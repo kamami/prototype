@@ -16,13 +16,12 @@ import TitleList from '../components/TitleList';
 // Container
 var Homepage = React.createClass({
 
-    apiKey: '87dfa1c669eea853da609d4968d294be',
     getInitialState: function() {
         return {searchTerm:"", searchUrl:""};
     },
      handleKeyUp :function(e){
         if (e.key === 'Enter' && this.state.searchTerm !== '') {
-            var searchUrl = "search/multi?query=" + this.state.searchTerm + "&api_key=" + this.apiKey;
+            var searchUrl = "search/multi?query=" + this.state.searchTerm;
             this.setState({searchUrl:searchUrl});
         }
     },
@@ -30,6 +29,9 @@ var Homepage = React.createClass({
    handleChange : function(e){
         this.setState({searchTerm : e.target.value});
     },
+
+
+
     render: function() {
         return (
             <div>
@@ -44,11 +46,11 @@ var Homepage = React.createClass({
                 </header>
                 <Hero />
                 <TitleList title="Suchergebnisse" url={this.state.searchUrl} />
-                <TitleList title="Die Beliebtesten Chatbots" url='discover/tv?sort_by=popularity.desc&page=1' />
-                <TitleList title="Trending" url='discover/movie?sort_by=popularity.desc&page=1' />
-                <TitleList title="Am meisten gespielte Städtetouren" url='genre/27/movies?sort_by=popularity.desc&page=1' />
-                <TitleList title="Gute Nacht Geschichten" url='genre/878/movies?sort_by=popularity.desc&page=1' />
-                <TitleList title="Interaktive Spannung auf der Couch" url='genre/35/movies?sort_by=popularity.desc&page=1' />
+                <TitleList title="Die Beliebtesten Chatbots" url='//api.jsonbin.io/b/5bba8ec46d95da7b7a759251/9' />
+                <TitleList title="Trending" url='//api.jsonbin.io/b/5bbb3f4d295e4356a50a605f/1' />
+                <TitleList title="Am meisten gespielte Städtetouren" url='//api.jsonbin.io/b/5bba8ec46d95da7b7a759251/9' />
+                <TitleList title="Gute Nacht Geschichten" url='//api.jsonbin.io/b/5bbb3f4d295e4356a50a605f/1' />
+                <TitleList title="Interaktive Spannung auf der Couch" url='//api.jsonbin.io/b/5bba8ec46d95da7b7a759251/9' />
             </div>
         );
     }

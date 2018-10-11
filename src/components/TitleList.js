@@ -1,10 +1,10 @@
 import React from 'react';
 import '../App.css';
 import Item from '../components/Item';
-import { Container, Collapse, Button, CardBody, Card, Row, Col } from 'reactstrap';
-import Hero from '../components/Hero';
-import Conversation from 'chat-template/dist/Conversation';
-import messages from '../components/Messages';
+import {Collapse, Card} from 'reactstrap';
+
+import Drop from '../components/Tabs';
+
 
 
 var TitleList = React.createClass({
@@ -14,7 +14,7 @@ var TitleList = React.createClass({
         return {data: [], mounted: false};
     },
     loadContent: function() {
-        var requestUrl = 'https://api.themoviedb.org/3/' + this.props.url + '&api_key=' + this.apiKey;
+        var requestUrl = this.props.url;
         fetch(requestUrl).then((response)=>{
             return response.json();
         }).then((data)=>{
@@ -31,6 +31,15 @@ var TitleList = React.createClass({
 
         }
     },
+    componentWillReceiveProps : function(nextProps){
+        if(nextProps.url !== this.props.url && nextProps.url !== ''){
+            this.setState({mounted:true,url:nextProps.url},()=>{
+                this.loadContent();
+            });
+
+        }
+    },
+
     componentDidMount: function() {
         if(this.props.url !== ''){
             this.loadContent();
@@ -39,47 +48,40 @@ var TitleList = React.createClass({
         }
 
     },
-    toggle: function() {
+   toggle: function() {
         this.setState({ collapse: !this.state.collapse });
     },
 
 
     render: function() {
 
-        var titles ='';
-        if(this.state.data.results) {
-            titles = this.state.data.results.map(function(title, i) {
+            var titles = this.state.data.map(function(title, i) {
                 if(i < 5) {
-                    var name = '';
-                    var backDrop = 'http://image.tmdb.org/t/p/original' + title.backdrop_path;
-                    if(!title.name) {
-                        name = title.original_title;
-                    } else {
-                        name = title.name;
-                    }
 
                     return (
-                        <Item key={title.id} title={name} score={title.vote_average} overview={title.overview} backdrop={backDrop} />
-                    );
-
+                    <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image} />
+                );
                 }else{
                     return (<div key={title.id}></div>);
                 }
-            });
 
-        }
+
+            })
 
         return (
             <div ref="titlecategory" className="TitleList" data-loaded={this.state.mounted}>
                 <div className="Title">
                     <h1>{this.props.title}</h1>
                     <div className="titles-wrapper" onClick={this.toggle}>
+
                         {titles}
                     </div>
                 </div>
                 <Collapse isOpen={this.state.collapse}>
 
-                            <Conversation height={300} messages={messages}/>
+
+<Drop/>
+
 
                 </Collapse>
             </div>

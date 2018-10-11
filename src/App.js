@@ -5,7 +5,6 @@ import Route from 'react-router-dom/Route';
 import Homepage from './Pages/Homepage';
 import Details from './Pages/Details';
 import Browse from './Pages/Browse';
-import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 
 
@@ -14,6 +13,8 @@ import { Collapse, Button, CardBody, Card } from 'reactstrap';
 
 
 class App extends Component {
+
+
   render() {
     return (
         <Router>

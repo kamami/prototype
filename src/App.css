@@ -321,11 +321,28 @@ p {
 }
 .Button[data-primary='true']:hover {
   background: #63fff7;
-  color: #ffffff
+  color: #ffffff;
+
 }
 
 .Button[data-primary='false']:hover {
   color:#000
+}
+
+.Tab{
+  border-radius: 4px;
+}
+
+.Tab:hover {
+  cursor: pointer;
+  background-color: #63fff7;
+  color: #ffffff;
+}
+
+.Tab:focus{
+  background-color: #63fff7;
+
+
 }
 
 .Hero {

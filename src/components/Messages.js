@@ -1,15 +1,19 @@
+
+
 var messages = [{
     message:'Hallo Katha und Mira :)',
-    backColor: '#3d83fa',
+    backColor: '#63fff7',
     textColor: "white",
     inbound: true,
     avatar: require(`../assets/avatar.png`),
     duration: 3000,
 },
+
     {
         message:'Ich bin ein Geist!!',
         backColor: '#f4f4f4',
         textColor: "black",
+        inbound: false,
         avatar: require(`../assets/avatar.png`),
         duration: 3000,
     },
@@ -17,12 +21,13 @@ var messages = [{
         message:'Wuuuuuuhhhhh...',
         backColor: '#f4f4f4',
         textColor: "black",
+        inbound: false,
         avatar: require(`../assets/avatar.png`),
         duration: 3000,
     },
     {
         message:'Oh Nein, ich hab solche Angst!',
-        backColor: '#3d83fa',
+        backColor: '#63fff7',
         textColor: "white",
         inbound: true,
         avatar: require(`../assets/avatar.png`),
@@ -30,7 +35,7 @@ var messages = [{
     },
     {
         message:'Hilfe!!!',
-        backColor: '#3d83fa',
+        backColor: '#63fff7',
         textColor: "white",
         inbound: true,
         avatar: require(`../assets/avatar.png`),
