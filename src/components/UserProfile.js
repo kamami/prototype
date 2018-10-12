@@ -6,9 +6,11 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Facebook from '../components/Facebook';
 
 class UserProfile extends React.Component{
+
   state = {
   open: false,
 }
+
 
 handleOpen = () => {
   this.setState({open: true});
@@ -22,8 +24,10 @@ handleClose = () => {
       const actions = [
      <FlatButton
        label="schließen"
-       primary={true}
        onClick={this.handleClose}
+       hoverColor='#63fff7'
+       color='#000'
+
      />
 
    ];
@@ -33,7 +37,9 @@ handleClose = () => {
 
                 <div className="UserProfile">
 
-                <FlatButton label="Login" onClick={this.handleOpen} className="Login" hoverColor=''/>
+                <FlatButton onClick={this.handleOpen} className="Login" hoverColor='#63fff7'>
+                  {this.props.isLoggedIn? 'Logout' : 'Login'}
+                  </FlatButton>
 
        <Dialog
          title="Login mit Facebook"

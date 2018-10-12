@@ -14,7 +14,7 @@ render() {
                     <ul>
 
                             <Link to="/browse/" style={{textDecoration: 'none', color: '#000'}}>  <MuiThemeProvider>
-                              <FlatButton variant="outlined" label="Browse" onClick={this.handleOpen} className="Login" hoverColor='#63fff7'/>
+                              <FlatButton label="Browse" onClick={this.handleOpen} className="Login" hoverColor='#63fff7'/>
                               </MuiThemeProvider>
                             </Link>
                             <MuiThemeProvider>
