@@ -37,9 +37,10 @@ handleClose = () => {
 
                 <div className="UserProfile">
 
-                <FlatButton onClick={this.handleOpen} className="Login" hoverColor='#63fff7'>
-                  {this.props.isLoggedIn? 'Logout' : 'Login'}
-                  </FlatButton>
+                <RaisedButton label=  {this.props.isLoggedIn? 'Logout' : 'Login'}
+                 onClick={this.handleOpen} className="Login" backgroundColor	='#63fff7' labelColor='#ffffff' />
+
+                  
 
        <Dialog
          title="Login mit Facebook"
