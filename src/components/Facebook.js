@@ -1,5 +1,7 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login';
+import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 export default class Facebook extends React.Component{
 
@@ -27,6 +29,7 @@ this.state = {
   }
 
   componentClicked = () => console.log('clicked');
+  logout = () => this.setState({isLoggedIn: false});
 
 render(){
   let fbContent;
@@ -37,6 +40,10 @@ render(){
       padding: 20}}>
       <img src={this.state.picture} alt={this.state.name} />
       <h2> Hallo {this.state.name} :) </h2>
+      <MuiThemeProvider>
+      <RaisedButton label={this.state.isLoggedIn? 'Logout' : 'Login'}
+       className="Login" backgroundColor	='#63fff7' labelColor='#ffffff'onClick={this.logout} />
+       </MuiThemeProvider>
 
         </div>
       )

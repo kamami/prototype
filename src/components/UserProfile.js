@@ -36,11 +36,12 @@ handleClose = () => {
           <MuiThemeProvider>
 
                 <div className="UserProfile">
-
+<MuiThemeProvider>
                 <RaisedButton label=  {this.props.isLoggedIn? 'Logout' : 'Login'}
                  onClick={this.handleOpen} className="Login" backgroundColor	='#63fff7' labelColor='#ffffff' />
+                 </MuiThemeProvider>
 
-                  
+
 
        <Dialog
          title="Login mit Facebook"
