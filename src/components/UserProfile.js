@@ -7,6 +7,10 @@ import Facebook from '../components/Facebook';
 
 class UserProfile extends React.Component{
 
+constructor(props){
+  super(props)
+  var isloggedIn = this.props.isLoggedIn;
+}
   state = {
   open: false,
 }
@@ -36,10 +40,9 @@ handleClose = () => {
           <MuiThemeProvider>
 
                 <div className="UserProfile">
-<MuiThemeProvider>
-                <RaisedButton label=  {this.props.isLoggedIn? 'Logout' : 'Login'}
+
+                <RaisedButton label= {this.isLoggedIn? 'Logout' : 'Login'}
                  onClick={this.handleOpen} className="Login" backgroundColor	='#63fff7' labelColor='#ffffff' />
-                 </MuiThemeProvider>
 
 
 

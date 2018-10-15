@@ -56,25 +56,26 @@ var TitleList = React.createClass({
     render: function() {
 
             var titles = this.state.data.map(function(title, i) {
-                if(i < 5) {
+
 
                     return (
                     <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image} />
                 );
-                }else{
-                    return (<div key={title.id}></div>);
-                }
+
 
 
             })
 
         return (
-            <div ref="titlecategory" className="TitleList" data-loaded={this.state.mounted}>
+            <div className="TitleList" data-loaded={this.state.mounted}>
+
                 <div className="Title">
                     <h1>{this.props.title}</h1>
                     <div className="titles-wrapper" onClick={this.toggle}>
-
+                          <div className="title-row">
                         {titles}
+                        </div>
+
                     </div>
                 </div>
                 <Collapse isOpen={this.state.collapse}>
