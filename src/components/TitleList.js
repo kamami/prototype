@@ -1,15 +1,12 @@
 import React from 'react';
 import '../App.css';
 import Item from '../components/Item';
-import {Collapse, Card} from 'reactstrap';
 
-import Drop from '../components/Tabs';
 
 
 
 var TitleList = React.createClass({
 
-    apiKey: '87dfa1c669eea853da609d4968d294be',
     getInitialState: function() {
         return {data: [], mounted: false};
     },
@@ -31,14 +28,7 @@ var TitleList = React.createClass({
 
         }
     },
-    componentWillReceiveProps : function(nextProps){
-        if(nextProps.url !== this.props.url && nextProps.url !== ''){
-            this.setState({mounted:true,url:nextProps.url},()=>{
-                this.loadContent();
-            });
 
-        }
-    },
 
     componentDidMount: function() {
         if(this.props.url !== ''){
@@ -48,43 +38,36 @@ var TitleList = React.createClass({
         }
 
     },
-   toggle: function() {
-        this.setState({ collapse: !this.state.collapse });
-    },
 
 
     render: function() {
 
-            var titles = this.state.data.map(function(title, i) {
+            var titles = this.state.data.map(function(title) {
 
 
                     return (
+
                     <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image} />
                 );
 
 
-
             })
+
+
 
         return (
             <div className="TitleList" data-loaded={this.state.mounted}>
 
                 <div className="Title">
                     <h1>{this.props.title}</h1>
-                    <div className="titles-wrapper" onClick={this.toggle}>
+                    <div className="titles-wrapper">
                           <div className="title-row">
                         {titles}
                         </div>
 
                     </div>
                 </div>
-                <Collapse isOpen={this.state.collapse}>
 
-
-<Drop/>
-
-
-                </Collapse>
             </div>
         );
     }

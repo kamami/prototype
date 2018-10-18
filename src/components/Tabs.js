@@ -10,15 +10,14 @@ import IconButton from 'material-ui/IconButton';
 import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import FlatButton from 'material-ui/FlatButton';
 
+class Drop extends React.Component{
 
-
-
-
-const Drop = () => (
+  render(){
+    return(
     <MuiThemeProvider>
         <Paper zDepth={1} >
         <AppBar
-            title={<span>Title</span>}
+            title={<span>{this.props.title}</span>}
             iconElementLeft={<IconButton><NavigationClose/></IconButton>}
      style={{backgroundColor: '#63fff7'}} zDepth={0}  />
 
@@ -30,17 +29,20 @@ const Drop = () => (
         </Tab>
         <Tab label="Story" value="two" style={{backgroundColor: '#63fff7', fontSize: 20}}>
             <div>
-                <h2>Work in progress.</h2>
+                <h2>{this.props.overview}</h2>
             </div>
         </Tab>
         <Tab label="Kaufen" value="three" style={{backgroundColor: '#63fff7', fontSize: 20}}>
             <div>
-                <h2>Work in progress</h2>
+                <h2>{this.props.score}</h2>
             </div>
         </Tab>
     </Tabs>
             </Paper>
         </MuiThemeProvider>
-);
+      )
+
+    }
+};
 
 export default Drop;
