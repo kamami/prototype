@@ -4,13 +4,18 @@ import Item from '../components/Item';
 
 
 
+class TitleList extends React.Component{
 
-var TitleList = React.createClass({
+  constructor(props){
+    super(props);
+    this.state = {
+      data: [],
+      mounted: false
+    }
+  }
 
-    getInitialState: function() {
-        return {data: [], mounted: false};
-    },
-    loadContent: function() {
+
+    loadContent() {
         var requestUrl = this.props.url;
         fetch(requestUrl).then((response)=>{
             return response.json();
@@ -19,28 +24,29 @@ var TitleList = React.createClass({
         }).catch((err)=>{
             console.log("There has been an error");
         });
-    },
-    componentWillReceiveProps : function(nextProps){
+    }
+
+    componentWillReceiveProps(nextProps){
         if(nextProps.url !== this.props.url && nextProps.url !== ''){
             this.setState({mounted:true,url:nextProps.url},()=>{
                 this.loadContent();
             });
 
         }
-    },
+    }
 
 
-    componentDidMount: function() {
+    componentDidMount() {
         if(this.props.url !== ''){
             this.loadContent();
             this.setState({mounted:true});
 
         }
 
-    },
+    }
 
 
-    render: function() {
+    render() {
 
             var titles = this.state.data.map(function(title) {
 
@@ -71,6 +77,6 @@ var TitleList = React.createClass({
             </div>
         );
     }
-});
+};
 
 export default TitleList;
