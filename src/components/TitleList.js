@@ -52,8 +52,7 @@ class TitleList extends React.Component{
 
 
                     return (
-
-                    <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image} />
+                    <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image}/>
                 );
 
 
@@ -70,6 +69,7 @@ class TitleList extends React.Component{
                           <div className="title-row">
                         {titles}
                         </div>
+
 
                     </div>
                 </div>

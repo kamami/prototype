@@ -29,7 +29,7 @@ handleClose = () => {
      <FlatButton
        label="schließen"
        onClick={this.handleClose}
-       hoverColor='#63fff7'
+       hoverColor='#000e7f'
        color='#000'
 
      />
@@ -42,7 +42,7 @@ handleClose = () => {
                 <div className="UserProfile">
 
                 <RaisedButton label= {this.isLoggedIn? 'Logout' : 'Login'}
-                 onClick={this.handleOpen} className="Login" backgroundColor	='#63fff7' labelColor='#ffffff' />
+                 onClick={this.handleOpen} className="Login" backgroundColor='#82f2da' labelColor='#ffffff' />
 
 
 

@@ -2,7 +2,7 @@
 
 var messages = [{
     message:'Hallo Katha und Mira :)',
-    backColor: '#63fff7',
+    backColor: '#82f2da',
     textColor: "white",
     inbound: true,
     avatar: require(`../assets/avatar.png`),
@@ -27,7 +27,7 @@ var messages = [{
     },
     {
         message:'Oh Nein, ich hab solche Angst!',
-        backColor: '#63fff7',
+        backColor: '#82f2da',
         textColor: "white",
         inbound: true,
         avatar: require(`../assets/avatar.png`),
@@ -35,7 +35,7 @@ var messages = [{
     },
     {
         message:'Hilfe!!!',
-        backColor: '#63fff7',
+        backColor: '#82f2da',
         textColor: "white",
         inbound: true,
         avatar: require(`../assets/avatar.png`),

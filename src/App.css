@@ -29,10 +29,13 @@ time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
+
 }
 body {
   line-height: 1;
 }
+
+
 ol, ul {
   list-style: none;
 }
@@ -53,6 +56,7 @@ body {
   background: #ffffff;
   color: #000;
   font-family: "Lato", sans-serif;
+  height: 100vh;
 }
 
 h2, .TitleList .Title {
@@ -72,9 +76,9 @@ p {
 
 .Header {
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, black 0%, transparent 100%);
+  background: -webkit-linear-gradient(to right, #82f2da 0%, white 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, white 0%, transparent 100%);
+  background: linear-gradient(to right, #82f2da 30%, white 100%);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
   /* IE6-9 */
@@ -82,13 +86,15 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding: 40px;
+  padding-top: 15px;
+  padding-right: 10px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   box-sizing: border-box;
   z-index: 5;
+  height: 70px;
 }
 
 .Logo {
@@ -114,10 +120,11 @@ p {
   margin-top: 2px;
 }
 .Logo:hover svg path {
-  fill: #b2fffa !important;
+  fill: #3ac1a5 !important;
 }
 
 .Navigation ul {
+  margin-left: -10px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -127,28 +134,25 @@ p {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 10px;
+  padding: 0px 10px 0px 0px;
 }
-.Navigation ul li {
+.Navigation li {
   font-weight: 400;
   padding: 7px 10px;
   font-size: 14px;
   -webkit-transition: background .125s ease;
   transition: background .125s ease;
-  border-radius: 3px;
-}
-.Navigation ul li:hover {
-  background: #63fff7;
-  cursor: pointer;
-  color: #ffffff;
+  border-radius: 50px;
+
 }
 
+
 .Login{
-  background-color: 'red';
+margin-right: 20px;
 }
 
 .Login:hover {
-  background: #63fff7;
+  background: #ffffff;
 }
 
 .Search {
@@ -162,7 +166,7 @@ p {
           justify-content: center;
   width: 100%;
   position: absolute;
-  left:0;
+  left: 0;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -172,20 +176,22 @@ p {
       -ms-flex-pack: center;
           justify-content: center;
   pointer-events: none;
+  margin-left: 200px;
 }
 .Search input {
+
   font-family: "Lato", sans-serif;
   font-weight: 300;
   font-size: 14px;
   height: 37px;
   width: 20%;
-  background: transparent;
+  background: linear-gradient(to right, #9ff4e2 30%, white 100%);
   color: #000;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   border: 0;
-  border: 2px solid rgba(99, 255, 247, 0.3);
+  border: 2px solid rgba(255, 255, 255, 1);
   outline: none;
   border-radius: 37px;
   padding: 0 10px;
@@ -194,8 +200,9 @@ p {
   transition: border .25s ease, width .125s ease .125s;
 }
 .Search input:focus {
-  border: 2px solid #63fff7;
+  border: 2px solid #ffffff;
   width: 25%;
+
 }
 
 .UserProfile {
@@ -235,11 +242,9 @@ p {
   font-weight: 300;
   height: 44px;
 }
-.UserProfile .User:hover {
-  cursor: pointer;
-}
+
 .UserProfile .User:hover .image {
-  border: 3px solid #63fff7;
+  border: 3px solid #82f2da;
 }
 .UserProfile .UserProfile-menu {
   display: none;
@@ -249,15 +254,19 @@ p {
   width: 100%;
   position: relative;
   background-size: cover;
-  min-height: 800px;
+  min-height: 100vh;
+
 }
 .Hero .content {
   position: relative;
   z-index: 4;
   width: 500px;
   left: 10vw;
-  top: 10vw;
+  top: 7vw;
+
 }
+
+
 .Hero .content .logo {
   max-width: 400px;
   display: block;
@@ -280,11 +289,11 @@ p {
 }
 .Hero .overlay {
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #ffffff 0%, rgba(34, 31, 31, 0) 100%);
+  background: -webkit-linear-gradient(top, #82f2da 0%, rgba(34, 31, 31, 0) 100%);
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(34, 31, 31, 0) 100%);
+  background: linear-gradient(to left, #82f2da 30%, white 100%);
+
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
   /* IE6-9 */
   height: 100%;
   position: absolute;
@@ -350,14 +359,9 @@ p {
 
 .Tab:focus{
   background-color: #63fff7;
-
-
 }
 
-.Hero {
-  margin-bottom: -15vw;
 
-}
 
 .TitleList {
   padding: 20px 40px ;
@@ -366,7 +370,7 @@ p {
   transition: opacity 3s ease;
   opacity: 0;
   position: relative;
-  z-index: 4;
+  z-index: 0;
 }
 ::-webkit-scrollbar {
     display: none;
