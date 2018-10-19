@@ -8,6 +8,12 @@ import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Tabs, Tab} from 'material-ui/Tabs';
+import Paper from 'material-ui/Paper';
+
+const customContentStyle = {
+  width: '60%',
+  maxWidth: 'none',
+};
 
 class Item extends React.Component{
   constructor(props){
@@ -39,35 +45,43 @@ style={{color: '#82f2da'}}        />
 
         return (
           <MuiThemeProvider>
-
-
-                <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', width: '15%', height: 175}}>
+                <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', height: 175}}>
                 <div className="overlay">
                     <div className="title" >{this.props.title}</div>
                     <div className="rating">{this.props.score} / 10</div>
                     <div className="plot">{this.props.overview}</div>
-                      <Dialog open={this.state.open} modal={false} actions={actions} onRequestClose={this.handleClose}
-                        >
-                        <Tabs inkBarStyle={{background: '#000'}} style={{height: 600}}>
-                            <Tab label="preview" value="one" style={{background: '#ffffff', fontSize: 20, color: '#000'}}>
+                      <Dialog
+                        contentStyle={customContentStyle}
+                        open={this.state.open} modal={false}
+                        actions={actions} onRequestClose={this.handleClose}>
+                        <div style={{display: 'flex'}}>
                                 <div>
-                                  <Conversation messages={messages}/>
-                                <div>
-                                  <h2>{this.props.overview}</h2>
-                                  </div>
+                                  <Paper zDepth={2} style={{  width: '250px',
+                                    height: '250px', borderRadius: '20%'}}>
+                                    <img className="DetailImg" src={this.props.backdrop}/>
+                                    </Paper>
                                 </div>
-                            </Tab>
+                        <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
+                          <h4>
+                              {this.props.title}
+                          </h4>
+                          <p>
+                            Hinzufügen zu:
+                          </p>
 
-                            <Tab label="Kaufen" value="two" style={{backgroundColor: '#ffffff', fontSize: 20, color: '#000'}}>
-                                <div>
-                                    <h2>{this.props.score}</h2>
-                                </div>
-                            </Tab>
-                        </Tabs>
+                          <p>
+                            Preview:
+                          </p>
+                          <div style={{width: 600}}>
+                          <Conversation messages={messages}/>
+                          </div>
+                        </div>
+                      </div>
+
                       </Dialog>
                 </div>
-                    </Card>
-                  </MuiThemeProvider>
+                </Card>
+          </MuiThemeProvider>
 
         );
     }

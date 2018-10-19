@@ -3,7 +3,6 @@ import '../App.css';
 import Item from '../components/Item';
 
 
-
 class TitleList extends React.Component{
 
   constructor(props){
@@ -49,31 +48,23 @@ class TitleList extends React.Component{
     render() {
 
             var titles = this.state.data.map(function(title) {
-
-
                     return (
                     <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image}/>
                 );
-
-
             })
 
 
 
         return (
             <div className="TitleList" data-loaded={this.state.mounted}>
-
                 <div className="Title">
                     <h1>{this.props.title}</h1>
                     <div className="titles-wrapper">
                           <div className="title-row">
                         {titles}
                         </div>
-
-
                     </div>
                 </div>
-
             </div>
         );
     }
