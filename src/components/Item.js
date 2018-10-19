@@ -38,25 +38,27 @@ style={{color: '#82f2da'}}        />
       ];
 
         return (
-            <MuiThemeProvider>
+          <MuiThemeProvider>
+
+
                 <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', width: '15%', height: 175}}>
                 <div className="overlay">
                     <div className="title" >{this.props.title}</div>
                     <div className="rating">{this.props.score} / 10</div>
                     <div className="plot">{this.props.overview}</div>
-                      <Dialog open={this.state.open} modal={false} actions={actions} onRequestClose={this.handleClose}>
+                      <Dialog open={this.state.open} modal={false} actions={actions} onRequestClose={this.handleClose}
+                        >
                         <Tabs inkBarStyle={{background: '#000'}} style={{height: 600}}>
                             <Tab label="preview" value="one" style={{background: '#ffffff', fontSize: 20, color: '#000'}}>
                                 <div>
                                   <Conversation messages={messages}/>
-                                </div>
-                            </Tab>
-                            <Tab label="Story" value="two" style={{backgroundColor: '#ffffff', fontSize: 20, color: '#000'}}>
                                 <div>
-                                    <h2>{this.props.overview}</h2>
+                                  <h2>{this.props.overview}</h2>
+                                  </div>
                                 </div>
                             </Tab>
-                            <Tab label="Kaufen" value="three" style={{backgroundColor: '#ffffff', fontSize: 20, color: '#000'}}>
+
+                            <Tab label="Kaufen" value="two" style={{backgroundColor: '#ffffff', fontSize: 20, color: '#000'}}>
                                 <div>
                                     <h2>{this.props.score}</h2>
                                 </div>
@@ -64,9 +66,8 @@ style={{color: '#82f2da'}}        />
                         </Tabs>
                       </Dialog>
                 </div>
-
                     </Card>
-  </MuiThemeProvider>
+                  </MuiThemeProvider>
 
         );
     }

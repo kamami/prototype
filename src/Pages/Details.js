@@ -7,7 +7,7 @@ import Hero from '../components/Hero';
 import {Link} from 'react-router-dom';
 
 
-var Details = React.createClass({
+class Details extends React.Component{
 
 
     render() {
@@ -34,6 +34,6 @@ var Details = React.createClass({
 </div>
         );
     }
-});
+};
 
 export default Details;

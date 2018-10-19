@@ -71,7 +71,7 @@ super();
 
     render() {
 
-      
+
 
       let content;
  if (this.test === 1) {
