@@ -12,7 +12,7 @@ import Paper from 'material-ui/Paper';
 const customContentStyle = {
   width: '60%',
   maxWidth: 'none',
-  height: 800,
+  height: 1000,
   maxHeight: 'none'
 };
 
@@ -73,7 +73,7 @@ style={{color: '#82f2da'}}        />
                                     <img className="DetailImg" src={this.props.backdrop}/>
                                 </div>
                                 <div style={{marginTop: 30}}>
-                                <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+                                <ButtonDropdown direction="down" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
              <DropdownToggle className= "DropdownButton" style={{background: '#82f2da', width: 180, border: '#82f2da'}}>
               Hinzufügen zu:
             </DropdownToggle>
@@ -92,10 +92,10 @@ style={{color: '#82f2da'}}        />
                  <DropdownItem>
                    <div style={{display: 'flex'}}>
                    <div style={{float: 'left'}}>
-                    <img src={require("../assets/Messnger-Icon.png")} style={{heigth: 20, width: 20}}/>
+                    <img src={require("../assets/Messenger-Icon.png")} style={{heigth: 20, width: 20}}/>
                     </div>
                     <div style={{marginLeft: 10, marginTop: 2}}>
-                        Messenger
+                      <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: '#000'}}>Messenger</a>
                     </div>
                   </div>
                  </DropdownItem>
@@ -140,7 +140,7 @@ style={{color: '#82f2da'}}        />
                             Preview:
                           </p>
                           <MuiThemeProvider>
-                          <Paper style={{width: 652, height: 200}} zDepth={1}>
+                          <Paper style={{width: 652, height: 250}} zDepth={1}>
                               <Messages avatar={this.props.backdrop} message1={"This is a test"}/>
                             </Paper>
                           </MuiThemeProvider>
