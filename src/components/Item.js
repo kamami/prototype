@@ -2,13 +2,13 @@ import React from 'react';
 import '../App.css';
 import Conversation from 'chat-template/dist/Conversation';
 import messages from '../components/Messages';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import Paper from 'material-ui/Paper';
+import {Card} from 'reactstrap';
 
 const customContentStyle = {
   width: '60%',
@@ -44,12 +44,14 @@ style={{color: '#82f2da'}}        />
       ];
 
         return (
-          <MuiThemeProvider>
+          <div style={{marginRight: 70}}>
                 <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', height: 175}}>
                 <div className="overlay">
                     <div className="title" >{this.props.title}</div>
                     <div className="rating">{this.props.score} / 10</div>
                     <div className="plot">{this.props.overview}</div>
+                      <MuiThemeProvider>
+
                       <Dialog
                         contentStyle={customContentStyle}
                         open={this.state.open} modal={false}
@@ -77,11 +79,16 @@ style={{color: '#82f2da'}}        />
                           </div>
                         </div>
                       </div>
-
                       </Dialog>
+                    </MuiThemeProvider>
+
                 </div>
                 </Card>
-          </MuiThemeProvider>
+                <div style={{width: 100, overflow: 'hidden'}}>
+                  {this.props.title}
+                </div>
+              </div>
+
 
         );
     }

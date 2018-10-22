@@ -371,7 +371,8 @@ margin-right: 20px;
   opacity: 0;
   position: relative;
   z-index: 0;
-  display: flex;
+
+
 
 }
 ::-webkit-scrollbar {
@@ -379,11 +380,7 @@ margin-right: 20px;
 }
 
 .title-row{
-  display: -webkit-box;
-  display: -ms-flexbox;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
+
   margin: 40px 0;
   width: calc(100vw - 80px);
   box-sizing: border-box;
@@ -394,8 +391,8 @@ margin-right: 20px;
           overflow-x: scroll;
   white-space: nowrap;
   overflow: auto;
- white-space:nowrap;
  width: 100%;
+ display: inline-flex;
 }
 
 .titles-wrapper {
@@ -413,6 +410,8 @@ margin-right: 20px;
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
+          white-space:nowrap;
+
 }
 .TitleList[data-loaded='true'] {
   opacity: 1;
@@ -420,8 +419,8 @@ margin-right: 20px;
 }
 
 .Item {
-  width: calc(20% - 10px);
-  min-width: calc(20% - 10px);
+  width: 250px;
+  min-width: 250px;
   background-color: #ffffff;
   -webkit-box-flex: 1;
  -webkit-flex: 1 0 auto;
@@ -429,13 +428,18 @@ margin-right: 20px;
          flex: 1 0 auto;
   background-position: center;
   background-size: 100%;
-  height: 200px;
+  height: 250px;
+  min-height: 250px;
   background-repeat: no-repeat;
   overflow: hidden;
-  margin-right: 10px;
+  margin-right: 70px;
   -webkit-transition: background 1s ease;
   transition: background 1s ease;
   display: inline-block;
+  border-radius: 2em !important;
+  border: 0px !important;
+ box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
 
 }
@@ -489,8 +493,9 @@ margin-right: 20px;
   transition: margin .25s ease .125s, opacity .25s ease .25s;
 }
 .Item:hover {
-  background-size: 150%;
+  background-size: 200%;
   cursor: pointer;
+   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
 }
 .Item:hover .overlay {
@@ -510,7 +515,6 @@ margin-right: 20px;
 .Item:hover .overlay .ListToggle {
   opacity: 1;
 }
-
 .DetailImg {
   background: 50% 50% no-repeat; /* 50% 50% centers image in div */
   width: 250px;
