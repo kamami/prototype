@@ -1,26 +1,30 @@
 import React from 'react';
 import '../App.css';
 import Conversation from 'chat-template/dist/Conversation';
-import messages from '../components/Messages';
+import Messages from '../components/Messages';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import {Card, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Paper from 'material-ui/Paper';
-import {Card} from 'reactstrap';
 
 const customContentStyle = {
   width: '60%',
   maxWidth: 'none',
+  height: 800,
+  maxHeight: 'none'
 };
 
 class Item extends React.Component{
   constructor(props){
      super(props);
      this.state = {
-         open: false
-     }
+         open: false,
+         dropdownOpen: false
+     };
+     this.toggle = this.toggle.bind(this);
+
    }
    handleOpen = () => {
    this.setState({open: true});
@@ -29,6 +33,12 @@ class Item extends React.Component{
  handleClose = () => {
    this.setState({open: false});
  };
+
+ toggle() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
 
 
 
@@ -47,36 +57,93 @@ style={{color: '#82f2da'}}        />
           <div style={{marginRight: 70}}>
                 <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', height: 175}}>
                 <div className="overlay">
-                    <div className="title" >{this.props.title}</div>
-                    <div className="rating">{this.props.score} / 10</div>
-                    <div className="plot">{this.props.overview}</div>
+                      <div className="HoverImg">
+                          START
+                      </div>
                       <MuiThemeProvider>
 
                       <Dialog
-                        contentStyle={customContentStyle}
                         open={this.state.open} modal={false}
-                        actions={actions} onRequestClose={this.handleClose}>
+                        actions={actions} onRequestClose={this.handleClose}
+                        contentStyle={customContentStyle}>
                         <div style={{display: 'flex'}}>
+                            <div>
                                 <div>
-                                  <Paper zDepth={2} style={{  width: '250px',
-                                    height: '250px', borderRadius: '20%'}}>
+
                                     <img className="DetailImg" src={this.props.backdrop}/>
-                                    </Paper>
                                 </div>
+                                <div style={{marginTop: 30}}>
+                                <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+             <DropdownToggle className= "DropdownButton" style={{background: '#82f2da', width: 180, border: '#82f2da'}}>
+              Hinzufügen zu:
+            </DropdownToggle>
+             <DropdownMenu style={{width: 180}}>
+               <DropdownItem>
+                 <div style={{display: 'flex'}}>
+                 <div style={{float: 'left'}}>
+                  <img src={require("../assets/Kik-Icon.png")} style={{heigth: 20, width: 20}}/>
+                  </div>
+                  <div style={{marginLeft: 10, marginTop: 2}}>
+                      Kik
+                  </div>
+                </div>
+               </DropdownItem>
+               <DropdownItem divider />
+                 <DropdownItem>
+                   <div style={{display: 'flex'}}>
+                   <div style={{float: 'left'}}>
+                    <img src={require("../assets/Messnger-Icon.png")} style={{heigth: 20, width: 20}}/>
+                    </div>
+                    <div style={{marginLeft: 10, marginTop: 2}}>
+                        Messenger
+                    </div>
+                  </div>
+                 </DropdownItem>
+                 <DropdownItem divider />
+                   <DropdownItem>
+                     <div style={{display: 'flex'}}>
+                     <div style={{float: 'left'}}>
+                      <img src={require("../assets/Slack-Icon.png")} style={{heigth: 20, width: 20}}/>
+                      </div>
+                      <div style={{marginLeft: 10, marginTop: 2}}>
+                          Slack
+                      </div>
+                    </div>
+                   </DropdownItem>
+                   <DropdownItem divider />
+                     <DropdownItem>
+                       <div style={{display: 'flex'}}>
+                       <div style={{float: 'left'}}>
+                        <img src={require("../assets/Telegram-Icon.png")} style={{heigth: 20, width: 20}}/>
+                        </div>
+                        <div style={{marginLeft: 10, marginTop: 2}}>
+                            Telegram
+                        </div>
+                      </div>
+                     </DropdownItem>
+             </DropdownMenu>
+           </ButtonDropdown>
+         </div>
+       </div>
                         <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
-                          <h4>
+                          <h3 style={{fontWeight: 'bold'}}>
                               {this.props.title}
-                          </h4>
+                          </h3>
+                          <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
+                            Beschreibung:
+                          </p>
                           <p>
-                            Hinzufügen zu:
+                            {this.props.description}
                           </p>
 
-                          <p>
+                          <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
                             Preview:
                           </p>
-                          <div style={{width: 600}}>
-                          <Conversation messages={messages}/>
-                          </div>
+                          <MuiThemeProvider>
+                          <Paper style={{width: 652, height: 200}} zDepth={1}>
+                              <Messages avatar={this.props.backdrop} message1={"This is a test"}/>
+                            </Paper>
+                          </MuiThemeProvider>
                         </div>
                       </div>
                       </Dialog>
@@ -84,8 +151,11 @@ style={{color: '#82f2da'}}        />
 
                 </div>
                 </Card>
-                <div style={{width: 100, overflow: 'hidden'}}>
+                <div className="BreakWords" style={{fontSize: 15, marginTop: 20}}>
                   {this.props.title}
+                </div>
+                <div className="BreakWords" style={{fontSize: 12, marginTop: 10, fontWeight: 'lighter'}}>
+                  {this.props.overview}
                 </div>
               </div>
 

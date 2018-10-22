@@ -49,7 +49,8 @@ class TitleList extends React.Component{
 
             var titles = this.state.data.map(function(title) {
                     return (
-                    <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image}/>
+                    <Item key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image}
+                      description={title.description}/>
                 );
             })
 
