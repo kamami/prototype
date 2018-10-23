@@ -29,9 +29,7 @@ handleClose = () => {
      <FlatButton
        label="schließen"
        onClick={this.handleClose}
-       hoverColor='#000e7f'
-       color='#000'
-
+style={{color: '#82f2da'}}
      />
 
    ];
@@ -49,9 +47,8 @@ handleClose = () => {
        <Dialog
          title="Login mit Facebook"
          actions={actions}
-         modal={true}
+         modal={false}
          open={this.state.open}
-         hoverColor='red'
        >
 
           <Facebook/>

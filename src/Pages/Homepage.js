@@ -8,7 +8,6 @@ import Footer from '../components/Footer';
 import ScrollToTop from 'react-scroll-up';
 import Content from '../components/Content';
 
-
 /////////////////
 /// COMPONENTS //
 /////////////////
@@ -64,8 +63,7 @@ class Homepage extends React.Component{
                     <UserProfile />
 
                 </header>
-                <Hero/>
-
+                <Hero url='//api.jsonbin.io/b/5bce2773716f9364f8c91a10/3'/>
 
                 <Content/>
                 <Footer/>

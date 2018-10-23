@@ -126,13 +126,13 @@ style={{color: '#82f2da'}}        />
          </div>
        </div>
                         <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
-                          <h3 style={{fontWeight: 'bold'}}>
+                          <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem"}}>
                               {this.props.title}
-                          </h3>
+                          </p>
                           <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
                             Beschreibung:
                           </p>
-                          <p>
+                          <p style={{fontSize: 13}}>
                             {this.props.description}
                           </p>
 

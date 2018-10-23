@@ -38,11 +38,11 @@ render(){
       fbContent = (
         <div style={{width: 400, margin: 'auto', background: '#ffffff',
       padding: 20}}>
-      <img src={this.state.picture} alt={this.state.name} />
-      <h2> Hallo {this.state.name} :) </h2>
+      <img src={this.state.picture} alt={this.state.name} style={{float: 'left', marginRight: 20, marginTop: 9}}/>
+      <p style={{fontSize: 20}}> Herzlich Willkommen {this.state.name}! </p>
       <MuiThemeProvider>
       <RaisedButton label={this.state.isLoggedIn? 'Logout' : 'Login'}
-       className="Login" backgroundColor	='#63fff7' labelColor='#ffffff'onClick={this.logout} />
+       className="Login" backgroundColor	='#82f2da' labelColor='#ffffff'onClick={this.logout} />
        </MuiThemeProvider>
 
         </div>
