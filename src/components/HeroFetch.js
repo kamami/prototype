@@ -30,7 +30,7 @@ class HeroFetch extends React.Component{
 
                 <div className="content" >
                   <MuiThemeProvider >
-                      <Paper zDepth={4} style={{background: 'transparent', padding: 40, width: 1000}}>
+                      <Paper square={false} zDepth={4} style={{background: 'transparent', padding: 40, width: 1000, borderRadius: '2em'}}>
                         <div style={{display: 'inline-block'}}>
                       <div style={{float: 'right', marginLeft: 80}}>
                         <img className="DetailImg" src={this.props.backdrop}/>

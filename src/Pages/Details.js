@@ -5,7 +5,9 @@ import Navigation from '../components/Navigation';
 import UserProfile from '../components/UserProfile';
 import Hero from '../components/Hero';
 import {Link} from 'react-router-dom';
-
+import ScrollToTop from 'react-scroll-up';
+import Footer from '../components/Footer';
+import ViewAll from '../components/ViewAll';
 
 class Details extends React.Component{
 
@@ -13,25 +15,33 @@ class Details extends React.Component{
     render() {
 
         return (
-            <div id="details">
-                <header className="Header">
-                    <Link to="/">                    <Logo/>
-                    </Link>
+          <div>
+              <header className="Header">
+                <ScrollToTop showUnder={-20} style={{
+position: 'relative',
+marginTop: 45,
+marginLeft: 40,
+cursor: 'pointer',
+transitionDuration: '2s',
+transitionTimingFunction: 'linear',
+transitionDelay: '1s'
+}}>
+          <Link to="/" style={{textDecoration: 'none'}}>
+                  <Logo />
+          </Link>
+                  </ScrollToTop>
 
-                    <Navigation />
+                  <Navigation />
 
-                    <UserProfile />
+                  <UserProfile />
 
-                </header>
-                <Hero />
+              </header>
 
+              <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/6'/>
 
+            <Footer/>
 
-                <div class="fb-customerchat"
-                     page_id="1272308332800038">
-                </div>
-
-</div>
+          </div>
         );
     }
 };

@@ -14,7 +14,7 @@ render() {
 
                     <ul>
 
-                            <Link to="/browse/" style={{textDecoration: 'none'}}>  <MuiThemeProvider>
+                            <Link to="/details/" style={{textDecoration: 'none'}}>  <MuiThemeProvider>
                               <RaisedButton label="Browse" className="Login" backgroundColor='#82f2da' labelColor='#ffffff' />
                               </MuiThemeProvider>
                             </Link>

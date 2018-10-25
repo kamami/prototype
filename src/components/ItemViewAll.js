@@ -16,7 +16,7 @@ const customContentStyle = {
   maxHeight: 'none'
 };
 
-class Item extends React.Component{
+class ItemViewAll extends React.Component{
   constructor(props){
      super(props);
      this.state = {
@@ -55,10 +55,10 @@ style={{color: '#82f2da'}}        />
 
         return (
           <div>
-                <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', height: 175}}>
+                <Card onClick={this.handleOpen} className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
                 <div className="overlay">
                       <div className="HoverImg">
-                          START
+                          DETAILS
                       </div>
                       <MuiThemeProvider>
 
@@ -75,7 +75,7 @@ style={{color: '#82f2da'}}        />
                                 <div style={{marginTop: 30}}>
                                 <ButtonDropdown direction="down" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
              <DropdownToggle className= "DropdownButton" style={{background: '#82f2da', width: 180, border: '#82f2da'}}>
-              Hinzufügen zu:
+              Starten:
             </DropdownToggle>
              <DropdownMenu style={{width: 180}}>
                <DropdownItem>
@@ -140,7 +140,7 @@ style={{color: '#82f2da'}}        />
                             Preview:
                           </p>
                           <MuiThemeProvider>
-                          <Paper style={{width: 652, height: 250, borderRadius: "2em"}} zDepth={1} square={false}>
+                          <Paper style={{width: 652, height: 250}} zDepth={1}>
                               <Messages avatar={this.props.backdrop} message1={"This is a test"}/>
                             </Paper>
                           </MuiThemeProvider>
@@ -151,12 +151,37 @@ style={{color: '#82f2da'}}        />
 
                 </div>
                 </Card>
-                <div className="BreakWords" style={{fontSize: 15, marginTop: 20}}>
+                <div className="BreakWords" style={{fontSize: 15, marginTop: 20, fontFamily: 'Anton'}}>
                   {this.props.title}
                 </div>
-                <div className="BreakWords" style={{fontSize: 12, marginTop: 10, fontWeight: 'lighter'}}>
+                <div className="BreakWords" style={{fontSize: 12, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}>
                   {this.props.overview}
                 </div>
+                <div style={{display: 'inline-block'}}>
+                  <div style={{marginTop: 10}}>
+                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
+                    </a>
+                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
+                    </a>
+                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
+                    </a>
+                  </div>
+                  <div style={{marginTop: 5}}>
+                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
+                    </a>
+                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
+                    </a>
+                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                    <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
+                    </a>
+              </div>
+            </div>
+
               </div>
 
 
@@ -164,4 +189,4 @@ style={{color: '#82f2da'}}        />
     }
 };
 
-export default Item;
+export default ItemViewAll;
