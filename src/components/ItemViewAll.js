@@ -140,7 +140,7 @@ style={{color: '#82f2da'}}        />
                             Preview:
                           </p>
                           <MuiThemeProvider>
-                          <Paper style={{width: 652, height: 250}} zDepth={1}>
+                          <Paper style={{width: 652, height: 250, borderRadius: "2em"}} zDepth={1}>
                               <Messages avatar={this.props.backdrop} message1={"This is a test"}/>
                             </Paper>
                           </MuiThemeProvider>
@@ -151,10 +151,10 @@ style={{color: '#82f2da'}}        />
 
                 </div>
                 </Card>
-                <div className="BreakWords" style={{fontSize: 15, marginTop: 20, fontFamily: 'Anton'}}>
+                <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}>
                   {this.props.title}
                 </div>
-                <div className="BreakWords" style={{fontSize: 12, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}>
+                <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}>
                   {this.props.overview}
                 </div>
                 <div style={{display: 'inline-block'}}>

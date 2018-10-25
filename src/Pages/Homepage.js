@@ -57,9 +57,7 @@ class Homepage extends React.Component{
                     </ScrollToTop>
 
                     <Navigation />
-                    <div id="search" className="Search">
-    <input onKeyUp={this.handleKeyUp} onChange={this.handleChange} type="search" placeholder="Nach Titel suchen..." value={this.state.searchTerm}/>
-                    </div>
+                    
                     <UserProfile />
 
                 </header>
