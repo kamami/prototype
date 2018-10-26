@@ -41,8 +41,6 @@ class ItemViewAll extends React.Component{
   }
 
 
-
-
     render() {
 
       const actions = [
@@ -50,8 +48,9 @@ class ItemViewAll extends React.Component{
           label="schließen"
           primary={false}
           onClick={this.handleClose}
-style={{color: '#82f2da'}}        />
+          style={{color: '#82f2da'}}        />
       ];
+
 
         return (
           <div>
@@ -78,39 +77,84 @@ style={{color: '#82f2da'}}        />
               Starten:
             </DropdownToggle>
              <DropdownMenu style={{width: 180}}>
-               <DropdownItem>
-                 <div style={{display: 'flex'}}>
-                 <div style={{float: 'left'}}>
-                  <img src={require("../assets/Kik-Icon.png")} style={{heigth: 20, width: 20}}/>
-                  </div>
-                  <div style={{marginLeft: 10, marginTop: 2}}>
-                      Kik
-                  </div>
-                </div>
-               </DropdownItem>
-               <DropdownItem divider />
-                 <DropdownItem>
-                   <div style={{display: 'flex'}}>
-                   <div style={{float: 'left'}}>
-                    <img src={require("../assets/Messenger-Icon.png")} style={{heigth: 20, width: 20}}/>
-                    </div>
-                    <div style={{marginLeft: 10, marginTop: 2}}>
-                      <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: '#000'}}>Messenger</a>
-                    </div>
-                  </div>
-                 </DropdownItem>
-                 <DropdownItem divider />
-                   <DropdownItem>
-                     <div style={{display: 'flex'}}>
-                     <div style={{float: 'left'}}>
-                      <img src={require("../assets/Slack-Icon.png")} style={{heigth: 20, width: 20}}/>
-                      </div>
+
+               {this.props.kik != "" &&
+                 <div>
+                    <DropdownItem>
+                      <div style={{display: 'flex'}}>
+                        <div style={{float: 'left'}}>
+                          <img src={require("../assets/Kik-Icon.png")} style={{heigth: 20, width: 20}}/>
+                        </div>
                       <div style={{marginLeft: 10, marginTop: 2}}>
-                          Slack
+                      Kik
                       </div>
                     </div>
-                   </DropdownItem>
-                   <DropdownItem divider />
+                  </DropdownItem>
+                </div>
+             }
+
+             {this.props.messenger != "" &&
+                  <div>
+                     <DropdownItem>
+                       <div style={{display: 'flex'}}>
+                         <div style={{float: 'left'}}>
+                           <img src={require("../assets/Messenger-Icon.png")} style={{heigth: 20, width: 20}}/>
+                         </div>
+                         <div style={{marginLeft: 10, marginTop: 2}}>
+                           <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: '#000'}}>Messenger</a>
+                         </div>
+                       </div>
+                     </DropdownItem>
+                   </div>
+               }
+
+                   {this.props.slack != "" &&
+                     <div>
+                          <DropdownItem>
+                            <div style={{display: 'flex'}}>
+                              <div style={{float: 'left'}}>
+                                <img src={require("../assets/Slack-Icon.png")} style={{heigth: 20, width: 20}}/>
+                              </div>
+                              <div style={{marginLeft: 10, marginTop: 2}}>
+                                Slack
+                              </div>
+                            </div>
+                          </DropdownItem>
+                        </div>
+                 }
+
+                 {this.props.twitter != "" &&
+                   <div>
+                        <DropdownItem>
+                          <div style={{display: 'flex'}}>
+                            <div style={{float: 'left'}}>
+                              <img src={require("../assets/Twitter-Icon.png")} style={{heigth: 20, width: 20}}/>
+                            </div>
+                            <div style={{marginLeft: 10, marginTop: 2}}>
+                              Slack
+                            </div>
+                          </div>
+                        </DropdownItem>
+                      </div>
+               }
+
+                                    {this.props.discord!= "" &&
+                                      <div>
+                                           <DropdownItem>
+                                             <div style={{display: 'flex'}}>
+                                               <div style={{float: 'left'}}>
+                                                 <img src={require("../assets/Discord-Icon.png")} style={{heigth: 20, width: 20}}/>
+                                               </div>
+                                               <div style={{marginLeft: 10, marginTop: 2}}>
+                                                 Slack
+                                               </div>
+                                             </div>
+                                           </DropdownItem>
+                                         </div>
+                                  }
+
+                     {this.props.telegram != "" &&
+                       <div>
                      <DropdownItem>
                        <div style={{display: 'flex'}}>
                        <div style={{float: 'left'}}>
@@ -121,10 +165,12 @@ style={{color: '#82f2da'}}        />
                         </div>
                       </div>
                      </DropdownItem>
+                   </div>
+                   }
              </DropdownMenu>
-           </ButtonDropdown>
-         </div>
-       </div>
+            </ButtonDropdown>
+          </div>
+        </div>
                         <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
                           <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem"}}>
                               {this.props.title}
@@ -158,28 +204,39 @@ style={{color: '#82f2da'}}        />
                   {this.props.overview}
                 </div>
                 <div style={{display: 'inline-block'}}>
-                  <div style={{marginTop: 10}}>
-                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
-                    <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
-                    </a>
-                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
-                    <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
-                    </a>
-                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
-                    <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
-                    </a>
-                  </div>
-                  <div style={{marginTop: 5}}>
-                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
-                    <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
-                    </a>
-                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
-                    <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
-                    </a>
-                    <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
-                    <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
-                    </a>
-              </div>
+
+                    {this.props.messenger != "" &&
+                    <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
+                  </a>
+                  }
+                  {this.props.kik != "" &&
+                  <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
+                  </a>
+                }
+                  {this.props.slack != "" &&
+                  <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
+                  </a>
+                }
+
+                  {this.props.telegram != "" &&
+                  <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
+                  </a>
+                  }
+                  {this.props.twitter != "" &&
+                  <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
+                  </a>
+                  }
+                  {this.props.discord != "" &&
+                  <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
+                  </a>
+                }
+
             </div>
 
               </div>

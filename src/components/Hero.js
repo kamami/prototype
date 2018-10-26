@@ -48,8 +48,19 @@ class Hero extends React.Component{
 
             var heroes = this.state.data.map(function(title) {
                     return (
-                    <HeroFetch key={title.id} title={title.title} body={title.body} backdrop={title.img}
-                      description={title.description} messengerLink={title.messenger}/>
+                    <HeroFetch
+                      key={title.id}
+                      title={title.title}
+                      body={title.body}
+                      backdrop={title.img}
+                      description={title.description}
+                      messenger={title.messenger}
+                      twitter={title.twitter}
+                      discord={title.discord}
+                      slack={title.slack}
+                      kik={title.kik}
+                      telegram={title.telegram}
+                      />
                 );
             })
 

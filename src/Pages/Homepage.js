@@ -8,37 +8,12 @@ import Footer from '../components/Footer';
 import ScrollToTop from 'react-scroll-up';
 import Content from '../components/Content';
 
-/////////////////
-/// COMPONENTS //
-/////////////////
-
-// Container
-
 class Homepage extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {
-      searchTerm: "",
-      searchUrl: ""
-    }
+
   }
-
-
-
-
-     handleKeyUp(e){
-        if (e.key === 'Enter' && this.state.searchTerm !== '') {
-            var searchUrl = "search/multi?query=" + this.state.searchTerm;
-            this.setState({searchUrl:searchUrl});
-        }
-    }
-
-   handleChange(e){
-        this.setState({searchTerm : e.target.value});
-    }
-
-
 
     render() {
         return (
@@ -57,11 +32,11 @@ class Homepage extends React.Component{
                     </ScrollToTop>
 
                     <Navigation />
-                    
+
                     <UserProfile />
 
                 </header>
-                <Hero url='//api.jsonbin.io/b/5bce2773716f9364f8c91a10/3'/>
+                <Hero url='//api.jsonbin.io/b/5bce2773716f9364f8c91a10/4'/>
 
                 <Content/>
                 <Footer/>

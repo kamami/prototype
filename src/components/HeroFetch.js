@@ -34,28 +34,39 @@ class HeroFetch extends React.Component{
                         <div style={{display: 'inline-block'}}>
                       <div style={{float: 'right', marginLeft: 80}}>
                         <img className="DetailImg" src={this.props.backdrop}/>
-                          <div style={{marginTop: 30}}>
-                            <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
+                          <div style={{marginTop: 30, width: 180}}>
+                            {this.props.messenger != "" &&
+                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
                             <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
                             </a>
+                          }
+                            {this.props.messenger != "" &&
                             <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
                             <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
                             </a>
+                          }
+                            {this.props.slack != "" &&
                             <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
                             <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
                             </a>
-                          </div>
-                          <div style={{marginTop: 5}}>
+                          }
+                            {this.props.messenger != "" &&
                             <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
                             <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
                             </a>
+                            }
+                            {this.props.messenger != "" &&
                             <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
                             <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
                             </a>
+                            }
+                            {this.props.messenger != "" &&
                             <a href={this.props.messengerLink} target="_blank" rel="noopener noreferrer">
                             <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
                             </a>
-                          </div>
+                          }
+
+                        </div>
                       </div>
 
 

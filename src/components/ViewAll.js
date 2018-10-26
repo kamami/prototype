@@ -59,11 +59,26 @@ class ViewAll extends React.Component{
                   <MuiThemeProvider>
                     <Paper style={{ borderRadius: "2em",
                       background: 'linear-gradient(to right, #82f2da 30%, white 100%)'
-                    }} zDepth={1} square={false} >
+                    }} zDepth={1} >
 
                 <div key={title.id}>
-              <ItemViewAll key={title.id} title={title.title} score={title.vote_average} overview={title.body} backdrop={title.image}
-                description={title.description} messengerLink={title.messenger}/>
+              <ItemViewAll
+                key={title.id}
+                title={title.title}
+                score={title.vote_average}
+                overview={title.body}
+                backdrop={title.image}
+                description={title.description}
+                messenger={title.messenger}
+                twitter={title.twitter}
+                discord={title.discord}
+                slack={title.slack}
+                kik={title.kik}
+                telegram={title.telegram}
+
+
+
+                  />
             </div>
           </Paper>
           </MuiThemeProvider>
@@ -76,9 +91,9 @@ class ViewAll extends React.Component{
 
           <StackGrid
             columnWidth={180}
-       gutterHeight={60}
-       gutterWidth={60}
-       duration={5000}
+       gutterHeight={80}
+       gutterWidth={80}
+       duration={3000}
        monitorImagesLoaded={true}
 
                >
