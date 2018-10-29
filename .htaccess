@@ -1,3 +1,7 @@
+
+
+
+
 <Files ~ "\.(tpl|sqlite)$">
  order deny,allow
  deny from all

@@ -22,7 +22,6 @@ class App extends Component {
             />
 
               <Route path="/browse/" exact strict component={Browse}/>
-                <Route component={Homepage}/>
           </div>
         </Router>
     );
