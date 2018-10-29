@@ -5,9 +5,17 @@ import ItemViewAll from '../components/ItemViewAll';
 import StackGrid, {transitions} from "react-stack-grid";
 import Paper from 'material-ui/Paper';
 import * as easings from '../components/easings';
+import TextField from 'material-ui/TextField';
+
+const { scaleDown } = transitions;
 
 
+function searchingFor(term){
+  return function(x){
+    return x.title.toLowerCase().includes(term.toLowerCase()) || x.body.toLowerCase().includes(term.toLowerCase());
 
+  }
+}
 
 
 class ViewAll extends React.Component{
@@ -16,9 +24,12 @@ class ViewAll extends React.Component{
     constructor(props){
       super(props);
       this.state = {
+        term: '',
         data: [],
         mounted: false
       }
+      this.searchHandler = this.searchHandler.bind(this);
+
     }
 
 
@@ -52,9 +63,18 @@ class ViewAll extends React.Component{
 
       }
 
+      searchHandler(event){
+        this.setState({term: event.target.value
+
+        })
+      }
+
     render() {
 
-      var titles = this.state.data.map(function(title) {
+      const {term, data} = this.state;
+
+
+      var titles = data.filter(searchingFor(term)).map(function(title) {
               return (
                 <div>
                   <MuiThemeProvider>
@@ -76,9 +96,6 @@ class ViewAll extends React.Component{
                 slack={title.slack}
                 kik={title.kik}
                 telegram={title.telegram}
-
-
-
                   />
             </div>
           </Paper>
@@ -88,17 +105,43 @@ class ViewAll extends React.Component{
       })
 
         return (
+
             <div style={{marginTop: 100}}>
+              <div style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 40 }}>
+                <MuiThemeProvider>
+                  <TextField
+                       hintText="Welchen Chatbot suchst du?"
+                       type="Text"
+                       onChange={this.searchHandler}
+                       value={term}
+                       fullWidth={true}
+                    underlineFocusStyle={{borderColor: '#82f2da'}}
+                    underlineStyle={{borderColor: '#82f2da'}}
+                    hintStyle={{fontSize: 30}}
+                    inputStyle={{fontSize: 30}}
+
+
+
+
+                     />
+
+                </MuiThemeProvider>
+
+              </div>
 
           <StackGrid
             columnWidth={180}
        gutterHeight={80}
        gutterWidth={80}
-       duration={3000}
+       duration={1500}
        monitorImagesLoaded={true}
-       easing= {easings.quartOut}
-
-               >
+       easing={easings.quadInOut}
+       appear={scaleDown.appear}
+       appeared={scaleDown.appeared}
+       enter={scaleDown.enter}
+       entered={scaleDown.entered}
+       leaved={scaleDown.leaved}
+ >
 
 
                {titles}

@@ -33,9 +33,13 @@ transitionDelay: '1s'
 
                   <Navigation />
 
+
                   <UserProfile />
 
+
               </header>
+
+
 
               <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/8'/>
 
