@@ -37,7 +37,7 @@ transitionDelay: '1s'
 
               </header>
 
-              <ViewAll url='//api.jsonbin.io/b/5bba8ec46d95da7b7a759251/21'/>
+              <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/8'/>
 
             <Footer/>
 
