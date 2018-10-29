@@ -74,7 +74,7 @@ class ViewAll extends React.Component{
       const {term, data} = this.state;
 
 
-      var titles = data.filter(searchingFor(term)).map(function(title) {
+      var titles = data.filter(searchingFor(term)).map(function(title, i) {
               return (
                 <div>
                   <MuiThemeProvider>
@@ -110,13 +110,13 @@ class ViewAll extends React.Component{
               <div style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 40 }}>
                 <MuiThemeProvider>
                   <TextField
-                       hintText="Welchen Chatbot suchst du?"
+                       hintText="Welcher Bot darf es sein?"
                        type="Text"
                        onChange={this.searchHandler}
                        value={term}
                        fullWidth={true}
-                    underlineFocusStyle={{borderColor: '#82f2da'}}
-                    underlineStyle={{borderColor: '#82f2da'}}
+                    underlineFocusStyle={{borderColor: '#82f2da', borderWidth: 2.5}}
+                    underlineStyle={{borderColor: '#82f2da', borderWidth: 1}}
                     hintStyle={{fontSize: 30}}
                     inputStyle={{fontSize: 30}}
 
