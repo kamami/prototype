@@ -4,6 +4,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import ItemViewAll from '../components/ItemViewAll';
 import StackGrid, {transitions} from "react-stack-grid";
 import Paper from 'material-ui/Paper';
+import * as easings from '../components/easings';
 
 
 
@@ -95,6 +96,7 @@ class ViewAll extends React.Component{
        gutterWidth={80}
        duration={3000}
        monitorImagesLoaded={true}
+       easing= {easings.quartOut}
 
                >
 
