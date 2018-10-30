@@ -60,7 +60,7 @@ class TitleList extends React.Component{
         return (
             <div className="TitleList" data-loaded={this.state.mounted}>
                 <div className="Title">
-                    <h1 style={{fontFamily: 'Anton'}}>{this.props.title}</h1>
+                    <p style={{fontFamily: 'Anton', fontSize: 40}}>{this.props.title}</p>
                     <div className="titles-wrapper">
                           <div className="title-row">
                         {titles}

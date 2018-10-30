@@ -6,6 +6,7 @@ import StackGrid, {transitions} from "react-stack-grid";
 import Paper from 'material-ui/Paper';
 import * as easings from '../components/easings';
 import TextField from 'material-ui/TextField';
+import button from 'reactstrap';
 
 const { scaleDown } = transitions;
 
@@ -21,14 +22,19 @@ function searchingFor(term){
 class ViewAll extends React.Component{
 
 
+
+
     constructor(props){
       super(props);
       this.state = {
         term: '',
         data: [],
-        mounted: false
+        mounted: false,
+
       }
       this.searchHandler = this.searchHandler.bind(this);
+      this.focus = this.focus.bind(this);
+
 
     }
 
@@ -54,14 +60,18 @@ class ViewAll extends React.Component{
       }
 
 
-      componentDidMount() {
+      componentDidMount(prevProps, prevState) {
           if(this.props.url !== ''){
               this.loadContent();
               this.setState({mounted:true});
 
           }
-          window.scrollTo(0, 0)
+          window.scrollTo(0, 0);
+          this.focus();
+
 }
+
+
 
 
 
@@ -70,6 +80,13 @@ class ViewAll extends React.Component{
 
         })
       }
+
+
+  focus() {
+    this.textInput.focus();
+  }
+
+
 
     render() {
 
@@ -108,8 +125,8 @@ class ViewAll extends React.Component{
 
         return (
 
-            <div style={{marginTop: 100}}>
-              <div style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 40 }}>
+            <div style={{marginTop: 130}}>
+              <div style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 70 }}>
                 <MuiThemeProvider>
                   <TextField
                        hintText="Welcher Bot darf es sein?"
@@ -117,19 +134,17 @@ class ViewAll extends React.Component{
                        onChange={this.searchHandler}
                        value={term}
                        fullWidth={true}
-                    underlineFocusStyle={{borderColor: '#82f2da', borderWidth: 2.5}}
-                    underlineStyle={{borderColor: '#82f2da', borderWidth: 1}}
-                    hintStyle={{fontSize: 30}}
-                    inputStyle={{fontSize: 30}}
-
-
-
-
-                     />
+                       underlineFocusStyle={{borderColor: '#82f2da', borderWidth: 3}}
+                       underlineStyle={{borderColor: '#82f2da', borderWidth: 1.5, top: '50px'}}
+                       hintStyle={{fontSize: 40}}
+                       inputStyle={{fontSize: 40}}
+                       ref={(input) => { this.textInput = input; }}
+                       style={{caretColor: '#82f2da'}}
+                       />
 
                 </MuiThemeProvider>
 
-              </div>
+                            </div>
 
           <StackGrid
             columnWidth={180}

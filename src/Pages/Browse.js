@@ -11,6 +11,14 @@ import ViewAll from '../components/ViewAll';
 import SearchButton from '../components/SearchButton';
 class Browse extends React.Component{
 
+  constructor(props) {
+       super(props);
+   }
+
+  focus = () => {
+    this.textInput.focus();
+  }
+
 
     render() {
 
@@ -34,15 +42,14 @@ transitionDelay: '1s'
                   <Navigation />
 
                     <ScrollToTop showUnder={80} style={{
-    position: 'relative',
-    marginTop: 45,
-    marginLeft: 40,
+    position: 'flex',
+    marginLeft: 4,
     cursor: 'pointer',
-    transitionDuration: '2s',
+    transitionDuration: '1s',
     transitionTimingFunction: 'linear',
-    transitionDelay: '1s'
+    transitionDelay: '0.5s',
     }}>
-              <SearchButton/>
+              <SearchButton triggerSubmit={this.focus}/>
               </ScrollToTop>
 
 
@@ -53,9 +60,11 @@ transitionDelay: '1s'
 
 
 
-              <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/8'/>
+              <div style={{position: 'relative', width: '100%', bottom: 0}}>
+                <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/8' ref={(input) =>  this.textInput = input}/>
 
             <Footer/>
+            </div>
 
           </div>
         );
