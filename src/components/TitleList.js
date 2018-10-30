@@ -41,6 +41,7 @@ class TitleList extends React.Component{
             this.setState({mounted:true});
 
         }
+        window.scrollTo(0, 0)
 
     }
 

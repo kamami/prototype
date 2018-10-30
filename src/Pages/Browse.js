@@ -8,7 +8,7 @@ import {Link} from 'react-router-dom';
 import ScrollToTop from 'react-scroll-up';
 import Footer from '../components/Footer';
 import ViewAll from '../components/ViewAll';
-
+import SearchButton from '../components/SearchButton';
 class Browse extends React.Component{
 
 
@@ -32,6 +32,18 @@ transitionDelay: '1s'
                   </ScrollToTop>
 
                   <Navigation />
+
+                    <ScrollToTop showUnder={80} style={{
+    position: 'relative',
+    marginTop: 45,
+    marginLeft: 40,
+    cursor: 'pointer',
+    transitionDuration: '2s',
+    transitionTimingFunction: 'linear',
+    transitionDelay: '1s'
+    }}>
+              <SearchButton/>
+              </ScrollToTop>
 
 
                   <UserProfile />

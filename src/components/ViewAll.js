@@ -60,8 +60,10 @@ class ViewAll extends React.Component{
               this.setState({mounted:true});
 
           }
+          window.scrollTo(0, 0)
+}
 
-      }
+
 
       searchHandler(event){
         this.setState({term: event.target.value
