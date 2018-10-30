@@ -252,18 +252,16 @@ margin-right: 20px;
 }
 
 .Hero {
-  position: relative;
   background-size: cover;
   min-height: 100vh;
 
 }
 .Hero .content {
-  position: relative;
+  position: absolute;
   z-index: 4;
   width: 100vh;
   left: 10vw;
-  top: 7vw;
-
+  margin-top: 10em;;
 }
 
 
@@ -280,7 +278,6 @@ margin-right: 20px;
   display: -ms-flexbox;
   display: flex;
   width: 400px;
-  margin-top: 30px;
 }
 .Hero .content .button-wrapper .Button:first-child {
   margin-right: 10px;
@@ -362,7 +359,6 @@ margin-right: 20px;
 
 
 .TitleList {
-  padding: 20px 40px ;
   box-sizing: border-box;
   -webkit-transition: opacity 3s ease;
   transition: opacity 3s ease;
@@ -643,4 +639,22 @@ padding-bottom: 10px;
 
 .hidden {
 	display: none;
+  z-index: 1;
+
+}
+
+.fog{
+  background: -webkit-linear-gradient(top, #000 0%, rgba(34, 31, 31, 0) 100%);
+ /* Chrome10-25,Safari5.1-6 */
+ background: linear-gradient(to right, #000 0%, rgba(34, 31, 31, 0) 100%);
+ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
+ /* IE6-9 */
+ height: 100%;
+ z-index: 5;
+ top: 0;
+ left: 0;
+ width: 100%;
+ position: relative;
+
 }

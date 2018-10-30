@@ -106,7 +106,7 @@ class TitleList extends React.Component{
           <div className="TitleList" data-loaded={this.state.mounted}>
             <div style={{width: '100%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 70 }}>
 
-                    <p style={{fontFamily: 'Anton', fontSize: 40}}>{this.props.title}</p>
+                    <p style={{fontFamily: 'Anton', fontSize: 40, marginLeft: 20}}>{this.props.title}</p>
 
                     <div className="Scroller">
 

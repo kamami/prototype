@@ -49,7 +49,6 @@ transitionDelay: '1s'
 }}>
                 <Hero url='//api.jsonbin.io/b/5bce2773716f9364f8c91a10/4'/>
                 </ScrollToTop>
-
                 <Content wait={500}/>
                 <Footer wait={500}/>
 

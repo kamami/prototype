@@ -28,7 +28,7 @@ class HeroFetch extends React.Component{
 
             <div id="hero" className="Hero">
 
-                <div className="content" >
+                <div className="content">
                   <MuiThemeProvider >
                       <Paper zDepth={4} style={{background: 'transparent', padding: 40, width: 1000, borderRadius: '2em'}}>
                         <div style={{display: 'inline-block'}}>
