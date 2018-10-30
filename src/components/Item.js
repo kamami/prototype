@@ -41,8 +41,6 @@ class Item extends React.Component{
   }
 
 
-
-
     render() {
 
       const actions = [
@@ -50,15 +48,15 @@ class Item extends React.Component{
           label="schließen"
           primary={false}
           onClick={this.handleClose}
-style={{color: '#82f2da'}}        />
+          style={{color: '#82f2da'}}        />
       ];
 
         return (
           <div>
-                <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')', height: 175}}>
+                <Card onClick={this.handleOpen} className="Item" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
                 <div className="overlay">
                       <div className="HoverImg">
-                          START
+                          DETAILS
                       </div>
                       <MuiThemeProvider>
 
@@ -79,7 +77,7 @@ style={{color: '#82f2da'}}        />
             </DropdownToggle>
              <DropdownMenu style={{width: 180}}>
 
-               {this.props.kik != "" &&
+               {this.props.kik != "." &&
                  <div>
                     <DropdownItem>
                       <div style={{display: 'flex'}}>
@@ -94,7 +92,7 @@ style={{color: '#82f2da'}}        />
                 </div>
              }
 
-             {this.props.messenger != "" &&
+             {this.props.messenger != "." &&
                   <div>
                      <DropdownItem>
                        <div style={{display: 'flex'}}>
@@ -109,7 +107,7 @@ style={{color: '#82f2da'}}        />
                    </div>
                }
 
-                   {this.props.slack != "" &&
+                   {this.props.slack != "." &&
                      <div>
                           <DropdownItem>
                             <div style={{display: 'flex'}}>
@@ -124,7 +122,7 @@ style={{color: '#82f2da'}}        />
                         </div>
                  }
 
-                 {this.props.twitter != "" &&
+                 {this.props.twitter != "." &&
                    <div>
                         <DropdownItem>
                           <div style={{display: 'flex'}}>
@@ -139,7 +137,7 @@ style={{color: '#82f2da'}}        />
                       </div>
                }
 
-                                    {this.props.discord!= "" &&
+                                    {this.props.discord!= "." &&
                                       <div>
                                            <DropdownItem>
                                              <div style={{display: 'flex'}}>
@@ -154,7 +152,7 @@ style={{color: '#82f2da'}}        />
                                          </div>
                                   }
 
-                     {this.props.telegram != "" &&
+                     {this.props.telegram != "." &&
                        <div>
                      <DropdownItem>
                        <div style={{display: 'flex'}}>
@@ -171,9 +169,9 @@ style={{color: '#82f2da'}}        />
              </DropdownMenu>
             </ButtonDropdown>
           </div>
-       </div>
+        </div>
                         <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
-                          <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem"}}>
+                          <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem", fontFamily: 'Anton'}}>
                               {this.props.title}
                           </p>
                           <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
@@ -187,8 +185,27 @@ style={{color: '#82f2da'}}        />
                             Preview:
                           </p>
                           <MuiThemeProvider>
-                          <Paper style={{width: 652, height: 250, borderRadius: "2em"}} zDepth={1} square={false}>
-                              <Messages avatar={this.props.backdrop} message1={"This is a test"}/>
+                          <Paper style={{width: 652, height: 250, borderRadius: "2em"}} zDepth={1}>
+                              <Messages
+                                avatar={this.props.backdrop}
+                                message1={this.props.message1}
+                                position1={this.props.position1}
+                                message2={this.props.message2}
+                                position2={this.props.position2}
+                                message3={this.props.message3}
+                                position3={this.props.position3}
+                                message4={this.props.message4}
+                                position4={this.props.position4}
+                                message5={this.props.message5}
+                                position5={this.props.position5}
+                                message6={this.props.message6}
+                                position6={this.props.position6}
+                                message7={this.props.message7}
+                                position7={this.props.position7}
+                                message8={this.props.message8}
+                                position8={this.props.position8}
+
+                                />
                             </Paper>
                           </MuiThemeProvider>
                         </div>
@@ -198,12 +215,48 @@ style={{color: '#82f2da'}}        />
 
                 </div>
                 </Card>
-                <div className="BreakWords" style={{fontSize: 15, marginTop: 20}}>
+                <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}>
                   {this.props.title}
                 </div>
-                <div className="BreakWords" style={{fontSize: 12, marginTop: 10, fontWeight: 'lighter'}}>
+                <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}>
                   {this.props.overview}
                 </div>
+                <div style={{display: 'inline-block'}}>
+
+                    {this.props.messenger != "." &&
+                    <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
+                  </a>
+                  }
+                  {this.props.kik != "." &&
+                  <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
+                  </a>
+                }
+                  {this.props.slack != "." &&
+                  <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
+                  </a>
+                }
+
+                  {this.props.telegram != "." &&
+                  <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
+                  </a>
+                  }
+                  {this.props.twitter != "." &&
+                  <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
+                  </a>
+                  }
+                  {this.props.discord != "." &&
+                  <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
+                  <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
+                  </a>
+                }
+
+            </div>
+
               </div>
 
 

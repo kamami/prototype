@@ -378,41 +378,19 @@ margin-right: 20px;
 }
 
 
-
-.title-row{
-
-  margin: 40px 0;
-  width: calc(100vw - 80px);
-  box-sizing: border-box;
-  -webkit-box-pack: justify;
+.Scroller{
+  display: inline-flex;
+  overflow-x: scroll;
+  justify-content: space-between;
   -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-          overflow-x: scroll;
-  white-space: nowrap;
-  overflow: auto;
- width: 100%;
- display: inline-flex;
+  width: 100%;
+
+
+
+
 }
 
-.titles-wrapper {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-  margin: 10px 0;
-  width: calc(100vw - 80px);
-  box-sizing: border-box;
-  -webkit-box-pack: justify;
-  -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-          white-space:nowrap;
 
-}
 .TitleList[data-loaded='true'] {
   opacity: 1;
 
@@ -432,7 +410,6 @@ margin-right: 20px;
   min-height: 180px;
   background-repeat: no-repeat;
   overflow: hidden;
-  margin-right: 70px;
   -webkit-transition: background 1s ease;
   transition: background 1s ease;
   display: inline-block;

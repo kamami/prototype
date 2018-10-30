@@ -172,7 +172,7 @@ class ItemViewAll extends React.Component{
           </div>
         </div>
                         <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
-                          <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem"}}>
+                          <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem", fontFamily: 'Anton'}}>
                               {this.props.title}
                           </p>
                           <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
