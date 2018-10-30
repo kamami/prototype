@@ -13,11 +13,12 @@ class Browse extends React.Component{
 
   constructor(props) {
        super(props);
-   }
+         }
 
   focus = () => {
     this.textInput.focus();
   }
+
 
 
     render() {
@@ -63,7 +64,8 @@ transitionDelay: '1s'
               <div style={{position: 'relative', width: '100%', bottom: 0}}>
                 <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/8' ref={(input) =>  this.textInput = input}/>
 
-            <Footer/>
+            <Footer wait={300}/>
+
             </div>
 
           </div>
