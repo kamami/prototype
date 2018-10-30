@@ -9,6 +9,7 @@ import ScrollToTop from 'react-scroll-up';
 import Footer from '../components/Footer';
 import ViewAll from '../components/ViewAll';
 import SearchButton from '../components/SearchButton';
+import Headline from '../components/Headline';
 class Browse extends React.Component{
 
   constructor(props) {
@@ -48,10 +49,12 @@ transitionDelay: '1s'
     cursor: 'pointer',
     transitionDuration: '1s',
     transitionTimingFunction: 'linear',
-    transitionDelay: '0.5s',
+    transitionDelay: '0.5s'
     }}>
               <SearchButton triggerSubmit={this.focus}/>
               </ScrollToTop>
+
+                <Headline/>
 
 
                   <UserProfile />

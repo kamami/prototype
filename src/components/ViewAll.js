@@ -153,8 +153,8 @@ class ViewAll extends React.Component{
                        fullWidth={true}
                        underlineFocusStyle={{borderColor: '#82f2da', borderWidth: 3}}
                        underlineStyle={{borderColor: '#82f2da', borderWidth: 1.5, top: '50px'}}
-                       hintStyle={{fontSize: 40}}
-                       inputStyle={{fontSize: 40}}
+                       hintStyle={{fontSize: 40, fontFamily: 'Anton'}}
+                       inputStyle={{fontSize: 40, fontFamily: 'Anton'}}
                        ref={(input) => { this.textInput = input; }}
                        style={{caretColor: '#82f2da'}}
                        />

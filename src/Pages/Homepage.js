@@ -7,6 +7,7 @@ import Hero from '../components/Hero';
 import Footer from '../components/Footer';
 import ScrollToTop from 'react-scroll-up';
 import Content from '../components/Content';
+import Headline from '../components/Headline';
 
 class Homepage extends React.Component{
 
@@ -32,6 +33,8 @@ class Homepage extends React.Component{
                     </ScrollToTop>
 
                     <Navigation />
+
+                  <Headline/>
 
                     <UserProfile />
 

@@ -24,7 +24,7 @@ class Footer extends React.Component{
     render() {
         return (
 
-          <div style={{backgroundColor: '#82f2da', height: 250, width: '100%', position: 'relative', marginTop: 10, bottom: 0}} className={this.state.hidden}>
+          <div style={{backgroundColor: '#82f2da', height: 120, width: '100%', position: 'relative', marginTop: 10, bottom: 0}} className={this.state.hidden}>
 
               <ul style={{paddingTop: 50, paddingLeft: 50, color: '#ffffff'}}>
 
@@ -33,9 +33,7 @@ class Footer extends React.Component{
                     Impressum
                 </Link>
                 </li>
-                <li style={{paddingBottom: 20,  color: '#ffffff'}}>Hilfe-Center</li>
-                <li style={{paddingBottom: 20,  color: '#ffffff'}}>Kontakt</li>
-                <li style={{paddingBottom: 20,  color: '#ffffff'}}>Karriere</li>
+
               </ul>
 
 

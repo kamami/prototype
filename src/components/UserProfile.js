@@ -29,7 +29,7 @@ handleClose = () => {
      <FlatButton
        label="schließen"
        onClick={this.handleClose}
-style={{color: '#82f2da'}}
+       style={{color: '#82f2da'}}
      />
 
    ];
@@ -38,7 +38,7 @@ style={{color: '#82f2da'}}
           <MuiThemeProvider>
 
                 <div className="UserProfile">
-                  
+
 
                 <RaisedButton label= {this.isLoggedIn? 'Logout' : 'Login'}
                  onClick={this.handleOpen} className="Login" backgroundColor='#82f2da' labelColor='#ffffff' />
@@ -46,11 +46,12 @@ style={{color: '#82f2da'}}
 
 
        <Dialog
-         title="Login mit Facebook"
          actions={actions}
          modal={false}
          open={this.state.open}
        >
+
+       <p style={{fontSize: 30, marginLeft: 20, fontFamily: 'Anton'}}> Login mit Facebook</p>
 
           <Facebook/>
        </Dialog>

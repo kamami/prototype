@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import Logo from '../Logo.js';
 import Navigation from '../components/Navigation';
 import UserProfile from '../components/UserProfile';
+import Headline from '../components/Headline';
 
 
 
@@ -36,6 +37,7 @@ transitionDelay: '1s'
 
           <Navigation />
 
+          <Headline/>
 
           <UserProfile />
 
@@ -43,12 +45,12 @@ transitionDelay: '1s'
       </header>
       <div style={{position: 'fixed', width: '100%', bottom: 0}}>
 
-      <div style={{ marginLeft: 150, marginBottom: 130, height: 200}}>
-        <p style={{fontSize: 30, fontFamily: 'Anton'}}>Impressum</p>
-        <p style={{fontSize: 20}}> Martin Seubert</p>
-        <p style={{fontSize: 20}}> Leitengraben 3</p>
-        <p style={{fontSize: 20}}> 97084 Würzburg</p>
-        <p style={{fontSize: 20}}> mail@martinseubert.de</p>
+      <div style={{ marginLeft: 150, marginBottom: 130}}>
+        <p style={{fontSize: 40, fontFamily: 'Anton'}}>Impressum</p>
+        <p style={{fontSize: 30}}> Martin Seubert</p>
+        <p style={{fontSize: 30}}> Leitengraben 3</p>
+        <p style={{fontSize: 30}}> 97084 Würzburg</p>
+        <p style={{fontSize: 30}}> mail@martinseubert.de</p>
 
       </div>
       <Footer/>
