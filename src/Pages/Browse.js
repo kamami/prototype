@@ -54,6 +54,7 @@ transitionDelay: '1s'
               <SearchButton triggerSubmit={this.focus}/>
               </ScrollToTop>
 
+
                 <Headline/>
 
 

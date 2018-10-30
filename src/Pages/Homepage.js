@@ -20,14 +20,14 @@ class Homepage extends React.Component{
         return (
             <div>
                 <header className="Header">
-                  <ScrollToTop showUnder={-20} style={{
+                  <ScrollToTop showUnder={-20} duration={3000} style={{
   position: 'relative',
   marginTop: 45,
   marginLeft: 40,
   cursor: 'pointer',
   transitionDuration: '2s',
   transitionTimingFunction: 'linear',
-  transitionDelay: '1s'
+  transitionDelay: '1s',
 }}>
                     <Logo />
                     </ScrollToTop>
@@ -39,7 +39,16 @@ class Homepage extends React.Component{
                     <UserProfile />
 
                 </header>
+                <ScrollToTop showUnder={-20}  style={{
+position: 'relative',
+marginTop: 49,
+cursor: 'pointer',
+transitionDuration: '2s',
+transitionTimingFunction: 'linear',
+transitionDelay: '1s'
+}}>
                 <Hero url='//api.jsonbin.io/b/5bce2773716f9364f8c91a10/4'/>
+                </ScrollToTop>
 
                 <Content wait={500}/>
                 <Footer wait={500}/>
