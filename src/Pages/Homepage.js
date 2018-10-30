@@ -38,8 +38,8 @@ class Homepage extends React.Component{
                 </header>
                 <Hero url='//api.jsonbin.io/b/5bce2773716f9364f8c91a10/4'/>
 
-                <Content wait={300}/>
-                <Footer wait={300}/>
+                <Content wait={500}/>
+                <Footer wait={500}/>
 
             </div>
         );

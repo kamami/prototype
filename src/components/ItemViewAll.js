@@ -78,7 +78,7 @@ class ItemViewAll extends React.Component{
             </DropdownToggle>
              <DropdownMenu style={{width: 180}}>
 
-               {this.props.kik != "" &&
+               {this.props.kik != "." &&
                  <div>
                     <DropdownItem>
                       <div style={{display: 'flex'}}>
@@ -93,7 +93,7 @@ class ItemViewAll extends React.Component{
                 </div>
              }
 
-             {this.props.messenger != "" &&
+             {this.props.messenger != "." &&
                   <div>
                      <DropdownItem>
                        <div style={{display: 'flex'}}>
@@ -108,7 +108,7 @@ class ItemViewAll extends React.Component{
                    </div>
                }
 
-                   {this.props.slack != "" &&
+                   {this.props.slack != "." &&
                      <div>
                           <DropdownItem>
                             <div style={{display: 'flex'}}>
@@ -123,7 +123,7 @@ class ItemViewAll extends React.Component{
                         </div>
                  }
 
-                 {this.props.twitter != "" &&
+                 {this.props.twitter != "." &&
                    <div>
                         <DropdownItem>
                           <div style={{display: 'flex'}}>
@@ -138,7 +138,7 @@ class ItemViewAll extends React.Component{
                       </div>
                }
 
-                                    {this.props.discord!= "" &&
+                                    {this.props.discord!= "." &&
                                       <div>
                                            <DropdownItem>
                                              <div style={{display: 'flex'}}>
@@ -153,7 +153,7 @@ class ItemViewAll extends React.Component{
                                          </div>
                                   }
 
-                     {this.props.telegram != "" &&
+                     {this.props.telegram != "." &&
                        <div>
                      <DropdownItem>
                        <div style={{display: 'flex'}}>
@@ -187,7 +187,26 @@ class ItemViewAll extends React.Component{
                           </p>
                           <MuiThemeProvider>
                           <Paper style={{width: 652, height: 250, borderRadius: "2em"}} zDepth={1}>
-                              <Messages avatar={this.props.backdrop} message1={"This is a test"}/>
+                              <Messages
+                                avatar={this.props.backdrop}
+                                message1={this.props.message1}
+                                position1={this.props.position1}
+                                message2={this.props.message2}
+                                position2={this.props.position2}
+                                message3={this.props.message3}
+                                position3={this.props.position3}
+                                message4={this.props.message4}
+                                position4={this.props.position4}
+                                message5={this.props.message5}
+                                position5={this.props.position5}
+                                message6={this.props.message6}
+                                position6={this.props.position6}
+                                message7={this.props.message7}
+                                position7={this.props.position7}
+                                message8={this.props.message8}
+                                position8={this.props.position8}
+
+                                />
                             </Paper>
                           </MuiThemeProvider>
                         </div>
@@ -205,33 +224,33 @@ class ItemViewAll extends React.Component{
                 </div>
                 <div style={{display: 'inline-block'}}>
 
-                    {this.props.messenger != "" &&
+                    {this.props.messenger != "." &&
                     <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
                   </a>
                   }
-                  {this.props.kik != "" &&
+                  {this.props.kik != "." &&
                   <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
                   </a>
                 }
-                  {this.props.slack != "" &&
+                  {this.props.slack != "." &&
                   <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
                   </a>
                 }
 
-                  {this.props.telegram != "" &&
+                  {this.props.telegram != "." &&
                   <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
                   </a>
                   }
-                  {this.props.twitter != "" &&
+                  {this.props.twitter != "." &&
                   <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
                   </a>
                   }
-                  {this.props.discord != "" &&
+                  {this.props.discord != "." &&
                   <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
                   </a>

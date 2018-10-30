@@ -62,9 +62,9 @@ transitionDelay: '1s'
 
 
               <div style={{position: 'relative', width: '100%', bottom: 0}}>
-                <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/8' ref={(input) =>  this.textInput = input}/>
+                <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/13' ref={(input) =>  this.textInput = input}/>
 
-            <Footer wait={300}/>
+            <Footer wait={500}/>
 
             </div>
 
