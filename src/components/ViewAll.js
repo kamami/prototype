@@ -7,8 +7,11 @@ import Paper from 'material-ui/Paper';
 import * as easings from '../components/easings';
 import TextField from 'material-ui/TextField';
 import button from 'reactstrap';
+import Media from "react-media";
+
 
 const { scaleDown } = transitions;
+
 
 
 function searchingFor(term){
@@ -141,9 +144,13 @@ class ViewAll extends React.Component{
       })
 
         return (
+          <div>
+          <Media query="(max-width: 599px)">
+            {matches =>
+              matches ? (
+            <div style={{marginTop: 100}}>
+              <div style={{width: '90%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 50 }}>
 
-            <div style={{marginTop: 130}}>
-              <div style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 70 }}>
                 <MuiThemeProvider>
                   <TextField
                        hintText="Welcher Bot darf es sein?"
@@ -152,36 +159,90 @@ class ViewAll extends React.Component{
                        value={term}
                        fullWidth={true}
                        underlineFocusStyle={{borderColor: '#82f2da', borderWidth: 3}}
-                       underlineStyle={{borderColor: '#82f2da', borderWidth: 1.5, top: '50px'}}
-                       hintStyle={{fontSize: 40, fontFamily: 'Anton'}}
-                       inputStyle={{fontSize: 40, fontFamily: 'Anton'}}
+                       underlineStyle={{borderColor: '#82f2da', borderWidth: 1.5, top: '40px'}}
+                       hintStyle={{fontSize: 30, fontFamily: 'Anton'}}
+                       inputStyle={{fontSize: 30, fontFamily: 'Anton'}}
                        ref={(input) => { this.textInput = input; }}
                        style={{caretColor: '#82f2da'}}
                        />
 
                 </MuiThemeProvider>
+              </div>
+            </div>
+                   ) : (
+                     <div style={{marginTop: 130}}>
+                       <div style={{width: '80%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 70 }}>
+                     <MuiThemeProvider>
+                       <TextField
+                            hintText="Welcher Bot darf es sein?"
+                            type="Text"
+                            onChange={this.searchHandler}
+                            value={term}
+                            fullWidth={true}
+                            underlineFocusStyle={{borderColor: '#82f2da', borderWidth: 3}}
+                            underlineStyle={{borderColor: '#82f2da', borderWidth: 1.5, top: '50px'}}
+                            hintStyle={{fontSize: 40, fontFamily: 'Anton'}}
+                            inputStyle={{fontSize: 40, fontFamily: 'Anton'}}
+                            ref={(input) => { this.textInput = input; }}
+                            style={{caretColor: '#82f2da'}}
+                            />
 
-                            </div>
+                     </MuiThemeProvider>
+                       </div>
+                         </div>
 
-          <StackGrid
-            columnWidth={180}
-       gutterHeight={80}
-       gutterWidth={80}
-       duration={1500}
-       monitorImagesLoaded={true}
-       easing={easings.quadInOut}
-       appear={scaleDown.appear}
-       appeared={scaleDown.appeared}
-       enter={scaleDown.enter}
-       entered={scaleDown.entered}
-       leaved={scaleDown.leaved}
- >
+                   )
+                 }
+               </Media>
 
 
-               {titles}
-               </StackGrid>
 
-             </div>
+
+
+       <Media query="(max-width: 599px)">
+         {matches =>
+           matches ? (
+             <StackGrid
+               columnWidth={180}
+          gutterHeight={10}
+          gutterWidth={10}
+          duration={1500}
+          monitorImagesLoaded={true}
+          easing={easings.quadInOut}
+          appear={scaleDown.appear}
+          appeared={scaleDown.appeared}
+          enter={scaleDown.enter}
+          entered={scaleDown.entered}
+          leaved={scaleDown.leaved}
+    >
+
+
+                  {titles}
+                  </StackGrid>
+           ) : (
+             <StackGrid
+               columnWidth={180}
+          gutterHeight={80}
+          gutterWidth={80}
+          duration={1500}
+          monitorImagesLoaded={true}
+          easing={easings.quadInOut}
+          appear={scaleDown.appear}
+          appeared={scaleDown.appeared}
+          enter={scaleDown.enter}
+          entered={scaleDown.entered}
+          leaved={scaleDown.leaved}
+    >
+
+
+                  {titles}
+                  </StackGrid>
+           )
+         }
+       </Media>
+     </div>
+
+
 
 
         )

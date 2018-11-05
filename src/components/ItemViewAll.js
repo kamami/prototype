@@ -8,12 +8,20 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import {Card, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Paper from 'material-ui/Paper';
+import Media from "react-media";
+
 
 const customContentStyle = {
   width: '60%',
   maxWidth: 'none',
-  height: 1000,
   maxHeight: 'none'
+};
+
+const customContentStyleMobile = {
+  width: '100%',
+  minHeight: '100vh',
+  height: '100%'
+
 };
 
 class ItemViewAll extends React.Component{
@@ -60,6 +68,9 @@ class ItemViewAll extends React.Component{
                           DETAILS
                       </div>
                       <MuiThemeProvider>
+                        <Media query="(min-width: 600px)">
+                          {matches =>
+                            matches ? (
 
                       <Dialog
                         open={this.state.open} modal={false}
@@ -212,6 +223,95 @@ class ItemViewAll extends React.Component{
                         </div>
                       </div>
                       </Dialog>
+                    ):(
+                      <div className="Dialog">
+                      <Dialog
+                        open={this.state.open} modal={true}
+                        contentStyle={customContentStyleMobile}
+                        autoScrollBodyContent={true}
+                      >
+                        <div>
+                        <div style={{display: 'flex'}}>
+                          <img className="DetailImgMobile" src={this.props.backdrop}/>
+                        </div>
+                        <div>
+                          <div className="BreakWords" style={{fontSize: '2rem', marginTop: 20, fontFamily: 'Anton', width: '100%'}}>
+                            {this.props.title}
+                          </div>
+                          <div className="BreakWords" style={{fontSize: '1.3rem', marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', width: '100%'}}>
+                            {this.props.overview}
+                          </div>
+                          <div style={{display: 'inline-block'}}>
+
+                              {this.props.messenger != "." &&
+                              <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
+                            </a>
+                            }
+                            {this.props.kik != "." &&
+                            <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
+                            </a>
+                          }
+                            {this.props.slack != "." &&
+                            <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
+                            </a>
+                          }
+
+                            {this.props.telegram != "." &&
+                            <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
+                            </a>
+                            }
+                            {this.props.twitter != "." &&
+                            <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
+                            </a>
+                            }
+                            {this.props.discord != "." &&
+                            <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
+                            </a>
+                          }
+
+                      </div>
+                      <MuiThemeProvider>
+                      <Paper style={{width: '100%', height: '100%', borderRadius: "2em", marginTop: 20}} zDepth={1}>
+                          <Messages
+                            avatar={this.props.backdrop}
+                            message1={this.props.message1}
+                            position1={this.props.position1}
+                            message2={this.props.message2}
+                            position2={this.props.position2}
+                            message3={this.props.message3}
+                            position3={this.props.position3}
+                            message4={this.props.message4}
+                            position4={this.props.position4}
+                            message5={this.props.message5}
+                            position5={this.props.position5}
+                            message6={this.props.message6}
+                            position6={this.props.position6}
+                            message7={this.props.message7}
+                            position7={this.props.position7}
+                            message8={this.props.message8}
+                            position8={this.props.position8}
+
+                            />
+                        </Paper>
+                      </MuiThemeProvider>
+
+                        </div>
+                      </div>
+
+
+                      </Dialog>
+                    </div>
+
+
+
+                    )}
+                  </Media>
                     </MuiThemeProvider>
 
                 </div>

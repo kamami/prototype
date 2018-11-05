@@ -10,6 +10,8 @@ import Footer from '../components/Footer';
 import ViewAll from '../components/ViewAll';
 import SearchButton from '../components/SearchButton';
 import Headline from '../components/Headline';
+import Media from "react-media";
+
 class Browse extends React.Component{
 
   constructor(props) {
@@ -40,8 +42,14 @@ transitionDelay: '1s'
                   <Logo />
 
                   </ScrollToTop>
+                  <Media query="(min-width: 600px)">
+                    {matches =>
+                      matches ? (
+                        <Navigation />
+                    ):(null)
+                  }
+                </Media>
 
-                  <Navigation />
 
                     <ScrollToTop showUnder={80} style={{
     position: 'flex',
@@ -54,11 +62,21 @@ transitionDelay: '1s'
               <SearchButton triggerSubmit={this.focus}/>
               </ScrollToTop>
 
-
+              <Media query="(min-width: 1200px)">
+                {matches =>
+                  matches ? (
                 <Headline/>
+                ):(null)
+              }
+            </Media>
 
-
+            <Media query="(min-width: 600px)">
+              {matches =>
+                matches ? (
                   <UserProfile />
+              ):(null)
+            }
+          </Media>
 
 
               </header>
@@ -68,9 +86,10 @@ transitionDelay: '1s'
               <div style={{position: 'relative', width: '100%', bottom: 0}}>
                 <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/13' ref={(input) =>  this.textInput = input}/>
 
-            <Footer wait={500}/>
+
 
             </div>
+              <Footer wait={500}/>
 
           </div>
         );

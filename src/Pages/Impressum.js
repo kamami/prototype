@@ -9,7 +9,6 @@ import UserProfile from '../components/UserProfile';
 import Headline from '../components/Headline';
 
 
-
 class Impressum extends React.Component{
 
 
