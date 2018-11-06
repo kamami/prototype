@@ -235,9 +235,7 @@ class ItemViewAll extends React.Component{
 
                 >
                 <div className="Header" style={{overflow: 'hidden', position: 'fixed'}} >
-          <IconButton onClick={this.handleClose} aria-label="Close" >
-            <CloseIcon style={{color: '#ffffff', fontSize: 30}}/>
-          </IconButton>
+            <CloseIcon style={{color: '#ffffff', fontSize: 40, marginTop: 12, marginLeft: 10}} onClick={this.handleClose}/>
 
       </div>
                   <DialogContent>
@@ -301,9 +299,7 @@ class ItemViewAll extends React.Component{
                   </DialogActions>
                 </Dialog>
               <div className="overlay" onClick={this.handleClickOpen}>
-                    <div className="HoverImg">
-                        DETAILS
-                    </div>
+
               </div>
           </Card>
 
