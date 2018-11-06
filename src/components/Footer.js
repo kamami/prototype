@@ -24,7 +24,7 @@ class Footer extends React.Component{
     render() {
         return (
 
-          <div style={{backgroundColor: '#82f2da', height: 120, width: '100%', marginTop: 40, bottom: 0}} className={this.state.hidden}>
+          <div className="Footer">
 
               <ul style={{paddingTop: 50, paddingLeft: 50, color: '#ffffff'}}>
 

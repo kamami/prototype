@@ -40,16 +40,19 @@ class ItemViewAll extends React.Component{
   this.state = {
       open: false,
       dropdownOpen: false
+
   };
   this.toggle = this.toggle.bind(this);
 
 }
 
      handleClickOpen = () => {
-       this.setState({ open: true });
+
+       this.setState({ open: true});
      };
 
      handleClose = () => {
+
        this.setState({ open: false });
      };
 
@@ -65,7 +68,7 @@ class ItemViewAll extends React.Component{
 
 
         return (
-          <div>
+          <div >
                 <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
                   <Media query="(min-width: 600px)">
                         {matches =>
@@ -225,8 +228,11 @@ class ItemViewAll extends React.Component{
                   aria-labelledby="alert-dialog-title"
                   aria-describedby="alert-dialog-description"
                   fullScreen
+                  scroll={this.state.scroll}
+                  style={{  overflow: 'hidden'}}
+
                 >
-                <div className="Header" style={{position: 'absolute'}} >
+                <div className="Header" style={{overflow: 'hidden', position: 'fixed'}} >
           <IconButton onClick={this.handleClose} aria-label="Close" >
             <CloseIcon style={{color: '#ffffff', fontSize: 30}}/>
           </IconButton>
@@ -238,35 +244,35 @@ class ItemViewAll extends React.Component{
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
                          </div>
                          <div style={{display: 'inline-block', height: '22vh', width: '22vh', flex: 1, marginLeft: 40}}>
-                           {this.props.messenger != "." &&
+                           {this.props.messenger !== "." &&
                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Messenger-Icon.png")} className="iconButtonDetailsMobile" alt="Messenger"/>
                          </a>
                          }
-                         {this.props.kik != "." &&
+                         {this.props.kik !== "." &&
                          <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Kik-Icon.png")} className="iconButtonDetailsMobile"/>
                          </a>
                        }
 
-                         {this.props.slack != "." &&
+                         {this.props.slack !== "." &&
                          <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Slack-Icon.png")} className="iconButtonDetailsMobile"/>
                          </a>
                        }
 
-                         {this.props.telegram != "." &&
+                         {this.props.telegram !=="." &&
                          <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Telegram-Icon.png")} className="iconButtonDetailsMobile"/>
                          </a>
                          }
 
-                         {this.props.twitter != "." &&
+                         {this.props.twitter !== "." &&
                          <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Twitter-Icon.png")} className="iconButtonDetailsMobile"/>
                          </a>
                          }
-                         {this.props.discord != "." &&
+                         {this.props.discord !== "." &&
                          <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Discord-Icon.png")} className="iconButtonDetailsMobile"/>
                          </a>
@@ -311,33 +317,33 @@ class ItemViewAll extends React.Component{
                 </div>
                 <div style={{display: 'inline-block'}}>
 
-                    {this.props.messenger != "." &&
+                    {this.props.messenger !== "." &&
                     <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
                   </a>
                   }
-                  {this.props.kik != "." &&
+                  {this.props.kik !== "." &&
                   <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
                   </a>
                 }
-                  {this.props.slack != "." &&
+                  {this.props.slack !== "." &&
                   <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
                   </a>
                 }
 
-                  {this.props.telegram != "." &&
+                  {this.props.telegram !== "." &&
                   <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
                   </a>
                   }
-                  {this.props.twitter != "." &&
+                  {this.props.twitter !== "." &&
                   <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
                   </a>
                   }
-                  {this.props.discord != "." &&
+                  {this.props.discord !== "." &&
                   <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
                   <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
                   </a>

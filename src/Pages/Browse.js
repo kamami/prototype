@@ -57,7 +57,6 @@ transitionDelay: '1s'
 
                     <ScrollToTop showUnder={80} style={{
     position: 'flex',
-    marginLeft: 4,
     cursor: 'pointer',
     transitionDuration: '1s',
     transitionTimingFunction: 'linear',
@@ -66,13 +65,7 @@ transitionDelay: '1s'
               <SearchButton triggerSubmit={this.focus}/>
               </ScrollToTop>
 
-              <Media query="(min-width: 1200px)">
-                {matches =>
-                  matches ? (
-                <Headline/>
-                ):(null)
-              }
-            </Media>
+
 
             <Media query="(min-width: 600px)">
               {matches =>
@@ -87,13 +80,21 @@ transitionDelay: '1s'
 
 
 
-              <div style={{position: 'relative', width: '100%', bottom: 0}}>
+              <div style={{position: 'relative', width: '100%', marginBottom: 10}}>
                 <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/13' ref={(input) =>  this.textInput = input}/>
 
 
 
             </div>
-              <Footer wait={1000}/>
+
+                <Media query="(min-width: 600px)">
+                  {matches =>
+                    matches ? (
+                      <Footer wait={1000}/>
+                  ):(null)
+                }
+              </Media>
+
 
           </div>
         );

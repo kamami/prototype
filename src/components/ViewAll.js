@@ -119,22 +119,7 @@ class ViewAll extends React.Component{
                 slack={title.slack}
                 kik={title.kik}
                 telegram={title.telegram}
-                message1={title.message1}
-                position1={title.position1}
-                message2={title.message2}
-                position2={title.position2}
-                message3={title.message3}
-                position3={title.position3}
-                message4={title.message4}
-                position4={title.position4}
-                message5={title.message5}
-                position5={title.position5}
-                message6={title.message6}
-                position6={title.position6}
-                message7={title.message7}
-                position7={title.position7}
-                message8={title.message8}
-                position8={title.position8}
+              
 
                   />
             </div>
