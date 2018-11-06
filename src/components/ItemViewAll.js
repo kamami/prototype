@@ -69,10 +69,11 @@ class ItemViewAll extends React.Component{
 
         return (
           <div >
-                <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
                   <Media query="(min-width: 600px)">
                         {matches =>
                           matches ? (
+                            <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
+
                             <div>
                   <Dialog
                     open={this.state.open}
@@ -218,10 +219,11 @@ class ItemViewAll extends React.Component{
                         </div>
                   </div>
                 </div>
+              </Card>
 
 
               ):(
-                <div>
+                <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
                 <Dialog
                   open={this.state.open}
                   onClose={this.handleClose}
@@ -303,12 +305,12 @@ class ItemViewAll extends React.Component{
                         DETAILS
                     </div>
               </div>
-            </div>
+          </Card>
+
 
 
               ) }
                   </Media>
-                </Card>
                 <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}>
                   {this.props.title}
                 </div>

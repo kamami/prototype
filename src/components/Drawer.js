@@ -84,14 +84,13 @@ class Drawer extends React.Component {
 
     return (
       <div>
-        <IconButton onClick={this.toggleDrawer('left', true)}>
-          <MenuIcon style={{color: '#ffffff', fontSize: 45, marginLeft: 5}}/>
-        </IconButton>
+          <MenuIcon style={{color: '#ffffff', fontSize: 45, marginLeft: 10, marginTop: 10}} onClick={this.toggleDrawer('left', true)}/>
 
         <SwipeableDrawer
           open={this.state.left}
           onClose={this.toggleDrawer('left', false)}
           onOpen={this.toggleDrawer('left', true)}
+          width='100%'
         >
           <div
             tabIndex={0}
