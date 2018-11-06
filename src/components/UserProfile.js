@@ -37,7 +37,7 @@ handleClose = () => {
 
           <MuiThemeProvider>
 
-                <div className="UserProfile">
+                <div className="UserProfile" style={{marginTop: 15}}>
 
 
                 <RaisedButton label= {this.isLoggedIn? 'Logout' : 'Login'}

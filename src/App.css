@@ -1,8 +1,8 @@
-@import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
 @import url('https://fonts.googleapis.com/css?family=Anton');
-@import "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css";
-@import "https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900";
-
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -89,8 +89,6 @@ p {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 15px;
-  padding-right: 10px;
   position: fixed;
   top: 0;
   left: 0;
@@ -375,6 +373,8 @@ margin-right: 20px;
 }
 
 
+
+
 .Scroller{
   display: inline-flex;
   overflow-x: scroll;
@@ -641,36 +641,42 @@ padding-bottom: 10px;
 .hidden {
 	display: none;
   z-index: 1;
-
 }
 
-.fog{
-  background: -webkit-linear-gradient(top, #000 0%, rgba(34, 31, 31, 0) 100%);
- /* Chrome10-25,Safari5.1-6 */
- background: linear-gradient(to right, #000 0%, rgba(34, 31, 31, 0) 100%);
- /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
- filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 );
- /* IE6-9 */
- height: 100%;
- z-index: 5;
- top: 0;
- left: 0;
- width: 100%;
- position: relative;
-
-}
 
 .DetailImgMobile {
-  width: 40vh;
-  height: 40vh;
+  width: 22vh;
+  height: 22vh;
   border-radius: 20%;
   box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
-  margin-left: auto;
-  margin-right: auto;
-
 
 }
 
-.Dialog{
-padding-top: -500;
+
+.AppBar{
+  position: relative;
+  background: linear-gradient(to top, #82f2da 30%, white 100%);
+  background: -webkit-linear-gradient(to top, #82f2da 0%, white 100%);
+
+}
+
+.iconButtonDetailsMobile {
+  display: inline-block !important;
+  height: 55px !important;
+  width: 55px !important;
+  border-radius: 50% !important;
+  border: 8px solid #ffffff !important;
+  margin-right: 15px;
+  margin-bottom: 15px;
+  background-color: #ffffff;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.DrawerHeader{
+  height: 15vh;
+  width: 100%;
+  background: linear-gradient(to top, #82f2da 30%, white 100%);
+  background: -webkit-linear-gradient(to top, #82f2da 0%, white 100%);
+
 }

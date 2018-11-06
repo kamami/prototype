@@ -17,7 +17,7 @@ class Headline extends React.Component{
         return (
           <div style={{position: 'absolute', marginLeft: 750}}>
 
-          <p style={{color: 'white', fontSize: 50, fontFamily: 'Anton', marginTop: -20}}>
+          <p style={{color: 'white', fontSize: 50, fontFamily: 'Anton', marginTop: 23}}>
               Auserlesene Chatbots.
           </p>
 

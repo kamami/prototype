@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App.css';
-import Conversation from 'chat-template/dist/Conversation';
-import Messages from '../components/Messages';
+
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -184,30 +183,7 @@ class Item extends React.Component{
                           <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
                             Preview:
                           </p>
-                          <MuiThemeProvider>
-                          <Paper style={{width: 652, height: 250, borderRadius: "2em"}} zDepth={1}>
-                              <Messages
-                                avatar={this.props.backdrop}
-                                message1={this.props.message1}
-                                position1={this.props.position1}
-                                message2={this.props.message2}
-                                position2={this.props.position2}
-                                message3={this.props.message3}
-                                position3={this.props.position3}
-                                message4={this.props.message4}
-                                position4={this.props.position4}
-                                message5={this.props.message5}
-                                position5={this.props.position5}
-                                message6={this.props.message6}
-                                position6={this.props.position6}
-                                message7={this.props.message7}
-                                position7={this.props.position7}
-                                message8={this.props.message8}
-                                position8={this.props.position8}
-
-                                />
-                            </Paper>
-                          </MuiThemeProvider>
+                          
                         </div>
                       </div>
                       </Dialog>

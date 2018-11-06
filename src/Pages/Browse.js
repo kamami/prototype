@@ -11,6 +11,7 @@ import ViewAll from '../components/ViewAll';
 import SearchButton from '../components/SearchButton';
 import Headline from '../components/Headline';
 import Media from "react-media";
+import Drawer from '../components/Drawer';
 
 class Browse extends React.Component{
 
@@ -29,10 +30,13 @@ class Browse extends React.Component{
         return (
           <div>
               <header className="Header">
+                <Drawer />
+
                 <ScrollToTop showUnder={-20} style={{
 position: 'relative',
-marginTop: 45,
-marginLeft: 40,
+marginTop: 60,
+marginLeft: 'auto',
+marginRight: 'auto',
 cursor: 'pointer',
 transitionDuration: '2s',
 transitionTimingFunction: 'linear',
@@ -89,7 +93,7 @@ transitionDelay: '1s'
 
 
             </div>
-              <Footer wait={500}/>
+              <Footer wait={1000}/>
 
           </div>
         );
