@@ -29,21 +29,21 @@ class Browse extends React.Component{
 
         return (
           <div>
-              <header className="Header">
+              <header className="Header" style={{  textAlign: 'center' }}>
                 <Drawer />
 
                 <ScrollToTop showUnder={-20} style={{
 position: 'relative',
-marginTop: 60,
-marginLeft: 'auto',
-marginRight: 'auto',
+marginTop: 46,
 cursor: 'pointer',
-transitionDuration: '2s',
+transitionDuration: '3s',
 transitionTimingFunction: 'linear',
-transitionDelay: '1s'
+transitionDelay: '1s',
+marginLeft: 'auto',
+marginRight: 'auto'
 }}>
 
-                  <Logo />
+                  <Logo/>
 
                   </ScrollToTop>
                   <Media query="(min-width: 600px)">
@@ -55,14 +55,15 @@ transitionDelay: '1s'
                 </Media>
 
 
-                    <ScrollToTop showUnder={80} style={{
+                    <ScrollToTop showUnder={80}     duration={1000} 
+style={{
     position: 'flex',
     cursor: 'pointer',
     transitionDuration: '1s',
     transitionTimingFunction: 'linear',
     transitionDelay: '0.5s'
     }}>
-              <SearchButton triggerSubmit={this.focus}/>
+              <SearchButton />
               </ScrollToTop>
 
 
@@ -80,8 +81,11 @@ transitionDelay: '1s'
 
 
 
+
+
+
               <div style={{position: 'relative', width: '100%', marginBottom: 10}}>
-                <ViewAll url='//api.jsonbin.io/b/5bd1934751e8b664f2c1aa60/13' ref={(input) =>  this.textInput = input}/>
+                <ViewAll url='https://api.jsonbin.io/b/5bce2773716f9364f8c91a10/7' ref={(input) =>  this.textInput = input}/>
 
 
 

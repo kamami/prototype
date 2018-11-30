@@ -22,13 +22,13 @@ class SearchButton extends React.Component{
                 {matches =>
                   matches ? (
                     <MuiThemeProvider>
-                      <RaisedButton label="Search" backgroundColor='#82f2da' labelColor='#ffffff' onClick={() => this.props.triggerSubmit()}
+                      <RaisedButton label="Search" backgroundColor='#82f2da' labelColor='#ffffff'
                         style={{marginTop: 15}}/>
                       </MuiThemeProvider>                ):(
 
 
-                          <IconButton onClick={() => this.props.triggerSubmit()}>
-                            <SearchIcon style={{color: '#82f2da', fontSize: 45, position: 'fixed', right: 15, marginTop: 22 }}/>
+                          <IconButton>
+                            <SearchIcon style={{color: '#000', fontSize: 45, position: 'fixed', right: 12, marginTop: 25 }}/>
                           </IconButton>
                       )
               }

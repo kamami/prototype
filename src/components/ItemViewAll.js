@@ -68,13 +68,13 @@ class ItemViewAll extends React.Component{
 
 
         return (
-          <div >
+          <div>
                   <Media query="(min-width: 600px)">
                         {matches =>
                           matches ? (
                             <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
 
-                            <div>
+                            <div style={{background: '#f6f6f6'}} >
                   <Dialog
                     open={this.state.open}
                     onClose={this.handleClose}
@@ -86,8 +86,8 @@ class ItemViewAll extends React.Component{
 
                     <DialogContent>
                       <div style={{display: 'flex'}}>
-                            <div>
-                                <div>
+                            <div style={{background: '#f6f6f6'}} >
+                                <div> style={{background: '#f6f6f6'}}
 
                                     <img className="DetailImg" src={this.props.backdrop}/>
                                 </div>
@@ -208,7 +208,7 @@ class ItemViewAll extends React.Component{
                     </DialogContent>
                     <DialogActions>
 
-                      <Button onClick={this.handleClose} style={{color: '#82f2da'}}>
+                      <Button onClick={this.handleClose} style={{color: '#000'}}>
                         Schliessen
                       </Button>
                     </DialogActions>
@@ -231,15 +231,20 @@ class ItemViewAll extends React.Component{
                   aria-describedby="alert-dialog-description"
                   fullScreen
                   scroll={this.state.scroll}
-                  style={{  overflow: 'hidden'}}
-
+                  style={{overflow: 'hidden'}}
+                  PaperProps={{
+    style: {
+      backgroundColor: '#f6f6f6',
+      boxShadow: 'none',
+    },
+  }}
                 >
                 <div className="Header" style={{overflow: 'hidden', position: 'fixed'}} >
-            <CloseIcon style={{color: '#ffffff', fontSize: 40, marginTop: 12, marginLeft: 10}} onClick={this.handleClose}/>
+            <CloseIcon style={{color: '#000', fontSize: 40, marginTop: 15, marginLeft: 10}} onClick={this.handleClose}/>
 
       </div>
                   <DialogContent>
-                    <div style={{marginTop: 90, display: 'inline-block', display: 'flex'}}>
+                    <div style={{marginTop: 90, display: 'inline-block', display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
                          </div>
@@ -291,12 +296,7 @@ class ItemViewAll extends React.Component{
 
                        </div>
                   </DialogContent>
-                  <DialogActions>
 
-                    <Button onClick={this.handleClose} style={{color: '#82f2da'}}>
-                      Schliessen
-                    </Button>
-                  </DialogActions>
                 </Dialog>
               <div className="overlay" onClick={this.handleClickOpen}>
 

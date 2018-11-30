@@ -9,7 +9,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
+import City from '@material-ui/icons/LocationCity';
+import Info from '@material-ui/icons/Info';
+
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from '../Logo.js';
@@ -41,50 +43,70 @@ class Drawer extends React.Component {
     const sideList = (
       <div className={classes.list}>
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
+          <Divider />
+
+            <ListItem button>
+              <ListItemIcon>
+                <City />
+            </ListItemIcon>
+              <ListItemText>
+                  Augsburg
+              </ListItemText>
             </ListItem>
-          ))}
+            <ListItem button>
+              <ListItemIcon>
+                <City />
+            </ListItemIcon>
+              <ListItemText>
+                  München
+              </ListItemText>
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <City />
+            </ListItemIcon>
+              <ListItemText>
+                  Nürnberg
+              </ListItemText>
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <City />
+            </ListItemIcon>
+              <ListItemText>
+                  Regensburg
+              </ListItemText>
+            </ListItem>
+            <ListItem button>
+              <ListItemIcon>
+                <City />
+            </ListItemIcon>
+              <ListItemText>
+                  Würzburg
+              </ListItemText>
+            </ListItem>
+
         </List>
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <List style={{bottom: '0', position: 'absolute'}}>
+
+          <ListItem button>
+            <ListItemIcon>
+              <Info />
+          </ListItemIcon>
+            <ListItemText>
+                Impressum
+            </ListItemText>
+          </ListItem></List>
+
       </div>
     );
 
-    const fullList = (
-      <div className={classes.fullList}>
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-      </div>
-    );
+
 
     return (
       <div>
-          <MenuIcon style={{color: '#ffffff', fontSize: 45, marginLeft: 10, marginTop: 10}} onClick={this.toggleDrawer('left', true)}/>
+          <MenuIcon style={{color: '#000', fontSize: 45, marginLeft: 10, marginTop: 12.5}} onClick={this.toggleDrawer('left', true)}/>
 
         <SwipeableDrawer
           open={this.state.left}
@@ -99,6 +121,14 @@ class Drawer extends React.Component {
             onKeyDown={this.toggleDrawer('left', false)}
           >
           <div className="DrawerHeader">
+            <Logo />
+          </div>
+          <div>
+<p style={{marginLeft: '15px', fontSize: '12pt', fontWeight: 'bold', marginTop: '20px', color: '#000'}}>
+Wähle deine Stadt:
+
+</p>
+
           </div>
             {sideList}
           </div>
