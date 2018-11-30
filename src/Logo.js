@@ -9,7 +9,7 @@ class Logo extends React.Component{
 }
 	render(){
 		return (
-			<div id="logo" className="Logo" style={{marginLeft: '30px'}} onClick={this.onClick}>
+			<div id="logo" className="Logo" onClick={this.onClick}>
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="320px" height="120px" preserveAspectRatio="xMidYMid meet">
 
 					<g transform="translate(0.000000,128.000000) scale(0.0800000,-0.0800000)">

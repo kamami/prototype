@@ -27,9 +27,7 @@ class SearchButton extends React.Component{
                       </MuiThemeProvider>                ):(
 
 
-                          <IconButton>
-                            <SearchIcon style={{color: '#000', fontSize: 45, position: 'fixed', right: 12, marginTop: 25 }}/>
-                          </IconButton>
+                            <SearchIcon style={{color: '#000', fontSize: 45, position: 'fixed', right: 12, marginTop: 12.5 }}/>
                       )
               }
             </Media>
