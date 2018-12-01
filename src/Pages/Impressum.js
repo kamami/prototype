@@ -13,7 +13,9 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-
+import SearchButton from '../components/SearchButton';
+import Media from "react-media";
+import Drawer from '../components/Drawer';
 
 
 class Impressum extends React.Component{
@@ -40,67 +42,66 @@ render(){
   return(
 
     <div>
-      <header className="Header">
-        <ScrollToTop showUnder={-20} style={{
-position: 'relative',
-marginTop: 45,
-marginLeft: 40,
-cursor: 'pointer',
-transitionDuration: '2s',
-transitionTimingFunction: 'linear',
-transitionDelay: '1s'
-}}>
+      <header className="Header" style={{  textAlign: 'center' }}>
+        <Drawer />
 
-          <Logo />
+        <ScrollToTop showUnder={-20} style={{
+  position: 'relative',
+  marginTop: 46,
+  cursor: 'pointer',
+  transitionDuration: '3s',
+  transitionTimingFunction: 'linear',
+  transitionDelay: '1s',
+  marginLeft: 'auto',
+  marginRight: 'auto'
+  }}>
+  <Link to="/browse/" style={{textDecoration: 'none'}}>
+
+  <Logo />
+  </Link>
 
           </ScrollToTop>
+          <Media query="(min-width: 600px)">
+            {matches =>
+              matches ? (
+                <Navigation />
+            ):(null)
+          }
+        </Media>
 
-          <Navigation />
 
-          <Headline/>
 
+
+
+
+    <Media query="(min-width: 600px)">
+      {matches =>
+        matches ? (
           <UserProfile />
+      ):(null)
+    }
+  </Media>
 
 
       </header>
-      <div style={{position: 'fixed', width: '100%', bottom: 0}}>
+      <div style={{textAlign: 'center', width: '100%'}}>
 
-      <div style={{ marginLeft: 150, marginBottom: 130}}>
-        <p style={{fontSize: 40, fontFamily: 'Anton'}}>Impressum</p>
+      <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 200}}>
+        <p style={{fontSize: 40, fontFamily: 'Anton', marginBottom: 100}}>Impressum</p>
         <p style={{fontSize: 30}}> Martin Seubert</p>
         <p style={{fontSize: 30}}> Leitengraben 3</p>
         <p style={{fontSize: 30}}> 97084 Würzburg</p>
         <p style={{fontSize: 30}}> mail@martinseubert.de</p>
 
       </div>
-      <div>
-      <Button onClick={this.handleClickOpen}>Open alert dialog</Button>
-      <Dialog
-        open={this.state.open}
-        onClose={this.handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-        fullScreen
-      >
-        <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
-            Disagree
-          </Button>
-          <Button onClick={this.handleClose} color="primary" autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
-    </div>
 
-      <Footer/>
+                      <Media query="(min-width: 600px)">
+                        {matches =>
+                          matches ? (
+                            <Footer wait={1000}/>
+                        ):(null)
+                      }
+                    </Media>
       </div>
     </div>
   )

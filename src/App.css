@@ -676,8 +676,9 @@ padding-bottom: 10px;
 .DrawerHeader{
   height: 10vh;
   width: 100%;
-  margin-left: 15px;
   margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 
 
 }

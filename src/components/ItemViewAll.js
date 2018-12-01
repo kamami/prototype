@@ -19,7 +19,7 @@ import Slide from '@material-ui/core/Slide';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-
+import DrawerBottom from '../components/DrawerBottom';
 const customContentStyle = {
   width: '60%',
   maxWidth: 'none',
@@ -74,7 +74,7 @@ class ItemViewAll extends React.Component{
                           matches ? (
                             <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
 
-                            <div style={{background: '#f6f6f6'}} >
+                            <div>
                   <Dialog
                     open={this.state.open}
                     onClose={this.handleClose}
@@ -86,8 +86,8 @@ class ItemViewAll extends React.Component{
 
                     <DialogContent>
                       <div style={{display: 'flex'}}>
-                            <div style={{background: '#f6f6f6'}} >
-                                <div> style={{background: '#f6f6f6'}}
+                            <div>
+                                <div>
 
                                     <img className="DetailImg" src={this.props.backdrop}/>
                                 </div>
@@ -291,6 +291,10 @@ class ItemViewAll extends React.Component{
                            </div>
                            <div className="BreakWords" style={{fontSize: '1.3rem', marginTop: 20, paddingBottom: 20, fontWeight: 'lighter', width: '100%'}}>
                              {this.props.description}
+                           </div>
+                           <div>
+                              <DrawerBottom />
+
                            </div>
 
 

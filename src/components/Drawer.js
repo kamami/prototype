@@ -11,7 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import City from '@material-ui/icons/LocationCity';
 import Info from '@material-ui/icons/Info';
-
+import {Link} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from '../Logo.js';
@@ -90,6 +90,7 @@ class Drawer extends React.Component {
         <Divider />
         <List style={{bottom: '0', position: 'absolute'}}>
 
+                                      <Link to="/impressum/" style={{textDecoration: 'none'}}>
           <ListItem button>
             <ListItemIcon>
               <Info />
@@ -97,7 +98,10 @@ class Drawer extends React.Component {
             <ListItemText>
                 Impressum
             </ListItemText>
-          </ListItem></List>
+          </ListItem>
+        </Link>
+
+        </List>
 
       </div>
     );

@@ -23,6 +23,12 @@ class Browse extends React.Component{
     this.textInput.focus();
   }
 
+  onClick() {
+  window.location.reload();
+
+
+  }
+
 
 
     render() {
@@ -42,8 +48,10 @@ transitionDelay: '1s',
 marginLeft: 'auto',
 marginRight: 'auto'
 }}>
+                <div  onClick={this.onClick}>
+                  <Logo />
 
-                  <Logo/>
+                </div>
 
                   </ScrollToTop>
                   <Media query="(min-width: 600px)">
@@ -55,7 +63,7 @@ marginRight: 'auto'
                 </Media>
 
 
-                    <ScrollToTop showUnder={80}     duration={1000} 
+                    <ScrollToTop showUnder={80}     duration={1000}
 style={{
     position: 'flex',
     cursor: 'pointer',
