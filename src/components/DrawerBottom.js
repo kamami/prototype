@@ -16,13 +16,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from '../Logo.js';
 import FloatingActionButtons from '../components/FloatingActionButtons.js';
+import ProgressMobileStepper from '../components/ProgressMobileStepper.js';
 
 const styles = {
   list: {
-    width: 250,
+    width: '100%',
+
   },
   fullList: {
     width: 'auto',
+
   },
 };
 
@@ -46,41 +49,13 @@ class DrawerBottom extends React.Component {
 
 
    const fullList = (
-     <div className={classes.list}>
-       <List>
+     <div style={{display: 'flex'}}>
+       <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+         <ProgressMobileStepper />
 
 
 
-           <ListItem button>
-             <ListItemIcon>
-               <City />
-           </ListItemIcon>
-             <ListItemText>
-                 Nürnberg
-             </ListItemText>
-           </ListItem>
-           <Divider />
-
-           <ListItem button>
-             <ListItemIcon>
-               <City />
-           </ListItemIcon>
-             <ListItemText>
-                 Regensburg
-             </ListItemText>
-           </ListItem>
-           <Divider />
-
-           <ListItem button>
-             <ListItemIcon>
-               <City />
-           </ListItemIcon>
-             <ListItemText>
-                 Würzburg
-             </ListItemText>
-           </ListItem>
-
-       </List>
+       </div>
 
 
      </div>
@@ -89,8 +64,10 @@ class DrawerBottom extends React.Component {
    return (
      <div>
 
-       <Button onClick={this.toggleDrawer('bottom', true)}>Open Bottom</Button>
-       <FloatingActionButtons onClick={this.toggleDrawer('bottom', true)}/>
+        <div onClick={this.toggleDrawer('bottom', true)} style={{width: 100}}>
+        <FloatingActionButtons />
+
+        </div>
 
        <SwipeableDrawer
          anchor="bottom"
@@ -101,8 +78,7 @@ class DrawerBottom extends React.Component {
          <div
            tabIndex={0}
            role="button"
-           onClick={this.toggleDrawer('bottom', false)}
-           onKeyDown={this.toggleDrawer('bottom', false)}
+
          >
            {fullList}
          </div>

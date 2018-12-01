@@ -117,6 +117,7 @@ class Drawer extends React.Component {
           onClose={this.toggleDrawer('left', false)}
           onOpen={this.toggleDrawer('left', true)}
           width='100%'
+
         >
           <div
             tabIndex={0}

@@ -36,7 +36,7 @@ class Browse extends React.Component{
         return (
           <div>
               <header className="Header" style={{  textAlign: 'center' }}>
-                <Drawer />
+                <Drawer/>
 
                 <ScrollToTop showUnder={-20} style={{
 position: 'relative',
@@ -48,6 +48,7 @@ transitionDelay: '1s',
 marginLeft: 'auto',
 marginRight: 'auto'
 }}>
+
                 <div  onClick={this.onClick}>
                   <Logo />
 
@@ -92,7 +93,7 @@ style={{
 
 
 
-              <div style={{position: 'relative', width: '100%', marginBottom: 10}}>
+              <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6'  /*, height: '100vh'  für scrolling beim Suchen */}}>
                 <ViewAll url='https://api.jsonbin.io/b/5bce2773716f9364f8c91a10/7' ref={(input) =>  this.textInput = input}/>
 
 

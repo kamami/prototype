@@ -131,7 +131,7 @@ render() {
 
 
     return (
-      <div   style={{background: '#f6f6f6'}}>
+      <div>
 
 
 
@@ -234,6 +234,7 @@ borderWidth: 3}}
    enter={scaleDown.enter}
    entered={scaleDown.entered}
    leaved={scaleDown.leaved}
+
   >
 
 
