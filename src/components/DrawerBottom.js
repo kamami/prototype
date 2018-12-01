@@ -20,11 +20,11 @@ import ProgressMobileStepper from '../components/ProgressMobileStepper.js';
 
 const styles = {
   list: {
-    width: '100%',
+    width: '100%'
 
   },
   fullList: {
-    width: 'auto',
+    width: 'auto'
 
   },
 };

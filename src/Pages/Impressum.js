@@ -55,7 +55,7 @@ render(){
   marginLeft: 'auto',
   marginRight: 'auto'
   }}>
-  <Link to="/browse/" style={{textDecoration: 'none'}}>
+  <Link to="/" style={{textDecoration: 'none'}}>
 
   <Logo />
   </Link>
@@ -86,7 +86,7 @@ render(){
       </header>
       <div style={{textAlign: 'center', width: '100%'}}>
 
-      <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 200}}>
+      <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 150}}>
         <p style={{fontSize: 40, fontFamily: 'Anton', marginBottom: 100}}>Impressum</p>
         <p style={{fontSize: 30}}> Martin Seubert</p>
         <p style={{fontSize: 30}}> Leitengraben 3</p>
