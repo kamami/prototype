@@ -50,7 +50,7 @@ class DrawerBottom extends React.Component {
 
 
    const fullList = (
-     <div style={{display: 'flex', height: "80vw"}}>
+     <div style={{display: 'flex', height: "100vw"}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
          <ProgressMobileStepper />
 
