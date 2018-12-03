@@ -9,32 +9,34 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import TextField from 'material-ui/TextField';
 
+
+
 const tutorialSteps = [
   {
     headline: 'Wie ist dein Name?',
     placeholder1: "Vorname",
     placeholder2: "Nachname",
-      label: 'Name'
+    label: 'Name'
   },
   {
     headline: 'Bird',
     placeholder: "z.B. maxmustermann@gmail.com",
-      label: 'Email'
+    label: 'Email'
   },
   {
     headline: 'Bali, Indonesia',
     placeholder: "z.B. 18",
-      label: 'Alter'
+    label: 'Alter'
   },
-
 ];
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#ffffff'
+    backgroundColor: '#ffffff',
 
   },
+
   header: {
     display: 'flex',
     alignItems: 'center',
@@ -43,6 +45,8 @@ const styles = theme => ({
     backgroundColor: '#ffffff',
 
   },
+
+
 
   container: {
    display: 'flex',
@@ -62,6 +66,8 @@ const styles = theme => ({
  menu: {
    width: 200,
  },
+
+
 
 });
 
@@ -101,13 +107,12 @@ class ProgressMobileStepper extends React.Component {
     return (
 
       <div className={classes.root} style={{textAlign: 'center'}}>
+
       <MobileStepper
       variant="progress"
-      style={{background: '#ffffff', width: '100vw'}}
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
-        className={classes.mobileStepper}
         nextButton={
           <Button size="small" onClick={this.handleNext} disabled={activeStep === maxSteps - 1} style={{outline: 'none'}}>
             Next
@@ -120,6 +125,9 @@ class ProgressMobileStepper extends React.Component {
             Back
           </Button>
         }
+        classes={{
+       root: classes.root, // class name, e.g. `classes-nesting-root-x`
+     }}
       />
 
 
