@@ -20,11 +20,12 @@ import ProgressMobileStepper from '../components/ProgressMobileStepper.js';
 
 const styles = {
   list: {
-    width: '100%'
+    width: '100%',
+
 
   },
   fullList: {
-    width: 'auto'
+    width: 'auto',
 
   },
 };
@@ -49,7 +50,7 @@ class DrawerBottom extends React.Component {
 
 
    const fullList = (
-     <div style={{display: 'flex'}}>
+     <div style={{display: 'flex', height: "80vw"}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
          <ProgressMobileStepper />
 
@@ -78,6 +79,7 @@ class DrawerBottom extends React.Component {
          <div
            tabIndex={0}
            role="button"
+           style={{ outline: 'none'}}
 
          >
            {fullList}
