@@ -18,7 +18,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+figure, figcaption, footer, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -32,7 +32,7 @@ time, mark, audio, video {
 
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section {
+footer, hgroup, menu, nav, section {
   display: block;
 
 }
@@ -81,7 +81,6 @@ p {
 
 .Header {
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(to right, #82f2da 0%, white 100%);
   /* Chrome10-25,Safari5.1-6 */
   background:rgba(255,255,255, 1);
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -95,7 +94,6 @@ p {
   top: 0;
   left: 0;
   width: 100vw;
-  box-sizing: border-box;
   z-index: 5;
   height: 60px;
   box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
@@ -103,11 +101,12 @@ p {
 
 .Logo {
   width: 120px;
-  height: 32px;
+  height: 40px;
   -webkit-transition: margin .125s ease;
   transition: margin .125s ease;
   margin-left: auto;
   margin-right: auto;
+
 }
 .Logo svg {
   -webkit-transform: scale(0.5);
@@ -118,7 +117,6 @@ p {
 .Logo svg path {
   fill: #63fff7;
   -webkit-transition: fill .125s ease;
-  transition: fill .125s ease;
 }
 .Logo:hover {
   cursor: pointer;

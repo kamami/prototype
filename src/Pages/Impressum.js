@@ -47,7 +47,7 @@ render(){
 
         <ScrollToTop showUnder={-20} style={{
   position: 'relative',
-  marginTop: 35,
+  marginTop: 44,
   cursor: 'pointer',
   transitionDuration: '3s',
   transitionTimingFunction: 'linear',

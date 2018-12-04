@@ -109,7 +109,7 @@ class Drawer extends React.Component {
 
 
     return (
-      <div >
+      <div  >
           <MenuIcon style={{color: '#000', fontSize: 35, marginLeft: 10, marginTop: 12.5}} onClick={this.toggleDrawer('left', true)}/>
 
         <SwipeableDrawer
@@ -126,7 +126,7 @@ class Drawer extends React.Component {
             style={{outline: 'none'}}
 
           >
-          <div className="DrawerHeader">
+          <div className="DrawerHeader" style={{display: 'flex'}}>
             <Logo />
           </div>
           <div>
