@@ -22,12 +22,12 @@ class SearchButton extends React.Component{
                 {matches =>
                   matches ? (
                     <MuiThemeProvider>
-                      <RaisedButton label="Search" backgroundColor='#82f2da' labelColor='#ffffff'
+                      <RaisedButton label="Search" backgroundColor='#B00020' labelColor='#ffffff'
                         style={{marginTop: 15}}/>
                       </MuiThemeProvider>                ):(
 
 
-                            <SearchIcon style={{color: '#000', fontSize: 45, position: 'fixed', right: 12, marginTop: 12.5 }}/>
+                            <SearchIcon style={{color: '#000', fontSize: 35, position: 'fixed', right: 12, marginTop: 12.5 }}/>
                       )
               }
             </Media>

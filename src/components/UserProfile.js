@@ -29,7 +29,7 @@ handleClose = () => {
      <FlatButton
        label="schließen"
        onClick={this.handleClose}
-       style={{color: '#82f2da'}}
+       style={{color: '#B00020'}}
      />
 
    ];
@@ -41,7 +41,7 @@ handleClose = () => {
 
 
                 <RaisedButton label= {this.isLoggedIn? 'Logout' : 'Login'}
-                 onClick={this.handleOpen} className="Login" backgroundColor='#82f2da' labelColor='#ffffff' />
+                 onClick={this.handleOpen} className="Login" backgroundColor='#B00020' labelColor='#ffffff' />
 
 
 

@@ -160,7 +160,7 @@ borderWidth: 3}}
          hintStyle={{fontSize: 36, fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
          inputStyle={{fontSize: 36, fontFamily: 'Anton', color: '#ffffff'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#B00020', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '22%' }}
+         style={{caretColor: '#B00020', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '16%' }}
          />
      </MuiThemeProvider>
 
@@ -172,14 +172,12 @@ borderWidth: 3}}
           </div>
         </div>
                ) : (
-                 <div style={{marginTop: 130}}>
+                 <div style={{marginTop: 70}}>
                    <div style={{width: '80%', marginLeft: 'auto',
     marginRight: 'auto', marginBottom: 70 }}>
 
-    <div>
-      <img src={require("../assets/City.jpg")} style={{width: '100%', marginTop: '70px'}}/>
+      <div style={{backgroundImage: 'url(' + imageUrl + ')'}} className="city">
 
-  </div>
   <MuiThemeProvider>
 
                    <TextField
@@ -188,16 +186,17 @@ borderWidth: 3}}
                         onChange={this.searchHandler}
                         value={term}
                         fullWidth={true}
-                        underlineFocusStyle={{borderColor: '#82f2da',
+                        underlineFocusStyle={{borderColor: '#B00020',
     borderWidth: 3}}
-                        underlineStyle={{borderColor: '#82f2da',
+                        underlineStyle={{borderColor: '#B00020',
     borderWidth: 1.5, top: '50px'}}
-                        hintStyle={{fontSize: 40, fontFamily: 'Anton'}}
-                        inputStyle={{fontSize: 40, fontFamily: 'Anton'}}
+                        hintStyle={{fontSize: 40, fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
+                        inputStyle={{fontSize: 40, fontFamily: 'Anton',  color: '#ffffff'}}
                         ref={(input) => { this.textInput = input; }}
-                        style={{caretColor: '#82f2da'}}
+                        style={{caretColor: '#B00020', marginTop: 80, width: '90%'}}
                         />
                     </MuiThemeProvider>
+                  </div>
 
                    </div>
                      </div>

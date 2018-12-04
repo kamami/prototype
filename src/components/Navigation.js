@@ -16,11 +16,11 @@ render() {
 
 
                             <Link to="/" style={{textDecoration: 'none'}}>  <MuiThemeProvider>
-                              <RaisedButton label="Home" className="Login" backgroundColor='#82f2da' labelColor='#ffffff' />
+                              <RaisedButton label="Home" className="Login" backgroundColor='#B00020' labelColor='#ffffff' />
                               </MuiThemeProvider>
                             </Link>
                             <Link to="/browse/" style={{textDecoration: 'none'}}>  <MuiThemeProvider>
-                              <RaisedButton label="Browse" className="Login" backgroundColor='#82f2da' labelColor='#ffffff' />
+                              <RaisedButton label="Browse" className="Login" backgroundColor='#B00020' labelColor='#ffffff' />
                               </MuiThemeProvider>
                             </Link>
 

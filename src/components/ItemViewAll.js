@@ -93,7 +93,7 @@ class ItemViewAll extends React.Component{
                                 </div>
                                 <div style={{marginTop: 30}}>
                                 <ButtonDropdown direction="down" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-             <DropdownToggle className= "DropdownButton" style={{background: '#82f2da', width: 180, border: '#82f2da'}}>
+             <DropdownToggle className= "DropdownButton" style={{background: '#B00020', width: 180, border: '#B00020'}}>
               Starten:
             </DropdownToggle>
              <DropdownMenu style={{width: 180}}>
@@ -240,7 +240,7 @@ class ItemViewAll extends React.Component{
   }}
                 >
                 <div className="Header" style={{overflow: 'hidden', position: 'fixed'}} >
-            <CloseIcon style={{color: '#000', fontSize: 40, marginTop: 15, marginLeft: 10}} onClick={this.handleClose}/>
+            <CloseIcon style={{color: '#000', fontSize: 35, marginTop: 12.5, marginLeft: 10}} onClick={this.handleClose}/>
 
       </div>
                   <DialogContent>

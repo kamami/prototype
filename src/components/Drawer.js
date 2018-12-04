@@ -15,7 +15,7 @@ import {Link} from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from '../Logo.js';
-
+import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 const styles = {
   list: {
     width: 250,
@@ -109,8 +109,8 @@ class Drawer extends React.Component {
 
 
     return (
-      <div>
-          <MenuIcon style={{color: '#000', fontSize: 45, marginLeft: 10, marginTop: 12.5}} onClick={this.toggleDrawer('left', true)}/>
+      <div >
+          <MenuIcon style={{color: '#000', fontSize: 35, marginLeft: 10, marginTop: 12.5}} onClick={this.toggleDrawer('left', true)}/>
 
         <SwipeableDrawer
           open={this.state.left}
@@ -122,20 +122,20 @@ class Drawer extends React.Component {
           <div
             tabIndex={0}
             role="button"
-            onClick={this.toggleDrawer('left', false)}
             onKeyDown={this.toggleDrawer('left', false)}
+            style={{outline: 'none'}}
+
           >
           <div className="DrawerHeader">
             <Logo />
           </div>
           <div>
 <p style={{marginLeft: '15px', fontSize: '12pt', fontWeight: 'bold', marginTop: '20px', color: '#000'}}>
-Wähle deine Stadt:
-
+Kategorien:
 </p>
 
           </div>
-            {sideList}
+<SimpleExpansionPanel/>
           </div>
         </SwipeableDrawer>
 
