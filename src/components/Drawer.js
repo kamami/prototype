@@ -116,17 +116,16 @@ class Drawer extends React.Component {
           open={this.state.left}
           onClose={this.toggleDrawer('left', false)}
           onOpen={this.toggleDrawer('left', true)}
-          width='100%'
-
         >
           <div
             tabIndex={0}
             role="button"
             onKeyDown={this.toggleDrawer('left', false)}
-            style={{outline: 'none'}}
+            style={{outline: 'none', overflow: 'hidden'}}
+
 
           >
-          <div className="DrawerHeader" style={{display: 'flex'}}>
+          <div className="DrawerHeader" >
             <Logo />
           </div>
           <div>
