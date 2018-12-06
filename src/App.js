@@ -19,10 +19,12 @@ class App extends Component {
     return (
         <Router>
           <div>
-            <Route path="/" exact strict component={Browse}
+            <Route path="/" exact strict component={Homepage}
             />
 
               <Route path="/impressum/" exact strict component={Impressum}/>
+                <Route path="/browse/" exact strict component={Browse}/>
+
           </div>
         </Router>
     );

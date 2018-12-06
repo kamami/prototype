@@ -12,6 +12,8 @@ import SearchButton from '../components/SearchButton';
 import Headline from '../components/Headline';
 import Media from "react-media";
 import Drawer from '../components/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+
 
 class Browse extends React.Component{
 

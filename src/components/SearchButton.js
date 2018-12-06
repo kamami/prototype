@@ -17,7 +17,7 @@ class SearchButton extends React.Component{
     render() {
         return (
 
-            <div>
+            <div style={{padding: 8}}>
               <Media query="(min-width: 600px)">
                 {matches =>
                   matches ? (
@@ -27,7 +27,7 @@ class SearchButton extends React.Component{
                       </MuiThemeProvider>                ):(
 
 
-                            <SearchIcon style={{color: '#000', fontSize: 35, position: 'fixed', right: 12, marginTop: 12.5 }}/>
+                            <SearchIcon style={{color: '#000', fontSize: 25, position: 'fixed', margin: 16, right: 0, top: 0}}/>
                       )
               }
             </Media>

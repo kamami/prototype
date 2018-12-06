@@ -20,6 +20,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import DrawerBottom from '../components/DrawerBottom';
+import Fade from '@material-ui/core/Fade';
+
 const customContentStyle = {
   width: '60%',
   maxWidth: 'none',
@@ -239,10 +241,24 @@ class ItemViewAll extends React.Component{
     },
   }}
                 >
-                <div className="Header" style={{overflow: 'hidden', position: 'fixed'}} >
-            <CloseIcon style={{color: '#000', fontSize: 35, marginTop: 12.5, marginLeft: 10}} onClick={this.handleClose}/>
 
-      </div>
+      <AppBar
+        position="fixed"
+
+      >
+        <Toolbar style={{background: '#ffffff', color: '#000'}}>
+          <IconButton
+            color="inherit"
+             onClick={this.handleClose}
+             style={{outline: 'none'}}
+          >
+          <CloseIcon style={{color: '#000', fontSize: 24, marginLeft: -2}} onClick={this.handleClose}/>
+          </IconButton>
+
+        </Toolbar>
+      </AppBar>
+      <Fade in={true}  timeout={2000}>
+
                   <DialogContent>
                     <div style={{marginTop: 90, display: 'inline-block', display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
@@ -300,6 +316,7 @@ class ItemViewAll extends React.Component{
 
                        </div>
                   </DialogContent>
+                </Fade>
 
                 </Dialog>
               <div className="overlay" onClick={this.handleClickOpen}>

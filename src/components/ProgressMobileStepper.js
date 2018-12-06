@@ -9,7 +9,6 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import TextField from 'material-ui/TextField';
 import RadioButtonsGroup from '../components/RadioButtonsGroup';
-import Paypal from '../components/Paypal';
 
 const tutorialSteps = [
   {
@@ -170,9 +169,7 @@ class ProgressMobileStepper extends React.Component {
     {tutorialSteps[activeStep].id == 2 &&
       <RadioButtonsGroup />
     }
-    {tutorialSteps[activeStep].id == 3 &&
-      <Paypal />
-    }
+
 
 
 

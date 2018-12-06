@@ -8,7 +8,7 @@ class Logo extends React.Component{
 			<div className="Logo">
 				<svg xmlns="http://www.w3.org/2000/svg" version="1.0" width="240px" height="120px" preserveAspectRatio="xMidYMid meet" >
 
-					<g transform="translate(0.000000,110.000000) scale(0.0600000,-0.0600000)">
+					<g transform="translate(0.000000,110.000000) scale(0.0500000,-0.0500000)">
 						<path d="M512 1195 c-145 -32 -297 -136 -357 -246 -34 -64 -39 -151 -11 -194
 	18 -28 71 -55 106 -55 17 0 19 4 13 28 -13 45 -7 135 12 192 25 76 108 158
 	190 189 84 32 217 39 265 14 103 -54 95 -231 -15 -332 -40 -37 -107 -63 -122

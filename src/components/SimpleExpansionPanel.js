@@ -18,6 +18,7 @@ import {Link} from 'react-router-dom';
 import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
 
 
+
 const styles = theme => ({
   root: {
     width: '100%',
@@ -38,10 +39,11 @@ const styles = theme => ({
 function SimpleExpansionPanel(props) {
   const { classes } = props;
 
+
+
   const städteList = (
     <div className={classes.list}>
-      <List style={{padding: 0}}>
-      <Divider />
+      <List style={{padding: 0, marginLeft: 10}}>
 
       <ListItem button style={{height: 60}}>
 
@@ -49,7 +51,6 @@ function SimpleExpansionPanel(props) {
                 Augsburg
             </ListItemText>
           </ListItem>
-          <Divider />
 
           <ListItem button style={{height: 60}}>
 
@@ -57,7 +58,6 @@ function SimpleExpansionPanel(props) {
                 München
             </ListItemText>
           </ListItem>
-          <Divider />
 
           <ListItem button style={{height: 60}}>
 
@@ -65,7 +65,6 @@ function SimpleExpansionPanel(props) {
                 Nürnberg
             </ListItemText>
           </ListItem>
-          <Divider />
 
           <ListItem button style={{height: 60}}>
 
@@ -73,7 +72,6 @@ function SimpleExpansionPanel(props) {
                 Regensburg
             </ListItemText>
           </ListItem>
-          <Divider />
 
           <ListItem button style={{height: 60}}>
 
@@ -82,20 +80,24 @@ function SimpleExpansionPanel(props) {
             </ListItemText>
           </ListItem>
 
+
       </List>
+      <Divider />
 
 
     </div>
   );
 
   return (
-    <div className={classes.root}>
+    <div className={classes.root} style={{overflow: 'hidden'}}>
 
       <ExpansionPanel style={{boxShadow: 'none', width: '99.999%'}}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} style={{height: 60}}>
+
           <Typography className={classes.heading}>
-          <City style={{color: 'grey', marginRight: 30, marginLeft: -10}}/>
-Stadtführungen</Typography>
+              Stadtführungen
+            </Typography>
+
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={{marginBottom: -17, padding: 0}}>
         {städteList}
@@ -104,19 +106,16 @@ Stadtführungen</Typography>
       </ExpansionPanel>
 
       <List style={{padding: 0}}>
-<Divider />
-      <Link to="/impressum/" style={{textDecoration: 'none'}}>
+      <Link to="/homepage/" style={{textDecoration: 'none'}}>
 
-        <ListItem button style={{height: 60}}>
-          <ListItemIcon>
-            <Couch />
-        </ListItemIcon>
+        <ListItem button style={{height: 60, marginLeft: 10}}>
+
           <ListItemText>
-              Von der Couch aus
-          </ListItemText>
+              Blackstories
+            </ListItemText>
         </ListItem>
         </Link>
-      
+
 
       </List>
 
@@ -127,7 +126,8 @@ Stadtführungen</Typography>
           <ListItemIcon>
             <Info />
         </ListItemIcon>
-          <ListItemText>
+          <ListItemText style={{fontSize: '0.9375rem'}}>
+
               Impressum
           </ListItemText>
         </ListItem>
