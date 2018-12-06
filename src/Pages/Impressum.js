@@ -23,6 +23,7 @@ import Footer from '../components/Footer';
 import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import Fade from '@material-ui/core/Fade';
+import Typography from '@material-ui/core/Typography';
 
 
 
@@ -136,12 +137,12 @@ class Impressum extends React.Component {
             <Fade in={true}  timeout={2000}>
               <Link to="/" style={{textDecoration: 'none'}}>
 
-            <div style={{marginTop: 'auto', marginBottom: 'auto', height: 28}}>
-<p style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
+            <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
+              <Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
 
-  Romeo
+                Romeo
 
-</p>
+              </Typography>
             </div>
           </Link>
 
@@ -184,7 +185,7 @@ class Impressum extends React.Component {
 
               {this.state.open == false &&
                 <Fade in={!this.state.open} timeout={1500}>
-                  <div style={{  marginTop: 150}}>
+                  <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100}}>
                     <p style={{fontSize: 40, fontFamily: 'Anton', marginBottom: 100}} >Impressum</p>
                     <p style={{fontSize: 30}}> Martin Seubert</p>
                     <p style={{fontSize: 30}}> Leitengraben 3</p>
@@ -202,7 +203,7 @@ class Impressum extends React.Component {
 
             <Fade in={this.state.open}  timeout={1000}>
 
-        <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 150}}>
+        <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100}}>
           <p style={{fontSize: 30, fontFamily: 'Anton', marginBottom: 70}} >Impressum</p>
           <p style={{fontSize: 18}}> Martin Seubert</p>
           <p style={{fontSize: 18}}> Leitengraben 3</p>

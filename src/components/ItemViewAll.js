@@ -233,7 +233,7 @@ class ItemViewAll extends React.Component{
                   aria-describedby="alert-dialog-description"
                   fullScreen
                   scroll={this.state.scroll}
-                  style={{overflow: 'hidden'}}
+                  style={{overflow: 'hidden', height: 'calc(100vh + 40px)'}}
                   PaperProps={{
 
 
@@ -260,8 +260,8 @@ class ItemViewAll extends React.Component{
       </AppBar>
       <Fade in={true}  timeout={2000}>
 
-                  <DialogContent>
-                    <div style={{marginTop: 90, display: 'inline-block', display: 'flex' }}>
+                  <DialogContent >
+                    <div style={{marginTop: 180, display: 'inline-block', display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
                          </div>

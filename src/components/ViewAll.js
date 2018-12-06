@@ -136,10 +136,12 @@ render() {
 
 <div style={{backgroundImage: 'url(' + imageUrl + ')', marginBottom: 10}} className="city">
 
+
+
   <MuiThemeProvider>
 
     <TextField
-         hintText={this.props.drawerOpen == false ? 'Welcher Bot darf es sein?' : 'Bot suchen...'}
+         hintText={this.props.drawerOpen === false ? 'Welcher Bot darf es sein?' : 'Bot suchen...'}
 
          type="Text"
          onChange={this.searchHandler}

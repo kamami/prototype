@@ -17,6 +17,7 @@ import ScrollToTop from 'react-scroll-up';
 import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
+import Typography from '@material-ui/core/Typography';
 
 const drawerWidth = 411.2 / 2;
 
@@ -129,11 +130,11 @@ class PersistentDrawerLeft extends React.Component {
             <Fade in={true}  timeout={2000}>
 
             <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
-<p style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
+<Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
 
   Romeo
 
-</p>
+</Typography>
             </div>
 
 </Fade>
