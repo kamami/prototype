@@ -235,6 +235,8 @@ class ItemViewAll extends React.Component{
                   scroll={this.state.scroll}
                   style={{overflow: 'hidden'}}
                   PaperProps={{
+
+
     style: {
       backgroundColor: '#f6f6f6',
       boxShadow: 'none',
@@ -243,8 +245,7 @@ class ItemViewAll extends React.Component{
                 >
 
       <AppBar
-        position="fixed"
-
+        style={{overflow: 'hidden', position: 'fixed'}}
       >
         <Toolbar style={{background: '#ffffff', color: '#000'}}>
           <IconButton

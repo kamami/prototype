@@ -23,6 +23,7 @@ class App extends Component {
             />
 
               <Route path="/impressum/" exact strict component={Impressum}/>
+
                 <Route path="/browse/" exact strict component={Browse}/>
 
           </div>

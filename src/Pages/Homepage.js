@@ -128,8 +128,8 @@ class PersistentDrawerLeft extends React.Component {
             </IconButton>
             <Fade in={true}  timeout={2000}>
 
-            <div  onClick={this.onClick}>
-<p style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020', marginTop: 13}}>
+            <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
+<p style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
 
   Romeo
 
@@ -161,10 +161,17 @@ transitionDelay: '0.5s',
           }}
         >
           <div className={classes.drawerHeader}>
-            <IconButton onClick={this.handleDrawerClose}               style={{outline: 'none'}}
->
-              {theme.direction === 'ltr' ? <ChevronLeftIcon
- /> : <ChevronRightIcon              />}
+            <IconButton onClick={this.handleDrawerClose} style={{outline: 'none'}}>
+              <ScrollToTop showUnder={-20}     duration={1000}
+  style={{
+  position: 'flex',
+  cursor: 'pointer',
+  transitionDuration: '1s',
+  transitionTimingFunction: 'linear',
+
+  }}>
+                <ChevronLeftIcon/>
+                </ScrollToTop>
             </IconButton>
           </div>
           <Divider />

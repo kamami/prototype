@@ -136,8 +136,8 @@ class Impressum extends React.Component {
             <Fade in={true}  timeout={2000}>
               <Link to="/" style={{textDecoration: 'none'}}>
 
-            <div >
-<p style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020', marginTop: 13}}>
+            <div style={{marginTop: 'auto', marginBottom: 'auto', height: 28}}>
+<p style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
 
   Romeo
 
