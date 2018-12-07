@@ -1,5 +1,6 @@
 
 var path = require("path");
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = [{
   context: path.join(__dirname, "public", "javascripts"),
@@ -9,8 +10,10 @@ module.exports = [{
     filename: "bundle.js"
   },
   module: {
+    exprContextRegExp: /^/,
+   exprContextCritical: false,
     loaders: [
-      { test: /\.jsx$/, loader: "jsx-loader?harmony"}
+      { test: /\.jsx/, loader: "jsx-loader?harmony"}
     ]
   },
   resolve: {
@@ -18,5 +21,11 @@ module.exports = [{
     extensions: ["", ".js", ".jsx"],
     root: [path.join(__dirname, "public", "javascripts")],
     modulesDirectories: ["node_modules"]
+  },
+  externals: {
+      // global app config object
+      config: JSON.stringify({
+          apiUrl: 'http://localhost:3000'
+      })
   }
 }];
