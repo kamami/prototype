@@ -109,7 +109,6 @@ class PersistentDrawerLeft extends React.Component {
 
     return (
       <div className={classes.root}>
-        <CssBaseline />
         <AppBar
           position="fixed"
           className={classNames(classes.appBar, {
@@ -188,11 +187,7 @@ transitionDelay: '0.5s',
           <div className={classes.drawerHeader} />
             <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6'  /*, height: '100vh'  für scrolling beim Suchen */}}>
               <ViewAll url='https://api.jsonbin.io/b/5bce2773716f9364f8c91a10/7' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open}/>
-
-
-
           </div>
-
         </main>
       </div>
     );

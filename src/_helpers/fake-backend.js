@@ -1,6 +1,6 @@
 // array in local storage for registered users
 let users = JSON.parse(localStorage.getItem('users')) || [];
-    
+
 export function configureFakeBackend() {
     let realFetch = window.fetch;
     window.fetch = function (url, opts) {
@@ -51,7 +51,7 @@ export function configureFakeBackend() {
                 }
 
                 // get user by id
-                if (url.match(/\/users\/\d+$/) && opts.method === 'GET') {
+                if (url.match('/\/users\/\d+$/') && opts.method === 'GET') {
                     // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
                     if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
                         // find user by id in users array
@@ -94,7 +94,7 @@ export function configureFakeBackend() {
                 }
 
                 // delete user
-                if (url.match(/\/users\/\d+$/) && opts.method === 'DELETE') {
+                if (url.match('/\/users\/\d+$/') && opts.method === 'DELETE') {
                     // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
                     if (opts.headers && opts.headers.Authorization === 'Bearer fake-jwt-token') {
                         // find user by id in users array

@@ -14,6 +14,8 @@ import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import City from '@material-ui/icons/LocationCity';
 import Info from '@material-ui/icons/Info';
+import Input from '@material-ui/icons/Input';
+
 import {Link} from 'react-router-dom';
 import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
 
@@ -124,7 +126,7 @@ function SimpleExpansionPanel(props) {
         <Link to="/login" style={{textDecoration: 'none'}}>
   <ListItem button>
   <ListItemIcon>
-  <Info />
+  <Input />
   </ListItemIcon>
   <ListItemText style={{fontSize: '0.9375rem'}}>
 
@@ -133,7 +135,7 @@ function SimpleExpansionPanel(props) {
   </ListItem>
   </Link>
 
-        <Link to="/impressum/" style={{textDecoration: 'none'}}>
+        <Link to="/impressum" style={{textDecoration: 'none'}}>
         <ListItem button>
           <ListItemIcon>
             <Info />
