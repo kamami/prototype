@@ -8,7 +8,7 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import KeyboardVoiceICon from '@material-ui/icons/KeyboardVoice';
 import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
-import Key from '@material-ui/icons/VpnKey';
+import Close from '@material-ui/icons/Cancel';
 
 const styles = theme => ({
   button: {
@@ -29,7 +29,7 @@ const styles = theme => ({
   },
 });
 
-class RegisterButton extends React.Component{
+class CloseButton extends React.Component{
 
   constructor(props) {
       super(props);
@@ -45,7 +45,7 @@ class RegisterButton extends React.Component{
     <div>
       <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}} >
       {this.props.label}
-        <Key className={classes.rightIcon} />
+        <Close className={classes.rightIcon} />
       </Button>
 
     </div>
@@ -53,9 +53,9 @@ class RegisterButton extends React.Component{
 }
 }
 
-RegisterButton.propTypes = {
+CloseButton.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
 
-export default withStyles(styles)(RegisterButton);
+export default withStyles(styles)(CloseButton);

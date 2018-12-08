@@ -28,30 +28,28 @@ const styles = theme => ({
   },
 });
 
-const theme = createMuiTheme({
-  palette: {
-    primary: green,
-  },
-  typography: {
-    useNextVariants: true,
-  },
-});
 
-function LoginButton(props) {
-  const { classes } = props;
+
+class LoginButton extends React.Component{
+
+  constructor(props) {
+      super(props);
+    }
+
+  render(){
+    const { classes } = this.props;
   return (
     <div>
 
-    <MuiThemeProvider theme={theme}>
 
-      <Button variant="contained"  className={classes.button} color="primary" >
-      Login
+      <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}}>
+    {this.props.label}  
         <Input className={classes.rightIcon} />
       </Button>
-      </MuiThemeProvider>
 
     </div>
   );
+}
 }
 
 LoginButton.propTypes = {

@@ -16,8 +16,28 @@ import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
-
+import InputAdornment from '@material-ui/core/InputAdornment';
+import TextField from '@material-ui/core/TextField';
+import MenuItem from '@material-ui/core/MenuItem';
+import Visibility from '@material-ui/icons/Visibility';
+import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import classNames from 'classnames';
 import '../App.css';
+
+const styles = theme => ({
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  margin: {
+    margin: theme.spacing.unit,
+  },
+  textField: {
+    flexBasis: 200,
+  },
+});
+
+
 
 
 
@@ -40,10 +60,13 @@ class LoginPage extends React.Component {
 
 
 
-    handleChange(e) {
-      const { name, value } = e.target;
-      this.setState({ [name]: value });
-  }
+    handleChange = name => event => {
+   this.setState({ [name]: event.target.value });
+ };
+
+ handleClickShowPassword = () => {
+   this.setState(state => ({ showPassword: !state.showPassword }));
+ };
 
 
     handleSubmit(e) {
@@ -83,9 +106,8 @@ class LoginPage extends React.Component {
       <Link to="/">
 
                   <IconButton
-                    color="inherit"
-                    aria-label="Open drawer"
-                    style={{outline: 'none'}}
+
+                    style={{outline: 'none', color: '#000'}}
                   >
                     <BackIcon />
                   </IconButton>
@@ -93,9 +115,9 @@ class LoginPage extends React.Component {
 
                 </Toolbar>
               </AppBar>
-              <Fade in={true}  timeout={2000}>
 
               <div style={{marginTop: 100 }}>
+                <Fade in={true}  timeout={2000}>
 
 
                 <div  style={{display: 'flex'}}>
@@ -105,29 +127,31 @@ class LoginPage extends React.Component {
     </Typography>
                 </div>
 
+              </Fade>
 
                                 <form name="form" >
                       <div className={'form-group' + (submitted && !username ? ' has-error' : '')} >
                         <div style={{display: 'flex'}}>
                           <MuiThemeProvider theme={theme}>
 
-                          <OutlinedInput
+                            <TextField
+             id="outlined-adornment-password"
+             variant="outlined"
+             label="Benutzername"
+             value={this.state.username}
+             onChange={this.handleChange('username')}
+             style={{marginLeft: 'auto', marginRight: 'auto', width: '80%'}} />
 
-                            type="text"
-                            placeholder="Benutzername"
-                            name="username"
-                            value={username}
-                            onChange={this.handleChange}
-                            style={{marginLeft: 'auto', marginRight: 'auto', width: '80%', borderColor: 'primary'}} />
+
+
                         </MuiThemeProvider>
                       </div>
                       <div>
                       {submitted && !username &&
                         <div>
                           <div className="help-block" style={{marginLeft: '10%'}}>
-                            <p style={{fontFamily: 'Roboto'}}>
-                                Username is required
-                            </p>
+                            <p style={{fontFamily: 'Roboto', color: 'red'}}>
+                                Benutzername erforderlich                            </p>
                           </div>
 
                         </div>
@@ -141,14 +165,27 @@ class LoginPage extends React.Component {
                         <div style={{display: 'flex', marginTop: 30}}>
                           <MuiThemeProvider theme={theme}>
 
-                          <OutlinedInput
+                            <TextField
+             id="outlined-adornment-password"
+             variant="outlined"
+             type={this.state.showPassword ? 'text' : 'password'}
+             label="Passwort"
+             value={this.state.password}
+             onChange={this.handleChange('password')}
+             InputProps={{
+               endAdornment: (
+                 <InputAdornment position="end">
+                   <IconButton
+                     aria-label="Toggle password visibility"
+                     onClick={this.handleClickShowPassword}
+                   >
+                     {this.state.showPassword ? <VisibilityOff /> : <Visibility />}
+                   </IconButton>
+                 </InputAdornment>
+               ),
+             }}
+             style={{marginLeft: 'auto', marginRight: 'auto', width: '80%'}} />
 
-                            type="password"
-                            placeholder="Passwort"
-                            name="password"
-                            value={password}
-                            style={{marginLeft: 'auto', marginRight: 'auto', width: '80%', borderColor: 'primary'}}
-                            onChange={this.handleChange} />
                           </MuiThemeProvider>
 
                       </div>
@@ -157,8 +194,8 @@ class LoginPage extends React.Component {
                       {submitted && !password &&
                         <div>
                           <div className="help-block"  style={{marginLeft: '10%'}}>
-                              <p style={{fontFamily: 'Roboto'}}>
-                            Password is required
+                              <p style={{fontFamily: 'Roboto', color: 'red'}}>
+                            Passwort erforderlich
                           </p>
                           </div>
 
@@ -169,17 +206,15 @@ class LoginPage extends React.Component {
 
                       <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
                         <div onClick={this.handleSubmit}>
-                          <LoginButton />
+                          <LoginButton background='green' label='Login'/>
 
                         </div>
 
 
 
-                          {loggingIn &&
-                              <img src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWnpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
-                          }
+
                           <Link to="/register">
-                            <RegisterButton />
+                              <RegisterButton background='#B00020' label='Registrieren'/>
                           </Link>
 
                       </div>
@@ -189,7 +224,6 @@ class LoginPage extends React.Component {
                   </form>
 
               </div>
-            </Fade>
 
 
             </div>
