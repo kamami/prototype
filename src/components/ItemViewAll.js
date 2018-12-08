@@ -71,6 +71,7 @@ class ItemViewAll extends React.Component{
 
         return (
           <div>
+
                   <Media query="(min-width: 600px)">
                         {matches =>
                           matches ? (
@@ -85,6 +86,7 @@ class ItemViewAll extends React.Component{
                     TransitionComponent={Transition}
 
                   >
+
 
                     <DialogContent>
                       <div style={{display: 'flex'}}>
@@ -265,7 +267,7 @@ class ItemViewAll extends React.Component{
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
                          </div>
-                         <div style={{display: 'inline-block', height: '22vh', width: '22vh', flex: 1, marginLeft: 40}}>
+                         <div style={{display: 'inline-block', height: '22vh', width: '22vh', flex: 1, marginLeft: 35}}>
                            {this.props.messenger !== "." &&
                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
                          <img src={require("../assets/Messenger-Icon.png")} className="iconButtonDetailsMobile" alt="Messenger"/>
@@ -303,10 +305,12 @@ class ItemViewAll extends React.Component{
                        </div>
                  </div>
                          <div>
-                           <div className="BreakWords" style={{fontSize: '2rem', marginTop: 40, fontFamily: 'Anton', width: '100%'}}>
+                           <div className="BreakWords" style={{fontSize: '2rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
                              {this.props.title}
                            </div>
-                           <div className="BreakWords" style={{fontSize: '1.3rem', marginTop: 20, paddingBottom: 20, fontWeight: 'lighter', width: '100%'}}>
+                           <div className="BreakWords"
+                             style={{fontSize: '1.3rem', marginTop: 20, paddingBottom: 20,
+                               fontWeight: 'lighter', width: '100%', textAlign: 'justify', paddingLeft: 0, paddingRight: 0}}>
                              {this.props.description}
                            </div>
                            <div>
