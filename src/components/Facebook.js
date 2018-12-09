@@ -1,7 +1,12 @@
 import React from 'react';
-import FacebookLogin from 'react-facebook-login';
+import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
 import RaisedButton from 'material-ui/RaisedButton';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { history } from '../_helpers';
+import FacebookLoginButton from '../components/FacebookLoginButton';
+import Card from '@material-ui/core/Card';
+import Button from '@material-ui/core/Button';
+import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import green from '@material-ui/core/colors/green';
 
 export default class Facebook extends React.Component{
 
@@ -25,7 +30,6 @@ this.state = {
         email: response.email,
         picture: response.picture.data.url
       })
-
   }
 
   componentClicked = () => console.log('clicked');
@@ -34,28 +38,51 @@ this.state = {
 render(){
   let fbContent;
 
+  const theme = createMuiTheme({
+  palette: {
+    primary: green,
+  },
+  typography: {
+    useNextVariants: true,
+  },
+});
+
     if (this.state.isLoggedIn) {
       fbContent = (
-        <div style={{width: 400, margin: 'auto', background: '#ffffff',
-      padding: 20}}>
-      <img src={this.state.picture} alt={this.state.name} style={{float: 'left', marginRight: 20, marginTop: 9}}/>
-      <p style={{fontSize: 20}}> Herzlich Willkommen {this.state.name}! </p>
-      <MuiThemeProvider>
-      <RaisedButton label={this.state.isLoggedIn? 'Logout' : 'Login'}
-       className="Login" backgroundColor	='#82f2da' labelColor='#ffffff'onClick={this.logout} />
-       </MuiThemeProvider>
+      <Card style={{marginTop: 100, background: '#ffffff',
+    padding: 20, width: '88%', marginLeft: 'auto', marginRight: 'auto'}}>
 
-        </div>
+      <img src={this.state.picture} alt={this.state.name} style={{float: 'left', marginRight: 20, marginTop: 9}}/>
+      <p style={{fontSize: 20, fontFamily: 'roboto'}}>{this.state.name} </p>
+        <MuiThemeProvider theme={theme}>
+
+      <Button onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#3b5998'}}>
+        {this.state.isLoggedIn? 'Logout' : 'Login'}
+      </Button>
+      </MuiThemeProvider>
+     </Card>
+
       )
 
     }else{
       fbContent = (
-        <FacebookLogin
-    appId="2196872730553081"
-    autoLoad={true}
-    fields="name,email,picture"
-    onClick={this.componentClicked}
-    callback={this.responseFacebook} />
+        <div style={{marginTop: 100}}>
+
+          <FacebookLogin
+      appId="2196872730553081"
+      autoLoad
+      fields="name,email,picture"
+      callback={this.responseFacebook}
+      render={renderProps => (
+        <div onClick={renderProps.onClick} style={{marginTop: -20}}>
+          <FacebookLoginButton background='#3b5998' label='Facebook'/>
+
+        </div>
+  )}
+    />
+
+        </div>
+
       )
     }
 

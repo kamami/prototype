@@ -1,4 +1,6 @@
 import React from 'react';
+import '../App.css';
+
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
@@ -22,7 +24,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import classNames from 'classnames';
-import '../App.css';
+import Facebook from '../components/Facebook';
+import FacebookLoginButton from '../components/FacebookLoginButton';
+import Divider from '@material-ui/core/Divider';
 
 const styles = theme => ({
   root: {
@@ -56,6 +60,14 @@ class LoginPage extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.loginFacebook = this.loginFacebook.bind(this);
+    }
+
+    loginFacebook = () => {
+      window.location.reload();
+
+      history.push('/profilepage');
+
     }
 
 
@@ -113,15 +125,20 @@ class LoginPage extends React.Component {
                   </IconButton>
                 </Link>
 
+                <Typography style={{fontFamily: 'Roboto', fontSize: 20, color: '#000'}}>
+
+              Login
+                </Typography>
+
                 </Toolbar>
               </AppBar>
 
-              <div style={{marginTop: 100 }}>
+              <div style={{marginTop: 70 }}>
                 <Fade in={true}  timeout={2000}>
 
 
                 <div  style={{display: 'flex'}}>
-    <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 50}}>
+    <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 30}}>
 
   Quest
     </Typography>
@@ -218,12 +235,25 @@ class LoginPage extends React.Component {
                           </Link>
 
                       </div>
+                      <div>
+
+                      </div>
 
 
 
                   </form>
+                  <div>
+
+                    <Divider style={{width: '80%', marginTop: '8%', marginLeft: '10%'}}/>
+
+                  </div>
+                  <div onClick={this.loginFacebook}>
+                    <FacebookLoginButton background='#3b5998' label='Facebook'/>
+
+                  </div>
 
               </div>
+
 
 
             </div>

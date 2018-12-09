@@ -108,14 +108,19 @@ class RegisterPage extends React.Component {
                   </IconButton>
                 </Link>
 
+                <Typography style={{fontFamily: 'Roboto', fontSize: 20, color: '#000'}}>
+
+              Registrieren
+                </Typography>
+
                 </Toolbar>
               </AppBar>
-              <div style={{marginTop: 100 }}>
+              <div style={{marginTop: 70 }}>
 
                 <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
-    <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 50}}>
+    <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 30}}>
 
   Quest
     </Typography>

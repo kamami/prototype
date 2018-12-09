@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import { history } from './_helpers';
 import {alertActions}   from './_actions';
 import { PrivateRoute } from './_components';
-
+import {ProfilePage} from './Pages/ProfilePage';
 
 
 
@@ -51,6 +51,7 @@ class App extends Component {
                   <Route path="/login" exact strict component={LoginPage}/>
                     <Route path="/register" exact strict component={RegisterPage}/>
                       <Route path="/profile" exact strict component={Profile}/>
+                        <Route path="/profilepage" exact strict component={ProfilePage}/>
 
 
 
