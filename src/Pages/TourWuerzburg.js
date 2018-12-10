@@ -18,6 +18,7 @@ import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
+import {Link} from 'react-router-dom';
 
 const drawerWidth = 411.2 / 2;
 
