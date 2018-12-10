@@ -138,17 +138,7 @@ function SimpleExpansionPanel(props) {
   </Link>
 
 
-  <Link to="/profile" style={{textDecoration: 'none'}}>
-<ListItem button>
-<ListItemIcon>
-<Input />
-</ListItemIcon>
-<ListItemText style={{fontSize: '0.9375rem'}}>
-
-Profil
-</ListItemText>
-</ListItem>
-</Link>
+  
 
 
         <Link to="/impressum" style={{textDecoration: 'none'}}>
