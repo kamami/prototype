@@ -227,7 +227,7 @@ class ItemViewAll extends React.Component{
 
 
               ):(
-                <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
+                <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')', boxShadow: 'none'}}>
                 <Dialog
                   open={this.state.open}
                   onClose={this.handleClose}
