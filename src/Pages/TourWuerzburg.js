@@ -83,7 +83,7 @@ const styles = theme => ({
   },
 });
 
-class Homepage extends React.Component {
+class TourWuerzburg extends React.Component {
   state = {
     open: false,
   };
@@ -128,13 +128,16 @@ class Homepage extends React.Component {
             </IconButton>
             <Fade in={true}  timeout={2000}>
 
-            <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
-<Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
+            <Link to="/" style={{textDecoration: 'none'}}>
 
-  Quest
+          <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
+            <Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
 
-</Typography>
-            </div>
+              Quest
+
+            </Typography>
+          </div>
+        </Link>
 
 </Fade>
 
@@ -194,9 +197,9 @@ transitionDelay: '0.5s',
   }
 }
 
-Homepage.propTypes = {
+TourWuerzburg.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Homepage);
+export default withStyles(styles, { withTheme: true })(TourWuerzburg);

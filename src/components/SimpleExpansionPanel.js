@@ -74,6 +74,7 @@ function SimpleExpansionPanel(props) {
                 Regensburg
             </ListItemText>
           </ListItem>
+          <Link to="/tourwuerzburg" style={{textDecoration: 'none'}}>
 
           <ListItem button style={{height: 60}}>
 
@@ -81,6 +82,7 @@ function SimpleExpansionPanel(props) {
                 Würzburg
             </ListItemText>
           </ListItem>
+        </Link>
 
 
       </List>

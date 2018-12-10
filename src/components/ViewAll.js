@@ -53,7 +53,7 @@ constructor(props){
         this.setState({ tracks: this.state.tracks.concat(tracks)});
         this.setState({page: this.state.page + 1});
 
-        if(this.state.page == 3){
+        if(this.state.page == 4){
           this.setState({hasMoreItems: false})
         }
     }).catch((err)=>{

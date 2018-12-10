@@ -1,131 +1,31 @@
 {
-  "page1": [
-    {
-      "twitter": "",
-      "kik": "",
-      "slack": "",
-      "discord": "haha",
-      "telegram": "",
-      "messenger": "https://www.facebook.com/messages/t/OilsofnatureUK",
-      "description": "Pure, Cold-Pressed Fresh 'From The Press' Castor Oil - Ideal For Hairloss and Growth! Choose your size - 100ml, 200ml, 500ml or 1 litre! If you're looking for 100% pure, cold-pressed castor oil for healing, hair growth and more - then you've made it to the right place ",
-      "body": "Buy Castor Oil",
-      "image": "https://botlist.co/media/4027/c/Oil%20of%20Nature%20Logo-medium.jpg",
-      "title": "Oils Of Nature Pure Castor Oil",
-      "id": 1
-    },
-    {
-      "kik": ".",
-      "telegram": ".",
-      "twitter": ".",
-      "slack": ".",
-      "discord": ".",
-      "messenger": "https://www.messenger.com/t/dontfeatit",
-      "description": "We challenge you to improve you health by fasting. The challenge works by setting up your fast preferences and then betting on yourself. If you complete the challenge, well done, you improved your health. If you don’t, your donation helps us provide food to kids who don’t have access to food every day. Either way you win.",
-      "image": "https://botlist.co/media/17857/c/42743635_250193639002714_5041958715473788928_n-medium.jpg",
-      "userId": 1,
-      "title": "Don't Fucking Eat It",
-      "body": "Fasting to improve your health or help feed those in need.",
-      "id": 2
-    },
-    {
-      "kik": ".",
-      "telegram": ".",
-      "twitter": ".",
-      "slack": "https://fyrebox.slack.com/",
-      "discord": ".",
-      "messenger": "https://www.messenger.com/t/fyrebox",
-      "description": "Fyrebox makes it easy to create quizzes to generate leads, educate or amuse your audience. Any quiz you create can now be played directly as a bot on Messenger or Slack. All the integrations available on Fyrebox as also available on Messenger. For instance, you can collect leads from Messenger and send them automatically to Mailchimp, Campaign Monitor, Zapier,...",
-      "image": "https://botlist.co/media/17814/c/fyrebox-medium.jpg",
-      "userId": 1,
-      "title": "Fyreboz Quiz Bot",
-      "body": "Create a quiz playable as a bot in Messenger and/or Slack",
-      "id": 3
-    }
-  ],
-  "page3": [
-    {
-      "twitter": "",
-      "kik": "",
-      "slack": "",
-      "discord": "haha",
-      "telegram": "",
-      "messenger": "https://www.facebook.com/messages/t/OilsofnatureUK",
-      "description": "Pure, Cold-Pressed Fresh 'From The Press' Castor Oil - Ideal For Hairloss and Growth! Choose your size - 100ml, 200ml, 500ml or 1 litre! If you're looking for 100% pure, cold-pressed castor oil for healing, hair growth and more - then you've made it to the right place ",
-      "body": "Buy Castor Oil",
-      "image": "https://botlist.co/media/1523/c/submission418bJHyag-medium.jpg",
-      "title": "Promo Bot",
-      "id": 1
-    },
-    {
-      "kik": ".",
-      "telegram": ".",
-      "twitter": ".",
-      "slack": ".",
-      "discord": ".",
-      "messenger": "https://www.messenger.com/t/dontfeatit",
-      "description": "We challenge you to improve you health by fasting. The challenge works by setting up your fast preferences and then betting on yourself. If you complete the challenge, well done, you improved your health. If you don’t, your donation helps us provide food to kids who don’t have access to food every day. Either way you win.",
-      "image": "https://botlist.co/media/2319/c/Golden_State_Warriors-medium.jpg",
-      "userId": 1,
-      "title": "Golden State Warrior",
-      "body": "Fasting to improve your health or help feed those in need.",
-      "id": 2
-    },
-    {
-      "kik": ".",
-      "telegram": ".",
-      "twitter": ".",
-      "slack": "https://fyrebox.slack.com/",
-      "discord": ".",
-      "messenger": "https://www.messenger.com/t/fyrebox",
-      "description": "Fyrebox makes it easy to create quizzes to generate leads, educate or amuse your audience. Any quiz you create can now be played directly as a bot on Messenger or Slack. All the integrations available on Fyrebox as also available on Messenger. For instance, you can collect leads from Messenger and send them automatically to Mailchimp, Campaign Monitor, Zapier,...",
-      "image": "https://botlist.co/media/1170/c/submission15OCFETk-medium.jpg",
-      "userId": 1,
-      "title": "Azkarbot",
-      "body": "Create a quiz playable as a bot in Messenger and/or Slack",
-      "id": 3
-    }
-  ],
-  "page2": [
-    {
-      "twitter": "",
-      "kik": "",
-      "slack": "",
-      "discord": "haha",
-      "telegram": "",
-      "messenger": "https://www.facebook.com/messages/t/OilsofnatureUK",
-      "description": "Pure, Cold-Pressed Fresh 'From The Press' Castor Oil - Ideal For Hairloss and Growth! Choose your size - 100ml, 200ml, 500ml or 1 litre! If you're looking for 100% pure, cold-pressed castor oil for healing, hair growth and more - then you've made it to the right place ",
-      "body": "Buy Castor Oil",
-      "image": "https://botlist.co/media/3967/c/submission3373opwj6B-medium.jpg",
-      "title": "Fast Company ",
-      "id": 1
-    },
-    {
-      "kik": ".",
-      "telegram": ".",
-      "twitter": ".",
-      "slack": ".",
-      "discord": ".",
-      "messenger": "https://www.messenger.com/t/dontfeatit",
-      "description": "We challenge you to improve you health by fasting. The challenge works by setting up your fast preferences and then betting on yourself. If you complete the challenge, well done, you improved your health. If you don’t, your donation helps us provide food to kids who don’t have access to food every day. Either way you win.",
-      "image": "https://botlist.co/media/3962/c/submission3265oe5G5z-medium.jpg",
-      "userId": 1,
-      "title": "Fred Whitton Challenge",
-      "body": "Fasting to improve your health or help feed those in need.",
-      "id": 2
-    },
-    {
-      "kik": ".",
-      "telegram": ".",
-      "twitter": ".",
-      "slack": "https://fyrebox.slack.com/",
-      "discord": ".",
-      "messenger": "https://www.messenger.com/t/fyrebox",
-      "description": "Fyrebox makes it easy to create quizzes to generate leads, educate or amuse your audience. Any quiz you create can now be played directly as a bot on Messenger or Slack. All the integrations available on Fyrebox as also available on Messenger. For instance, you can collect leads from Messenger and send them automatically to Mailchimp, Campaign Monitor, Zapier,...",
-      "image": "https://botlist.co/media/3866/c/Untitled%20design%20%285%29-medium.jpg",
-      "userId": 1,
-      "title": "Sweep",
-      "body": "Create a quiz playable as a bot in Messenger and/or Slack",
-      "id": 3
-    }
-  ]
-}
+
+
+       "page1": [{
+         "id": "5601e1c0-317c-4af8-9731-a1863f677e85",
+         "name": "DummyOrg"
+       },
+       {
+         "id": "5601e1c0-317c-4af8-9731-a1863f677e85",
+         "name": "DummyOrg"
+       }],
+
+       "page2": [{
+         "id": "5601e1c0-317c-4af8-9731-a1863f677e85",
+         "name": "DummyOrg"
+       },
+       {
+         "id": "5601e1c0-317c-4af8-9731-a1863f677e85",
+         "name": "DummyOrg"
+       }],
+       "page3": [{
+         "id": "5601e1c0-317c-4af8-9731-a1863f677e85",
+         "name": "DummyOrg"
+       },
+       {
+         "id": "5601e1c0-317c-4af8-9731-a1863f677e85",
+         "name": "DummyOrg"
+       }]
+
+
+   }
