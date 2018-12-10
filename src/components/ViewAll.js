@@ -36,6 +36,7 @@ constructor(props){
     mounted: true,
     tracks: [],
     hasMoreItems: true,
+    page: 2
 
   }
 
@@ -46,10 +47,15 @@ constructor(props){
 
   loadContent() {
     var requestUrl = this.props.url;
-    fetch(requestUrl).then((response)=>{
+    fetch(requestUrl + '/page' + this.state.page).then((response)=>{
         return response.json();
     }) .then((tracks)=>{
         this.setState({ tracks: this.state.tracks.concat(tracks)});
+        this.setState({page: this.state.page + 1});
+
+        if(this.state.page == 3){
+          this.setState({hasMoreItems: false})
+        }
     }).catch((err)=>{
         console.log("There has been an error");
     });
@@ -60,7 +66,7 @@ var requestUrl = this.props.url;
 
 
 
-fetch(requestUrl).then((response)=>{
+fetch(requestUrl + '/page1').then((response)=>{
     return response.json();
 }) .then((data)=>{
     this.setState({tracks : data});
