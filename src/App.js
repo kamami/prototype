@@ -51,7 +51,7 @@ class App extends Component {
                 <Route path="/browse" exact strict component={Browse}/>
                   <Route path="/login" exact strict component={LoginPage}/>
                     <Route path="/register" exact strict component={RegisterPage}/>
-                      <Route path="/profile" exact strict component={Profile}/>
+                      <PrivateRoute exact path="/profile" exact strict component={Profile}/>
                         <Route path="/profilepage" exact strict component={ProfilePage}/>
                           <Route path="/tourwuerzburg" exact strict component={TourWuerzburg}/>
 

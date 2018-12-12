@@ -17,7 +17,7 @@ class SearchButton extends React.Component{
     render() {
         return (
 
-            <div style={{padding: 8}}>
+            <div>
               <Media query="(min-width: 600px)">
                 {matches =>
                   matches ? (

@@ -15,6 +15,8 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import City from '@material-ui/icons/LocationCity';
 import Info from '@material-ui/icons/Info';
 import Input from '@material-ui/icons/Input';
+import { connect } from 'react-redux';
+import { userActions } from '../_actions';
 
 import {Link} from 'react-router-dom';
 import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
@@ -110,6 +112,7 @@ function SimpleExpansionPanel(props) {
       </ExpansionPanel>
 
       <List style={{padding: 0}}>
+
       <Link to="/homepage/" style={{textDecoration: 'none'}}>
 
         <ListItem button style={{height: 60, marginLeft: 10}}>
@@ -125,20 +128,21 @@ function SimpleExpansionPanel(props) {
 
       <List style={{bottom: '0', position: 'absolute'}}>
 
-        <Link to="/login" style={{textDecoration: 'none'}}>
-  <ListItem button>
-  <ListItemIcon>
-  <Input />
-  </ListItemIcon>
-  <ListItemText style={{fontSize: '0.9375rem'}}>
+<Link to="/login" style={{textDecoration: 'none'}}>
+<ListItem button>
+<ListItemIcon>
+<Input />
+</ListItemIcon>
+<ListItemText style={{fontSize: '0.9375rem'}}>
 
-  Login
-  </ListItemText>
-  </ListItem>
-  </Link>
+Login
+</ListItemText>
+</ListItem>
+</Link>
 
 
-  
+
+
 
 
         <Link to="/impressum" style={{textDecoration: 'none'}}>

@@ -96,7 +96,7 @@ render() {
   const loader = <div className="loader"></div>;
 
   var items = [];
-  const imageUrl = require(`../assets/City.jpg`)
+  const imageUrl = require(`../assets/Book.jpg`)
 
   tracks.filter(searchingFor(term)).map(function(title, i)
 {
@@ -142,8 +142,6 @@ render() {
 
 <div style={{backgroundImage: 'url(' + imageUrl + ')', marginBottom: 10}} className="city">
 
-
-
   <MuiThemeProvider>
 
     <TextField
@@ -163,8 +161,7 @@ render() {
 
 
      </MuiThemeProvider>
-
-        </div>
+      </div>
       </Fade>
                ) : (
                  <div style={{marginTop: 70}}>
