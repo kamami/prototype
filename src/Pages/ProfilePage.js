@@ -60,9 +60,9 @@ componentDidMount() {
 }
 
 function mapStateToProps(state) {
-    const { loggingIn } = state.authentication;
+    const { isLoggedIn } = state.authentication;
     return {
-        loggingIn
+        isLoggedIn
     };
 }
 

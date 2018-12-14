@@ -17,10 +17,9 @@ import Info from '@material-ui/icons/Info';
 import Input from '@material-ui/icons/Input';
 import { connect } from 'react-redux';
 import { userActions } from '../_actions';
-
 import {Link} from 'react-router-dom';
 import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
-
+import Facebook from '../components/Facebook';
 
 
 const styles = theme => ({
@@ -42,7 +41,6 @@ const styles = theme => ({
 
 function SimpleExpansionPanel(props) {
   const { classes } = props;
-
 
 
   const städteList = (

@@ -36,7 +36,7 @@ constructor(props){
     mounted: true,
     tracks: [],
     hasMoreItems: true,
-    page: 2
+    page: 2,
 
   }
 
@@ -65,8 +65,8 @@ componentDidMount() {
 var requestUrl = this.props.url;
 
 
-
-fetch(requestUrl + '/page1').then((response)=>{
+fetch(requestUrl + '/page1')
+    .then((response)=>{
     return response.json();
 }) .then((data)=>{
     this.setState({tracks : data});
@@ -76,6 +76,7 @@ fetch(requestUrl + '/page1').then((response)=>{
     console.log("There has been an error");
 });
 window.scrollTo(0, 0);
+
 //this.focus();
 
  }

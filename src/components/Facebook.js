@@ -7,6 +7,7 @@ import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
 import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
+import { connect } from 'react-redux';
 
 export default class Facebook extends React.Component{
 
@@ -95,3 +96,13 @@ render(){
 }
 
 }
+
+function mapStateToProps(state) {
+    const { isLoggedIn } = state.authentication;
+    return {
+        isLoggedIn
+    };
+}
+
+const connectedFacebookPage = connect(mapStateToProps)(Facebook);
+export { connectedFacebookPage as Facebook };
