@@ -39,8 +39,17 @@ const styles = theme => ({
 
 });
 
-function SimpleExpansionPanel(props) {
-  const { classes } = props;
+class SimpleExpansionPanel extends React.Component{
+
+  constructor(props) {
+        super(props)
+}
+
+
+render(){
+  const { classes } = this.props;
+  const { loggingIn } = this.props;
+  let user = JSON.parse(localStorage.getItem('user'));
 
 
   const städteList = (
@@ -125,6 +134,20 @@ function SimpleExpansionPanel(props) {
       </List>
 
       <List style={{bottom: '0', position: 'absolute'}}>
+        {user && user.token ?
+
+        <Link to="/profile" style={{textDecoration: 'none'}}>
+        <ListItem button>
+        <ListItemIcon>
+        <Input />
+        </ListItemIcon>
+        <ListItemText style={{fontSize: '0.9375rem'}}>
+
+        Profil
+        </ListItemText>
+        </ListItem>
+        </Link>
+      :
 
 <Link to="/login" style={{textDecoration: 'none'}}>
 <ListItem button>
@@ -138,7 +161,7 @@ Login
 </ListItem>
 </Link>
 
-
+}
 
 
 
@@ -163,6 +186,9 @@ Login
     </div>
   );
 }
+}
+
+
 
 SimpleExpansionPanel.propTypes = {
   classes: PropTypes.object.isRequired,

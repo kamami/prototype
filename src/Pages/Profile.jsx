@@ -21,6 +21,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import classNames from 'classnames';
+import Card from '@material-ui/core/Card';
 
 class Profile extends React.Component {
     componentDidMount() {
@@ -31,10 +32,24 @@ class Profile extends React.Component {
         return (e) => this.props.dispatch(userActions.delete(id));
     }
 
+    logout(){
+      history.push('/login');
+
+    }
+
     render() {
         const { user, users } = this.props;
+        const theme = createMuiTheme({
+        palette: {
+          primary: green,
+        },
+        typography: {
+          useNextVariants: true,
+        },
+      });
         return (
-            <div >
+          <div>
+          <div>
               <AppBar
                 position="fixed"
 
@@ -53,29 +68,26 @@ class Profile extends React.Component {
 
                 </Toolbar>
               </AppBar>
-
-                <p>You're logged in with React!!</p>
-                <h3>All registered users:</h3>
-                {users.loading && <em>Loading users...</em>}
-                {users.error && <span className="text-danger">ERROR: {users.error}</span>}
-                {users.items &&
-                    <ul>
-                        {users.items.map((user, index) =>
-                            <li key={user.id}>
-                                {user.firstName + ' ' + user.lastName}
-                                {
-                                    user.deleting ? <em> - Deleting...</em>
-                                    : user.deleteError ? <span className="text-danger"> - ERROR: {user.deleteError}</span>
-                                    : <span> - <a onClick={this.handleDeleteUser(user.id)}>Delete</a></span>
-                                }
-                            </li>
-                        )}
-                    </ul>
-                }
-                <p>
-                    <Link to="/login">Logout</Link>
-                </p>
             </div>
+              <div>
+                <Card style={{marginTop: 100, background: '#ffffff',
+              padding: 20, width: '88%', marginLeft: 'auto', marginRight: 'auto'}}>
+
+                <p style={{fontSize: 20, fontFamily: 'roboto'}}>{user.firstName} {user.lastName} </p>
+                  <MuiThemeProvider theme={theme}>
+
+                <Button  onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#B00020'}}>
+                Logout
+                </Button>
+                </MuiThemeProvider>
+
+               </Card>
+
+
+
+
+            </div>
+          </div>
         );
     }
 }

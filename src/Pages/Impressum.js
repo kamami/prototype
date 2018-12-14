@@ -29,7 +29,6 @@ import Typography from '@material-ui/core/Typography';
 
 
 
-const drawerWidth = 411.2 / 2;
 
 
 const styles = theme => ({
@@ -44,8 +43,8 @@ const styles = theme => ({
     }),
   },
   appBarShift: {
-    width: `calc(100vw - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
+    width: '50%',
+    marginLeft: '50%',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -59,11 +58,11 @@ const styles = theme => ({
     display: 'none',
   },
   drawer: {
-    width: drawerWidth,
+    width: '50%',
     flexShrink: 0,
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: '50%',
   },
   drawerHeader: {
     display: 'flex',
@@ -79,7 +78,7 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen,
     }),
-    marginLeft: -drawerWidth,
+    marginLeft: '-50%',
     padding: 0
 
   },
