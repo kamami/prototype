@@ -33,9 +33,7 @@ const tutorialSteps = [
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: '#ffffff',
-    width: '100vw'
-
+    backgroundColor: '#ffffff'
   },
 
   header: {
