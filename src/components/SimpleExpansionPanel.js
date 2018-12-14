@@ -20,6 +20,7 @@ import { userActions } from '../_actions';
 import {Link} from 'react-router-dom';
 import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
 import Facebook from '../components/Facebook';
+import Account from '@material-ui/icons/AccountCircle';
 
 
 const styles = theme => ({
@@ -139,7 +140,8 @@ render(){
         <Link to="/profile" style={{textDecoration: 'none'}}>
         <ListItem button>
         <ListItemIcon>
-        <Input />
+          <Account />
+
         </ListItemIcon>
         <ListItemText style={{fontSize: '0.9375rem'}}>
 
@@ -152,7 +154,8 @@ render(){
 <Link to="/login" style={{textDecoration: 'none'}}>
 <ListItem button>
 <ListItemIcon>
-<Input />
+  <Input />
+
 </ListItemIcon>
 <ListItemText style={{fontSize: '0.9375rem'}}>
 

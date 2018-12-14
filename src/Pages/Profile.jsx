@@ -74,6 +74,8 @@ class Profile extends React.Component {
               padding: 20, width: '88%', marginLeft: 'auto', marginRight: 'auto'}}>
 
                 <p style={{fontSize: 20, fontFamily: 'roboto'}}>{user.firstName} {user.lastName} </p>
+                  <p style={{fontSize: 20, fontFamily: 'roboto'}}>{user.credits}</p>
+
                   <MuiThemeProvider theme={theme}>
 
                 <Button  onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#B00020'}}>
@@ -82,10 +84,6 @@ class Profile extends React.Component {
                 </MuiThemeProvider>
 
                </Card>
-
-
-
-
             </div>
           </div>
         );
