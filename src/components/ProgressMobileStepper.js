@@ -32,9 +32,12 @@ const tutorialSteps = [
 
 const styles = theme => ({
   root: {
-    flexGrow: 1,
-    backgroundColor: '#ffffff'
-  },
+    backgroundColor: '#ffffff',
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    padding: 0,
+    paddingTop: 5
+    },
 
   header: {
     display: 'flex',
@@ -46,15 +49,13 @@ const styles = theme => ({
   },
 
 
-
   container: {
    display: 'flex',
-   flexWrap: 'wrap',
-
+   flexWrap: 'wrap'
  },
+
  textField: {
-   marginLeft: theme.spacing.unit,
-   marginRight: theme.spacing.unit,
+  
    width: '80%',
    marginBottom: 100,
    size: 30
@@ -62,9 +63,7 @@ const styles = theme => ({
  dense: {
    marginTop: 19,
  },
- menu: {
-   width: 200,
- },
+
 
 
 
@@ -106,7 +105,7 @@ class ProgressMobileStepper extends React.Component {
 
     return (
 
-      <div className={classes.root} style={{textAlign: 'center'}}>
+      <div className={classes.root} style={{textAlign: 'center', width: '100%'}}>
 
       <MobileStepper
       variant="progress"
@@ -165,7 +164,9 @@ class ProgressMobileStepper extends React.Component {
          </MuiThemeProvider>
     }
     {tutorialSteps[activeStep].id == 2 &&
-      <RadioButtonsGroup />
+
+        <RadioButtonsGroup />
+
     }
 
 
