@@ -211,9 +211,11 @@ render() {
        loader={loader}
        initialLoad={false}
       >
-
+      <Media query="(min-width: 375px)">
+        {matches =>
+          matches ? (
       <StackGrid
-        columnWidth={180}
+   columnWidth={180}
    gutterHeight={10}
    gutterWidth={10}
    duration={1500}
@@ -229,7 +231,31 @@ render() {
 
 
    {items}
-            </StackGrid>
+ </StackGrid> ):(
+   <StackGrid
+ columnWidth={160}
+ gutterHeight={10}
+ gutterWidth={10}
+ duration={1500}
+ monitorImagesLoaded={true}
+ easing={easings.quadInOut}
+ appear={scaleDown.appear}
+ appeared={scaleDown.appeared}
+ enter={scaleDown.enter}
+ entered={scaleDown.entered}
+ leaved={scaleDown.leaved}
+
+ >
+
+
+ {items}
+ </StackGrid>
+
+
+
+ )
+  }
+</Media>
          </InfiniteScroll>
        ) : (
 

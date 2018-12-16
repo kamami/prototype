@@ -519,12 +519,12 @@ font-family: roboto;
 
 .iconButton {
   display: inline-block !important;
-  height: 50px !important;
-  width: 50px !important;
+  height: 27% !important;
+  width: 27% !important;
   border-radius: 50% !important;
   border: 8px solid #ffffff !important;
   background-color: #ffffff;
-  margin: 5px;
+  margin: 3.15%;
   box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   box-sizing: inherit;
@@ -537,8 +537,8 @@ font-family: roboto;
 }
 
 .ItemViewAll {
-  width: 180px;
-  min-width: 180px;
+  width: 100%;
+  min-width: 150px;
   background-color: #ffffff;
   -webkit-box-flex: 1;
  -webkit-flex: 1 0 auto;

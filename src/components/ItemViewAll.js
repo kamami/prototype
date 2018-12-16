@@ -15,6 +15,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import Card from '@material-ui/core/Card';
 import AppBar from '@material-ui/core/AppBar';
 import CloseIcon from '@material-ui/icons/Close';
+import Credits from '@material-ui/icons/MonetizationOn';
+
 import Slide from '@material-ui/core/Slide';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -67,6 +69,7 @@ class ItemViewAll extends React.Component{
     render() {
 
       const { classes } = this.props;
+      let user = JSON.parse(localStorage.getItem('user'));
 
 
         return (
@@ -258,6 +261,13 @@ class ItemViewAll extends React.Component{
           <CloseIcon style={{color: '#000', fontSize: 24, marginLeft: -2}} onClick={this.handleClose}/>
           </IconButton>
 
+
+  {user && user.token &&
+            <Button variant="outlined" style={{position: 'absolute', right: 20, background: '#B00020', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
+              <Credits />
+               {user.credits}</Button>
+              }
+
         </Toolbar>
       </AppBar>
       <Fade in={true}  timeout={2000}>
@@ -339,7 +349,7 @@ class ItemViewAll extends React.Component{
                 <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}>
                   {this.props.overview}
                 </div>
-                <div style={{display: 'inline-block'}}>
+                <div >
 
                     {this.props.messenger !== "." &&
                     <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
@@ -374,7 +384,6 @@ class ItemViewAll extends React.Component{
                 }
 
             </div>
-
               </div>
 
 

@@ -16,7 +16,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import IconButton from '@material-ui/core/IconButton';
 import Logo from '../Logo.js';
 import FloatingActionButtons from '../components/FloatingActionButtons.js';
-import ProgressMobileStepper from '../components/ProgressMobileStepper.js';
+import ProgressMobileStepper from '../components/ProgressMobileStepper.jsx';
 
 const styles = {
   list: {

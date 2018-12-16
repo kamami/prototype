@@ -9,6 +9,7 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import TextField from 'material-ui/TextField';
 import RadioButtonsGroup from '../components/RadioButtonsGroup';
+import { authHeader } from '../_helpers';
 
 const tutorialSteps = [
   {
@@ -55,7 +56,7 @@ const styles = theme => ({
  },
 
  textField: {
-  
+
    width: '80%',
    marginBottom: 100,
    size: 30
@@ -76,7 +77,7 @@ class ProgressMobileStepper extends React.Component {
     nachname: '',
     age: '',
     multiline: 'Controlled',
-    currency: 'EUR'
+    currency: 'EUR',
     };
 
   handleNext = () => {
@@ -96,6 +97,22 @@ class ProgressMobileStepper extends React.Component {
     [name]: event.target.value,
   });
 };
+
+updateCredits() {
+
+  fetch('https://mighty-atoll-75521.herokuapp.com/users/5c13fd6008dd3400169867a5', {
+  method: 'put',
+  headers: {
+    ...authHeader(),
+    'Accept': 'application/json, text/plain, */*',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({credits: 1000})
+}).then(res=>res.json())
+  .then(res => console.log(res))
+
+}
+
 
 
   render() {
@@ -167,6 +184,10 @@ class ProgressMobileStepper extends React.Component {
 
         <RadioButtonsGroup />
 
+    }
+    {tutorialSteps[activeStep].id == 3 &&
+
+      <Button style={{backgroundColor: 'green', color: '#ffffff'}} onClick={this.updateCredits}> Kaufen </Button>
     }
 
 

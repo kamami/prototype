@@ -186,10 +186,10 @@ class Impressum extends React.Component {
                 <Fade in={!this.state.open} timeout={1500}>
                   <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100}}>
                     <p style={{fontSize: 40, fontFamily: 'Anton', marginBottom: 100}} >Impressum</p>
-                    <p style={{fontSize: 30}}> Martin Seubert</p>
-                    <p style={{fontSize: 30}}> Leitengraben 3</p>
-                    <p style={{fontSize: 30}}> 97084 Würzburg</p>
-                    <p style={{fontSize: 30}}> mail@martinseubert.de</p>
+                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> Martin Seubert</p>
+                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> Leitengraben 3</p>
+                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
+                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
 
                   </div>
 
@@ -204,10 +204,10 @@ class Impressum extends React.Component {
 
         <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100}}>
           <p style={{fontSize: 30, fontFamily: 'Anton', marginBottom: 70}} >Impressum</p>
-          <p style={{fontSize: 18}}> Martin Seubert</p>
-          <p style={{fontSize: 18}}> Leitengraben 3</p>
-          <p style={{fontSize: 18}}> 97084 Würzburg</p>
-          <p style={{fontSize: 18}}> mail@martinseubert.de</p>
+          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> Martin Seubert</p>
+          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> Leitengraben 3</p>
+          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
+          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
 
         </div>
       </Fade>
