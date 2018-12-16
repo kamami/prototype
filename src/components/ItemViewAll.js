@@ -71,8 +71,9 @@ class ItemViewAll extends React.Component{
  componentDidMount(){
    let user = JSON.parse(localStorage.getItem('user'));
    var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
-   var id = '5c13fd6008dd3400169867a5'
-   fetch(requestUrl + id, {
+    {user && user.token &&
+
+   fetch(requestUrl + user._id, {
      method: 'get',
      headers: {
        ...authHeader(),
@@ -84,11 +85,9 @@ class ItemViewAll extends React.Component{
    return response.json();
  }) .then((user)=>{
    this.setState({credits : user.credits});
-
-
    })
-
  }
+}
 
  updateCredits() {
    let user = JSON.parse(localStorage.getItem('user'));
