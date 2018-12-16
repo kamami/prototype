@@ -16,7 +16,7 @@ import Card from '@material-ui/core/Card';
 import AppBar from '@material-ui/core/AppBar';
 import CloseIcon from '@material-ui/icons/Close';
 import Credits from '@material-ui/icons/MonetizationOn';
-
+import { authHeader } from '../_helpers';
 import Slide from '@material-ui/core/Slide';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -47,6 +47,7 @@ class ItemViewAll extends React.Component{
 
   };
   this.toggle = this.toggle.bind(this);
+  this.updateCredits = this.updateCredits.bind(this);
 
 }
 
@@ -65,6 +66,51 @@ class ItemViewAll extends React.Component{
      dropdownOpen: !this.state.dropdownOpen
    });
  }
+
+
+ componentDidMount(){
+   let user = JSON.parse(localStorage.getItem('user'));
+   var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
+   var id = '5c13fd6008dd3400169867a5'
+   fetch(requestUrl + id, {
+     method: 'get',
+     headers: {
+       ...authHeader(),
+       'Accept': 'application/json, text/plain, */*',
+       'Content-Type': 'application/json'
+     },
+   })
+   .then((response)=>{
+   return response.json();
+ }) .then((user)=>{
+   this.setState({credits : user.credits});
+
+
+   })
+
+ }
+
+ updateCredits() {
+   let user = JSON.parse(localStorage.getItem('user'));
+   var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
+   var id = user._id
+   fetch(requestUrl + id, {
+       method: 'put',
+       headers: {
+         ...authHeader(),
+         'Accept': 'application/json, text/plain, */*',
+         'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({credits: this.state.credits - 20})
+     }) .then((user)=>{
+           this.setState({credits: this.state.credits - 20});
+           this.forceUpdate();
+
+       })
+
+ }
+
+
 
     render() {
 
@@ -265,7 +311,8 @@ class ItemViewAll extends React.Component{
   {user && user.token &&
             <Button variant="outlined" style={{position: 'absolute', right: 20, background: '#B00020', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
               <Credits />
-               {user.credits}</Button>
+               {this.state.credits}</Button>
+
               }
 
         </Toolbar>
@@ -324,7 +371,7 @@ class ItemViewAll extends React.Component{
                              {this.props.description}
                            </div>
                            <div>
-                              <DrawerBottom />
+                              <DrawerBottom updateCredits = {this.updateCredits}/>
 
                            </div>
 

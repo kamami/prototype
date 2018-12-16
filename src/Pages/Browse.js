@@ -40,17 +40,17 @@ class Browse extends React.Component{
               <header className="Header" style={{  textAlign: 'center' }}>
                 <Drawer/>
 
-                <ScrollToTop showUnder={-20} style={{
-position: 'relative',
-marginTop: 44,
-cursor: 'pointer',
-transitionDuration: '3s',
-transitionTimingFunction: 'linear',
-transitionDelay: '1s',
-marginLeft: 'auto',
-marginRight: 'auto'
-}}>
-
+                <ScrollToTop showUnder={-20}
+                      style={{
+                        position: 'relative',
+                        marginTop: 44,
+                        cursor: 'pointer',
+                        transitionDuration: '3s',
+                        transitionTimingFunction: 'linear',
+                        transitionDelay: '1s',
+                        marginLeft: 'auto',
+                        marginRight: 'auto'
+                      }}>
                 <div  onClick={this.onClick}>
                   <Logo />
 
@@ -64,20 +64,18 @@ marginRight: 'auto'
                     ):(null)
                   }
                 </Media>
-
-
-                    <ScrollToTop showUnder={80}     duration={1000}
-style={{
-    position: 'flex',
-    cursor: 'pointer',
-    transitionDuration: '1s',
-    transitionTimingFunction: 'linear',
-    transitionDelay: '0.5s'
-    }}>
-              <SearchButton />
-              </ScrollToTop>
-
-
+                    <ScrollToTop
+                        showUnder={80}
+                        duration={1000}
+                        style={{
+                            position: 'flex',
+                            cursor: 'pointer',
+                            transitionDuration: '1s',
+                            transitionTimingFunction: 'linear',
+                            transitionDelay: '0.5s'
+                            }}>
+                            <SearchButton />
+                    </ScrollToTop>
 
             <Media query="(min-width: 600px)">
               {matches =>
@@ -85,32 +83,20 @@ style={{
                   <UserProfile />
               ):(null)
             }
-          </Media>
-
-
+            </Media>
               </header>
-
-
-
-
-
 
               <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6'  /*, height: '100vh'  für scrolling beim Suchen */}}>
                 <ViewAll url='https://api.jsonbin.io/b/5bce2773716f9364f8c91a10/7' ref={(input) =>  this.textInput = input}/>
 
-
-
             </div>
-
                 <Media query="(min-width: 600px)">
                   {matches =>
                     matches ? (
                       <Footer wait={1000}/>
                   ):(null)
                 }
-              </Media>
-
-
+                </Media>
           </div>
         );
     }

@@ -34,9 +34,10 @@ module.exports = [{
     },
     externals: {
         // global app config object
-        config: JSON.stringify({
-            apiUrl: 'https://mighty-atoll-75521.herokuapp.com'
-        })
+
+  config: JSON.stringify( {
+    apiUrl: "https://mighty-atoll-75521.herokuapp.com"
+  })
     }
 
 }];

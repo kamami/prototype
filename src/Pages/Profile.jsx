@@ -22,10 +22,42 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import classNames from 'classnames';
 import Card from '@material-ui/core/Card';
+import { authHeader } from '../_helpers';
+import Credits from '@material-ui/icons/MonetizationOn';
 
 class Profile extends React.Component {
+
+  constructor(props){
+  super(props);
+  this.state = {
+      open: false,
+      dropdownOpen: false,
+
+  };
+  this.componentDidMount = this.componentDidMount.bind(this);
+
+}
+
+
     componentDidMount() {
-        this.props.dispatch(userActions.getAll());
+      let user = JSON.parse(localStorage.getItem('user'));
+      var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
+      var id = user._id
+      fetch(requestUrl + id, {
+        method: 'get',
+        headers: {
+          ...authHeader(),
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+      })
+      .then((response)=>{
+      return response.json();
+    }) .then((user)=>{
+      this.setState({credits : user.credits});
+
+
+      })
     }
 
     handleDeleteUser(id) {
@@ -66,6 +98,13 @@ class Profile extends React.Component {
                   </IconButton>
                 </Link>
 
+                {user && user.token &&
+                          <Button  variant="outlined" style={{position: 'absolute', right: 20, background: '#B00020', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
+                            <Credits />
+                             {this.state.credits}</Button>
+
+                            }
+
                 </Toolbar>
               </AppBar>
             </div>
@@ -74,7 +113,6 @@ class Profile extends React.Component {
               padding: 20, width: '88%', marginLeft: 'auto', marginRight: 'auto'}}>
 
                 <p style={{fontSize: 20, fontFamily: 'roboto'}}>{user.firstName} {user.lastName} </p>
-                  <p style={{fontSize: 20, fontFamily: 'roboto'}}>{user.credits}</p>
 
                   <MuiThemeProvider theme={theme}>
 

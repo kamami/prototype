@@ -31,12 +31,17 @@ const styles = {
 };
 
 class DrawerBottom extends React.Component {
-  state = {
+  constructor(props){
+    super(props);
 
-  bottom: false,
+    this.state = {
+
+    bottom: false,
 
 
-  };
+    };
+  }
+
 
   toggleDrawer = (side, open) => () => {
     this.setState({
@@ -52,7 +57,7 @@ class DrawerBottom extends React.Component {
    const fullList = (
      <div style={{display: 'flex', height: "52vh"}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto', width: '100%'}}>
-         <ProgressMobileStepper />
+         <ProgressMobileStepper credits={this.props.credits} updateCredits={this.props.updateCredits}/>
 
 
 
@@ -65,9 +70,9 @@ class DrawerBottom extends React.Component {
    return (
      <div>
 
+
         <div onClick={this.toggleDrawer('bottom', true)} style={{width: 100}}>
         <FloatingActionButtons />
-
         </div>
 
        <SwipeableDrawer
@@ -83,6 +88,7 @@ class DrawerBottom extends React.Component {
 
          >
            {fullList}
+
          </div>
        </SwipeableDrawer>
 

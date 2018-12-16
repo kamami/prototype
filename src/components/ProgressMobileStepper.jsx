@@ -9,7 +9,11 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import TextField from 'material-ui/TextField';
 import RadioButtonsGroup from '../components/RadioButtonsGroup';
-import { authHeader } from '../_helpers';
+import { connect } from 'react-redux';
+import { userService } from '../_services';
+import Input from '@material-ui/icons/Input';
+import {Link} from 'react-router-dom';
+import { history } from '../_helpers';
 
 const tutorialSteps = [
   {
@@ -71,7 +75,10 @@ const styles = theme => ({
 });
 
 class ProgressMobileStepper extends React.Component {
-  state = {
+
+  constructor(props){
+    super(props);
+  this.state = {
     activeStep: 0,
     vorname: '',
     nachname: '',
@@ -79,6 +86,11 @@ class ProgressMobileStepper extends React.Component {
     multiline: 'Controlled',
     currency: 'EUR',
     };
+
+
+  }
+
+
 
   handleNext = () => {
     this.setState(prevState => ({
@@ -98,20 +110,11 @@ class ProgressMobileStepper extends React.Component {
   });
 };
 
-updateCredits() {
-
-  fetch('https://mighty-atoll-75521.herokuapp.com/users/5c13fd6008dd3400169867a5', {
-  method: 'put',
-  headers: {
-    ...authHeader(),
-    'Accept': 'application/json, text/plain, */*',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({credits: 1000})
-}).then(res=>res.json())
-  .then(res => console.log(res))
-
+toLogin(){
+  history.push('/login');
 }
+
+
 
 
 
@@ -119,6 +122,7 @@ updateCredits() {
     const { classes, theme } = this.props;
     const { activeStep } = this.state;
     const maxSteps = tutorialSteps.length;
+    let user = JSON.parse(localStorage.getItem('user'));
 
     return (
 
@@ -150,8 +154,9 @@ updateCredits() {
           {tutorialSteps[activeStep].headline}
     </p>
 
+
     {tutorialSteps[activeStep].id == 1 &&
-      <MuiThemeProvider>
+      <MuiThemeProvider >
         <TextField
              hintText={tutorialSteps[activeStep].placeholder1}
              type="Text"
@@ -182,13 +187,22 @@ updateCredits() {
     }
     {tutorialSteps[activeStep].id == 2 &&
 
+
         <RadioButtonsGroup />
 
     }
     {tutorialSteps[activeStep].id == 3 &&
+      <div>
+            {user && user.token ?
+      <Button style={{backgroundColor: 'green', color: '#ffffff'}} onClick={this.props.updateCredits}> Kaufen </Button>
+      :
 
-      <Button style={{backgroundColor: 'green', color: '#ffffff'}} onClick={this.updateCredits}> Kaufen </Button>
+        <Button style={{backgroundColor: 'green', color: '#ffffff'}} onClick={this.toLogin} > Login </Button>
+
+      }
+      </div>
     }
+
 
 
 
