@@ -65,15 +65,14 @@ const styles = theme => ({
    flexWrap: 'wrap'
  },
 
- textField: {
 
-   width: '80%',
-   marginBottom: 100,
-   size: 30
- },
- dense: {
-   marginTop: 19,
- },
+ button: {
+  margin: theme.spacing.unit,
+  width: '90%',
+  color: '#ffffff',
+  backgroundColor: 'green'
+},
+
 
 
 
@@ -178,7 +177,7 @@ this.setState(prevState => ({
 
     </p>
 
-    <Button style={{backgroundColor: 'green', color: '#ffffff', fontSize: '1.3em', width: '90%', marginTop: '10%'}} onClick={this.handleNext}> Verstanden</Button>
+    <Button  className={classes.button} variant="contained" onClick={this.handleNext}> Verstanden</Button>
 
        </div>
 
@@ -214,7 +213,7 @@ Bitte logge dich ein oder eröffne ein Konto.
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
 
-        <Button style={{backgroundColor: 'green', color: '#ffffff', fontSize: '1.3em', width: '90%', marginTop: '10%'}} onClick={this.buyFinal}>
+        <Button className={classes.button} variant="contained" onClick={this.buyFinal}>
           <Key style={{marginRight: '2%'}}/>
             Key erhalten</Button>
 
@@ -233,14 +232,13 @@ Bitte logge dich ein oder eröffne ein Konto.
                 Hier ist dein Key:
                   </p>
 
-                  <div style={{  marginLeft: 'auto', marginRight: 'auto' }}>
 
                     <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
                       <div>
 
                           <CopyToClipboard text="123456789"
                             onCopy={() => this.setState({copied: true})}>
-                            <Button style={{backgroundColor: 'green', color: '#ffffff', fontSize: '1.4em', width: '90%', marginTop: '5%'}}>
+                            <Button className={classes.button} variant="contained" >
 
                                 1234-5678-9
 
@@ -249,7 +247,6 @@ Bitte logge dich ein oder eröffne ein Konto.
                           </CopyToClipboard>
                       </div>
 
-                  </div>
 
 
 
