@@ -240,7 +240,7 @@ Bitte logge dich ein oder eröffne ein Konto.
                             onCopy={() => this.setState({copied: true})}>
                             <Button className={classes.button} variant="contained" >
 
-                                1234-5678-9
+                              {this.props.code}
 
                               <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
                             </Button>

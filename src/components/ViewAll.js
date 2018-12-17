@@ -121,6 +121,7 @@ render() {
             slack={title.slack}
             kik={title.kik}
             telegram={title.telegram}
+            code={title.key}
 
               />
       </Paper>
@@ -227,8 +228,6 @@ render() {
    leaved={scaleDown.leaved}
 
   >
-
-
    {items}
  </StackGrid> ):(
    <StackGrid
