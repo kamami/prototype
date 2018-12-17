@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import Button from '@material-ui/core/Button';
 import List from '@material-ui/core/List';
@@ -54,8 +54,9 @@ class DrawerBottom extends React.Component {
 
 
 
+
    const fullList = (
-     <div style={{display: 'flex', height: "52vh"}}>
+     <div style={{display: 'flex', height: "45vh"}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto', width: '100%'}}>
          <ProgressMobileStepper credits={this.props.credits} updateCredits={this.props.updateCredits}/>
 
@@ -80,7 +81,7 @@ class DrawerBottom extends React.Component {
          open={this.state.bottom}
          onClose={this.toggleDrawer('bottom', false)}
          onOpen={this.toggleDrawer('bottom', true)}
-       >
+      >
          <div
            tabIndex={0}
            role="button"

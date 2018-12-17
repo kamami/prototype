@@ -7,17 +7,22 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import TextField from 'material-ui/TextField';
 import RadioButtonsGroup from '../components/RadioButtonsGroup';
 import { connect } from 'react-redux';
 import { userService } from '../_services';
 import Input from '@material-ui/icons/Input';
 import {Link} from 'react-router-dom';
 import { history } from '../_helpers';
+import Key from '@material-ui/icons/VpnKey';
+import FileCopy from '@material-ui/icons/FileCopy';
+
+import LoginButton from '../components/LoginButton';
+import RegisterButton from '../components/RegisterButton';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 const tutorialSteps = [
   {
-    headline: 'Wie ist dein Name?',
+    headline: 'Gute Wahl!',
     placeholder1: "Vorname",
     placeholder2: "Nachname",
     label: 'Name',
@@ -32,7 +37,8 @@ const tutorialSteps = [
     headline: 'Wie möchtest du zahlen?',
 
     id: 3
-  },
+  }
+
 ];
 
 const styles = theme => ({
@@ -41,7 +47,7 @@ const styles = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: 0,
-    paddingTop: 5
+    paddingTop: 5,
     },
 
   header: {
@@ -85,11 +91,13 @@ class ProgressMobileStepper extends React.Component {
     age: '',
     multiline: 'Controlled',
     currency: 'EUR',
-    };
+    value: '',
+      copied: false
+        };
+this.buyFinal = this.buyFinal.bind(this);
 
 
   }
-
 
 
   handleNext = () => {
@@ -115,6 +123,20 @@ toLogin(){
 }
 
 
+toRegister(){
+  history.push('/register');
+}
+
+buyFinal(){
+this.props.updateCredits();
+this.setState(prevState => ({
+  activeStep: prevState.activeStep + 1,
+}));
+
+}
+
+
+
 
 
 
@@ -123,84 +145,127 @@ toLogin(){
     const { activeStep } = this.state;
     const maxSteps = tutorialSteps.length;
     let user = JSON.parse(localStorage.getItem('user'));
+    var message = "Hello World"
 
     return (
 
-      <div className={classes.root} style={{textAlign: 'center', width: '100%'}}>
+      <div style={{textAlign: 'center', width: '100%'}}>
 
       <MobileStepper
       variant="progress"
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={this.handleNext} disabled={activeStep === maxSteps - 1} style={{outline: 'none'}}>
-            Next
-            {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={this.handleBack} disabled={activeStep === 0} style={{outline: 'none'}}>
-            {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
-            Back
-          </Button>
-        }
+
         classes={{
        root: classes.root, // class name, e.g. `classes-nesting-root-x`
      }}
       />
 
-    <p style={{fontSize: '2em', marginTop: 30, fontFamily: 'Anton'}}>
-          {tutorialSteps[activeStep].headline}
-    </p>
 
 
     {tutorialSteps[activeStep].id == 1 &&
-      <MuiThemeProvider >
-        <TextField
-             hintText={tutorialSteps[activeStep].placeholder1}
-             type="Text"
-             onChange={this.handleChange('vorname')}
-             value={this.state.vorname}
-             underlineFocusStyle={{borderColor: '#B00020',
-    borderWidth: 2}}
-             underlineStyle={{borderColor: '#B00020', borderWidth:
-    1, top: '45px'}}
-             hintStyle={{fontSize: 20, color: 'rgba(0,0,0,0.7)'}}
-             inputStyle={{fontSize: 20, color: '#000'}}
-             style={{caretColor: '#B00020', width: '90%', marginLeft: 'auto', marginRight: 'auto', marginBottom: 40, marginTop: 30 }}
-             />
-             <TextField
-                  hintText={tutorialSteps[activeStep].placeholder2}
-                  type="Text"
-                  onChange={this.handleChange('nachname')}
-                  value={this.state.nachname}
-                  underlineFocusStyle={{borderColor: '#B00020',
-         borderWidth: 2}}
-                  underlineStyle={{borderColor: '#B00020', borderWidth:
-         1, top: '45px'}}
-                  hintStyle={{fontSize: 20,  color: 'rgba(0,0,0,0.7)'}}
-                  inputStyle={{fontSize: 20,  color: '#000'}}
-                  style={{caretColor: '#B00020', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginBottom: 50 }}
-                  />
-         </MuiThemeProvider>
+
+
+
+
+      <div>
+        {user && user.token ?
+          <div>
+        <p style={{fontFamily: 'roboto', fontSize: '1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+      Um den Bot in vollem Umfang genießen zu können, benötigst du einen Key.
+      Gib deinen Key direkt im Chatfenster ein, sobald du dazu aufgefordert wirst.
+
+    </p>
+
+    <Button style={{backgroundColor: 'green', color: '#ffffff', fontSize: '1.3em', width: '90%', marginTop: '10%'}} onClick={this.handleNext}> Verstanden</Button>
+
+       </div>
+
+       :
+
+       <div>
+         <p style={{fontFamily: 'roboto', fontSize: '1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+Bitte logge dich ein oder eröffne ein Konto.
+
+     </p>
+     <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
+
+       <div onClick={this.toLogin}>
+         <LoginButton background='green' label='Login'/>
+
+       </div>
+
+
+ <div onClick={this.toRegister}>
+              <RegisterButton background='#B00020' label='Registrieren'/>
+      </div>
+     </div>
+         </div>
+         }
+       </div>
+
+
+
     }
     {tutorialSteps[activeStep].id == 2 &&
+      <div>
+    <p style={{fontFamily: 'roboto', fontSize:'1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+        Dein Guthaben wird mit 20 Credits belastet:
+    </p>
+
+        <Button style={{backgroundColor: 'green', color: '#ffffff', fontSize: '1.3em', width: '90%', marginTop: '10%'}} onClick={this.buyFinal}>
+          <Key style={{marginRight: '2%'}}/>
+            Key erhalten</Button>
 
 
-        <RadioButtonsGroup />
+
+        </div>
 
     }
+
     {tutorialSteps[activeStep].id == 3 &&
       <div>
-            {user && user.token ?
-      <Button style={{backgroundColor: 'green', color: '#ffffff'}} onClick={this.props.updateCredits}> Kaufen </Button>
-      :
+        <div>
 
-        <Button style={{backgroundColor: 'green', color: '#ffffff'}} onClick={this.toLogin} > Login </Button>
+          <p style={{fontFamily: 'Roboto', fontSize: '1.35em', color: '#B00020', fontWeight: 'bold', marginTop: '10%'}}> Danke für deine Unterstützung :)</p>
+              <p style={{fontFamily: 'roboto', fontSize: '1.3em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '7%'}}>
+                Hier ist dein Key:
+                  </p>
 
-      }
+                  <div style={{  marginLeft: 'auto', marginRight: 'auto' }}>
+
+                    <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
+                      <div>
+
+                          <CopyToClipboard text="123456789"
+                            onCopy={() => this.setState({copied: true})}>
+                            <Button style={{backgroundColor: 'green', color: '#ffffff', fontSize: '1.4em', width: '90%', marginTop: '5%'}}>
+
+                                1234-5678-9
+
+                              <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
+                            </Button>
+                          </CopyToClipboard>
+                      </div>
+
+                  </div>
+
+
+
+
+
+
+     </div>
+
+
       </div>
+      <div style={{marginTop: '5%'}}>
+        {this.state.copied ? <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', marginTop: 50}}>Erfolgreich kopiert!</span> : null}
+
+      </div>
+      </div>
+
     }
 
 

@@ -25,6 +25,7 @@ import Card from '@material-ui/core/Card';
 import { authHeader } from '../_helpers';
 import Credits from '@material-ui/icons/MonetizationOn';
 
+
 class Profile extends React.Component {
 
   constructor(props){
@@ -60,6 +61,8 @@ class Profile extends React.Component {
       })
     }
 
+
+
     handleDeleteUser(id) {
         return (e) => this.props.dispatch(userActions.delete(id));
     }
@@ -71,6 +74,8 @@ class Profile extends React.Component {
 
     render() {
         const { user, users } = this.props;
+        let fbContent;
+
         const theme = createMuiTheme({
         palette: {
           primary: green,
@@ -79,6 +84,10 @@ class Profile extends React.Component {
           useNextVariants: true,
         },
       });
+
+
+
+
         return (
           <div>
           <div>
@@ -112,7 +121,9 @@ class Profile extends React.Component {
                 <Card style={{marginTop: 100, background: '#ffffff',
               padding: 20, width: '88%', marginLeft: 'auto', marginRight: 'auto'}}>
 
+
                 <p style={{fontSize: 20, fontFamily: 'roboto'}}>{user.firstName} {user.lastName} </p>
+
 
                   <MuiThemeProvider theme={theme}>
 
@@ -122,7 +133,12 @@ class Profile extends React.Component {
                 </MuiThemeProvider>
 
                </Card>
-            </div>
+
+
+
+
+
+             </div>
           </div>
         );
     }

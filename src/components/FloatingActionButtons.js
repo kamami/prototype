@@ -4,6 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Fab from '@material-ui/core/Fab';
 import Icon from '@material-ui/core/Icon';
 import ShoppingCart from '@material-ui/icons/ShoppingCart';
+import Key from '@material-ui/icons/VpnKey';
 
 const styles = theme => ({
   fab: {
@@ -19,9 +20,9 @@ function FloatingActionButtons(props) {
   return (
     <div>
 
-      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none',  fontSize: '12pt'}}>
-        <ShoppingCart className={classes.extendedIcon} />
-          Kaufen
+      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none',  fontSize: '12pt', width: '43vw'}}>
+        <Key className={classes.extendedIcon} />
+            Key erhalten
       </Fab>
 
     </div>
