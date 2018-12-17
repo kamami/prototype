@@ -27,6 +27,8 @@ import classNames from 'classnames';
 import Facebook from '../components/Facebook';
 import FacebookLoginButton from '../components/FacebookLoginButton';
 import Divider from '@material-ui/core/Divider';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
 
 const styles = theme => ({
   root: {
@@ -252,7 +254,37 @@ class LoginPage extends React.Component {
 
                   </div>
 
+
+
               </div>
+
+              {loggingIn &&
+                <Dialog
+                  open={true}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                  fullScreen
+                  PaperProps={{
+
+
+    style: {
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+      boxShadow: 'none',
+    },
+  }}
+                >
+                <DialogContent >
+                  <div  style={{display: 'flex'}}>
+
+                  <div  class="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
+
+                  </div>
+                </div>
+                </DialogContent>
+              </Dialog>
+
+
+           }
 
 
 

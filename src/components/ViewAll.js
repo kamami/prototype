@@ -94,7 +94,7 @@ render() {
 
   const {term, data, tracks} = this.state;
 
-  const loader = <div className="loader"></div>;
+  const loader = <div className="loader2"> </div>;
 
   var items = [];
   const imageUrl = require(`../assets/Book.jpg`)
@@ -208,7 +208,6 @@ render() {
        pageStart={1}
        loadMore={this.loadContent.bind(this)}
        hasMore={this.state.hasMoreItems}
-       loader={loader}
        initialLoad={false}
       >
       <Media query="(min-width: 375px)">
@@ -261,10 +260,9 @@ render() {
 
 
      <InfiniteScroll
-       pageStart={10}
+       pageStart={1}
        loadMore={this.loadContent.bind(this)}
        hasMore={this.state.hasMoreItems}
-       loader={loader}
        initialLoad={true}
 
       >

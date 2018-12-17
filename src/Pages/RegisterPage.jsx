@@ -21,7 +21,8 @@ import { history } from '../_helpers';
 import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton';
 import CloseButton from '../components/CloseButton';
-
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
 
 const styles = theme => ({
   root: {
@@ -264,6 +265,34 @@ class RegisterPage extends React.Component {
                   </div>
                 </form>
               </div>
+              {registering &&
+                <Dialog
+                  open={true}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                  fullScreen
+                  PaperProps={{
+
+
+    style: {
+      backgroundColor: 'rgba(255, 255, 255, 0.5)',
+      boxShadow: 'none',
+    },
+  }}
+                >
+                <DialogContent >
+                  <div  style={{display: 'flex'}}>
+
+                  <div  class="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
+
+                  </div>
+                </div>
+                </DialogContent>
+              </Dialog>
+
+
+           }
+
             </div>
         );
     }
