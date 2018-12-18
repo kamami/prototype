@@ -20,7 +20,7 @@ function FloatingActionButtons(props) {
   return (
     <div>
 
-      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none',  fontSize: '12pt', width: '43vw'}}>
+      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw'}}>
         <Key className={classes.extendedIcon} />
             Key erhalten
       </Fab>

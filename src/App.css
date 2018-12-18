@@ -701,8 +701,16 @@ margin-bottom: 0.65em;
   padding-bottom: 18%;
   background-position: center;
   background-size: 100%;
+}
 
-
+.cityDesktop{
+    height: 40vh;
+    width: 100%;
+    text-align: center;
+    border-radius: 0px 0px 42px 42px;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+    background-position: center;
+    background-size: 100%;
 }
 
 .loader,
@@ -712,7 +720,7 @@ margin-bottom: 0.65em;
   height: 10em;
 }
 .loader {
-  margin: 60px auto;
+  margin: auto;
   font-size: 10px;
   position: relative;
   text-indent: -9999em;

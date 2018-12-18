@@ -166,11 +166,11 @@ render() {
       </div>
       </Fade>
                ) : (
-                 <div style={{marginTop: 70}}>
-                   <div style={{width: '80%', marginLeft: 'auto',
+                 <div>
+                   <div style={{width: '100%', marginLeft: 'auto',
     marginRight: 'auto', marginBottom: 70 }}>
 
-      <div style={{backgroundImage: 'url(' + imageUrl + ')'}} className="city">
+      <div style={{backgroundImage: 'url(' + imageUrl + ')'}} className="cityDesktop">
 
   <MuiThemeProvider>
 
@@ -180,12 +180,12 @@ render() {
                         onChange={this.searchHandler}
                         value={term}
                         fullWidth={true}
-                        underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
-                        underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '50px'}}
-                        hintStyle={{fontSize: '8.7vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
-                        inputStyle={{fontSize: '8.7vw', fontFamily: 'Anton',  color: '#ffffff'}}
+                        underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3, top: '95px' }}
+                        underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '95px' }}
+                        hintStyle={{fontSize: '4em', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
+                        inputStyle={{fontSize: '4em', fontFamily: 'Anton',  color: '#ffffff'}}
                         ref={(input) => { this.textInput = input; }}
-                        style={{caretColor: '#B00020', marginTop: 80, width: '90%'}}
+                        style={{caretColor: '#B00020', marginTop: '6%', width: '80%', height: '12vh'}}
                         />
                     </MuiThemeProvider>
                   </div>
