@@ -14,6 +14,7 @@ import {alertActions}   from './_actions';
 import { PrivateRoute } from './_components';
 import {ProfilePage} from './Pages/ProfilePage';
 import TourWuerzburg from './Pages/TourWuerzburg';
+import {KeysPage} from './Pages/KeysPage';
 
 
 
@@ -54,6 +55,7 @@ class App extends Component {
                       <PrivateRoute exact path="/profile" exact strict component={Profile}/>
                         <Route path="/profilepage" exact strict component={ProfilePage}/>
                           <Route path="/tourwuerzburg" exact strict component={TourWuerzburg}/>
+                            <Route path="/keys" exact strict component={KeysPage}/>
 
 
 

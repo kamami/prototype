@@ -14,10 +14,6 @@ import Fade from '@material-ui/core/Fade';
 
 const { scaleDown } = transitions;
 
-
-
-
-
 function searchingFor(term){
 return function(x){
 return x.title.toLowerCase().includes(term.toLowerCase()) ||
@@ -47,15 +43,17 @@ constructor(props){
 
   loadContent() {
     var requestUrl = this.props.url;
-    fetch(requestUrl + '/page' + this.state.page).then((response)=>{
+    fetch(requestUrl + this.state.page + '&_limit=3').then((response)=>{
         return response.json();
     }) .then((tracks)=>{
         this.setState({ tracks: this.state.tracks.concat(tracks)});
         this.setState({page: this.state.page + 1});
 
-        if(this.state.page == 4){
-          this.setState({hasMoreItems: false})
-        }
+        if(this.state.page === 6){
+         this.setState({hasMoreItems: false})
+       }
+
+
     }).catch((err)=>{
         console.log("There has been an error");
     });
@@ -65,7 +63,7 @@ componentDidMount() {
 var requestUrl = this.props.url;
 
 
-fetch(requestUrl + '/page1')
+fetch(requestUrl + '1&_limit=3')
     .then((response)=>{
     return response.json();
 }) .then((data)=>{

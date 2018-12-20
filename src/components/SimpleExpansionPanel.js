@@ -21,6 +21,7 @@ import {Link} from 'react-router-dom';
 import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
 import Facebook from '../components/Facebook';
 import Account from '@material-ui/icons/AccountCircle';
+import Key from '@material-ui/icons/VpnKey';
 
 
 const styles = theme => ({
@@ -135,6 +136,19 @@ render(){
       </List>
 
       <List style={{bottom: '0', position: 'absolute'}}>
+
+        <Link to="/keys" style={{textDecoration: 'none'}}>
+        <ListItem button>
+        <ListItemIcon>
+          <Key />
+        </ListItemIcon>
+        <ListItemText style={{fontSize: '0.9375rem'}}>
+
+        Keys
+        </ListItemText>
+        </ListItem>
+        </Link>
+
         {user && user.token ?
 
         <Link to="/profile" style={{textDecoration: 'none'}}>
