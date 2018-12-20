@@ -61,7 +61,7 @@ class KeysPage extends React.Component {
 
             </Toolbar>
           </AppBar>
-          <div>
+          <div style={{height: '100vh', background: '#ffffff'}}>
             <KeyList />
           </div>
           </div>

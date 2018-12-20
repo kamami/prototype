@@ -57,9 +57,7 @@ class KeyList extends React.Component {
   }
 
 
-
-
-  componentDidMount() {
+componentDidMount() {
     window.scrollTo(0, 0);
 
 
@@ -84,7 +82,6 @@ class KeyList extends React.Component {
 
 
  loadContent() {
-   this.setState({loading: true});
 
    var requestUrl = 'https://questdb.herokuapp.com/all?_page=';
    fetch(requestUrl + this.state.page + '&_limit=14').then((response)=>{
@@ -93,7 +90,6 @@ class KeyList extends React.Component {
        this.setState({ bots: this.state.bots.concat(bots)});
        this.setState({hasMoreItems: false})
        this.setState({page: this.state.page + 1});
-       this.setState({loading: false});
 
 
 
@@ -128,6 +124,8 @@ class KeyList extends React.Component {
     bots.map(function(title, i){
 
       items.push(
+        <Fade in={true}  timeout={2000}>
+
               <div>
               <ListItem button>
                 <ListItemAvatar>
@@ -148,6 +146,7 @@ class KeyList extends React.Component {
 
 
         </div>
+        </Fade>
       );
     }, this);
 
