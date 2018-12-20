@@ -60,6 +60,8 @@ constructor(props){
 }
 
 componentDidMount() {
+  window.scrollTo(0, 0);
+
 var requestUrl = this.props.url;
 
 
@@ -73,7 +75,6 @@ fetch(requestUrl + '1&_limit=3')
 .catch((err)=>{
     console.log("There has been an error");
 });
-window.scrollTo(0, 0);
 
 //this.focus();
 

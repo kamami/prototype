@@ -136,6 +136,8 @@ render(){
       </List>
 
       <List style={{bottom: '0', position: 'absolute'}}>
+        {user && user.token &&
+
 
         <Link to="/keys" style={{textDecoration: 'none'}}>
         <ListItem button>
@@ -148,6 +150,7 @@ render(){
         </ListItemText>
         </ListItem>
         </Link>
+      }
 
         {user && user.token ?
 

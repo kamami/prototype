@@ -20,7 +20,12 @@ import InfiniteScroll from 'react-infinite-scroller';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import Fade from '@material-ui/core/Fade';
-
+import Snackbar from '@material-ui/core/Snackbar';
+import CloseIcon from '@material-ui/icons/Close';
+import Button from '@material-ui/core/Button';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+import FileCopy from '@material-ui/icons/FileCopy';
+import KeyListItem from '../components/KeyListItem';
 const styles = theme => ({
   root: {
     flexGrow: 1,
@@ -51,7 +56,8 @@ class KeyList extends React.Component {
       bots: [],
       hasMoreItems: true,
       page: 2,
-      loading: true
+      loading: true,
+      open: false
 
     }
   }
@@ -91,10 +97,6 @@ componentDidMount() {
        this.setState({hasMoreItems: false})
        this.setState({page: this.state.page + 1});
 
-
-
-
-
    }).then( (page)=> {
 
      if(this.state.page === 2){
@@ -108,6 +110,22 @@ componentDidMount() {
 }
 
 
+handleClickOpen = () => {
+
+  this.setState({ open: true});
+};
+
+
+handleClose = (event, reason) => {
+  if (reason === 'clickaway') {
+    return;
+  }
+
+  this.setState({ open: false });
+};
+
+
+
 
 
 
@@ -115,7 +133,7 @@ componentDidMount() {
   render() {
     const { classes } = this.props;
     const { secondary, bots } = this.state;
-    const loader = <div className="loader2"> </div>;
+    const loader = <div className="loader"> </div>;
 
 
 
@@ -124,38 +142,14 @@ componentDidMount() {
     bots.map(function(title, i){
 
       items.push(
-        <Fade in={true}  timeout={2000}>
-
-              <div>
-              <ListItem button>
-                <ListItemAvatar>
-                  <Avatar src={title.image} />
-                </ListItemAvatar>
-                <ListItemText
-                  primary={title.title}
-                  secondary={secondary ? title.key : null}
-                />
-                <ListItemSecondaryAction>
-                  <IconButton aria-label="Delete">
-                    <CheckIcon style={{color: 'green'}} />
-                  </IconButton>
-                </ListItemSecondaryAction>
-              </ListItem>
-
-
-
-
-        </div>
-        </Fade>
+        <KeyListItem
+          image={title.image}
+          title={title.title}
+          code={title.key}
+          key={title.id}
+          />
       );
     }, this);
-
-
-
-
-
-
-
 
     return (
       <div className={classes.root}>
@@ -173,7 +167,6 @@ componentDidMount() {
                      >
 
               {items}
-
               </InfiniteScroll>
 
 
@@ -198,7 +191,7 @@ componentDidMount() {
                     <DialogContent >
                       <div  style={{display: 'flex'}}>
 
-                      <div  class="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
+                      <div  className="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
 
                       </div>
                     </div>
