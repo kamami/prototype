@@ -34,6 +34,7 @@ import FormGroup from '@material-ui/core/FormGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import CheckIcon from '@material-ui/icons/CheckCircle';
+import Cancel from '@material-ui/icons/Cancel';
 import Snackbar from '@material-ui/core/Snackbar';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import FileCopy from '@material-ui/icons/FileCopy';
@@ -79,11 +80,44 @@ class KeyListItem extends React.Component{
   super(props);
   this.state = {
       open: false,
-      dropdownOpen: false
+      dropdownOpen: false,
+      key1: ""
 
   };
 
 }
+
+componentDidMount(){
+  let user = JSON.parse(localStorage.getItem('user'));
+  var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
+
+
+  fetch(requestUrl + user._id, {
+    method: 'get',
+    headers: {
+      ...authHeader(),
+      'Accept': 'application/json, text/plain, */*',
+      'Content-Type': 'application/json'
+    },
+  })
+  .then((response)=>{
+  return response.json();
+}) .then((user)=>{
+  this.setState({key1: user.keys._1});
+  this.setState({key2: user.keys._2});
+  this.setState({key3: user.keys._3});
+
+
+  })
+
+}
+
+
+
+
+
+
+
 
 handleClickOpen = () => {
 
@@ -99,11 +133,16 @@ handleClose = () => {
 
 
     render() {
-      const { classes, theme } = this.props;
+      const { classes, theme, code } = this.props;
       const { secondary, bots } = this.state;
 
 
         return (
+          <div>
+            {this.props.code === this.state.key1 || this.props.code === this.state.key2 || this.props.code === this.state.key3 ?
+
+          <div>
+
           <Fade in={true}  timeout={2000}>
 
               <div>
@@ -117,7 +156,7 @@ handleClose = () => {
                     secondary={secondary ? this.props.key : null}
                   />
                   <ListItemSecondaryAction>
-                    <IconButton aria-label="Delete">
+                    <IconButton aria-label="Delete" onClick={this.handleClickOpen}>
                       <CheckIcon style={{color: 'green'}} />
                     </IconButton>
                   </ListItemSecondaryAction>
@@ -145,7 +184,7 @@ handleClose = () => {
                 <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
                   <div>
 
-                      <CopyToClipboard text="123456789"
+                      <CopyToClipboard text={this.props.code}
                         onCopy={() => this.setState({copied: true})}>
                         <div style={{display: 'flex'}}>
                         <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: 'green', color: '#ffffff'}}>
@@ -159,17 +198,59 @@ handleClose = () => {
                   </div>
 
                   <DialogContentText>
-                  <div>
-                    {this.state.copied ? <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold'}}>Erfolgreich kopiert!</span> : null}
+                    {this.state.copied &&
+                      <div>
 
-                  </div>
+                      <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
+
+
+                        <div style={{marginTop: '24px', paddingLeft: '5vw', paddingRight: '5vw'}}>
+                          <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+
+                            {this.props.messenger !== "." &&
+                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Messenger-Icon.png")} className="iconButtonKeys" alt="Messenger"/>
+                            </a>
+                            }
+                            {this.props.kik !== "." &&
+                            <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Kik-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+
+                            {this.props.slack !== "." &&
+                            <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Slack-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+
+                            {this.props.telegram !=="." &&
+                            <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Telegram-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+
+                            {this.props.twitter !== "." &&
+                            <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Twitter-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+                            {this.props.discord !== "." &&
+                            <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Discord-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+                          </div>
+
+
+                      </div>
+                    </div>
+                  }
+
                   </DialogContentText>
 
 
-
-
-
- </div>
+                    </div>
                 </DialogContent>
 
 
@@ -181,6 +262,134 @@ handleClose = () => {
 
           </div>
           </Fade>
+        </div>
+         :
+       <div>
+          <Fade in={true}  timeout={2000}>
+
+              <div>
+
+                <ListItem button disabled onClick={this.handleClickOpen}>
+                  <ListItemAvatar>
+                    <Avatar src={this.props.image} />
+                  </ListItemAvatar>
+                  <ListItemText
+                    primary={this.props.title}
+                    secondary={secondary ? this.props.key : null}
+                  />
+                  <ListItemSecondaryAction>
+                    <IconButton aria-label="Delete">
+                      <Cancel style={{color: 'rgba(255, 0, 0, 0.4)'}} />
+                    </IconButton>
+                  </ListItemSecondaryAction>
+                </ListItem>
+                <div>
+                <Dialog
+                  open={this.state.open}
+                  onClose={this.handleClose}
+                  aria-labelledby="alert-dialog-title"
+                  aria-describedby="alert-dialog-description"
+                  scroll={this.state.scroll}
+                  style={{overflow: 'hidden', height: 'calc(100vh + 40px)'}}
+                  PaperProps={{
+
+
+              style: {
+              backgroundColor: '#f6f6f6',
+              boxShadow: 'none',
+              width: '90%'
+              },
+              }}
+                >
+
+                <DialogContent >
+                <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
+                  <div>
+
+                      <CopyToClipboard text={this.props.code}
+
+                        onCopy={() => this.setState({copied: true})}>
+                        <div style={{display: 'flex'}}>
+                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: 'green', color: '#ffffff'}}>
+
+                          {this.props.code}
+
+                          <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
+                        </Button>
+                        </div>
+                      </CopyToClipboard>
+                  </div>
+
+                  <DialogContentText>
+                    {this.state.copied &&
+                      <div>
+
+                      <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
+
+
+                        <div style={{marginTop: '24px', paddingLeft: '5vw', paddingRight: '5vw'}}>
+                          <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+
+                            {this.props.messenger !== "." &&
+                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Messenger-Icon.png")} className="iconButtonKeys" alt="Messenger"/>
+                            </a>
+                            }
+                            {this.props.kik !== "." &&
+                            <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Kik-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+
+                            {this.props.slack !== "." &&
+                            <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Slack-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+
+                            {this.props.telegram !=="." &&
+                            <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Telegram-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+
+                            {this.props.twitter !== "." &&
+                            <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Twitter-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+                            {this.props.discord !== "." &&
+                            <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
+                            <img src={require("../assets/Discord-Icon.png")} className="iconButtonKeys"/>
+                            </a>
+                            }
+                          </div>
+
+
+                      </div>
+                    </div>
+                  }
+
+                  </DialogContentText>
+
+
+                    </div>
+                </DialogContent>
+
+
+
+                </Dialog>
+                </div>
+
+
+
+          </div>
+          </Fade>
+        </div>
+
+
+        }
+      </div>
 
 
         );

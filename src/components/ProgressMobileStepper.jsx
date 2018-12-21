@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import RadioButtonsGroup from '../components/RadioButtonsGroup';
 import { connect } from 'react-redux';
 import { userService } from '../_services';
 import Input from '@material-ui/icons/Input';
@@ -245,7 +244,9 @@ Bitte logge dich ein oder eröffne ein Konto.
                               <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
                             </Button>
                           </CopyToClipboard>
+
                       </div>
+
 
 
 
@@ -256,7 +257,11 @@ Bitte logge dich ein oder eröffne ein Konto.
      </div>
 
 
+
       </div>
+      <p style={{fontFamily:'roboto', color: 'grey'}}>
+        (Klicken um den Key zu kopieren)
+      </p>
       <div style={{marginTop: '5%'}}>
         {this.state.copied ? <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', marginTop: 50}}>Erfolgreich kopiert!</span> : null}
 

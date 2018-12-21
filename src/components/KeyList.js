@@ -143,10 +143,19 @@ handleClose = (event, reason) => {
 
       items.push(
         <KeyListItem
-          image={title.image}
-          title={title.title}
-          code={title.key}
           key={title.id}
+          title={title.title}
+          score={title.vote_average}
+          overview={title.body}
+          image={title.image}
+          description={title.description}
+          messenger={title.messenger}
+          twitter={title.twitter}
+          discord={title.discord}
+          slack={title.slack}
+          kik={title.kik}
+          telegram={title.telegram}
+          code={title.key}
           />
       );
     }, this);
