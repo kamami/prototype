@@ -358,7 +358,7 @@ class ItemViewAll extends React.Component{
                              {this.props.description}
                            </div>
                            <div>
-                              <DrawerBottom updateCredits = {this.updateCredits} code={this.props.code}/>
+                              <DrawerBottom updateCredits = {this.updateCredits} code={this.props.code} matchId={this.props.matchId}/>
 
 
                            </div>

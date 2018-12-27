@@ -10,6 +10,7 @@ import button from 'reactstrap';
 import Media from "react-media";
 import InfiniteScroll from 'react-infinite-scroller';
 import Fade from '@material-ui/core/Fade';
+import Typing from 'react-typing-animation';
 
 
 const { scaleDown } = transitions;
@@ -91,6 +92,15 @@ fetch(requestUrl + '1&_limit=3')
 
 render() {
 
+  const AnimatedTypingComponent = () => (
+        <Typing>
+            <div>
+                <Typing.Delay ms={1000} />
+                Welcher Bot darf es sein?
+            </div>
+        </Typing>
+        );
+
   const {term, data, tracks} = this.state;
 
   const loader = <div className="loader2"> </div>;
@@ -121,6 +131,7 @@ render() {
             kik={title.kik}
             telegram={title.telegram}
             code={title.key}
+            matchId={title.matchId}
 
               />
       </Paper>
@@ -128,6 +139,8 @@ render() {
       </div>
     );
   }, this);
+
+
 
     return (
       <div>
@@ -146,15 +159,37 @@ render() {
   <MuiThemeProvider>
 
     <TextField
-         hintText={this.props.drawerOpen === false ? 'Welcher Bot darf es sein?' : 'Bot suchen...'}
+         hintText={this.props.drawerOpen === false ?
+
+    <Typing startDelay={1500} speed={20}>
+        <span>
+          Welcher Bot darf es sein?
+        </span>
+        <Typing.Backspace count={26} delay={1000} speed={20}/>
+          <span>
+            Stadtführungen?
+          </span>
+          <Typing.Backspace count={16} delay={1000} speed={20}/>
+            <span>
+              Blackstories?
+            </span>
+            <Typing.Backspace count={14} delay={1000} speed={20}/>
+              <span>
+                Welcher Bot darf es sein?
+              </span>
+    </Typing>
+
+    : 'Bot suchen...'}
+
+
 
          type="Text"
          onChange={this.searchHandler}
          value={term}
          underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
          underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '45px'}}
-         hintStyle={{fontSize: '8.7vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
-         inputStyle={{fontSize: '8.7vw', fontFamily: 'Anton', color: '#ffffff'}}
+         hintStyle={{fontSize: '8.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
+         inputStyle={{fontSize: '8.5vw', fontFamily: 'Anton', color: '#ffffff'}}
          ref={(input) => { this.textInput = input; }}
          style={{caretColor: '#B00020', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '12%' }}
          InputLabelProps={{ shrink: true }}

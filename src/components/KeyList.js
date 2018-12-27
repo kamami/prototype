@@ -156,6 +156,7 @@ handleClose = (event, reason) => {
           kik={title.kik}
           telegram={title.telegram}
           code={title.key}
+          matchId={title.matchId}
           />
       );
     }, this);

@@ -58,7 +58,7 @@ class DrawerBottom extends React.Component {
    const fullList = (
      <div style={{display: 'flex', height: "45vh"}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto', width: '100%'}}>
-         <ProgressMobileStepper credits={this.props.credits} updateCredits={this.props.updateCredits} code={this.props.code}/>
+         <ProgressMobileStepper credits={this.props.credits} matchId={this.props.matchId} updateCredits={this.props.updateCredits} code={this.props.code}/>
 
 
 

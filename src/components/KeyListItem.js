@@ -100,23 +100,29 @@ componentDidMount(){
       'Content-Type': 'application/json'
     },
   })
-  .then((response)=>{
-  return response.json();
-}) .then((user)=>{
-  this.setState({key1: user.keys._1});
-  this.setState({key2: user.keys._2});
-  this.setState({key3: user.keys._3});
+.then((user)=>{
+  this.setState({key1: user._1});
+  this.setState({key2: user._2});
+  this.setState({key3: user._3});
+  this.setState({key4: user._4});
+  this.setState({key5: user._5});
+  this.setState({key6: user._6});
+  this.setState({key7: user._7});
+  this.setState({key8: user._8});
+  this.setState({key9: user._9});
+  this.setState({key10: user._10});
+  this.setState({key11: user._11});
+  this.setState({key12: user._12});
+  this.setState({key13: user._13});
+  this.setState({key14: user._14});
+  this.setState({key15: user._15});
+  this.setState({key16: user._16});
+
 
 
   })
 
 }
-
-
-
-
-
-
 
 
 handleClickOpen = () => {
@@ -133,13 +139,14 @@ handleClose = () => {
 
 
     render() {
-      const { classes, theme, code } = this.props;
-      const { secondary, bots } = this.state;
+      const { classes, theme, code} = this.props;
+      const { secondary, bots, user } = this.state;
 
 
         return (
           <div>
-            {this.props.code === this.state.key1 || this.props.code === this.state.key2 || this.props.code === this.state.key3 ?
+
+              {this.state.key1 === this.props.code ?
 
           <div>
 
@@ -161,6 +168,7 @@ handleClose = () => {
                     </IconButton>
                   </ListItemSecondaryAction>
                 </ListItem>
+
                 <div>
                 <Dialog
                   open={this.state.open}
@@ -170,7 +178,6 @@ handleClose = () => {
                   scroll={this.state.scroll}
                   style={{overflow: 'hidden', height: 'calc(100vh + 40px)'}}
                   PaperProps={{
-
 
               style: {
               backgroundColor: '#f6f6f6',
@@ -263,132 +270,133 @@ handleClose = () => {
           </div>
           </Fade>
         </div>
-         :
-       <div>
-          <Fade in={true}  timeout={2000}>
+        :
+        <div>
+
+        <Fade in={true}  timeout={2000}>
+
+            <div>
+
+              <ListItem button onClick={this.handleClickOpen}>
+                <ListItemAvatar>
+                  <Avatar src={this.props.image} />
+                </ListItemAvatar>
+                <ListItemText
+                  primary={this.props.title}
+                  secondary={secondary ? this.props.key : null}
+                />
+                <ListItemSecondaryAction>
+                  <IconButton aria-label="Delete" onClick={this.handleClickOpen}>
+                    <CheckIcon style={{color: 'green'}} />
+                  </IconButton>
+                </ListItemSecondaryAction>
+              </ListItem>
 
               <div>
+              <Dialog
+                open={this.state.open}
+                onClose={this.handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+                scroll={this.state.scroll}
+                style={{overflow: 'hidden', height: 'calc(100vh + 40px)'}}
+                PaperProps={{
 
-                <ListItem button disabled onClick={this.handleClickOpen}>
-                  <ListItemAvatar>
-                    <Avatar src={this.props.image} />
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={this.props.title}
-                    secondary={secondary ? this.props.key : null}
-                  />
-                  <ListItemSecondaryAction>
-                    <IconButton aria-label="Delete">
-                      <Cancel style={{color: 'rgba(255, 0, 0, 0.4)'}} />
-                    </IconButton>
-                  </ListItemSecondaryAction>
-                </ListItem>
+
+            style: {
+            backgroundColor: '#f6f6f6',
+            boxShadow: 'none',
+            width: '90%'
+            },
+            }}
+              >
+
+              <DialogContent >
+              <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
                 <div>
-                <Dialog
-                  open={this.state.open}
-                  onClose={this.handleClose}
-                  aria-labelledby="alert-dialog-title"
-                  aria-describedby="alert-dialog-description"
-                  scroll={this.state.scroll}
-                  style={{overflow: 'hidden', height: 'calc(100vh + 40px)'}}
-                  PaperProps={{
 
+                    <CopyToClipboard text={this.props.code}
+                      onCopy={() => this.setState({copied: true})}>
+                      <div style={{display: 'flex'}}>
+                      <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: 'green', color: '#ffffff'}}>
 
-              style: {
-              backgroundColor: '#f6f6f6',
-              boxShadow: 'none',
-              width: '90%'
-              },
-              }}
-                >
+                        {this.props.code}
 
-                <DialogContent >
-                <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
-                  <div>
-
-                      <CopyToClipboard text={this.props.code}
-
-                        onCopy={() => this.setState({copied: true})}>
-                        <div style={{display: 'flex'}}>
-                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: 'green', color: '#ffffff'}}>
-
-                          {this.props.code}
-
-                          <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
-                        </Button>
-                        </div>
-                      </CopyToClipboard>
-                  </div>
-
-                  <DialogContentText>
-                    {this.state.copied &&
-                      <div>
-
-                      <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
-
-
-                        <div style={{marginTop: '24px', paddingLeft: '5vw', paddingRight: '5vw'}}>
-                          <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
-
-                            {this.props.messenger !== "." &&
-                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Messenger-Icon.png")} className="iconButtonKeys" alt="Messenger"/>
-                            </a>
-                            }
-                            {this.props.kik !== "." &&
-                            <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Kik-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-
-                            {this.props.slack !== "." &&
-                            <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Slack-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-
-                            {this.props.telegram !=="." &&
-                            <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Telegram-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-
-                            {this.props.twitter !== "." &&
-                            <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Twitter-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-                            {this.props.discord !== "." &&
-                            <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Discord-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-                          </div>
-
-
+                        <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
+                      </Button>
                       </div>
-                    </div>
-                  }
-
-                  </DialogContentText>
-
-
-                    </div>
-                </DialogContent>
-
-
-
-                </Dialog>
+                    </CopyToClipboard>
                 </div>
 
+                <DialogContentText>
+                  {this.state.copied &&
+                    <div>
+
+                    <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
 
 
-          </div>
-          </Fade>
+                      <div style={{marginTop: '24px', paddingLeft: '5vw', paddingRight: '5vw'}}>
+                        <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+
+                          {this.props.messenger !== "." &&
+                          <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                          <img src={require("../assets/Messenger-Icon.png")} className="iconButtonKeys" alt="Messenger"/>
+                          </a>
+                          }
+                          {this.props.kik !== "." &&
+                          <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
+                          <img src={require("../assets/Kik-Icon.png")} className="iconButtonKeys"/>
+                          </a>
+                          }
+
+                          {this.props.slack !== "." &&
+                          <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
+                          <img src={require("../assets/Slack-Icon.png")} className="iconButtonKeys"/>
+                          </a>
+                          }
+
+                          {this.props.telegram !=="." &&
+                          <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
+                          <img src={require("../assets/Telegram-Icon.png")} className="iconButtonKeys"/>
+                          </a>
+                          }
+
+                          {this.props.twitter !== "." &&
+                          <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
+                          <img src={require("../assets/Twitter-Icon.png")} className="iconButtonKeys"/>
+                          </a>
+                          }
+                          {this.props.discord !== "." &&
+                          <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
+                          <img src={require("../assets/Discord-Icon.png")} className="iconButtonKeys"/>
+                          </a>
+                          }
+                        </div>
+
+
+                    </div>
+                  </div>
+                }
+
+                </DialogContentText>
+
+
+                  </div>
+              </DialogContent>
+
+
+
+              </Dialog>
+              </div>
+
+
+
         </div>
+        </Fade>
+      </div>
 
+      }
 
-        }
       </div>
 
 
