@@ -808,6 +808,9 @@ margin-bottom: 0.65em;
   box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 
+}
 
-
+.cursor{
+  background-color: #ffffff !important;
+  color: red;
 }

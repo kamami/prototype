@@ -10,7 +10,7 @@ import button from 'reactstrap';
 import Media from "react-media";
 import InfiniteScroll from 'react-infinite-scroller';
 import Fade from '@material-ui/core/Fade';
-import Typing from 'react-typing-animation';
+import Typed from 'react-typed';
 
 
 const { scaleDown } = transitions;
@@ -53,8 +53,6 @@ constructor(props){
         if(this.state.page === 6){
          this.setState({hasMoreItems: false})
        }
-
-
     }).catch((err)=>{
         console.log("There has been an error");
     });
@@ -64,8 +62,6 @@ componentDidMount() {
   window.scrollTo(0, 0);
 
 var requestUrl = this.props.url;
-
-
 fetch(requestUrl + '1&_limit=3')
     .then((response)=>{
     return response.json();
@@ -90,16 +86,11 @@ fetch(requestUrl + '1&_limit=3')
    this.textInput.focus();
  }
 
+
+
 render() {
 
-  const AnimatedTypingComponent = () => (
-        <Typing>
-            <div>
-                <Typing.Delay ms={1000} />
-                Welcher Bot darf es sein?
-            </div>
-        </Typing>
-        );
+
 
   const {term, data, tracks} = this.state;
 
@@ -158,27 +149,18 @@ render() {
 
   <MuiThemeProvider>
 
-    <TextField
-         hintText={this.props.drawerOpen === false ?
+    <TextField hintText={this.props.drawerOpen === false ?
 
-    <Typing startDelay={1500} speed={20}>
-        <span>
-          Welcher Bot darf es sein?
-        </span>
-        <Typing.Backspace count={26} delay={1000} speed={20}/>
-          <span>
-            Stadtführungen?
-          </span>
-          <Typing.Backspace count={16} delay={1000} speed={20}/>
-            <span>
-              Blackstories?
-            </span>
-            <Typing.Backspace count={14} delay={1000} speed={20}/>
-              <span>
-                Welcher Bot darf es sein?
-              </span>
-    </Typing>
-
+      <Typed
+                 strings={[
+                     'Welcher Bot darf es sein?',
+                     'Stadtführungen?',
+                     'Blackstories?',
+                   'Suche hier deine Quest!']}
+                     typeSpeed={70}
+                     backSpeed={90}
+                     loop >
+                 </Typed>
     : 'Bot suchen...'}
 
 
@@ -191,7 +173,7 @@ render() {
          hintStyle={{fontSize: '8.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
          inputStyle={{fontSize: '8.5vw', fontFamily: 'Anton', color: '#ffffff'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#B00020', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '12%' }}
+         style={{caretColor: '#ffffff', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '12%' }}
          InputLabelProps={{ shrink: true }}
          />
 

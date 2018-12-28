@@ -311,6 +311,9 @@ class ItemViewAll extends React.Component{
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
                          </div>
+
+
+
                          <div style={{display: 'inline-block', height: '22vh', width: '22vh', flex: 1, marginLeft: 35}}>
                            {this.props.messenger !== "." &&
                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
@@ -365,6 +368,7 @@ class ItemViewAll extends React.Component{
 
 
                        </div>
+
                   </DialogContent>
                 </Fade>
 
@@ -418,7 +422,10 @@ class ItemViewAll extends React.Component{
                   </a>
                 }
 
+
+
             </div>
+
               </div>
 
 

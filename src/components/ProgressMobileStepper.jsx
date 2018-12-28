@@ -91,17 +91,14 @@ class ProgressMobileStepper extends React.Component {
     multiline: 'Controlled',
     currency: 'EUR',
     value: '',
-    copied: false,
-    keys: ''
+    copied: false
         };
 this.buyFinal = this.buyFinal.bind(this);
 this.updateKeys = this.updateKeys.bind(this);
 
   }
 
-  componentDidMount(user){
-    this.setState({matchId: 'keys.' + this.props.matchId})
-  }
+
 
 
   handleNext = () => {
@@ -141,19 +138,20 @@ this.updateKeys();
 
 }
 
+
 updateKeys() {
-let user = JSON.parse(localStorage.getItem('user'));
-var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
-var id = user._id
-fetch(requestUrl + id, {
-  method: 'put',
-  headers: {
-    ...authHeader(),
-    'Accept': 'application/json, text/plain, */*',
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify({_1:  this.props.code})
-})
+  let user = JSON.parse(localStorage.getItem('user'));
+  var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
+  var id = user._id
+  fetch(requestUrl + id, {
+      method: 'put',
+      headers: {
+        ...authHeader(),
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({[this.props.matchId]: this.props.code})
+    })
 }
 
   render() {
