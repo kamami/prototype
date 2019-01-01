@@ -121,7 +121,7 @@ class RegisterPage extends React.Component {
                 <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
-    <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 30}}>
+                  <Typography style={{fontFamily: 'Devonshire', fontSize: 90, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}}>
 
   Genkō
     </Typography>

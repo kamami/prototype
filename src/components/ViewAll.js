@@ -11,6 +11,7 @@ import Media from "react-media";
 import InfiniteScroll from 'react-infinite-scroller';
 import Fade from '@material-ui/core/Fade';
 import Typed from 'react-typed';
+import SearchIcon from '@material-ui/icons/Search';
 
 
 const { scaleDown } = transitions;
@@ -150,10 +151,12 @@ render() {
   <MuiThemeProvider>
 
     <TextField hintText={this.props.drawerOpen === false ?
+<div>
+  <SearchIcon style={{fontSize: '10vw', color: 'rgba(255,255,255,0.9)', marginBottom: -5}}/>
 
       <Typed
                  strings={[
-                     'Welcher Bot darf es sein?',
+                     'Welchen Bot suchst du?',
                      'Stadtführungen?',
                      'Blackstories?',
                    'Suche hier deine Quest!']}
@@ -161,6 +164,7 @@ render() {
                      backSpeed={90}
                      loop >
                  </Typed>
+</div>
     : 'Bot suchen...'}
 
 
@@ -170,8 +174,8 @@ render() {
          value={term}
          underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
          underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '45px'}}
-         hintStyle={{fontSize: '8.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
-         inputStyle={{fontSize: '8.5vw', fontFamily: 'Anton', color: '#ffffff'}}
+         hintStyle={{fontSize: '8.1vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
+         inputStyle={{fontSize: '8.1vw', fontFamily: 'Anton', color: '#ffffff'}}
          ref={(input) => { this.textInput = input; }}
          style={{caretColor: '#ffffff', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '12%' }}
          InputLabelProps={{ shrink: true }}

@@ -137,7 +137,7 @@ class Impressum extends React.Component {
               <Link to="/" style={{textDecoration: 'none'}}>
 
             <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
-              <Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
+              <Typography style={{fontFamily: 'Devonshire', fontSize: 40, color: '#B00020'}}>
 
                 Genkō
 

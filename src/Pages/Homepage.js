@@ -129,7 +129,7 @@ class Homepage extends React.Component {
             <Fade in={true}  timeout={2000}>
 
             <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
-<Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
+<Typography style={{fontFamily: 'Devonshire', fontSize: 40, color: '#B00020'}}>
 
   Genkō
 </Typography>
