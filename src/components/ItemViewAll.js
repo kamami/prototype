@@ -369,6 +369,8 @@ class ItemViewAll extends React.Component{
 
                        </div>
 
+                    
+
                   </DialogContent>
                 </Fade>
 

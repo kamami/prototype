@@ -9,6 +9,7 @@ import KeyboardVoiceICon from '@material-ui/icons/KeyboardVoice';
 import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 import Key from '@material-ui/icons/VpnKey';
+import Media from "react-media";
 
 const styles = theme => ({
   button: {
@@ -18,11 +19,25 @@ const styles = theme => ({
     position: 'absolute',
     right: '10%'
   },
+  buttonsmall: {
+    marginLeft: '10%',
+    marginTop: 50,
+    color: '#ffffff',
+    position: 'absolute',
+    right: '10%',
+    fontSize: '0.6em'
+  },
+
+
   leftIcon: {
     marginRight: theme.spacing.unit,
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
+  },
+  rightIconSmall: {
+    marginLeft: theme.spacing.unit,
+    fontSize: '1.2em'
   },
   iconSmall: {
     fontSize: 20,
@@ -43,11 +58,21 @@ class RegisterButton extends React.Component{
 
   return (
     <div>
-      <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}} >
+      <Media query="(max-width: 376px)">
+            {matches =>
+              matches ? (
+      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}} >
       {this.props.label}
-        <Key className={classes.rightIcon} />
+        <Key className={classes.rightIconSmall} />
       </Button>
+):(
 
+  <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}} >
+  {this.props.label}
+    <Key className={classes.rightIcon} />
+  </Button>
+)}
+</Media>
     </div>
   );
 }

@@ -99,7 +99,7 @@ class RegisterPage extends React.Component {
               >
                 <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
       }}>
-      <Link to="/">
+      <Link to="/login">
 
                   <IconButton
 
@@ -123,7 +123,7 @@ class RegisterPage extends React.Component {
                 <div  style={{display: 'flex'}}>
     <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 30}}>
 
-  Quest
+  Genkō
     </Typography>
                 </div>
               </Fade>

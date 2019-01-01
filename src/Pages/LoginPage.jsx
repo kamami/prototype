@@ -142,7 +142,7 @@ class LoginPage extends React.Component {
                 <div  style={{display: 'flex'}}>
     <Typography style={{fontFamily: 'Lobster', fontSize: 70, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 30}}>
 
-  Quest
+  Genkō
     </Typography>
                 </div>
 

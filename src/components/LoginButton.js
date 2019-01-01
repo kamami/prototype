@@ -10,18 +10,31 @@ import Icon from '@material-ui/core/Icon';
 import SaveIcon from '@material-ui/icons/Save';
 import Input from '@material-ui/icons/Input';
 import green from '@material-ui/core/colors/green';
+import Media from "react-media";
 
 
 const styles = theme => ({
   button: {
     marginTop: 50,
     color: '#ffffff'
+
+  },
+  buttonsmall:{
+    marginTop: 50,
+    color: '#ffffff',
+    fontSize: '0.7em',
+    marginBottom: 50
+
   },
   leftIcon: {
     marginRight: theme.spacing.unit,
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
+  },
+  rightIconSmall: {
+    marginLeft: theme.spacing.unit,
+    fontSize: '1.3em'
   },
   iconSmall: {
     fontSize: 20,
@@ -41,12 +54,21 @@ class LoginButton extends React.Component{
   return (
     <div>
 
-
+      <Media query="(max-width: 376px)">
+            {matches =>
+              matches ? (
+      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}}>
+    {this.props.label}
+        <Input className={classes.rightIconSmall} />
+      </Button>
+    ) :(
       <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}}>
-    {this.props.label}  
+    {this.props.label}
         <Input className={classes.rightIcon} />
       </Button>
 
+    ) }
+        </Media>
     </div>
   );
 }

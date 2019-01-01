@@ -27,6 +27,7 @@
     "primereact": "^2.0.0-beta.9",
     "react": "^16.6.3",
     "react-bootstrap": "^0.32.4",
+    "react-bot-ui": "^2.0.0",
     "react-clipboard.js": "^2.0.2",
     "react-copy-to-clipboard": "^5.0.1",
     "react-credit-cards": "^0.7.0",

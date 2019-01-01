@@ -139,7 +139,7 @@ class Impressum extends React.Component {
             <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
               <Typography style={{fontFamily: 'Lobster', fontSize: 36, color: '#B00020'}}>
 
-                Quest
+                Genkō
 
               </Typography>
             </div>
