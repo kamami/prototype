@@ -359,7 +359,7 @@ class ItemViewAll extends React.Component{
                        </div>
                  </div>
                          <div>
-                           <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
+                           <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
                              {this.props.title}
                            </div>
                            <div className="BreakWords"
