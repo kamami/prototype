@@ -310,7 +310,14 @@ class ItemViewAll extends React.Component{
                     <div style={{marginTop: 180, display: 'inline-block', display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
+                           <div style={{display: 'flex'}}>
+                             <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
+
+                             <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
+
+                           </div>
                          </div>
+
 
 
 
@@ -369,7 +376,7 @@ class ItemViewAll extends React.Component{
 
                        </div>
 
-                    
+
 
                   </DialogContent>
                 </Fade>
