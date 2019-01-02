@@ -161,17 +161,17 @@ class Impressum extends React.Component {
         </AppBar>
         {this.state.open === true &&
 
-        <div style={{textAlign: 'right', width: '100%', right: 20, position: 'absolute'}}>
+        <div style={{textAlign: 'right', width: '100%', right: 10, position: 'absolute'}}>
           <Media query="(max-width: 376px)">
                 {matches =>
                   matches ? (
             <Fade in={!this.props.open} timeout={1500}>
-              <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100, color: '#000'}}>
-                <p style={{fontSize: 20, fontFamily: 'Anton', marginBottom: 50}} >Impressum</p>
-                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> Martin Seubert</p>
-                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> Leitengraben 3</p>
-                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
-                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
+              <div style={{marginTop: 66}}>
+                <p style={{fontSize: 20, fontFamily: 'Anton', marginBottom: 20}} >Impressum</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> Martin Seubert</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> Leitengraben 3</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> 97084 Würzburg</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> mail@martinseubert.de</p>
 
               </div>
 
@@ -180,12 +180,12 @@ class Impressum extends React.Component {
 ) : (
 
   <Fade in={!this.props.open} timeout={1500}>
-    <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100, color: '#000'}}>
-      <p style={{fontSize: 25, fontFamily: 'Anton', marginBottom: 50}} >Impressum</p>
-      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> Martin Seubert</p>
-      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> Leitengraben 3</p>
-      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
-      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
+    <div style={{marginTop: 66}}>
+      <p style={{fontSize: 25, fontFamily: 'Anton', marginBottom: 20}} >Impressum</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> Martin Seubert</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> Leitengraben 3</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> 97084 Würzburg</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> mail@martinseubert.de</p>
 
     </div>
 

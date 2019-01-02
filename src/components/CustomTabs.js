@@ -163,12 +163,7 @@ class CustomTabs extends React.Component {
 
               </div>
 
-
             </Fade>
-
-
-
-
 
         </div>
 
