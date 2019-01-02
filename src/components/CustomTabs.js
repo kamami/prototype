@@ -231,7 +231,7 @@ To determine whether any of the third party services it uses honor the “Do Not
                   </p>
                   <p style={{fontSize: 22, fontFamily: 'Roboto', fontWeight: 'bold'}}> Changes to this privacy policy
  </p>
-                  <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 150}}> The Data Controller reserves the right to make changes to this privacy policy at any time by giving notice to its Users on this page. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom. If a User objects to any of the changes to the Policy, the User must cease using this Application and can request that the Data Controller remove the Personal Data.
+                  <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 200}}> The Data Controller reserves the right to make changes to this privacy policy at any time by giving notice to its Users on this page. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom. If a User objects to any of the changes to the Policy, the User must cease using this Application and can request that the Data Controller remove the Personal Data.
                   Unless stated otherwise, the then-current privacy policy applies to all Personal Data the Data Controller has about Users.
 
 
