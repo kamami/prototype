@@ -7,7 +7,6 @@ import Typography from '@material-ui/core/Typography';
 import SwipeableViews from 'react-swipeable-views';
 import Fade from '@material-ui/core/Fade';
 import Media from "react-media";
-import Footer from '../components/Footer';
 
 function TabContainer({ children, dir }) {
   return (
@@ -184,13 +183,6 @@ class CustomTabs extends React.Component {
 
   }
 
-                        <Media query="(min-width: 600px)">
-                          {matches =>
-                            matches ? (
-                              <Footer wait={1000}/>
-                          ):(null)
-                        }
-                      </Media>
         </div>
 
         </TabContainer>

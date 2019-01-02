@@ -17,7 +17,6 @@ import ScrollToTop from 'react-scroll-up';
 import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Media from "react-media";
-import Footer from '../components/Footer';
 import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import Fade from '@material-ui/core/Fade';
