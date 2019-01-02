@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -24,7 +22,7 @@ import {Link} from 'react-router-dom';
 import FadeIn from 'react-fade-in';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
-
+import CustomTabs from '../components/CustomTabs';
 
 
 
@@ -59,10 +57,12 @@ const styles = theme => ({
   },
   drawer: {
     width: '50%',
-    flexShrink: 0,
+    flexShrink: 0
   },
   drawerPaper: {
     width: '50%',
+    overflowX: 'hidden'
+
   },
   drawerHeader: {
     display: 'flex',
@@ -150,8 +150,9 @@ class Impressum extends React.Component {
 
 
 
-
           </Toolbar>
+          <CustomTabs open={this.state.open}/>
+
         </AppBar>
         <Drawer
           className={classes.drawer}
@@ -180,49 +181,7 @@ class Impressum extends React.Component {
           })}
         >
           <div className={classes.drawerHeader} />
-            <div style={{textAlign: 'center', width: '100%', }}>
 
-              {this.state.open == false &&
-                <Fade in={!this.state.open} timeout={1500}>
-                  <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100}}>
-                    <p style={{fontSize: 40, fontFamily: 'Anton', marginBottom: 100}} >Impressum</p>
-                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> Martin Seubert</p>
-                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> Leitengraben 3</p>
-                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
-                    <p style={{fontSize: 30, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
-
-                  </div>
-
-
-                </Fade>
-
-
-          }
-          {this.state.open == true &&
-
-            <Fade in={this.state.open}  timeout={1000}>
-
-        <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100}}>
-          <p style={{fontSize: 30, fontFamily: 'Anton', marginBottom: 70}} >Impressum</p>
-          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> Martin Seubert</p>
-          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> Leitengraben 3</p>
-          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
-          <p style={{fontSize: 18, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
-
-        </div>
-      </Fade>
-
-
-      }
-
-                            <Media query="(min-width: 600px)">
-                              {matches =>
-                                matches ? (
-                                  <Footer wait={1000}/>
-                              ):(null)
-                            }
-                          </Media>
-            </div>
         </main>
       </div>
     );
