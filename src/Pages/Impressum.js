@@ -30,8 +30,8 @@ import CustomTabs from '../components/CustomTabs';
 
 const styles = theme => ({
   root: {
-    display: 'flex',
-  },
+    display: 'flex'
+    },
   appBar: {
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -150,9 +150,55 @@ class Impressum extends React.Component {
 
 
           </Toolbar>
-          <CustomTabs open={this.state.open}/>
+          {this.state.open === false &&
+            <CustomTabs open={this.state.open}/>
+
+          }
+
+
+
 
         </AppBar>
+        {this.state.open === true &&
+
+        <div style={{textAlign: 'right', width: '100%', right: 20, position: 'absolute'}}>
+          <Media query="(max-width: 376px)">
+                {matches =>
+                  matches ? (
+            <Fade in={!this.props.open} timeout={1500}>
+              <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100, color: '#000'}}>
+                <p style={{fontSize: 20, fontFamily: 'Anton', marginBottom: 50}} >Impressum</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> Martin Seubert</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> Leitengraben 3</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
+
+              </div>
+
+
+            </Fade>
+) : (
+
+  <Fade in={!this.props.open} timeout={1500}>
+    <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 100, color: '#000'}}>
+      <p style={{fontSize: 25, fontFamily: 'Anton', marginBottom: 50}} >Impressum</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> Martin Seubert</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> Leitengraben 3</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
+
+    </div>
+
+
+  </Fade>
+)
+}
+</Media>
+
+
+
+        </div>
+      }
         <Drawer
           className={classes.drawer}
           variant="persistent"
