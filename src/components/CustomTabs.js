@@ -39,6 +39,7 @@ const styles = theme => ({
     backgroundColor: '#B00020',
     height: 3,
     minWidth: '50%'
+
   },
   tabRoot: {
     fontSize: 20,

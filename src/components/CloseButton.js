@@ -32,6 +32,7 @@ const styles = theme => ({
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
+    fontSize: '1.4em'
   },
   rightIconSmall: {
     marginLeft: theme.spacing.unit,
@@ -56,7 +57,7 @@ class CloseButton extends React.Component{
 
   return (
     <div>
-      <Media query="(max-width: 376px)">
+      <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
       <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}} >
