@@ -244,7 +244,7 @@ class LoginPage extends React.Component {
 
 
                   </form>
-                  <div>
+              /*    <div>
 
                     <Divider style={{width: '80%', marginTop: '8%', marginLeft: '10%'}}/>
 
@@ -252,7 +252,7 @@ class LoginPage extends React.Component {
                   <div onClick={this.loginFacebook}>
                     <FacebookLoginButton background='#3b5998' label='Facebook'/>
 
-                  </div>
+                  </div> */
 
 
 
