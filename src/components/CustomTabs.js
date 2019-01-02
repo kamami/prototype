@@ -151,15 +151,15 @@ class CustomTabs extends React.Component {
 
         <TabContainer dir={theme.direction}>
 
-        <div style={{textAlign: 'center', width: '100%', }}>
+        <div >
 
             <Fade in={!this.props.open} timeout={1500}>
-              <div style={{ marginLeft: 'auto', marginRight: 'auto', marginTop: 70}}>
-                <p style={{fontSize: 30, fontFamily: 'Anton', marginBottom: 70}} >Impressum</p>
-                <p style={{fontSize: 20, fontFamily: 'Roboto'}}> Martin Seubert</p>
-                <p style={{fontSize: 20, fontFamily: 'Roboto'}}> Leitengraben 3</p>
-                <p style={{fontSize: 20, fontFamily: 'Roboto'}}> 97084 Würzburg</p>
-                <p style={{fontSize: 20, fontFamily: 'Roboto'}}> mail@martinseubert.de</p>
+              <div>
+                <p style={{fontSize: 30, fontFamily: 'Anton', marginBottom: 20}} >Impressum</p>
+                <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> Martin Seubert</p>
+                <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> Leitengraben 3</p>
+                <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> 97084 Würzburg</p>
+                <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> mail@martinseubert.de</p>
 
               </div>
 
@@ -174,6 +174,7 @@ class CustomTabs extends React.Component {
 
         </TabContainer>
         <TabContainer dir={theme.direction}>
+
         <div style={{ height: '100vh'}}>
         <p style={{fontSize: 30, fontFamily: 'Anton', marginBottom: 20}}>Privacy Policy of the Facebook apps</p>
         <p style={{fontSize: 20, fontFamily: 'Roboto'}}> In order to receive information about your Personal Data, the purposes and the parties the Data is shared with, contact the Owner.</p>
@@ -238,6 +239,7 @@ To determine whether any of the third party services it uses honor the “Do Not
 
                   </p>
                   </div>
+
         </TabContainer>
       </SwipeableViews>
       </div>
