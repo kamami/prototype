@@ -159,7 +159,7 @@ class CustomTabs extends React.Component {
                 <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> Martin Seubert</p>
                 <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> Leitengraben 3</p>
                 <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> 97084 Würzburg</p>
-                <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> mail@martinseubert.de</p>
+                <p style={{fontSize: 20, fontFamily: 'Roboto', marginBottom: 0}}> mail@genko.de</p>
 
               </div>
 
@@ -175,7 +175,7 @@ class CustomTabs extends React.Component {
         <p style={{fontSize: 20, fontFamily: 'Roboto'}}> In order to receive information about your Personal Data, the purposes and the parties the Data is shared with, contact the Owner.</p>
         <p style={{fontSize: 25, fontFamily: 'Roboto', fontWeight: 'bold'}}> Data Controller and Owner </p>
         <p style={{fontSize: 18, fontFamily: 'Roboto'}}> Leitengraben 3, 97084 Würzburg </p>
-        <p style={{fontSize: 18, fontFamily: 'Roboto'}}> mail@martinseubert.de </p>
+        <p style={{fontSize: 18, fontFamily: 'Roboto'}}> data@genko.de </p>
         <p style={{fontSize: 25, fontFamily: 'Roboto', fontWeight: 'bold'}}> Types of Data collected </p>
         <p style={{fontSize: 20, fontFamily: 'Roboto'}}>The owner does not provide a list of Personal Data types collected.
         Other Personal Data collected may be described in other sections of this privacy policy or by dedicated explanation text contextually with the Data collection.

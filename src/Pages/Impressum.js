@@ -171,7 +171,7 @@ class Impressum extends React.Component {
                 <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> Martin Seubert</p>
                 <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> Leitengraben 3</p>
                 <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> 97084 Würzburg</p>
-                <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> mail@martinseubert.de</p>
+                <p style={{fontSize: 13, fontFamily: 'Roboto', marginBottom: 0}}> mail@genko.de</p>
 
               </div>
 
@@ -185,7 +185,7 @@ class Impressum extends React.Component {
       <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> Martin Seubert</p>
       <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> Leitengraben 3</p>
       <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> 97084 Würzburg</p>
-      <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> mail@martinseubert.de</p>
+      <p style={{fontSize: 15, fontFamily: 'Roboto', marginBottom: 0}}> mail@genko.de</p>
 
     </div>
 
