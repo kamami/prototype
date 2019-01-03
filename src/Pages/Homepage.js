@@ -115,8 +115,7 @@ class Homepage extends React.Component {
             [classes.appBarShift]: open,
           })}
         >
-          <Toolbar disableGutters={!open} style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
-}}>
+          <Toolbar disableGutters={!open} style={{background: '#ffffff', color: '#000', maxHeight: '56px'}}>
             <IconButton
               color="inherit"
               aria-label="Open drawer"
@@ -129,23 +128,23 @@ class Homepage extends React.Component {
             <Fade in={true}  timeout={2000}>
 
             <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
-<Typography style={{fontFamily: 'Devonshire', fontSize: 40, color: '#B00020'}}>
+                  <Typography style={{fontFamily: 'Devonshire', fontSize: 40, color: '#B00020'}}>
 
-  Genkō
-</Typography>
+                    Genkō
+                  </Typography>
             </div>
 
-</Fade>
+            </Fade>
 
             <ScrollToTop showUnder={80}     duration={1000}
-style={{
-position: 'flex',
-cursor: 'pointer',
-transitionDuration: '1s',
-transitionTimingFunction: 'linear',
-transitionDelay: '0.5s',
+                    style={{
+                    position: 'flex',
+                    cursor: 'pointer',
+                    transitionDuration: '1s',
+                    transitionTimingFunction: 'linear',
+                    transitionDelay: '0.5s',
 
-}}>
+                    }}>
       <SearchButton />
       </ScrollToTop>
           </Toolbar>
@@ -162,13 +161,13 @@ transitionDelay: '0.5s',
           <div className={classes.drawerHeader}>
             <IconButton onClick={this.handleDrawerClose} style={{outline: 'none'}}>
               <ScrollToTop showUnder={-20}     duration={1000}
-  style={{
-  position: 'flex',
-  cursor: 'pointer',
-  transitionDuration: '1s',
-  transitionTimingFunction: 'linear',
+                    style={{
+                    position: 'flex',
+                    cursor: 'pointer',
+                    transitionDuration: '1s',
+                    transitionTimingFunction: 'linear',
 
-  }}>
+                    }}>
                 <ChevronLeftIcon/>
                 </ScrollToTop>
             </IconButton>

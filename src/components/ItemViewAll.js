@@ -125,126 +125,7 @@ class ItemViewAll extends React.Component{
                     TransitionComponent={Transition}
                   >
                     <DialogContent>
-                      <div style={{display: 'flex'}}>
-                            <div>
-                                <div>
-
-                                    <img className="DetailImg" src={this.props.backdrop}/>
-                                </div>
-                                <div style={{marginTop: 30}}>
-                                <ButtonDropdown direction="down" isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-                       <DropdownToggle className= "DropdownButton" style={{background: '#B00020', width: 180, border: '#B00020'}}>
-                        Starten:
-                      </DropdownToggle>
-                       <DropdownMenu style={{width: 180}}>
-
-                         {this.props.kik != "." &&
-                           <div>
-                              <DropdownItem>
-                                <div style={{display: 'flex'}}>
-                                  <div style={{float: 'left'}}>
-                                    <img src={require("../assets/Kik-Icon.png")} style={{heigth: 20, width: 20}}/>
-                                  </div>
-                                <div style={{marginLeft: 10, marginTop: 2}}>
-                                Kik
-                                </div>
-                              </div>
-                            </DropdownItem>
-                          </div>
-                       }
-
-                       {this.props.messenger != "." &&
-                            <div>
-                               <DropdownItem>
-                                 <div style={{display: 'flex'}}>
-                                   <div style={{float: 'left'}}>
-                                     <img src={require("../assets/Messenger-Icon.png")} style={{heigth: 20, width: 20}}/>
-                                   </div>
-                                   <div style={{marginLeft: 10, marginTop: 2}}>
-                                     <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none', color: '#000'}}>Messenger</a>
-                                   </div>
-                                 </div>
-                               </DropdownItem>
-                             </div>
-                         }
-
-                             {this.props.slack != "." &&
-                               <div>
-                                    <DropdownItem>
-                                      <div style={{display: 'flex'}}>
-                                        <div style={{float: 'left'}}>
-                                          <img src={require("../assets/Slack-Icon.png")} style={{heigth: 20, width: 20}}/>
-                                        </div>
-                                        <div style={{marginLeft: 10, marginTop: 2}}>
-                                          Slack
-                                        </div>
-                                      </div>
-                                    </DropdownItem>
-                                  </div>
-                           }
-
-                           {this.props.twitter != "." &&
-                             <div>
-                                  <DropdownItem>
-                                    <div style={{display: 'flex'}}>
-                                      <div style={{float: 'left'}}>
-                                        <img src={require("../assets/Twitter-Icon.png")} style={{heigth: 20, width: 20}}/>
-                                      </div>
-                                      <div style={{marginLeft: 10, marginTop: 2}}>
-                                        Slack
-                                      </div>
-                                    </div>
-                                  </DropdownItem>
-                                </div>
-                         }
-
-                                              {this.props.discord!= "." &&
-                                                <div>
-                                                     <DropdownItem>
-                                                       <div style={{display: 'flex'}}>
-                                                         <div style={{float: 'left'}}>
-                                                           <img src={require("../assets/Discord-Icon.png")} style={{heigth: 20, width: 20}}/>
-                                                         </div>
-                                                         <div style={{marginLeft: 10, marginTop: 2}}>
-                                                           Slack
-                                                         </div>
-                                                       </div>
-                                                     </DropdownItem>
-                                                   </div>
-                                            }
-
-                               {this.props.telegram != "." &&
-                                 <div>
-                               <DropdownItem>
-                                 <div style={{display: 'flex'}}>
-                                 <div style={{float: 'left'}}>
-                                  <img src={require("../assets/Telegram-Icon.png")} style={{heigth: 20, width: 20}}/>
-                                  </div>
-                                  <div style={{marginLeft: 10, marginTop: 2}}>
-                                      Telegram
-                                  </div>
-                                </div>
-                               </DropdownItem>
-                             </div>
-                             }
-                       </DropdownMenu>
-            </ButtonDropdown>
-          </div>
-        </div>
-                        <div style={{float: 'right', marginLeft: 20, fontWeight: 'bold'}}>
-                          <p style={{fontWeight: 'bold', fontSize: 26, marginBottom: "-0.5rem", fontFamily: 'Anton'}}>
-                              {this.props.title}
-                          </p>
-                          <p style={{fontSize: 20, fontWeight: 'bold', marginTop: 20}}>
-                            Beschreibung:
-                          </p>
-                          <p style={{fontSize: 13}}>
-                            {this.props.description}
-                          </p>
-
-
-                        </div>
-                      </div>
+                        <p> Hallo </p>
                     </DialogContent>
                     <DialogActions>
 
@@ -313,13 +194,7 @@ class ItemViewAll extends React.Component{
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
 
-                           <div style={{display: 'flex'}}>
-                             <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
-
-                             <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
-
-                           </div>
-                         </div>
+                     </div>
 
                          <div>
                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
@@ -329,6 +204,12 @@ class ItemViewAll extends React.Component{
                        <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
                        </Button>
                      </a>
+                     <div style={{display: 'flex'}}>
+                       <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
+
+                       <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
+
+                     </div>
                    </div>
 
                  </div>

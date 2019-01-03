@@ -122,11 +122,6 @@ render() {
             backdrop={title.image}
             description={title.description}
             messenger={title.messenger}
-            twitter={title.twitter}
-            discord={title.discord}
-            slack={title.slack}
-            kik={title.kik}
-            telegram={title.telegram}
             code={title.key}
             matchId={title.matchId}
 
