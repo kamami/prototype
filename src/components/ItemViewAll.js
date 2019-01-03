@@ -236,7 +236,7 @@ class ItemViewAll extends React.Component{
                   </DialogContent>
                 ) :(
 
-                  <DialogContent >
+                  <DialogContent>
                     <div style={{marginTop: 180, display: 'inline-block', display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
@@ -294,10 +294,10 @@ class ItemViewAll extends React.Component{
 
               ) }
                   </Media>
-                <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}>
+                <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}  onClick={this.handleClickOpen}>
                   {this.props.title}
                 </div>
-                <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}>
+                <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}  onClick={this.handleClickOpen}>
                   {this.props.overview}
                 </div>
                 <div >
