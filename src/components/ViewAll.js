@@ -251,7 +251,7 @@ render() {
    {items}
  </StackGrid> ):(
    <StackGrid
- columnWidth={160}
+ columnWidth={150}
  gutterHeight={10}
  gutterWidth={10}
  duration={1500}
