@@ -133,7 +133,7 @@ class LoginPage extends React.Component {
                 </Typography>
 
                 </Toolbar>
-              </AppBar>
+                            </AppBar>
 
               <div style={{marginTop: 70 }}>
                 <Fade in={true}  timeout={2000}>
@@ -244,7 +244,7 @@ class LoginPage extends React.Component {
 
 
                   </form>
-            
+
 
 
 

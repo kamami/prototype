@@ -25,9 +25,6 @@ import CustomTabs from '../components/CustomTabs';
 
 
 
-
-
-
 const styles = theme => ({
   root: {
     display: 'flex'
@@ -155,7 +152,7 @@ class Impressum extends React.Component {
 
           }
 
-
+          
 
 
         </AppBar>
