@@ -33,7 +33,7 @@ constructor(props){
   this.searchHandler = this.searchHandler.bind(this);
   this.focus = this.focus.bind(this);
   this.updateMessage = debounce(this.updateMessage, 0 );
-  this.loadContent = this.loadContent.bind(this);
+  this.loadContent = debounce(this.loadContent.bind(this), 0);
 
 
  }
