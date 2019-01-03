@@ -25,10 +25,6 @@ x.body.toLowerCase().includes(term.toLowerCase());
 
  }
 
-
-
-
-
 class ViewAll extends React.Component{
 
 constructor(props){
@@ -88,8 +84,8 @@ fetch(requestUrl + '1&_limit=3')
     var requestUrl = 'https://questdb.herokuapp.com/all?q='
     fetch(requestUrl + this.state.term).then((response)=>{
         return response.json();
-    }) .then((tracks)=>{
-        this.setState({ tracks: this.state.tracks.concat(tracks)});
+    }) .then((data)=>{
+        this.setState({ tracks: data});
 
 
     }).catch((err)=>{
@@ -102,20 +98,7 @@ fetch(requestUrl + '1&_limit=3')
    this.textInput.focus();
  }
 
-
-
-
-
-
-
-
-
-
 render() {
-
-
-
-
 
   const {term, data, tracks} = this.state;
 
