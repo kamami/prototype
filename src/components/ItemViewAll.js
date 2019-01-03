@@ -114,7 +114,7 @@ class ItemViewAll extends React.Component{
                   <Media query="(min-width: 600px)">
                         {matches =>
                           matches ? (
-                            <Card className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
+                            <div className="ItemViewAll" style={{backgroundImage: 'url(' + this.props.backdrop + ')'}}>
 
                             <div>
                   <Dialog
@@ -140,7 +140,7 @@ class ItemViewAll extends React.Component{
                         </div>
                   </div>
                 </div>
-              </Card>
+              </div>
 
 
               ):(

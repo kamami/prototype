@@ -26,6 +26,9 @@ x.body.toLowerCase().includes(term.toLowerCase());
  }
 
 
+
+
+
 class ViewAll extends React.Component{
 
 constructor(props){
@@ -41,6 +44,7 @@ constructor(props){
 
   this.searchHandler = this.searchHandler.bind(this);
   this.focus = this.focus.bind(this);
+
 
  }
 
@@ -78,13 +82,19 @@ fetch(requestUrl + '1&_limit=3')
 //this.focus();
 
  }
-
   searchHandler(event){
     this.setState({term: event.target.value});
-    window.scrollTo(0, 1);
-    window.scrollTo(0, 0);
+
+    var requestUrl = 'https://questdb.herokuapp.com/all?q='
+    fetch(requestUrl + this.state.term).then((response)=>{
+        return response.json();
+    }) .then((tracks)=>{
+        this.setState({ tracks: this.state.tracks.concat(tracks)});
 
 
+    }).catch((err)=>{
+        console.log("There has been an error");
+    });
 
   }
 
@@ -94,7 +104,16 @@ fetch(requestUrl + '1&_limit=3')
 
 
 
+
+
+
+
+
+
+
 render() {
+
+
 
 
 
