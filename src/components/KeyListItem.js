@@ -228,43 +228,17 @@ handleClose = () => {
                       <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
 
 
-                        <div style={{marginTop: '24px', paddingLeft: '5vw', paddingRight: '5vw'}}>
-                          <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                        <div style={{marginTop: '24px'}}>
+                          <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 
-                            {this.props.messenger !== "." &&
-                            <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Messenger-Icon.png")} className="iconButtonKeys" alt="Messenger"/>
-                            </a>
-                            }
-                            {this.props.kik !== "." &&
-                            <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Kik-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
+                          <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
+                            color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
 
-                            {this.props.slack !== "." &&
-                            <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Slack-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
+                          Facebook
 
-                            {this.props.telegram !=="." &&
-                            <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Telegram-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-
-                            {this.props.twitter !== "." &&
-                            <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Twitter-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-                            {this.props.discord !== "." &&
-                            <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
-                            <img src={require("../assets/Discord-Icon.png")} className="iconButtonKeys"/>
-                            </a>
-                            }
-                          </div>
+                          <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                          </Button>
+                        </a>
 
 
                       </div>

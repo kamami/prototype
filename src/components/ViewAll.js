@@ -17,11 +17,16 @@ import SearchIcon from '@material-ui/icons/Search';
 const { scaleDown } = transitions;
 
 function searchingFor(term){
+  window.scrollTo(0, 1);
+  window.scrollTo(0, 0);
+
 return function(x){
 return x.title.toLowerCase().includes(term.toLowerCase()) ||
 x.body.toLowerCase().includes(term.toLowerCase());
 
+
 }
+
  }
 
 

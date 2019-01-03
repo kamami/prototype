@@ -322,7 +322,7 @@ class ItemViewAll extends React.Component{
                          </div>
 
                          <div>
-                         <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                           <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                        <Button variant="contained" style={{backgroundColor: '#3b5998',
                          color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
                        Facebook
@@ -360,27 +360,28 @@ class ItemViewAll extends React.Component{
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
 
-                           <div style={{display: 'flex'}}>
-                             <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
 
-                             <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
-
-                           </div>
                          </div>
 
                          <div>
-                         <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                           <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                        <Button variant="contained" style={{backgroundColor: '#3b5998',
                          color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
                        Facebook
                        <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
                        </Button>
                      </a>
+                     <div style={{display: 'flex'}}>
+                       <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
+
+                       <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
+
+                     </div>
                    </div>
 
                  </div>
                          <div>
-                           <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
+                           <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
                              {this.props.title}
                            </div>
                            <div className="BreakWords"
@@ -421,7 +422,7 @@ class ItemViewAll extends React.Component{
                 <div >
 
 
-                    <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                  <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
                     color: '#ffffff', boxShadow: 'none', borderRadius: "0em 0em 2em 2em", Top: 100}}>
                   Facebook

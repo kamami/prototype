@@ -184,7 +184,7 @@ transitionDelay: '0.5s',
           })}
         >
           <div className={classes.drawerHeader} />
-            <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6'  /*, height: '100vh'  für scrolling beim Suchen */}}>
+            <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6' }}>
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open}/>
           </div>
         </main>
