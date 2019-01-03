@@ -75,7 +75,6 @@ fetch(requestUrl + '1&_limit=3')
     console.log("There has been an error");
 });
 
-//this.focus();
 
  }
   searchHandler(event){
