@@ -53,6 +53,7 @@ const styles = theme => ({
   },
   drawerPaper: {
     width: '50%',
+    overflow: 'hidden'
   },
   drawerHeader: {
     display: 'flex',

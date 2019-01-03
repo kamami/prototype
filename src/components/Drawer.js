@@ -122,9 +122,7 @@ class Drawer extends React.Component {
             tabIndex={0}
             role="button"
             onKeyDown={this.toggleDrawer('left', false)}
-            style={{outline: 'none', overflow: 'hidden'}}
-
-
+            style={{outline: 'none'}}
           >
           <div className="DrawerHeader" >
             <Logo />
