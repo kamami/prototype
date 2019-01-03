@@ -12,39 +12,34 @@ import InfiniteScroll from 'react-infinite-scroller';
 import Fade from '@material-ui/core/Fade';
 import Typed from 'react-typed';
 import SearchIcon from '@material-ui/icons/Search';
+import { debounce} from 'lodash'
 
 
 const { scaleDown } = transitions;
-
-function searchingFor(term){
-
-return function(x){
-return x.title.toLowerCase().includes(term.toLowerCase()) ||
-x.body.toLowerCase().includes(term.toLowerCase());
-}
-
- }
 
 class ViewAll extends React.Component{
 
 constructor(props){
   super(props);
   this.state = {
-    term: '',
+    value: '',
     mounted: true,
     tracks: [],
     hasMoreItems: true,
     page: 2,
-
+    message: ''
   }
 
   this.searchHandler = this.searchHandler.bind(this);
   this.focus = this.focus.bind(this);
+  this.updateMessage = debounce(this.updateMessage, 0 );
+  this.loadContent = this.loadContent.bind(this);
 
 
  }
 
   loadContent() {
+    if(this.state.message.length === 0){
     var requestUrl = this.props.url;
     fetch(requestUrl + this.state.page + '&_limit=3').then((response)=>{
         return response.json();
@@ -59,6 +54,7 @@ constructor(props){
         console.log("There has been an error");
     });
 }
+}
 
 componentDidMount() {
   window.scrollTo(0, 0);
@@ -69,6 +65,7 @@ fetch(requestUrl + '1&_limit=3')
     return response.json();
 }) .then((data)=>{
     this.setState({tracks : data});
+    this.setState({hasMoreItems: true})
 
 })
 .catch((err)=>{
@@ -77,21 +74,34 @@ fetch(requestUrl + '1&_limit=3')
 
 
  }
-  searchHandler(event){
-    this.setState({term: event.target.value});
-
-    var requestUrl = 'https://questdb.herokuapp.com/all?q='
-    fetch(requestUrl + this.state.term).then((response)=>{
-        return response.json();
-    }) .then((data)=>{
-        this.setState({ tracks: data});
 
 
-    }).catch((err)=>{
-        console.log("There has been an error");
-    });
+  searchHandler = ({ target: { value } }) => {
+      this.setState({ message: value }, () => {
+        if(this.state.message.length === 0){
+          this.setState({hasMoreItems: false});
+          this.componentDidMount();
+          this.setState({page: 2})
 
-  }
+        }else{
+
+      var requestUrl = 'https://questdb.herokuapp.com/all?q='
+      fetch(requestUrl + this.state.message).then((response)=>{
+          return response.json();
+      }) .then((data)=>{
+          this.setState({ tracks: data});
+
+      })
+      } // this will print out the new value
+});
+
+
+    }
+
+
+    updateMessage = message => this.setState({ message });
+
+
 
    focus() {
    this.textInput.focus();
@@ -99,14 +109,15 @@ fetch(requestUrl + '1&_limit=3')
 
 render() {
 
-  const {term, data, tracks} = this.state;
+  const {message, data, tracks} = this.state;
 
   const loader = <div className="loader2"> </div>;
 
   var items = [];
   const imageUrl = require(`../assets/Book.jpg`)
 
-  tracks.filter(searchingFor(term)).map(function(title, i)
+  tracks.map(function(title, i)
+
 {
     items.push(
             <div>
@@ -137,7 +148,6 @@ render() {
 
     return (
       <div>
-
 
 
       <Media query="(max-width: 599px)">
@@ -172,7 +182,7 @@ render() {
 
          type="Text"
          onChange={this.searchHandler}
-         value={term}
+         value={message}
          underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
          underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '45px'}}
          hintStyle={{fontSize: '8.1vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
@@ -199,7 +209,7 @@ render() {
                         hintText="Welcher Bot darf es sein?"
                         type="Text"
                         onChange={this.searchHandler}
-                        value={term}
+                        value={message}
                         fullWidth={true}
                         underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3, top: '95px' }}
                         underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '95px' }}
@@ -219,16 +229,13 @@ render() {
            </Media>
 
 
-
-
-
    <Media query="(max-width: 599px)">
      {matches =>
        matches ? (
 
     <InfiniteScroll
        pageStart={1}
-       loadMore={this.loadContent.bind(this)}
+       loadMore={this.loadContent}
        hasMore={this.state.hasMoreItems}
        initialLoad={false}
       >
@@ -281,7 +288,7 @@ render() {
 
      <InfiniteScroll
        pageStart={1}
-       loadMore={this.loadContent.bind(this)}
+       loadMore={this.loadContent}
        hasMore={this.state.hasMoreItems}
        initialLoad={true}
 
