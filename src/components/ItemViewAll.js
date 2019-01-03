@@ -305,11 +305,14 @@ class ItemViewAll extends React.Component{
         </Toolbar>
       </AppBar>
       <Fade in={true}  timeout={2000}>
-
+        <Media query="(max-width: 350px)">
+              {matches =>
+                matches ? (
                   <DialogContent >
-                    <div style={{marginTop: 180, display: 'inline-block', display: 'flex' }}>
+                    <div style={{marginTop: 140, display: 'inline-block', display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop}/>
+
                            <div style={{display: 'flex'}}>
                              <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
 
@@ -318,45 +321,16 @@ class ItemViewAll extends React.Component{
                            </div>
                          </div>
 
+                         <div>
+                         <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                       <Button variant="contained" style={{backgroundColor: '#3b5998',
+                         color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
+                       Facebook
+                       <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                       </Button>
+                     </a>
+                   </div>
 
-
-
-                         <div style={{display: 'inline-block', height: '22vh', width: '22vh', flex: 1, marginLeft: 35}}>
-                           {this.props.messenger !== "." &&
-                           <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
-                         <img src={require("../assets/Messenger-Icon.png")} className="iconButtonDetailsMobile" alt="Messenger"/>
-                         </a>
-                         }
-                         {this.props.kik !== "." &&
-                         <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
-                         <img src={require("../assets/Kik-Icon.png")} className="iconButtonDetailsMobile"/>
-                         </a>
-                       }
-
-                         {this.props.slack !== "." &&
-                         <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
-                         <img src={require("../assets/Slack-Icon.png")} className="iconButtonDetailsMobile"/>
-                         </a>
-                       }
-
-                         {this.props.telegram !=="." &&
-                         <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
-                         <img src={require("../assets/Telegram-Icon.png")} className="iconButtonDetailsMobile"/>
-                         </a>
-                         }
-
-                         {this.props.twitter !== "." &&
-                         <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
-                         <img src={require("../assets/Twitter-Icon.png")} className="iconButtonDetailsMobile"/>
-                         </a>
-                         }
-                         {this.props.discord !== "." &&
-                         <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
-                         <img src={require("../assets/Discord-Icon.png")} className="iconButtonDetailsMobile"/>
-                         </a>
-                       }
-
-                       </div>
                  </div>
                          <div>
                            <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
@@ -379,6 +353,53 @@ class ItemViewAll extends React.Component{
 
 
                   </DialogContent>
+                ) :(
+
+                  <DialogContent >
+                    <div style={{marginTop: 180, display: 'inline-block', display: 'flex' }}>
+                         <div style={{ display: 'inline-block', flex: 1}}>
+                           <img className="DetailImgMobile" src={this.props.backdrop}/>
+
+                           <div style={{display: 'flex'}}>
+                             <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
+
+                             <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
+
+                           </div>
+                         </div>
+
+                         <div>
+                         <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                       <Button variant="contained" style={{backgroundColor: '#3b5998',
+                         color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
+                       Facebook
+                       <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                       </Button>
+                     </a>
+                   </div>
+
+                 </div>
+                         <div>
+                           <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
+                             {this.props.title}
+                           </div>
+                           <div className="BreakWords"
+                             style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
+                               fontWeight: 'lighter', width: '100%', textAlign: 'justify', paddingLeft: 0, paddingRight: 0}}>
+                             {this.props.description}
+                           </div>
+                           <div>
+                              <DrawerBottom updateCredits = {this.updateCredits} code={this.props.code} matchId={this.props.matchId}/>
+
+
+                           </div>
+
+
+                       </div>
+
+                  </DialogContent>
+                )}
+              </Media>
                 </Fade>
 
                 </Dialog>
@@ -399,37 +420,15 @@ class ItemViewAll extends React.Component{
                 </div>
                 <div >
 
-                    {this.props.messenger !== "." &&
-                    <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
-                  <img src={require("../assets/Messenger-Icon.png")} className="iconButton" alt="Messenger"/>
-                  </a>
-                  }
-                  {this.props.kik !== "." &&
-                  <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
-                  <img src={require("../assets/Kik-Icon.png")} className="iconButton"/>
-                  </a>
-                }
-                  {this.props.slack !== "." &&
-                  <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
-                  <img src={require("../assets/Slack-Icon.png")} className="iconButton"/>
-                  </a>
-                }
 
-                  {this.props.telegram !== "." &&
-                  <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
-                  <img src={require("../assets/Telegram-Icon.png")} className="iconButton"/>
-                  </a>
-                  }
-                  {this.props.twitter !== "." &&
-                  <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
-                  <img src={require("../assets/Twitter-Icon.png")} className="iconButton"/>
-                  </a>
-                  }
-                  {this.props.discord !== "." &&
-                  <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
-                  <img src={require("../assets/Discord-Icon.png")} className="iconButton"/>
-                  </a>
-                }
+                    <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
+                  <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
+                    color: '#ffffff', boxShadow: 'none', borderRadius: "0em 0em 2em 2em", Top: 100}}>
+                  Facebook
+                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                  </Button>
+                </a>
+
 
 
 
