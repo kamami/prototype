@@ -242,7 +242,7 @@ Bitte logge dich ein oder eröffne ein Konto.
                     <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
                       <div>
 
-                          <CopyToClipboard text="123456789"
+                          <CopyToClipboard text={this.props.code}
                             onCopy={() => this.setState({copied: true})}>
                             <Button className={classes.button} variant="contained" >
 
