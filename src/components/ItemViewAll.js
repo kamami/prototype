@@ -198,7 +198,6 @@ class ItemViewAll extends React.Component{
 
                      </div>
                    </div>
-
                  </div>
                          <div>
                            <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
@@ -224,7 +223,7 @@ class ItemViewAll extends React.Component{
                 ) :(
 
                   <DialogContent>
-                    <div style={{marginTop: 180, display: 'flex' }}>
+                    <div style={{marginTop: '50%', display: 'flex', background: '#ffffff', borderRadius: '2em'  }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
                            <img className="DetailImgMobile" src={this.props.backdrop} alt="DetailImgMobile"/>
 

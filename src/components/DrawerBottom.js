@@ -58,7 +58,7 @@ class DrawerBottom extends React.Component {
      <div>
 
 
-        <div onClick={this.toggleDrawer('bottom', true)} style={{width: 100}}>
+        <div onClick={this.toggleDrawer('bottom', true)}>
         <FloatingActionButtons />
         </div>
 

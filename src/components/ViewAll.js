@@ -185,11 +185,10 @@ render() {
          value={message}
          underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
          underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '45px'}}
-         hintStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
+         hintStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.8)'}}
          inputStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: '#ffffff'}}
          ref={(input) => { this.textInput = input; }}
          style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop: '6%' }}
-         InputLabelProps={{ shrink: true }}
          />
 
 

@@ -22,12 +22,12 @@ function FloatingActionButtons(props) {
       <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
-      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw', fontSize: '0.7em'}}>
+      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw', fontSize: '0.7em', float: 'right'}}>
         <Key className={classes.extendedIcon} />
             Key erhalten
       </Fab>
     ) : (
-      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw'}}>
+      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw', float: 'right'}}>
         <Key className={classes.extendedIcon} />
             Key erhalten
       </Fab>

@@ -31,6 +31,7 @@ const styles = theme => ({
       duration: theme.transitions.duration.leavingScreen,
 
     }),
+    background: 'rgba(255, 255, 255, 1)'
   },
   appBarShift: {
     width: '50%',
@@ -116,7 +117,7 @@ class Homepage extends React.Component {
             [classes.appBarShift]: open,
           })}
         >
-          <Toolbar disableGutters={!open} style={{background: '#ffffff', color: '#000', maxHeight: '56px'}}>
+          <Toolbar disableGutters={!open} style={{color: '#000', maxHeight: '56px'}}>
             <IconButton
               color="inherit"
               aria-label="Open drawer"
@@ -146,6 +147,7 @@ class Homepage extends React.Component {
                     transitionDelay: '0.5s',
 
                     }}>
+
       <SearchButton />
       </ScrollToTop>
           </Toolbar>
