@@ -157,7 +157,7 @@ render() {
 
             <Fade in={true}  timeout={1000}>
 
-<div style={{backgroundImage: 'url(' + imageUrl + ')', marginBottom: 10}} className="city">
+<div style={{backgroundImage: 'url(' + imageUrl + ')', marginBottom: 20}} className="city">
   <div style={{backgroundColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: '7%'}} className="city">
   <MuiThemeProvider>
 
@@ -243,9 +243,9 @@ render() {
         {matches =>
           matches ? (
       <StackGrid
-   columnWidth={180}
-   gutterHeight={10}
-   gutterWidth={10}
+   columnWidth={170}
+   gutterHeight={20}
+   gutterWidth={20}
    duration={1500}
    monitorImagesLoaded={true}
    easing={easings.quadInOut}
