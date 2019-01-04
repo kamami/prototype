@@ -114,7 +114,7 @@ render() {
   const loader = <div className="loader2"> </div>;
 
   var items = [];
-  const imageUrl = require(`../assets/Book.jpg`)
+  const imageUrl = require(`../assets/white-wall.jpg`)
 
   tracks.map(function(title, i)
 
@@ -158,12 +158,12 @@ render() {
             <Fade in={true}  timeout={1000}>
 
 <div style={{backgroundImage: 'url(' + imageUrl + ')', marginBottom: 10}} className="city">
-
+  <div style={{backgroundColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: '7%'}} className="city">
   <MuiThemeProvider>
 
     <TextField hintText={this.props.drawerOpen === false ?
 <div>
-  <SearchIcon style={{fontSize: '10vw', color: 'rgba(255,255,255,0.9)', marginBottom: -5}}/>
+  <SearchIcon style={{fontSize: '9vw', color: 'rgba(255,255,255,0.9)', marginBottom: -5}}/>
 
       <Typed
                  strings={[
@@ -185,15 +185,16 @@ render() {
          value={message}
          underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
          underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '45px'}}
-         hintStyle={{fontSize: '8.1vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
-         inputStyle={{fontSize: '8.1vw', fontFamily: 'Anton', color: '#ffffff'}}
+         hintStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.9)'}}
+         inputStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: '#ffffff'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#ffffff', width: '90%', maginLeft: 'auto', marginRight: 'auto', marginTop: '12%' }}
+         style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop: '6%' }}
          InputLabelProps={{ shrink: true }}
          />
 
 
      </MuiThemeProvider>
+   </div>
       </div>
       </Fade>
                ) : (
