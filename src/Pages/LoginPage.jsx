@@ -268,7 +268,7 @@ class LoginPage extends React.Component {
                 <DialogContent >
                   <div  style={{display: 'flex'}}>
 
-                  <div  class="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
+                  <div  className="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
 
                   </div>
                 </div>

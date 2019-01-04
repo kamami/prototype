@@ -2,29 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import FolderIcon from '@material-ui/icons/Folder';
-import CheckIcon from '@material-ui/icons/CheckCircle';
 import InfiniteScroll from 'react-infinite-scroller';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import Fade from '@material-ui/core/Fade';
-import Snackbar from '@material-ui/core/Snackbar';
-import CloseIcon from '@material-ui/icons/Close';
-import Button from '@material-ui/core/Button';
-import {CopyToClipboard} from 'react-copy-to-clipboard';
-import FileCopy from '@material-ui/icons/FileCopy';
 import KeyListItem from '../components/KeyListItem';
 const styles = theme => ({
   root: {
@@ -132,8 +112,7 @@ handleClose = (event, reason) => {
 
   render() {
     const { classes } = this.props;
-    const { secondary, bots } = this.state;
-    const loader = <div className="loader"> </div>;
+    const { bots } = this.state;
 
 
 

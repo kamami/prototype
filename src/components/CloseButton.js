@@ -1,13 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
-import DeleteIcon from '@material-ui/icons/Delete';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import KeyboardVoiceICon from '@material-ui/icons/KeyboardVoice';
-import Icon from '@material-ui/core/Icon';
-import SaveIcon from '@material-ui/icons/Save';
 import Close from '@material-ui/icons/Cancel';
 import Media from "react-media";
 
@@ -45,9 +39,6 @@ const styles = theme => ({
 
 class CloseButton extends React.Component{
 
-  constructor(props) {
-      super(props);
-    }
 
   render(){
     const { classes } = this.props;

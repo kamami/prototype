@@ -11,14 +11,9 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ViewAll from '../components/ViewAll';
-import Logo from '../Logo.js';
-import ScrollToTop from 'react-scroll-up';
-import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Media from "react-media";
 import {Link} from 'react-router-dom';
-import FadeIn from 'react-fade-in';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import CustomTabs from '../components/CustomTabs';
@@ -152,7 +147,7 @@ class Impressum extends React.Component {
 
           }
 
-          
+
 
 
         </AppBar>

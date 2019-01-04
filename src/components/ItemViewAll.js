@@ -1,17 +1,10 @@
 import React from 'react';
 import '../App.css';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import Media from "react-media";
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Card from '@material-ui/core/Card';
 import AppBar from '@material-ui/core/AppBar';
 import CloseIcon from '@material-ui/icons/Close';
@@ -20,15 +13,10 @@ import { authHeader } from '../_helpers';
 import Slide from '@material-ui/core/Slide';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
 import DrawerBottom from '../components/DrawerBottom';
 import Fade from '@material-ui/core/Fade';
 
-const customContentStyle = {
-  width: '60%',
-  maxWidth: 'none',
-  maxHeight: 'none'
-};
+
 
 function Transition(props) {
   return <Slide direction="up" {...props} />;
@@ -69,7 +57,7 @@ class ItemViewAll extends React.Component{
    var requestUrl = 'https://mighty-atoll-75521.herokuapp.com/users/';
     {user && user.token &&
 
-   fetch(requestUrl + user._id, {
+   fetch(requestUrl+user._id,{
      method: 'get',
      headers: {
        ...authHeader(),
@@ -105,7 +93,6 @@ class ItemViewAll extends React.Component{
 
     render() {
 
-      const { classes } = this.props;
       let user = JSON.parse(localStorage.getItem('user'));
 
         return (
@@ -190,9 +177,9 @@ class ItemViewAll extends React.Component{
               {matches =>
                 matches ? (
                   <DialogContent >
-                    <div style={{marginTop: 140, display: 'inline-block', display: 'flex' }}>
+                    <div style={{marginTop: 140, display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
-                           <img className="DetailImgMobile" src={this.props.backdrop}/>
+                           <img className="DetailImgMobile" src={this.props.backdrop} alt="DetailImgMobile"/>
 
                      </div>
 
@@ -201,7 +188,7 @@ class ItemViewAll extends React.Component{
                        <Button variant="contained" style={{backgroundColor: '#3b5998',
                          color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
                        Facebook
-                       <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                       <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
                        </Button>
                      </a>
                      <div style={{display: 'flex'}}>
@@ -237,9 +224,9 @@ class ItemViewAll extends React.Component{
                 ) :(
 
                   <DialogContent>
-                    <div style={{marginTop: 180, display: 'inline-block', display: 'flex' }}>
+                    <div style={{marginTop: 180, display: 'flex' }}>
                          <div style={{ display: 'inline-block', flex: 1}}>
-                           <img className="DetailImgMobile" src={this.props.backdrop}/>
+                           <img className="DetailImgMobile" src={this.props.backdrop} alt="DetailImgMobile"/>
 
 
                          </div>
@@ -249,7 +236,7 @@ class ItemViewAll extends React.Component{
                        <Button variant="contained" style={{backgroundColor: '#3b5998',
                          color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
                        Facebook
-                       <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                       <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
                        </Button>
                      </a>
                      <div style={{display: 'flex'}}>
@@ -307,7 +294,7 @@ class ItemViewAll extends React.Component{
                   <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
                     color: '#ffffff', boxShadow: 'none', borderRadius: "0em 0em 2em 2em", Top: 100}}>
                   Facebook
-                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
                   </Button>
                 </a>
 

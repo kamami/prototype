@@ -11,15 +11,9 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import City from '@material-ui/icons/LocationCity';
 import Info from '@material-ui/icons/Info';
 import Input from '@material-ui/icons/Input';
-import { connect } from 'react-redux';
-import { userActions } from '../_actions';
 import {Link} from 'react-router-dom';
-import Couch from '@material-ui/icons/AirlineSeatIndividualSuite';
-import Facebook from '../components/Facebook';
 import Account from '@material-ui/icons/AccountCircle';
 import Key from '@material-ui/icons/VpnKey';
 
@@ -43,14 +37,10 @@ const styles = theme => ({
 
 class SimpleExpansionPanel extends React.Component{
 
-  constructor(props) {
-        super(props)
-}
 
 
 render(){
   const { classes } = this.props;
-  const { loggingIn } = this.props;
   let user = JSON.parse(localStorage.getItem('user'));
 
 

@@ -1,78 +1,24 @@
 import React from 'react';
 import '../App.css';
-import FlatButton from 'material-ui/FlatButton';
-import RaisedButton from 'material-ui/RaisedButton';
-import {ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
-import Media from "react-media";
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Card from '@material-ui/core/Card';
-import AppBar from '@material-ui/core/AppBar';
-import CloseIcon from '@material-ui/icons/Close';
-import Credits from '@material-ui/icons/MonetizationOn';
 import {authHeader} from '../_helpers';
-import Slide from '@material-ui/core/Slide';
-import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import DrawerBottom from '../components/DrawerBottom';
 import Fade from '@material-ui/core/Fade';
-import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@material-ui/core/Avatar';
-import FormGroup from '@material-ui/core/FormGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import CheckIcon from '@material-ui/icons/CheckCircle';
 import Cancel from '@material-ui/icons/Cancel';
-import Snackbar from '@material-ui/core/Snackbar';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import FileCopy from '@material-ui/icons/FileCopy';
-import Grid from '@material-ui/core/Grid';
 
 
-const styles = theme => ({
-  root: {
-    backgroundColor: '#ffffff',
-    marginLeft: 'auto',
-    marginRight: 'auto',
-    padding: 0,
-    paddingTop: 5,
-    },
 
-  header: {
-    display: 'flex',
-    alignItems: 'center',
-    height: 50,
-    paddingLeft: theme.spacing.unit * 4,
-    backgroundColor: '#ffffff',
-
-  },
-
-
-  container: {
-   display: 'flex',
-   flexWrap: 'wrap'
- },
-
-
- button: {
-  margin: theme.spacing.unit,
-  width: '90%',
-  color: '#ffffff',
-  backgroundColor: 'green'
-},
-});
 
 class KeyListItem extends React.Component{
 
@@ -141,8 +87,8 @@ handleClose = () => {
 
 
     render() {
-      const { classes, theme, code} = this.props;
-      const { secondary, bots, user} = this.state;
+      const {  code} = this.props;
+      const { secondary, user} = this.state;
 
 
         return (

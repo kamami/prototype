@@ -1,16 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
-import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
-import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
-import { connect } from 'react-redux';
-import { userService } from '../_services';
-import Input from '@material-ui/icons/Input';
-import {Link} from 'react-router-dom';
 import { history } from '../_helpers';
 import Key from '@material-ui/icons/VpnKey';
 import FileCopy from '@material-ui/icons/FileCopy';
@@ -155,11 +147,10 @@ updateKeys() {
 }
 
   render() {
-    const { classes, theme } = this.props;
+    const { classes } = this.props;
     const { activeStep } = this.state;
     const maxSteps = tutorialSteps.length;
     let user = JSON.parse(localStorage.getItem('user'));
-    var message = "Hello World"
 
     return (
 
@@ -178,7 +169,7 @@ updateKeys() {
 
 
 
-    {tutorialSteps[activeStep].id == 1 &&
+    {tutorialSteps[activeStep].id === 1 &&
 
 
 
@@ -222,7 +213,7 @@ Bitte logge dich ein oder eröffne ein Konto.
 
 
     }
-    {tutorialSteps[activeStep].id == 2 &&
+    {tutorialSteps[activeStep].id === 2 &&
       <div>
     <p style={{fontFamily: 'roboto', fontSize:'1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
         Dein Guthaben wird mit 20 Credits belastet:
@@ -238,7 +229,7 @@ Bitte logge dich ein oder eröffne ein Konto.
 
     }
 
-    {tutorialSteps[activeStep].id == 3 &&
+    {tutorialSteps[activeStep].id === 3 &&
       <div>
         <div>
 

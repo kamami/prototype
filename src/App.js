@@ -4,7 +4,6 @@ import {Router} from 'react-router-dom';
 import Route from 'react-router-dom/Route';
 import Homepage from './Pages/Homepage';
 import Impressum from './Pages/Impressum';
-import Browse from './Pages/Browse';
 import {LoginPage} from './Pages/LoginPage';
 import {Profile} from './Pages/Profile';
 import {RegisterPage} from './Pages/RegisterPage';
@@ -49,7 +48,6 @@ class App extends Component {
 
               <Route path="/impressum" exact strict component={Impressum}/>
 
-                <Route path="/browse" exact strict component={Browse}/>
                   <Route path="/login" exact strict component={LoginPage}/>
                     <Route path="/register" exact strict component={RegisterPage}/>
                       <PrivateRoute exact path="/profile" exact strict component={Profile}/>

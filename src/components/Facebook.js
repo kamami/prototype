@@ -1,11 +1,9 @@
 import React from 'react';
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props';
-import RaisedButton from 'material-ui/RaisedButton';
-import { history } from '../_helpers';
 import FacebookLoginButton from '../components/FacebookLoginButton';
 import Card from '@material-ui/core/Card';
 import Button from '@material-ui/core/Button';
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import { connect } from 'react-redux';
 

@@ -2,24 +2,16 @@ import React from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userActions } from '../_actions';
-import Drawer from '../components/Drawer';
 import AppBar from '@material-ui/core/AppBar';
-import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import BackIcon from '@material-ui/icons/ArrowBack';
 import Toolbar from '@material-ui/core/Toolbar';
 import Facebook from '../components/Facebook';
-import { history } from '../_helpers';
 
 
 class ProfilePage extends React.Component {
-    constructor(props) {
-        super(props);
-
-}
-
+  
 componentDidMount() {
 }
 
