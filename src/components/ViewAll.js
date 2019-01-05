@@ -13,7 +13,7 @@ import Fade from '@material-ui/core/Fade';
 import Typed from 'react-typed';
 import SearchIcon from '@material-ui/icons/Search';
 import { debounce} from 'lodash'
-
+import Content from '../components/Content';
 
 const { scaleDown } = transitions;
 
@@ -148,7 +148,7 @@ render() {
 
     return (
       <div>
-
+        <div>
 
       <Media query="(max-width: 599px)">
         {matches =>
@@ -157,13 +157,12 @@ render() {
 
             <Fade in={true}  timeout={1000}>
 
-<div style={{backgroundImage: 'url(' + imageUrl + ')', marginBottom: 20}} className="city">
-  <div style={{backgroundColor: 'rgba(0, 0, 0, 0.3)', paddingBottom: '7%'}} className="city">
+<div style={{backgroundColor: 'rgba(255, 255, 255, 1)', marginBottom: 10, position: 'fixed', zIndex: 9999}} className="city">
   <MuiThemeProvider>
 
     <TextField hintText={this.props.drawerOpen === false ?
 <div>
-  <SearchIcon style={{fontSize: '9vw', color: 'rgba(255,255,255,0.9)', marginBottom: -5}}/>
+  <SearchIcon style={{fontSize: '7.5vw', color: 'rgba(0,0,0,0.9)', marginBottom: -5}}/>
 
       <Typed
                  strings={[
@@ -183,17 +182,16 @@ render() {
          type="Text"
          onChange={this.searchHandler}
          value={message}
-         underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3}}
-         underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '45px'}}
-         hintStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: 'rgba(255,255,255,0.8)'}}
-         inputStyle={{fontSize: '7.5vw', fontFamily: 'Anton', color: '#ffffff'}}
+         underlineFocusStyle={{borderColor: '#ffffff', borderWidth: 0}}
+         underlineStyle={{borderColor: '#ffffff', borderWidth: 0}}
+         hintStyle={{fontSize: '6vw', fontFamily: 'Anton', color: 'rgba(0,0,0,0.8)'}}
+         inputStyle={{fontSize: '6vw', fontFamily: 'Anton', color: '#000'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop: '6%' }}
+         style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto' }}
          />
 
 
      </MuiThemeProvider>
-   </div>
       </div>
       </Fade>
                ) : (
@@ -227,95 +225,10 @@ render() {
                )
              }
            </Media>
+         </div>
 
 
-   <Media query="(max-width: 599px)">
-     {matches =>
-       matches ? (
-
-    <InfiniteScroll
-       pageStart={1}
-       loadMore={this.loadContent}
-       hasMore={this.state.hasMoreItems}
-       initialLoad={false}
-      >
-      <Media query="(min-width: 375px)">
-        {matches =>
-          matches ? (
-      <StackGrid
-   columnWidth={170}
-   gutterHeight={20}
-   gutterWidth={20}
-   duration={1500}
-   monitorImagesLoaded={true}
-   easing={easings.quadInOut}
-   appear={scaleDown.appear}
-   appeared={scaleDown.appeared}
-   enter={scaleDown.enter}
-   entered={scaleDown.entered}
-   leaved={scaleDown.leaved}
-
-  >
-   {items}
- </StackGrid> ):(
-   <StackGrid
- columnWidth={150}
- gutterHeight={10}
- gutterWidth={10}
- duration={1500}
- monitorImagesLoaded={true}
- easing={easings.quadInOut}
- appear={scaleDown.appear}
- appeared={scaleDown.appeared}
- enter={scaleDown.enter}
- entered={scaleDown.entered}
- leaved={scaleDown.leaved}
-
- >
-
-
- {items}
- </StackGrid>
-
-
-
- )
-  }
-</Media>
-         </InfiniteScroll>
-       ) : (
-
-
-     <InfiniteScroll
-       pageStart={1}
-       loadMore={this.loadContent}
-       hasMore={this.state.hasMoreItems}
-       initialLoad={true}
-
-      >
-      <StackGrid
-        columnWidth={180}
-   gutterHeight={80}
-   gutterWidth={80}
-   duration={1500}
-   monitorImagesLoaded={true}
-   easing={easings.quadInOut}
-   appear={scaleDown.appear}
-   appeared={scaleDown.appeared}
-   enter={scaleDown.enter}
-   entered={scaleDown.entered}
-   leaved={scaleDown.leaved}
-
-    >
-
-              {items}
-            </StackGrid>
-         </InfiniteScroll>
-       )
-     }
-   </Media>
-
-
+         <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent}/>
 
 </div>
     )
