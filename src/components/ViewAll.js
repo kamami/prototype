@@ -92,7 +92,7 @@ fetch(requestUrl + '1&_limit=3')
           this.setState({ tracks: data});
 
       })
-      } // this will print out the new value
+      }
 });
 
 
@@ -147,8 +147,9 @@ render() {
 
 
     return (
+
       <div>
-        <div>
+        {this.props.drawerOpen === false &&
 
       <Media query="(max-width: 599px)">
         {matches =>
@@ -157,10 +158,10 @@ render() {
 
             <Fade in={true}  timeout={1000}>
 
-<div style={{backgroundColor: 'rgba(255, 255, 255, 1)', marginBottom: 10, position: 'fixed', zIndex: 9999}} className="city">
+<div style={{backgroundColor: 'rgba(255, 255, 255, 1)', marginBottom: 20}} className="city">
   <MuiThemeProvider>
 
-    <TextField hintText={this.props.drawerOpen === false ?
+    <TextField hintText=
 <div>
   <SearchIcon style={{fontSize: '7.5vw', color: 'rgba(0,0,0,0.9)', marginBottom: -5}}/>
 
@@ -175,7 +176,6 @@ render() {
                      loop >
                  </Typed>
 </div>
-    : 'Bot suchen...'}
 
 
 
@@ -187,13 +187,14 @@ render() {
          hintStyle={{fontSize: '6vw', fontFamily: 'Anton', color: 'rgba(0,0,0,0.8)'}}
          inputStyle={{fontSize: '6vw', fontFamily: 'Anton', color: '#000'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto' }}
+         style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop: 50 }}
          />
 
 
      </MuiThemeProvider>
       </div>
       </Fade>
+
                ) : (
                  <div>
                    <div style={{width: '100%', marginLeft: 'auto',
@@ -220,14 +221,14 @@ render() {
                   </div>
 
                    </div>
+                 }
+
                      </div>
 
                )
              }
            </Media>
-         </div>
-
-
+         }
          <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent}/>
 
 </div>

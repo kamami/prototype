@@ -11,6 +11,7 @@ import { authHeader } from '../_helpers';
 import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import CustomSnackbar from '../components/CustomSnackbar';
 
 const tutorialSteps = [
   {
@@ -83,7 +84,8 @@ class ProgressMobileStepper extends React.Component {
     multiline: 'Controlled',
     currency: 'EUR',
     value: '',
-    copied: false
+    copied: false,
+    snackbarOpen: false
         };
 this.buyFinal = this.buyFinal.bind(this);
 this.updateKeys = this.updateKeys.bind(this);
@@ -125,9 +127,13 @@ this.props.updateCredits();
 this.setState(prevState => ({
   activeStep: prevState.activeStep + 1,
 }));
-
+this.setState({snackbarOpen: true})
 this.updateKeys();
 
+}
+
+snackbarClose(){
+  this.setState({snackbarOpen: false})
 }
 
 
@@ -156,6 +162,8 @@ updateKeys() {
 
       <div style={{textAlign: 'center', width: '100%'}}>
 
+        <CustomSnackbar snackbarOpen={this.state.snackbarOpen} />
+
       <MobileStepper
       variant="progress"
         steps={maxSteps}
@@ -177,7 +185,7 @@ updateKeys() {
       <div>
         {user && user.token ?
           <div>
-        <p style={{fontFamily: 'roboto', fontSize: '1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+        <p style={{fontFamily: 'roboto', fontSize: '1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
       Um den Bot in vollem Umfang genießen zu können, benötigst du einen Key.
       Gib deinen Key direkt im Chatfenster ein, sobald du dazu aufgefordert wirst.
 
@@ -190,7 +198,7 @@ updateKeys() {
        :
 
        <div>
-         <p style={{fontFamily: 'roboto', fontSize: '1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+         <p style={{fontFamily: 'roboto', fontSize: '1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
 Bitte logge dich ein oder eröffne ein Konto.
 
      </p>
@@ -215,7 +223,7 @@ Bitte logge dich ein oder eröffne ein Konto.
     }
     {tutorialSteps[activeStep].id === 2 &&
       <div>
-    <p style={{fontFamily: 'roboto', fontSize:'1.2em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+    <p style={{fontFamily: 'roboto', fontSize:'1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
 
@@ -233,8 +241,7 @@ Bitte logge dich ein oder eröffne ein Konto.
       <div>
         <div>
 
-          <p style={{fontFamily: 'Roboto', fontSize: '1.35em', color: '#B00020', fontWeight: 'bold', marginTop: '10%'}}> Danke für deine Unterstützung :)</p>
-              <p style={{fontFamily: 'roboto', fontSize: '1.3em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '7%'}}>
+              <p style={{fontFamily: 'roboto', fontSize: '1.1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '7%', fontWeight: 'bold'}}>
                 Hier ist dein Key:
                   </p>
 

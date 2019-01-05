@@ -24,6 +24,7 @@ import InfiniteScroll from 'react-infinite-scroller';
 import StackGrid, {transitions} from "react-stack-grid";
 import * as easings from '../components/easings';
 import Media from "react-media";
+import AddtoHomeScreen from '../components/AddtoHomeScreen';
 
 const { scaleDown } = transitions;
 
@@ -38,7 +39,9 @@ class Content extends React.Component {
 
     return (
 
-      <div style={{paddingTop: '17%'}}>
+      <div style={{marginTop: 5}}>
+
+
 <Media query="(max-width: 599px)">
 {matches =>
   matches ? (

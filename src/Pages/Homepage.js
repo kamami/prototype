@@ -18,44 +18,25 @@ import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
-
+import CollapsibleAppBar from '../components/CollapsibleAppBar';
 const drawerWidth = '50%';
 
 const styles = theme => ({
+
+
+
   root: {
     display: 'flex',
   },
-  appBar: {
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
 
-    }),
-    background: 'rgba(255, 255, 255, 1)',
-    boxShadow: 'none'
-  },
-  appBarShift: {
-    width: '50%',
-    marginLeft: '50%',
-    transition: theme.transitions.create(['margin', 'width'], {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  },
-  menuButton: {
-    marginLeft: 12,
-    marginRight: 20,
-  },
-  hide: {
-    display: 'none',
-  },
   drawer: {
     width: '50%',
     flexShrink: 0,
   },
   drawerPaper: {
     width: '50%',
-    overflow: 'hidden'
+    overflow: 'hidden',
+    borderRadius: '0 2em 2em 0'
   },
   drawerHeader: {
     display: 'flex',
@@ -63,7 +44,11 @@ const styles = theme => ({
     padding: '0 8px',
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    backgroundColor: '#ffffff',
+    minHeight: 0
+
   },
+
   content: {
     flexGrow: 1,
     padding: theme.spacing.unit * 3,
@@ -83,13 +68,23 @@ const styles = theme => ({
     }),
     marginLeft: 0,
 
+
   },
 });
 
 class Homepage extends React.Component {
-  state = {
-    open: false,
-  };
+
+  constructor(props){
+      super(props);
+      this.state={
+        open: false
+
+
+      }
+
+  }
+
+
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -106,53 +101,21 @@ class Homepage extends React.Component {
   }
 
 
+
+
+
   render() {
     const { classes, theme } = this.props;
     const { open } = this.state;
 
     return (
       <div className={classes.root}>
-        <AppBar
-          position="fixed"
-          className={classNames(classes.appBar, {
-            [classes.appBarShift]: open,
-          })}
-        >
-          <Toolbar disableGutters={!open} style={{color: '#000', maxHeight: '56px'}}>
-            <IconButton
-              color="inherit"
-              aria-label="Open drawer"
-              onClick={this.handleDrawerOpen}
-              className={classNames(classes.menuButton, open && classes.hide)}
-              style={{outline: 'none'}}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Fade in={true}  timeout={2000}>
 
-            <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
-                  <Typography style={{fontFamily: 'Devonshire', fontSize: 40, color: '#B00020'}}>
 
-                    Genkō
-                  </Typography>
-            </div>
+        {this.state.open === false &&
 
-            </Fade>
-
-            <ScrollToTop showUnder={80}     duration={1000}
-                    style={{
-                    position: 'flex',
-                    cursor: 'pointer',
-                    transitionDuration: '1s',
-                    transitionTimingFunction: 'linear',
-                    transitionDelay: '0.5s',
-
-                    }}>
-
-      <SearchButton />
-      </ScrollToTop>
-          </Toolbar>
-        </AppBar>
+      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} />
+}
         <Drawer
           className={classes.drawer}
           variant="persistent"
@@ -176,7 +139,7 @@ class Homepage extends React.Component {
                 </ScrollToTop>
             </IconButton>
           </div>
-          <Divider />
+        
             <SimpleExpansionPanel/>
 
 
@@ -187,9 +150,10 @@ class Homepage extends React.Component {
           })}
         >
           <div className={classes.drawerHeader} />
-            <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6' }}>
+            <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6' }} onScroll={this.updateDimensions}>
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open}/>
           </div>
+
         </main>
       </div>
     );

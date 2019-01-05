@@ -692,7 +692,8 @@ margin-bottom: 0.65em;
   width: 100%;
   text-align: center;
   border-radius: 0px 0px 42px 42px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.19), 0 4px 4px rgba(0,0,0,0.23);
+  box-shadow: 0 0 0 4px rgba(255,255,255,1), 0 6px 4px rgba(0,0,0,0.4);
+height: 100px;
   background-position: center;
   background-size: 100%;
 }
