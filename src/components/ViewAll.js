@@ -187,7 +187,8 @@ render() {
          hintStyle={{fontSize: '6vw', fontFamily: 'Anton', color: 'rgba(0,0,0,0.8)'}}
          inputStyle={{fontSize: '6vw', fontFamily: 'Anton', color: '#000'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#ffffff', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop: 50 }}
+         style={{caretColor: '#000', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop:  56}}
+
          />
 
 

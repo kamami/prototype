@@ -37,7 +37,7 @@ const styles = theme => ({
  },
  show: {
    transform: "translate(0, 0)",
-   transition: "transform 2s",
+   transition: "transform 1s",
 
 
  },
@@ -86,12 +86,7 @@ class CollapsibleAppBar extends React.PureComponent {
    }
 
    updateDimensions() {
-     this.setState({ heightSet: window.scrollY }
- , () => {
-
-      console.log(this.state.heightSet)
-    }
-    );
+     this.setState({ heightSet: window.scrollY })
 }
 
    handleScroll() {
@@ -137,6 +132,13 @@ class CollapsibleAppBar extends React.PureComponent {
 
    }
 
+   onClick() {
+   window.location.reload();
+
+
+   }
+
+
   render() {
     const { classes } = this.props;
     return (
@@ -149,7 +151,7 @@ class CollapsibleAppBar extends React.PureComponent {
       >
 
 
-      <Toolbar disableGutters={!this.props.open } style={{color: '#000', maxHeight: '56px'}}>
+      <Toolbar disableGutters={!this.props.open } style={{color: '#000'}}>
          <IconButton
            color="inherit"
            aria-label="Open drawer"

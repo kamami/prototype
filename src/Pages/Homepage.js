@@ -44,7 +44,6 @@ const styles = theme => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
     backgroundColor: '#ffffff',
-    minHeight: 0
 
   },
 
@@ -77,13 +76,9 @@ class Homepage extends React.Component {
       super(props);
       this.state={
         open: false
-
-
       }
 
   }
-
-
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -93,11 +88,6 @@ class Homepage extends React.Component {
     this.setState({ open: false });
   };
 
-  onClick() {
-  window.location.reload();
-
-
-  }
 
 
 
@@ -113,8 +103,10 @@ class Homepage extends React.Component {
 
         {this.state.open === false &&
 
+
       <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} />
 }
+
         <Drawer
           className={classes.drawer}
           variant="persistent"
@@ -126,7 +118,7 @@ class Homepage extends React.Component {
         >
           <div className={classes.drawerHeader}>
             <IconButton onClick={this.handleDrawerClose} style={{outline: 'none'}}>
-              <ScrollToTop showUnder={-20}     duration={1000}
+              <ScrollToTop showUnder={-20} duration={1000}
                     style={{
                     position: 'flex',
                     cursor: 'pointer',
@@ -148,7 +140,6 @@ class Homepage extends React.Component {
             [classes.contentShift]: open,
           })}
         >
-          <div className={classes.drawerHeader} />
             <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6' }} onScroll={this.updateDimensions}>
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open}/>
           </div>
