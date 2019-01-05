@@ -36,7 +36,6 @@ const styles = theme => ({
   drawerPaper: {
     width: '50%',
     overflow: 'hidden',
-    borderRadius: '0 2em 2em 0'
   },
   drawerHeader: {
     display: 'flex',
@@ -139,7 +138,7 @@ class Homepage extends React.Component {
                 </ScrollToTop>
             </IconButton>
           </div>
-        
+
             <SimpleExpansionPanel/>
 
 
