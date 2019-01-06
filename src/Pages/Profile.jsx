@@ -120,7 +120,7 @@ class Profile extends React.Component {
               </AppBar>
             </div>
               <div>
-                <Card style={{marginTop: 100, background: '#ffffff',
+                <Card style={{marginTop: '15%', background: '#ffffff',
               padding: 20, width: '88%', marginLeft: 'auto', marginRight: 'auto'}}>
 
 
