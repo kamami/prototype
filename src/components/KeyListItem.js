@@ -16,6 +16,7 @@ import CheckIcon from '@material-ui/icons/CheckCircle';
 import Cancel from '@material-ui/icons/Cancel';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import FileCopy from '@material-ui/icons/FileCopy';
+import CustomSnackbar from '../components/CustomSnackbar';
 
 
 
@@ -152,6 +153,8 @@ handleClose = () => {
 
                 <DialogContent >
                 <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
+                  <CustomSnackbar snackbarOpen={this.state.copied} />
+
                   <div>
 
                       <CopyToClipboard text={this.props.code}
@@ -169,9 +172,7 @@ handleClose = () => {
 
                   <DialogContentText>
                     {this.state.copied &&
-                      <div>
 
-                      <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
 
 
                         <div style={{marginTop: '24px'}}>
@@ -187,7 +188,6 @@ handleClose = () => {
                         </a>
 
 
-                      </div>
                     </div>
                   }
 

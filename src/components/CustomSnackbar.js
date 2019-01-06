@@ -119,17 +119,18 @@ class CustomSnackbar extends React.Component {
 
         <Snackbar
           anchorOrigin={{
-            vertical: 'bottom',
+            vertical: 'top',
             horizontal: 'left',
           }}
           open={this.props.snackbarOpen && this.state.open}
           autoHideDuration={5000}
           onClose={this.handleClose}
+
         >
           <MySnackbarContentWrapper
             onClose={this.handleClose}
             variant="success"
-            message="Kauf erfolgreich"
+            message="Erfolgreich kopier!"
           />
         </Snackbar>
 

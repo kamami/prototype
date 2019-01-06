@@ -19,6 +19,7 @@ import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
+
 const drawerWidth = '50%';
 
 const styles = theme => ({
@@ -77,7 +78,7 @@ class Homepage extends React.Component {
       this.state={
         open: false
       }
-
+      this.copy = this.copy.bind(this);
   }
 
   handleDrawerOpen = () => {
@@ -88,7 +89,11 @@ class Homepage extends React.Component {
     this.setState({ open: false });
   };
 
-
+ copy(){
+   this.setState({
+     copied: true
+   })
+ }
 
 
 
@@ -140,8 +145,10 @@ class Homepage extends React.Component {
             [classes.contentShift]: open,
           })}
         >
+
             <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6' }} onScroll={this.updateDimensions}>
-              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open}/>
+
+              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} />
           </div>
 
         </main>

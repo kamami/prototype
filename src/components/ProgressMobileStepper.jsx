@@ -127,7 +127,6 @@ this.props.updateCredits();
 this.setState(prevState => ({
   activeStep: prevState.activeStep + 1,
 }));
-this.setState({snackbarOpen: true})
 this.updateKeys();
 
 }
@@ -162,7 +161,6 @@ updateKeys() {
 
       <div style={{textAlign: 'center', width: '100%'}}>
 
-        <CustomSnackbar snackbarOpen={this.state.snackbarOpen} />
 
       <MobileStepper
       variant="progress"
@@ -187,7 +185,7 @@ updateKeys() {
           <div>
         <p style={{fontFamily: 'roboto', fontSize: '1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
       Um den Bot in vollem Umfang genießen zu können, benötigst du einen Key.
-      Gib deinen Key direkt im Chatfenster ein, sobald du dazu aufgefordert wirst.
+      Gib deinen Key direkt im Messenger ein, sobald du dazu aufgefordert wirst.
 
     </p>
 
@@ -250,7 +248,7 @@ Bitte logge dich ein oder eröffne ein Konto.
                       <div>
 
                           <CopyToClipboard text={this.props.code}
-                            onCopy={() => this.setState({copied: true})}>
+                            onCopy={this.props.copy}>
                             <Button className={classes.button} variant="contained" >
 
                               {this.props.code}
@@ -276,10 +274,7 @@ Bitte logge dich ein oder eröffne ein Konto.
       <p style={{fontFamily:'roboto', color: 'grey'}}>
         (Klicken um den Key zu kopieren)
       </p>
-      <div style={{marginTop: '5%'}}>
-        {this.state.copied ? <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', marginTop: 50}}>Erfolgreich kopiert!</span> : null}
 
-      </div>
       </div>
 
     }

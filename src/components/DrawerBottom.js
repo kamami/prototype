@@ -4,6 +4,7 @@ import { withStyles} from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
 import FloatingActionButtons from '../components/FloatingActionButtons.js';
 import ProgressMobileStepper from '../components/ProgressMobileStepper.jsx';
+import CustomSnackbar from '../components/CustomSnackbar';
 
 const styles = {
   list: {
@@ -36,6 +37,8 @@ class DrawerBottom extends React.Component {
     });
   };
 
+
+
   render() {
 
 
@@ -44,7 +47,7 @@ class DrawerBottom extends React.Component {
    const fullList = (
      <div style={{display: 'flex', height: "45vh"}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto', width: '100%'}}>
-         <ProgressMobileStepper credits={this.props.credits} matchId={this.props.matchId} updateCredits={this.props.updateCredits} code={this.props.code}/>
+         <ProgressMobileStepper credits={this.props.credits} matchId={this.props.matchId} updateCredits={this.props.updateCredits} code={this.props.code} copy={this.props.copy}/>
 
 
 
@@ -56,6 +59,7 @@ class DrawerBottom extends React.Component {
 
    return (
      <div>
+       <CustomSnackbar snackbarOpen={this.props.copied} />
 
 
         <div onClick={this.toggleDrawer('bottom', true)}>

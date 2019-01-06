@@ -14,6 +14,7 @@ import Typed from 'react-typed';
 import SearchIcon from '@material-ui/icons/Search';
 import { debounce} from 'lodash'
 import Content from '../components/Content';
+import CustomSnackbar from '../components/CustomSnackbar';
 
 const { scaleDown } = transitions;
 
@@ -34,6 +35,7 @@ constructor(props){
   this.focus = this.focus.bind(this);
   this.updateMessage = debounce(this.updateMessage, 0 );
   this.loadContent = debounce(this.loadContent.bind(this), 0);
+  this.copy = this.copy.bind(this);
 
 
  }
@@ -107,6 +109,13 @@ fetch(requestUrl + '1&_limit=3')
    this.textInput.focus();
  }
 
+ copy(){
+   this.setState({
+     copied: true
+   })
+ }
+
+
 render() {
 
   const {message, data, tracks} = this.state;
@@ -136,7 +145,7 @@ render() {
             messenger={title.messenger}
             code={title.key}
             matchId={title.matchId}
-
+            copy={this.copy}
               />
       </Paper>
       </MuiThemeProvider>
@@ -149,6 +158,8 @@ render() {
     return (
 
       <div>
+        <CustomSnackbar snackbarOpen={this.state.copied} />
+
         {this.props.drawerOpen === false &&
 
       <Media query="(max-width: 599px)">
@@ -161,8 +172,7 @@ render() {
 <div style={{backgroundColor: 'rgba(255, 255, 255, 1)', marginBottom: 20}} className="city">
   <MuiThemeProvider>
 
-    <TextField hintText=
-<div>
+    <TextField hintText= <div>
   <SearchIcon style={{fontSize: '7.5vw', color: 'rgba(0,0,0,0.9)', marginBottom: -5}}/>
 
       <Typed
@@ -187,7 +197,8 @@ render() {
          hintStyle={{fontSize: '6vw', fontFamily: 'Anton', color: 'rgba(0,0,0,0.8)'}}
          inputStyle={{fontSize: '6vw', fontFamily: 'Anton', color: '#000'}}
          ref={(input) => { this.textInput = input; }}
-         style={{caretColor: '#000', width: '85%', maginLeft: 'auto', marginRight: 'auto', marginTop:  56}}
+         style={{caretColor: '#000', width: '85%', maginLeft: 'auto', marginRight: 'auto',
+           marginTop:  56}}
 
          />
 
