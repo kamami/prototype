@@ -1,7 +1,6 @@
 import React from 'react';
 import '../App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import ItemViewAll from '../components/ItemViewAll';
 import StackGrid, {transitions} from "react-stack-grid";
 import Paper from 'material-ui/Paper';
 import * as easings from '../components/easings';
@@ -15,6 +14,10 @@ import SearchIcon from '@material-ui/icons/Search';
 import { debounce} from 'lodash'
 import Content from '../components/Content';
 import CustomSnackbar from '../components/CustomSnackbar';
+import Button from '@material-ui/core/Button';
+import { history } from '../_helpers';
+
+import Card from '@material-ui/core/Card';
 
 const { scaleDown } = transitions;
 
@@ -111,7 +114,11 @@ fetch(requestUrl + '1&_limit=3')
  }
 
 
+
+
 render() {
+
+
 
   const {message, data, tracks} = this.state;
 
@@ -130,19 +137,42 @@ render() {
                   background: '#ffffff'
                 }} zDepth={1} >
 
-          <ItemViewAll
-            id={title.id}
-            key={title.id}
-            title={title.title}
-            score={title.vote_average}
-            overview={title.body}
-            backdrop={title.image}
-            description={title.description}
-            messenger={title.messenger}
-            code={title.key}
-            matchId={title.matchId}
-            copy={this.copy}
-              />
+                <div>
+
+
+
+
+                      <Card className="ItemViewAll" style={{backgroundImage: 'url(' + title.image + ')', boxShadow: 'none'}}>
+
+                    <div className="overlay" onClick = {()=> {history.push('/bots/' + title.id)}}/>
+                </Card>
+
+
+
+
+                      <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}  onClick={this.handleClickOpen}>
+                        {title.title}
+                      </div>
+                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}  onClick={this.handleClickOpen}>
+                        {title.body}
+                      </div>
+                      <div >
+
+
+                        <a href={title.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+                        <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
+                          color: '#ffffff', boxShadow: 'none', borderRadius: "0em 0em 2em 2em", Top: 100}}>
+                        Facebook
+                        <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
+                        </Button>
+                      </a>
+
+                    </div>
+
+
+
+                  </div>
+
       </Paper>
       </MuiThemeProvider>
       </div>
