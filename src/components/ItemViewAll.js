@@ -15,6 +15,8 @@ import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import DrawerBottom from '../components/DrawerBottom';
 import Fade from '@material-ui/core/Fade';
+import { history } from '../_helpers';
+import { Link } from 'react-router-dom';
 
 
 function Transition(props) {
@@ -32,6 +34,8 @@ class ItemViewAll extends React.Component{
   };
   this.toggle = this.toggle.bind(this);
   this.updateCredits = this.updateCredits.bind(this);
+  this.openDetails = this.openDetails.bind(this);
+
 }
 
      handleClickOpen = () => {
@@ -48,6 +52,12 @@ class ItemViewAll extends React.Component{
    this.setState({
      dropdownOpen: !this.state.dropdownOpen
    });
+ }
+
+ openDetails = () => {
+
+   history.push('/bots/' + this.props.id);
+
  }
 
 
@@ -89,6 +99,9 @@ class ItemViewAll extends React.Component{
            this.forceUpdate();
        })
  }
+
+
+
 
     render() {
 
@@ -269,10 +282,8 @@ class ItemViewAll extends React.Component{
               </Media>
                 </Fade>
 
-                </Dialog>
-              <div className="overlay" onClick={this.handleClickOpen}>
-
-              </div>
+              </Dialog>
+              <div className="overlay" onClick={this.openDetails}/>
           </Card>
 
 

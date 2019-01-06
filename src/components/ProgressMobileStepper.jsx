@@ -149,6 +149,8 @@ updateKeys() {
       },
       body: JSON.stringify({[this.props.matchId]: this.props.code})
     })
+    console.log(this.props.matchId)
+
 }
 
   render() {

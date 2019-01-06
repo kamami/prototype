@@ -96,14 +96,9 @@ fetch(requestUrl + '1&_limit=3')
       })
       }
 });
-
-
     }
 
-
     updateMessage = message => this.setState({ message });
-
-
 
    focus() {
    this.textInput.focus();
@@ -136,6 +131,7 @@ render() {
                 }} zDepth={1} >
 
           <ItemViewAll
+            id={title.id}
             key={title.id}
             title={title.title}
             score={title.vote_average}
