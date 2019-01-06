@@ -1,16 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { userActions } from '../_actions';
-import { withStyles, MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
@@ -19,7 +13,6 @@ import BackIcon from '@material-ui/icons/ArrowBack';
 import Toolbar from '@material-ui/core/Toolbar';
 import { history } from '../_helpers';
 import LoginButton from '../components/LoginButton';
-import RegisterButton from '../components/RegisterButton';
 import CloseButton from '../components/CloseButton';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';

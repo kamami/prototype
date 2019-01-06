@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import BackIcon from '@material-ui/icons/ArrowBack';
 import Toolbar from '@material-ui/core/Toolbar';
-import { history } from '../_helpers';
 import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton';
 import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -43,15 +42,8 @@ class LoginPage extends React.Component {
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.loginFacebook = this.loginFacebook.bind(this);
     }
 
-    loginFacebook = () => {
-      window.location.reload();
-
-      history.push('/profilepage');
-
-    }
 
 
 
@@ -71,10 +63,9 @@ class LoginPage extends React.Component {
         const { username, password } = this.state;
         const { dispatch } = this.props;
         if (username && password) {
-            dispatch(userActions.login(username, password));
+            dispatch(userActions.login(username, password))
 
-        }
-
+          }
     }
 
 
