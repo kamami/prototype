@@ -130,7 +130,7 @@ class CustomSnackbar extends React.Component {
           <MySnackbarContentWrapper
             onClose={this.handleClose}
             variant="success"
-            message="Erfolgreich kopier!"
+            message="Erfolgreich kopiert!"
           />
         </Snackbar>
 
