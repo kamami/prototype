@@ -1,13 +1,10 @@
 import React from 'react';
 import '../App.css';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import BackIcon from '@material-ui/icons/ArrowBack';
 import Toolbar from '@material-ui/core/Toolbar';
-import Facebook from '../components/Facebook';
 import { history } from '../_helpers';
 import Button from '@material-ui/core/Button';
 import DrawerBottom from '../components/DrawerBottom';

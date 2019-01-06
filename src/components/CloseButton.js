@@ -4,6 +4,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import Close from '@material-ui/icons/Cancel';
 import Media from "react-media";
+import { history } from '../_helpers';
 
 const styles = theme => ({
   button: {
@@ -51,12 +52,14 @@ class CloseButton extends React.Component{
       <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
-      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}} >
+      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}}                     onClick={history.goBack}
+>
       {this.props.label}
         <Close className={classes.rightIconSmall} />
       </Button>
 ):(
-  <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}} >
+  <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}}                     onClick={history.goBack}
+>
   {this.props.label}
     <Close className={classes.rightIcon} />
   </Button>

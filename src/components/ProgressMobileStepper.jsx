@@ -7,11 +7,9 @@ import { history } from '../_helpers';
 import Key from '@material-ui/icons/VpnKey';
 import FileCopy from '@material-ui/icons/FileCopy';
 import { authHeader } from '../_helpers';
-
 import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
-import CustomSnackbar from '../components/CustomSnackbar';
 
 const tutorialSteps = [
   {

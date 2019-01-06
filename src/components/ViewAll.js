@@ -1,13 +1,9 @@
 import React from 'react';
 import '../App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import StackGrid, {transitions} from "react-stack-grid";
 import Paper from 'material-ui/Paper';
-import * as easings from '../components/easings';
 import TextField from 'material-ui/TextField';
-import button from 'reactstrap';
 import Media from "react-media";
-import InfiniteScroll from 'react-infinite-scroller';
 import Fade from '@material-ui/core/Fade';
 import Typed from 'react-typed';
 import SearchIcon from '@material-ui/icons/Search';
@@ -19,7 +15,6 @@ import { history } from '../_helpers';
 
 import Card from '@material-ui/core/Card';
 
-const { scaleDown } = transitions;
 
 class ViewAll extends React.Component{
 
@@ -122,7 +117,6 @@ render() {
 
   const {message, data, tracks} = this.state;
 
-  const loader = <div className="loader2"> </div>;
 
   var items = [];
   const imageUrl = require(`../assets/white-wall.jpg`)

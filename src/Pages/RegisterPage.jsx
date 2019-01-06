@@ -99,15 +99,13 @@ class RegisterPage extends React.Component {
               >
                 <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
       }}>
-      <Link to="/">
 
                   <IconButton
-
+                    onClick={history.goBack}
                     style={{outline: 'none', color: '#000'}}
                   >
                     <BackIcon />
                   </IconButton>
-                </Link>
 
                 <Typography style={{fontFamily: 'Roboto', fontSize: 20, color: '#000'}}>
 
@@ -258,9 +256,7 @@ class RegisterPage extends React.Component {
 
 
 
-                      <Link to="/login">
                         <CloseButton background='#B00020' label='Abbrechen'/>
-                      </Link>
 
                   </div>
                 </form>
