@@ -144,10 +144,10 @@ render() {
 
 
 
-                      <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton'}}  onClick = {()=> {history.push('/bots/' + title.id)}}>
+                      <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton', color: '#484F58'}}  onClick = {()=> {history.push('/bots/' + title.id)}}>
                         {title.title}
                       </div>
-                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter'}}  onClick = {()=> {history.push('/bots/' + title.id)}}>
+                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', color: '#484F58'}}  onClick = {()=> {history.push('/bots/' + title.id)}}>
                         {title.body}
                       </div>
                       <div >

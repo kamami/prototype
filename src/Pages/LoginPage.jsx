@@ -197,7 +197,7 @@ class LoginPage extends React.Component {
 
                       <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
                         <div onClick={this.handleSubmit}>
-                          <LoginButton background='#FF6B6B' label='#Login'/>
+                          <LoginButton background='#FF6B6B' label='Login'/>
 
                         </div>
 

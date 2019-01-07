@@ -9,14 +9,17 @@ import Media from "react-media";
 const styles = theme => ({
   button: {
     marginTop: 50,
-    color: '#ffffff'
+    color: '#ffffff',
+    boxShadow: 'none'
 
   },
   buttonsmall:{
     marginTop: 50,
     color: '#ffffff',
     fontSize: '0.7em',
-    marginBottom: 50
+    marginBottom: 50,
+    boxShadow: 'none'
+
 
   },
   leftIcon: {

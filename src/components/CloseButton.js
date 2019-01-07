@@ -12,7 +12,9 @@ const styles = theme => ({
     marginTop: 50,
     color: '#ffffff',
     position: 'absolute',
-    right: '10%'
+    right: '10%',
+    boxShadow: 'none'
+
   },
   buttonsmall: {
     marginLeft: '10%',
@@ -20,7 +22,9 @@ const styles = theme => ({
     color: '#ffffff',
     position: 'absolute',
     right: '10%',
-    fontSize: '0.7em'
+    fontSize: '0.7em',
+    boxShadow: 'none'
+
   },
   leftIcon: {
     marginRight: theme.spacing.unit,

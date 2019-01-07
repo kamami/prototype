@@ -203,13 +203,13 @@ Bitte logge dich ein oder eröffne ein Konto.
      <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
 
        <div onClick={this.toLogin}>
-         <LoginButton background='green' label='Login'/>
+         <LoginButton background='#FF6B6B' label='Login'/>
 
        </div>
 
 
  <div onClick={this.toRegister}>
-              <RegisterButton background='#B00020' label='Registrieren'/>
+              <RegisterButton background='#484F58' label='Registrieren'/>
       </div>
      </div>
          </div>

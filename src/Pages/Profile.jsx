@@ -129,7 +129,7 @@ class Profile extends React.Component {
 
                   <MuiThemeProvider theme={theme}>
 
-                <Button  onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#FF6B6B'}}>
+                <Button  onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#FF6B6B', boxShadow: 'none', borderWidth: 0}}>
                 Logout
                 </Button>
                 </MuiThemeProvider>
