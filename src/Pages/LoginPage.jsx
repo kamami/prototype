@@ -112,7 +112,7 @@ class LoginPage extends React.Component {
 
 
                 <div  style={{display: 'flex'}}>
-    <Typography style={{fontFamily: 'Devonshire', fontSize: 90, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}}>
+    <Typography style={{fontFamily: 'Devonshire', fontSize: 90, marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
 
   Genkō
     </Typography>
@@ -197,7 +197,7 @@ class LoginPage extends React.Component {
 
                       <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
                         <div onClick={this.handleSubmit}>
-                          <LoginButton background='green' label='Login'/>
+                          <LoginButton background='#FF6B6B' label='#Login'/>
 
                         </div>
 
@@ -205,7 +205,7 @@ class LoginPage extends React.Component {
 
 
                           <Link to="/register">
-                              <RegisterButton background='#B00020' label='Registrieren'/>
+                              <RegisterButton background='#484F58' label='Registrieren'/>
                           </Link>
 
                       </div>

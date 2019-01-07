@@ -112,7 +112,7 @@ class RegisterPage extends React.Component {
                 <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
-                  <Typography style={{fontFamily: 'Devonshire', fontSize: 90, color: '#B00020', marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}}>
+                  <Typography style={{fontFamily: 'Devonshire', fontSize: 90, marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
 
   Genkō
     </Typography>
@@ -242,14 +242,14 @@ class RegisterPage extends React.Component {
                   </div>
                   <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
                     <div onClick={this.handleSubmit}>
-                      <LoginButton background='green' label='Registrieren'/>
+                      <LoginButton background='#FF6B6B' label='Registrieren'/>
 
                     </div>
 
 
 
 
-                        <CloseButton background='#B00020' label='Abbrechen'/>
+                        <CloseButton background='#484F58' label='Abbrechen'/>
 
                   </div>
                 </form>

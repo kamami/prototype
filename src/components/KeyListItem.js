@@ -125,10 +125,11 @@ handleClose = () => {
                   <ListItemText
                     primary={this.props.title}
                     secondary={secondary ? this.props.key : null}
+                    style={{color: '#484F58'}}
                   />
                   <ListItemSecondaryAction>
                     <IconButton aria-label="Delete" onClick={this.handleClickOpen}>
-                      <CheckIcon style={{color: 'green'}} />
+                      <CheckIcon style={{color: '#00C9B7'}} />
                     </IconButton>
                   </ListItemSecondaryAction>
                 </ListItem>
@@ -160,7 +161,7 @@ handleClose = () => {
                       <CopyToClipboard text={this.props.code}
                         onCopy={() => this.setState({copied: true})}>
                         <div style={{display: 'flex'}}>
-                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: 'green', color: '#ffffff'}}>
+                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}}>
 
                           {this.props.code}
 
@@ -224,108 +225,10 @@ handleClose = () => {
                        />
                        <ListItemSecondaryAction>
                          <IconButton aria-label="Delete">
-                           <Cancel style={{color: 'rgba(255, 0, 0, 0.4)'}} />
+                           <Cancel style={{color: 'rgba(255, 107, 107, 0.4)'}} />
                          </IconButton>
                        </ListItemSecondaryAction>
                      </ListItem>
-                     <div>
-                     <Dialog
-                       open={this.state.open}
-                       onClose={this.handleClose}
-                       aria-labelledby="alert-dialog-title"
-                       aria-describedby="alert-dialog-description"
-                       scroll={this.state.scroll}
-                       style={{overflow: 'hidden', height: 'calc(100vh + 40px)'}}
-                       PaperProps={{
-
-
-                   style: {
-                   backgroundColor: '#f6f6f6',
-                   boxShadow: 'none',
-                   width: '90%'
-                   },
-                   }}
-                     >
-
-                     <DialogContent >
-                     <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
-                       <div>
-
-                           <CopyToClipboard text={this.props.code}
-
-                             onCopy={() => this.setState({copied: true})}>
-                             <div style={{display: 'flex'}}>
-                             <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: 'green', color: '#ffffff'}}>
-
-                               {this.props.code}
-
-                               <FileCopy style={{color: '#ffffff',right: 10, position: 'absolute'}}/>
-                             </Button>
-                             </div>
-                           </CopyToClipboard>
-                       </div>
-
-                       <DialogContentText>
-                         {this.state.copied &&
-                           <div>
-
-                           <span style={{fontFamily: 'Roboto', fontSize: '1em', color: 'green', fontWeight: 'bold', margin: 'auto'}}>Erfolgreich kopiert!</span>
-
-
-                             <div style={{marginTop: '24px', paddingLeft: '5vw', paddingRight: '5vw'}}>
-                               <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
-
-                                 {this.props.messenger !== "." &&
-                                 <a href={this.props.messenger} target="_blank" rel="noopener noreferrer">
-                                 <img src={require("../assets/Messenger-Icon.png")} className="iconButtonKeys" alt="Messenger"/>
-                                 </a>
-                                 }
-                                 {this.props.kik !== "." &&
-                                 <a href={this.props.kik} target="_blank" rel="noopener noreferrer">
-                                 <img src={require("../assets/Kik-Icon.png")} className="iconButtonKeys"/>
-                                 </a>
-                                 }
-
-                                 {this.props.slack !== "." &&
-                                 <a href={this.props.slack} target="_blank" rel="noopener noreferrer">
-                                 <img src={require("../assets/Slack-Icon.png")} className="iconButtonKeys"/>
-                                 </a>
-                                 }
-
-                                 {this.props.telegram !=="." &&
-                                 <a href={this.props.telegram} target="_blank" rel="noopener noreferrer">
-                                 <img src={require("../assets/Telegram-Icon.png")} className="iconButtonKeys"/>
-                                 </a>
-                                 }
-
-                                 {this.props.twitter !== "." &&
-                                 <a href={this.props.twitter} target="_blank" rel="noopener noreferrer">
-                                 <img src={require("../assets/Twitter-Icon.png")} className="iconButtonKeys"/>
-                                 </a>
-                                 }
-                                 {this.props.discord !== "." &&
-                                 <a href={this.props.discord} target="_blank" rel="noopener noreferrer">
-                                 <img src={require("../assets/Discord-Icon.png")} className="iconButtonKeys"/>
-                                 </a>
-                                 }
-                               </div>
-
-
-                           </div>
-                         </div>
-                       }
-
-                       </DialogContentText>
-
-
-                         </div>
-                     </DialogContent>
-
-
-
-                     </Dialog>
-                     </div>
-
 
 
                </div>

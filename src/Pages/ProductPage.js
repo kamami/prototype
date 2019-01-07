@@ -23,14 +23,20 @@ const styles = {
 
 
  show: {
+   opacity: 1,
+   visibility: 'visible',
    transform: "translate(0, 0)",
-   transition: "transform 1s",
+   transition: "transform 1s, opacity 1s linear",
 
 
  },
  hide: {
-   transform: "translate(calc(-96vw + 131.5px + 4vw), 0px) rotate(180deg)",
-   transition: "transform 1s",
+   visibility: 'hidden',
+   opacity: 0,
+
+   transform: "translate(calc(-96vw + 131.5px + 4vw), 0px)",
+   transition: "transform 1s, visibility 0s 1s, opacity 1s ease-in-out"
+
  },
  blur: {
    width: '100vw',
@@ -248,7 +254,7 @@ getScrollClassNameBlur() {
                     <BackIcon />
                   </IconButton>
                   {user && user.token &&
-                  <Button variant="outlined" style={{position: 'absolute', right: 20, background: '#B00020', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
+                  <Button variant="outlined" style={{position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto', borderWidth: 0}}>
                               <Credits style={{marginRight: '2%'}}/>
                                {this.state.credits}</Button>
 
@@ -271,18 +277,18 @@ getScrollClassNameBlur() {
                  </Button>
                </a>
                <div style={{display: 'flex'}}>
-                 <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#B00020'}}/>
+                 <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#484F58'}}/>
 
-                 <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
+                 <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#484F58'}}> 20 Credits</p>
 
              </div>
 
-                     <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
+                     <div className="BreakWords" style={{color: '#484F58', fontSize: '1.5rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
                        {this.state.title}
                      </div>
                      <div className="BreakWords"
                        style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
-                         fontWeight: 'lighter', width: '100%', textAlign: 'justify', paddingLeft: 0, paddingRight: 0}}>
+                         fontWeight: 'lighter', width: '100%', textAlign: 'justify', paddingLeft: 0, paddingRight: 0, color: '#484F58'}}>
                        {this.state.description}
                      </div>
 

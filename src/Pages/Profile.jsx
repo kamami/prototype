@@ -97,20 +97,20 @@ class Profile extends React.Component {
                 position="fixed"
 
               >
-                <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
+                <Toolbar  style={{background: '#ffffff',       maxHeight: '56px'
       }}>
       <Link to="/">
 
                   <IconButton
 
-                    style={{outline: 'none', color: '#000'}}
+                    style={{outline: 'none'}}
                   >
                     <BackIcon />
                   </IconButton>
                 </Link>
 
                 {user && user.token &&
-                          <Button  variant="outlined" style={{position: 'absolute', right: 20, background: '#B00020', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
+                          <Button  variant="outlined" style={{borderWidth: 0, position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
                             <Credits />
                              {this.state.credits}</Button>
 
@@ -129,7 +129,7 @@ class Profile extends React.Component {
 
                   <MuiThemeProvider theme={theme}>
 
-                <Button  onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#B00020'}}>
+                <Button  onClick={this.logout} variant="contained" color="primary" style={{color: '#ffffff', backgroundColor: '#FF6B6B'}}>
                 Logout
                 </Button>
                 </MuiThemeProvider>

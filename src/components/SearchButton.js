@@ -20,7 +20,7 @@ class SearchButton extends React.Component{
                 {matches =>
                   matches ? (
                     <MuiThemeProvider>
-                      <RaisedButton label="Search" backgroundColor='#B00020' labelColor='#ffffff'
+                      <RaisedButton label="Search" backgroundColor='#1d4e35' labelColor='#ffffff'
                         style={{position: 'absolute', right: 20, top: 15}}/>
                       </MuiThemeProvider>                ):(
 

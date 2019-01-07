@@ -61,7 +61,8 @@ const styles = theme => ({
   margin: theme.spacing.unit,
   width: '90%',
   color: '#ffffff',
-  backgroundColor: 'green'
+  backgroundColor: '#FF6B6B',
+  boxShadow: 'none'
 },
 
 
@@ -167,7 +168,6 @@ updateKeys() {
         steps={maxSteps}
         position="static"
         activeStep={activeStep}
-
         classes={{
        root: classes.root, // class name, e.g. `classes-nesting-root-x`
      }}
@@ -183,7 +183,7 @@ updateKeys() {
       <div>
         {user && user.token ?
           <div>
-        <p style={{fontFamily: 'roboto', fontSize: '1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+        <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
       Um den Bot in vollem Umfang genießen zu können, benötigst du einen Key.
       Gib deinen Key direkt im Messenger ein, sobald du dazu aufgefordert wirst.
 
@@ -196,7 +196,7 @@ updateKeys() {
        :
 
        <div>
-         <p style={{fontFamily: 'roboto', fontSize: '1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+         <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
 Bitte logge dich ein oder eröffne ein Konto.
 
      </p>
@@ -221,7 +221,7 @@ Bitte logge dich ein oder eröffne ein Konto.
     }
     {tutorialSteps[activeStep].id === 2 &&
       <div>
-    <p style={{fontFamily: 'roboto', fontSize:'1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+    <p style={{fontFamily: 'roboto', fontSize:'1em', color: '#484F58', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
 
@@ -239,7 +239,7 @@ Bitte logge dich ein oder eröffne ein Konto.
       <div>
         <div>
 
-              <p style={{fontFamily: 'roboto', fontSize: '1.1em', color: 'grey', marginLeft: '2%', marginRight: '2%', marginTop: '7%', fontWeight: 'bold'}}>
+              <p style={{fontFamily: 'roboto', fontSize: '1.1em', color: '#484F58', marginLeft: '2%', marginRight: '2%', marginTop: '7%', fontWeight: 'bold'}}>
                 Hier ist dein Key:
                   </p>
 
