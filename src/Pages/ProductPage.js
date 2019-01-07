@@ -12,8 +12,70 @@ import { authHeader } from '../_helpers';
 import Credits from '@material-ui/icons/MonetizationOn';
 import CustomSnackbar from '../components/CustomSnackbar';
 import Dialog from '@material-ui/core/Dialog';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+
+import { withStyles } from '@material-ui/core/styles';
 
 import DialogContent from '@material-ui/core/DialogContent';
+
+const styles = {
+
+
+ show: {
+   transform: "translate(0, 0)",
+   transition: "transform 1s",
+
+
+ },
+ hide: {
+   transform: "translate(calc(-96vw + 131.5px + 4vw), 0px) rotate(180deg)",
+   transition: "transform 1s",
+ },
+ blur: {
+   width: '100vw',
+   height: '30vh',
+   marginTop: '56px',
+   objectFit: 'cover',
+   backgroundPosition: '50% 50%',
+   display: 'block',
+   backgroundRepeat: 'no-repeat',
+   webkitFilter:' blur(30px)',
+   mozFilter: 'blur(30px)',
+oFilter: 'blur(30px)',
+msFilter: 'blur(30px)',
+filter: 'blur(30px)',
+webkitTransition:' 2s -webkit-filter linear',
+oTransition: '2s -o-filter linear',
+transition: '1s -webkit-filter linear'
+
+
+},
+noBlur:{
+  width: '100vw',
+  height: '30vh',
+  marginTop: '56px',
+  objectFit: 'cover',
+  backgroundPosition: '50% 50%',
+  display: 'block',
+  backgroundRepeat: 'no-repeat',
+  webkitFilter: 'blur(0px)',
+  mozFilter: 'blur(0px)',
+  oFilter: 'blur(0px)',
+  msFilter: 'blur(0px)',
+filter: 'blur(0px)',
+webkitTransition:' 2s -webkit-filter linear',
+oTransition: '2s -o-filter linear',
+transition: '1s -webkit-filter linear'
+
+
+
+},
+
+
+}
+
+
 
 
 class ProductPage extends React.Component {
@@ -25,13 +87,77 @@ class ProductPage extends React.Component {
       }
       this.updateCredits = this.updateCredits.bind(this);
       this.copy = this.copy.bind(this);
-
+      this.updateDimensions = this.updateDimensions.bind(this);
+      this.getScrollClassName = this.getScrollClassName.bind(this);
+      this.handleScroll = this.handleScroll.bind(this);
   }
+
+
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  updateDimensions() {
+    this.setState({ heightSet: window.scrollY })
+}
+
+handleScroll() {
+  const lastScroll = window.scrollY;
+
+  if (lastScroll === this.state.lastScroll) {
+    return;
+  }
+
+  const shouldShow =
+    this.lastScroll !== null ? lastScroll < this.lastScroll : null;
+
+  if (shouldShow !== this.state.shouldShow) {
+    this.setState(prevState => ({
+      ...prevState,
+      shouldShow,
+    }));
+  }
+
+  this.lastScroll = lastScroll;
+}
+
+getScrollClassName() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if(this.state.shouldShow === false && this.state.heightSet > 20){
+     return this.props.classes.hide;
+
+   } else {
+     return this.props.classes.show;
+
+   }
+
+}
+
+getScrollClassNameBlur() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if(this.state.shouldShow === false && this.state.heightSet > 20){
+     return this.props.classes.blur;
+
+   } else {
+     return this.props.classes.noBlur;
+
+   }
+
+}
 
 
 
 
   componentDidMount() {
+    this.updateDimensions();
+
+    window.addEventListener('scroll', this.handleScroll, { passive: true });
+    window.addEventListener('scroll', this.updateDimensions);
 
     const { match: { params } } = this.props;
     let user = JSON.parse(localStorage.getItem('user'));
@@ -103,15 +229,14 @@ class ProductPage extends React.Component {
       let user = JSON.parse(localStorage.getItem('user'));
 
         return (
-
-            <div >
+          <div style={{backgroundColor: '#ffffff', height: 'calc(70vh - 56px)'}}>
             <CustomSnackbar snackbarOpen={this.state.copied} />
 
               <AppBar
                 position="fixed"
 
               >
-                <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
+                <Toolbar  style={{background: '#ffffff', color: '#000',maxHeight: '56px'
       }}>
 
 
@@ -131,18 +256,16 @@ class ProductPage extends React.Component {
 
                 </Toolbar>
               </AppBar>
-              <div style={{padding: '5%', marginTop: '15%'}}>
-              <div style={{ display: 'flex', background: '#ffffff', borderRadius: '2em'  }}>
-                   <div style={{ display: 'inline-block', flex: 1}}>
-                     <img className="DetailImgMobile" src={this.state.backdrop} alt="DetailImgMobile"/>
-
-
+                   <div style={{position: 'fixed', top: 0, zIndex: -1}}>
+                     <img className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
                    </div>
 
-                   <div>
+                   <div style={{marginTop: 'calc(30vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)' }}>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                  <Button variant="contained" style={{backgroundColor: '#3b5998',
-                   color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
+                   color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em", marginTop: -20, float: 'right'}}
+                   className={classNames(`${this.getScrollClassName()}`)}
+                   >
                  Facebook
                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
                  </Button>
@@ -152,11 +275,8 @@ class ProductPage extends React.Component {
 
                  <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#B00020'}}> 20 Credits</p>
 
-               </div>
              </div>
 
-           </div>
-                   <div>
                      <div className="BreakWords" style={{fontSize: '1.5rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
                        {this.state.title}
                      </div>
@@ -165,14 +285,12 @@ class ProductPage extends React.Component {
                          fontWeight: 'lighter', width: '100%', textAlign: 'justify', paddingLeft: 0, paddingRight: 0}}>
                        {this.state.description}
                      </div>
-                     <div>
+
                      <DrawerBottom updateCredits = {this.updateCredits} code={this.state.code} matchId={this.state.matchId} copy={this.copy}/>
 
 
-                     </div>
 
 
-                 </div>
                  </div>
 
                  {this.state.loading &&
@@ -202,7 +320,6 @@ class ProductPage extends React.Component {
 
                }
 
-
             </div>
         );
     }
@@ -214,6 +331,11 @@ function mapStateToProps(state) {
         isLoggedIn
     };
 }
+ProductPage.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
 
 const connectedProfilePage = connect(mapStateToProps)(ProductPage);
-export { connectedProfilePage as ProductPage };
+
+export default withStyles(styles)(ProductPage );

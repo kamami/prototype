@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 import { history } from './_helpers';
 import {alertActions}   from './_actions';
 import { PrivateRoute } from './_components';
-import {ProductPage} from './Pages/ProductPage';
+import ProductPage from './Pages/ProductPage';
 import TourWuerzburg from './Pages/TourWuerzburg';
 import {KeysPage} from './Pages/KeysPage';
 

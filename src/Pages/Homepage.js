@@ -146,7 +146,7 @@ class Homepage extends React.Component {
           })}
         >
 
-            <div style={{position: 'relative', width: '100%', marginBottom: 10, background: '#f6f6f6' }} onScroll={this.updateDimensions}>
+            <div style={{position: 'relative', width: '100%', marginBottom: 10 }} onScroll={this.updateDimensions}>
 
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} />
           </div>

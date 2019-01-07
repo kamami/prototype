@@ -15,7 +15,7 @@ import ScrollToTop from 'react-scroll-up';
 import SearchButton from '../components/SearchButton';
 import Fade from '@material-ui/core/Fade';
 
-const styles = theme => ({
+const styles = {
   root: {
    flexGrow: 1
  },
@@ -49,7 +49,7 @@ menuButton: {
   marginRight: 20,
 },
 
-});
+};
 
 
 

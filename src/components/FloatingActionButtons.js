@@ -11,7 +11,8 @@ const styles = theme => ({
     margin: theme.spacing.unit,
   },
   extendedIcon: {
-    marginRight: theme.spacing.unit,
+
+
   },
 });
 
@@ -22,14 +23,16 @@ function FloatingActionButtons(props) {
       <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
-      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw', fontSize: '0.7em', float: 'right'}}>
+                <Fab color="primary" aria-label="Add" className={classes.fab}
+        style={{background: '#B00020', color: '#ffffff', outline:'none',
+          float: 'right', marginBottom: '4vw', position: 'fixed', bottom: 0}}>
         <Key className={classes.extendedIcon} />
-            Key erhalten
       </Fab>
     ) : (
-      <Fab variant="extended" aria-label="Delete" className={classes.fab} style={{background: '#B00020', color: '#ffffff', outline:'none', width: '46vw', float: 'right'}}>
+      <Fab color="primary" aria-label="Add" className={classes.fab}
+        style={{background: '#B00020', color: '#ffffff', outline:'none',
+          float: 'right',  marginBottom: '4vw', position: 'fixed', bottom: 0, right: 'calc(4vw - 6px)'}}>
         <Key className={classes.extendedIcon} />
-            Key erhalten
       </Fab>
 
     )}
