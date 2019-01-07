@@ -14,9 +14,8 @@ import CustomSnackbar from '../components/CustomSnackbar';
 import Dialog from '@material-ui/core/Dialog';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-
+import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
-
 import DialogContent from '@material-ui/core/DialogContent';
 
 const styles = {
@@ -277,18 +276,19 @@ getScrollClassNameBlur() {
                  </Button>
                </a>
                <div style={{display: 'flex'}}>
-                 <Credits style={{marginRight: '2%', float: 'left', marginTop: 24, color: '#484F58'}}/>
+                 <Credits style={{marginRight: '2%', float: 'left', color: '#484F58', marginTop: '5vh'}}/>
 
-                 <p style={{marginTop: 20, fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#484F58'}}> 20 Credits</p>
+                 <p style={{ fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#484F58', marginTop: '4.5vh'}}> 20 Credits</p>
 
              </div>
 
-                     <div className="BreakWords" style={{color: '#484F58', fontSize: '1.5rem', marginTop: 40, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0}}>
+                     <div style={{color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
                      </div>
-                     <div className="BreakWords"
+                     <Divider style={{width: '30%', height: 3, backgroundColor: '#40E0D0'}}/>
+                     <div
                        style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
-                         fontWeight: 'lighter', width: '100%', textAlign: 'justify', paddingLeft: 0, paddingRight: 0, color: '#484F58'}}>
+                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
 

@@ -10,7 +10,9 @@ const styles = theme => ({
   button: {
     marginTop: 50,
     color: '#ffffff',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderWidth: 1.5,
+    borderColor: '#FF6B6B',
 
   },
   buttonsmall:{
@@ -18,7 +20,10 @@ const styles = theme => ({
     color: '#ffffff',
     fontSize: '0.7em',
     marginBottom: 50,
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderWidth: 1.5,
+    borderColor: '#FF6B6B',
+
 
 
   },
@@ -51,12 +56,12 @@ class LoginButton extends React.Component{
       <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
-      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}}>
+      <Button variant="outlined"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}}>
     {this.props.label}
         <Input className={classes.rightIconSmall} />
       </Button>
     ) :(
-      <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}}>
+      <Button variant="outlined"  className={classes.button} style={{backgroundColor: this.props.background}}>
     {this.props.label}
         <Input className={classes.rightIcon} />
       </Button>

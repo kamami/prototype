@@ -1,9 +1,8 @@
 import React from 'react';
 import '../App.css';
-
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { userActions } from '../_actions';
+import { userActions, alertActions } from '../_actions';
 import AppBar from '@material-ui/core/AppBar';
 import Fade from '@material-ui/core/Fade';
 import Typography from '@material-ui/core/Typography';
@@ -20,12 +19,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-
-
-
-
-
-
+import { alertConstants } from '../_constants/alert.constants';
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -44,9 +38,6 @@ class LoginPage extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-
-
-
     handleChange = name => event => {
    this.setState({ [name]: event.target.value });
  };
@@ -64,16 +55,14 @@ class LoginPage extends React.Component {
         const { dispatch } = this.props;
         if (username && password) {
             dispatch(userActions.login(username, password))
-
           }
     }
 
 
 
     render() {
-        const { loggingIn } = this.props;
+        const { loggingIn, classes } = this.props;
         const { username, password, submitted } = this.state;
-        const { classes } = this.props;
 
         const theme = createMuiTheme({
   palette: {
@@ -108,7 +97,8 @@ class LoginPage extends React.Component {
                             </AppBar>
 
               <div style={{marginTop: 70 }}>
-                <Fade in={true}  timeout={2000}>
+
+  <Fade in={true}  timeout={2000}>
 
 
                 <div  style={{display: 'flex'}}>
@@ -120,7 +110,7 @@ class LoginPage extends React.Component {
 
               </Fade>
 
-                                <form name="form" >
+                                <form name="form">
                       <div className={'form-group' + (submitted && !username ? ' has-error' : '')} >
                         <div style={{display: 'flex'}}>
                           <MuiThemeProvider theme={theme}>
@@ -209,10 +199,6 @@ class LoginPage extends React.Component {
                           </Link>
 
                       </div>
-                      <div>
-
-                      </div>
-
 
 
                   </form>

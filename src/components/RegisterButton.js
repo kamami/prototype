@@ -9,20 +9,25 @@ const styles = theme => ({
   button: {
     marginLeft: '10%',
     marginTop: 50,
-    color: '#ffffff',
+    color: '#FF6B6B',
     position: 'absolute',
     right: '10%',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderColor: '#FF6B6B',
+    borderWidth: 1.5
 
   },
   buttonsmall: {
     marginLeft: '10%',
     marginTop: 50,
-    color: '#ffffff',
+    color: '#FF6B6B',
     position: 'absolute',
     right: '10%',
     fontSize: '0.6em',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderColor: '#FF6B6B',
+    borderWidth: 1.5
+
 
   },
 
@@ -57,13 +62,13 @@ class RegisterButton extends React.Component{
       <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
-      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}} >
+      <Button  className={classes.buttonsmall} variant="outlined" >
       {this.props.label}
-        <Key className={classes.rightIconSmall} />
+        <Key className={classes.rightIconSmall}  />
       </Button>
 ):(
 
-  <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}} >
+  <Button className={classes.button}  variant="outlined" >
   {this.props.label}
     <Key className={classes.rightIcon} />
   </Button>

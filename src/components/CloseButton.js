@@ -10,20 +10,23 @@ const styles = theme => ({
   button: {
     marginLeft: '10%',
     marginTop: 50,
-    color: '#ffffff',
+    color: '#FF6B6B',
     position: 'absolute',
     right: '10%',
-    boxShadow: 'none'
-
+    boxShadow: 'none',
+    borderColor: '#FF6B6B',
+    borderWidth: 1.5
   },
   buttonsmall: {
     marginLeft: '10%',
     marginTop: 50,
-    color: '#ffffff',
+    color: '#FF6B6B',
     position: 'absolute',
     right: '10%',
     fontSize: '0.7em',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    borderColor: '#FF6B6B',
+    borderWidth: 1.5
 
   },
   leftIcon: {
@@ -56,13 +59,13 @@ class CloseButton extends React.Component{
       <Media query="(max-width: 350px)">
             {matches =>
               matches ? (
-      <Button variant="contained"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}}                     onClick={history.goBack}
+      <Button variant="outlined"  className={classes.buttonsmall}                     onClick={history.goBack}
 >
       {this.props.label}
         <Close className={classes.rightIconSmall} />
       </Button>
 ):(
-  <Button variant="contained"  className={classes.button} style={{backgroundColor: this.props.background}}                     onClick={history.goBack}
+  <Button variant="outlined"  className={classes.button}                    onClick={history.goBack}
 >
   {this.props.label}
     <Close className={classes.rightIcon} />

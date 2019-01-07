@@ -19,7 +19,7 @@ function login(username, password) {
             .then(
                 user => {
                     dispatch(success(user));
-                    history.push('/profile');
+                    history.goBack();
                 },
                 error => {
                     dispatch(failure(error.toString()));
