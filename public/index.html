@@ -5,6 +5,13 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui">
 
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+   <!-- Tell the browser it's a PWA -->
+   <meta name="mobile-web-app-capable" content="yes">
+   <!-- Tell iOS it's a PWA -->
+   <meta name="apple-mobile-web-app-capable" content="yes">
+   <!-- Make sure theme-color is defined -->
+   <meta name="theme-color" content="#00C9B7">
     <!--
       Notice the use of %PUBLIC_URL% in the tag above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -15,23 +22,59 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
      <title>Genkō</title>
+     <style type="text/css">
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+
+      .App-header {
+        background-color: #00C9B7;
+        height: 100vh;
+        color: white;
+        text-align: center;
+
+      }
+      .App-intro {
+        font-size: 7em;
+        color: white;
+        font-family: "Devonshire";
+        background-color: #00C9B7;
+        padding-top: 50%;
+
+
+      }
+    </style>
+
 
   </head>
   <body>
+      <!-- Filler HTML as our app starts up -->
+      <div id="root">
+        <div class="App-header">
+        <p  class="App-intro">
 
+          Genkō
+        </p>
+      </div>
 
-
-
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
-
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
-
-      To begin the development, run `npm start`.
-      To create a production bundle, use `npm run build`.
-    -->
-  </body>
+      <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function() {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+              // Registration was successful
+              console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+              // registration failed :(
+              console.log('ServiceWorker registration failed: ', err);
+            }).catch(function(err) {
+              console.log(err)
+            });
+          });
+        } else {
+          console.log('service worker is not supported');
+        }
+      </script>
+    </body>
 </html>

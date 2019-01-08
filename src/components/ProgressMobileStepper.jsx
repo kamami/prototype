@@ -189,7 +189,7 @@ updateKeys() {
 
     </p>
 
-    <Button  className={classes.button} variant="contained" onClick={this.handleNext}> Verstanden</Button>
+    <Button  variant="contained" style={{width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}} onClick={this.handleNext}> Verstanden</Button>
 
        </div>
 
@@ -225,7 +225,7 @@ Bitte logge dich ein oder eröffne ein Konto.
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
 
-        <Button className={classes.button} variant="contained" onClick={this.buyFinal}>
+    <Button variant="contained" style={{width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}} onClick={this.buyFinal}>
           <Key style={{marginRight: '2%'}}/>
             Key erhalten</Button>
 
@@ -249,7 +249,7 @@ Bitte logge dich ein oder eröffne ein Konto.
 
                           <CopyToClipboard text={this.props.code}
                             onCopy={this.props.copy}>
-                            <Button className={classes.button} variant="contained" >
+                            <Button variant="contained" style={{width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}}>
 
                               {this.props.code}
 

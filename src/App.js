@@ -15,17 +15,12 @@ import ProductPage from './Pages/ProductPage';
 import TourWuerzburg from './Pages/TourWuerzburg';
 import {KeysPage} from './Pages/KeysPage';
 
-
-
-
-
-
-
-
 class App extends Component {
   constructor(props) {
         super(props);
-
+          this.state={
+            open: true
+          }
         const { dispatch } = this.props;
         history.listen((location, action) => {
             // clear alert on location change
@@ -38,9 +33,7 @@ class App extends Component {
       <div >
                 <div className="container">
                     <div>
-                        {alert.message &&
-                            <div className={`alert ${alert.type}`}>{alert.message}</div>
-                        }
+
                         <Router history={history}>
           <div>
             <Route path="/" exact strict component={Homepage}
@@ -70,7 +63,7 @@ class App extends Component {
 function mapStateToProps(state) {
     const { alert } = state;
     return {
-        alert
+        alertState: alert
     };
 }
 

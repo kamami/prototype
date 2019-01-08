@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { userActions } from '../_actions';
+import { userActions, alertActions } from '../_actions';
 import {MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import green from '@material-ui/core/colors/green';
 import TextField from '@material-ui/core/TextField';
@@ -15,6 +15,8 @@ import LoginButton from '../components/LoginButton';
 import CloseButton from '../components/CloseButton';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
+import ErrorMessages from '../components/ErrorMessages';
+import SuccessMessages from '../components/SuccessMessages';
 
 const styles = theme => ({
   root: {
@@ -40,8 +42,11 @@ class RegisterPage extends React.Component {
                 lastName: '',
                 username: '',
                 password: ''
+
             },
-            submitted: false
+            submitted: false,
+            open: true
+
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -56,17 +61,33 @@ class RegisterPage extends React.Component {
    this.setState({ user: {...this.state.user,[name]: event.target.value }});
  };
 
-
+ closeSnackbar = () =>{
+   this.setState({
+     open: false
+   })
+ }
 
 
     handleSubmit(event) {
         event.preventDefault();
 
         this.setState({ submitted: true });
+
         const { user } = this.state;
         const { dispatch } = this.props;
+
         if (user.firstName && user.lastName && user.username && user.password) {
             dispatch(userActions.register(user));
+            dispatch(alertActions.clear());
+
+            {this.props.alertState.message &&
+
+            this.setState({open:true}, () => {
+
+              return this.state.open;
+            }
+            )
+          }
         }
     }
 
@@ -107,6 +128,14 @@ class RegisterPage extends React.Component {
                 </Toolbar>
               </AppBar>
               <div style={{marginTop: 70 }}>
+
+                {this.props.alertState.message &&
+                  <ErrorMessages error={this.props.alertState.message} openError={this.state.open} closeSnackbar={this.closeSnackbar}/>
+
+                }
+
+
+
 
                 <Fade in={true}  timeout={2000}>
 
@@ -288,8 +317,12 @@ class RegisterPage extends React.Component {
 
 function mapStateToProps(state) {
     const { registering } = state.registration;
+    const { alert } = state;
+
     return {
-        registering
+        registering,
+        alertState: alert
+
     };
 }
 

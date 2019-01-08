@@ -20,6 +20,9 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import { alertConstants } from '../_constants/alert.constants';
+import ErrorMessages from '../components/ErrorMessages';
+import { history } from '../_helpers';
+
 
 class LoginPage extends React.Component {
     constructor(props) {
@@ -31,8 +34,11 @@ class LoginPage extends React.Component {
         this.state = {
             username: '',
             password: '',
-            submitted: false
+            submitted: false,
+            open: true
         };
+
+
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -46,20 +52,33 @@ class LoginPage extends React.Component {
    this.setState(state => ({ showPassword: !state.showPassword }));
  };
 
+ closeSnackbar = () =>{
+   this.setState({
+     open: false
+   })
+ }
 
     handleSubmit(e) {
         e.preventDefault();
 
         this.setState({ submitted: true });
+
         const { username, password } = this.state;
         const { dispatch } = this.props;
         if (username && password) {
-            dispatch(userActions.login(username, password))
+          dispatch(userActions.login(username, password))
+          dispatch(alertActions.clear());
+
+          {this.props.alertState.message &&
+          this.setState({open:true}, () => {
+            return this.state.open;
           }
-    }
+          )
+        }
 
+          }
 
-
+        }
     render() {
         const { loggingIn, classes } = this.props;
         const { username, password, submitted } = this.state;
@@ -73,13 +92,12 @@ class LoginPage extends React.Component {
 
         return (
 
-            <div >
+            <div>
               <AppBar
                 position="fixed"
 
               >
-                <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
-      }}>
+                <Toolbar  style={{background: '#ffffff', color: '#000', maxHeight: '56px'}}>
                   <Link to="/">
                   <IconButton
 
@@ -98,8 +116,11 @@ class LoginPage extends React.Component {
 
               <div style={{marginTop: 70 }}>
 
-  <Fade in={true}  timeout={2000}>
+                {this.props.alertState.message &&
+                  <ErrorMessages error={this.props.alertState.message} openError={this.state.open} closeSnackbar={this.closeSnackbar}/>
+                }
 
+                <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
     <Typography style={{fontFamily: 'Devonshire', fontSize: 90, marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
@@ -245,8 +266,12 @@ class LoginPage extends React.Component {
 
 function mapStateToProps(state) {
     const { loggingIn } = state.authentication;
+    const { alert } = state;
+
     return {
-        loggingIn
+        loggingIn,
+        alertState: alert
+
     };
 }
 

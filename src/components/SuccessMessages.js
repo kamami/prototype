@@ -1,38 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ErrorIcon from '@material-ui/icons/Error';
-import InfoIcon from '@material-ui/icons/Info';
 import CloseIcon from '@material-ui/icons/Close';
-import green from '@material-ui/core/colors/green';
-import amber from '@material-ui/core/colors/amber';
 import IconButton from '@material-ui/core/IconButton';
 import Snackbar from '@material-ui/core/Snackbar';
 import SnackbarContent from '@material-ui/core/SnackbarContent';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles } from '@material-ui/core/styles';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 
 const variantIcon = {
   success: CheckCircleIcon,
-  warning: WarningIcon,
+
   error: ErrorIcon,
-  info: InfoIcon,
 };
 
 const styles1 = theme => ({
+
   success: {
-    backgroundColor: '#40E0D0',
+    backgroundColor: '#00C9B7',
   },
-  error: {
-    backgroundColor: theme.palette.error.dark,
-  },
-  info: {
-    backgroundColor: theme.palette.primary.dark,
-  },
-  warning: {
-    backgroundColor: amber[700],
-  },
+
   icon: {
     fontSize: 20,
   },
@@ -47,7 +36,7 @@ const styles1 = theme => ({
 });
 
 function MySnackbarContent(props) {
-  const { classes, className, message, onClose, variant, ...other } = props;
+  const {classes, className, message, onClose, variant, ...other  } = props;
   const Icon = variantIcon[variant];
 
   return (
@@ -92,12 +81,10 @@ const styles2 = theme => ({
   },
 });
 
-class CustomSnackbar extends React.Component {
+class SuccessMessages extends React.Component {
   state = {
     open: true,
   };
-
-  
 
   handleClick = () => {
     this.setState({ open: true });
@@ -123,15 +110,15 @@ class CustomSnackbar extends React.Component {
             vertical: 'top',
             horizontal: 'left',
           }}
-          open={this.props.snackbarOpen && this.props.open}
+          open={this.props.openError}
           autoHideDuration={5000}
-          onClose={this.handleClose}
+          onClose={this.props.closeSnackbar}
 
         >
           <MySnackbarContentWrapper
-            onClose={this.handleClose}
+            onClose={this.props.closeSnackbar}
             variant="success"
-            message="Erfolgreich kopiert!"
+            message={this.props.error}
           />
         </Snackbar>
 
@@ -141,8 +128,8 @@ class CustomSnackbar extends React.Component {
   }
 }
 
-CustomSnackbar.propTypes = {
+SuccessMessages.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles2)(CustomSnackbar);
+export default withStyles(styles2)(SuccessMessages);
