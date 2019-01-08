@@ -10,12 +10,13 @@ import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles } from '@material-ui/core/styles';
 
 const variantIcon = {
-  error: ErrorIcon,
+  warning: WarningIcon,
+
 };
 
 const styles1 = theme => ({
 
-  error: {
+  warning: {
     backgroundColor: '#FF6B6B',
   },
 
@@ -114,7 +115,7 @@ class ErrorMessages extends React.Component {
         >
           <MySnackbarContentWrapper
             onClose={this.props.closeSnackbar}
-            variant="error"
+            variant="warning"
             message={this.props.error}
           />
         </Snackbar>
