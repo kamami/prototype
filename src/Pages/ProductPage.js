@@ -226,7 +226,9 @@ getScrollClassNameBlur() {
       copied: true
     })
   }
-
+  closeSnackbar=() => {
+    this.setState({copied: false})
+  }
 
 
 
@@ -235,7 +237,7 @@ getScrollClassNameBlur() {
 
         return (
           <div style={{backgroundColor: '#ffffff', height: 'calc(70vh - 56px)'}}>
-            <CustomSnackbar snackbarOpen={this.state.copied} />
+            <CustomSnackbar snackbarOpen={this.state.copied} closeSnackbar={this.closeSnackbar}/>
 
               <AppBar
                 position="fixed"
@@ -292,7 +294,7 @@ getScrollClassNameBlur() {
                        {this.state.description}
                      </div>
 
-                     <DrawerBottom updateCredits = {this.updateCredits} code={this.state.code} matchId={this.state.matchId} copy={this.copy}/>
+                     <DrawerBottom updateCredits = {this.updateCredits} code={this.state.code} matchId={this.state.matchId} copy={this.copy} credits={this.state.credits}/>
 
 
 

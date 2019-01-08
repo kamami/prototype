@@ -92,7 +92,7 @@ const styles2 = theme => ({
   },
 });
 
-class CustomSnackbar extends React.Component {
+class CustomSnackbar2 extends React.Component {
   state = {
     open: true,
   };
@@ -105,7 +105,7 @@ class CustomSnackbar extends React.Component {
 
   handleClose = (event, reason) => {
     if (reason === 'clickaway') {
-      this.props.closeSnackbar();
+      return;
     }
     this.props.closeSnackbar();
   };
@@ -139,8 +139,8 @@ class CustomSnackbar extends React.Component {
   }
 }
 
-CustomSnackbar.propTypes = {
+CustomSnackbar2.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles2)(CustomSnackbar);
+export default withStyles(styles2)(CustomSnackbar2);

@@ -80,9 +80,17 @@ handleClickOpen = () => {
 };
 
 handleClose = () => {
-
   this.setState({ open: false });
+  this.setState({showButton: false});
 };
+
+closeSnackbar=() => {
+  this.setState({copied: false})
+}
+
+showFacebook = () =>{
+  this.setState({showButton: true})
+}
 
 
 
@@ -154,14 +162,14 @@ handleClose = () => {
 
                 <DialogContent >
                 <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
-                  <CustomSnackbar snackbarOpen={this.state.copied} />
+                  <CustomSnackbar snackbarOpen={this.state.copied} closeSnackbar={this.closeSnackbar}/>
 
                   <div>
 
                       <CopyToClipboard text={this.props.code}
                         onCopy={() => this.setState({copied: true})}>
                         <div style={{display: 'flex'}}>
-                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}}>
+                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}} onClick={this.showFacebook}>
 
                           {this.props.code}
 
@@ -172,9 +180,7 @@ handleClose = () => {
                   </div>
 
                   <DialogContentText>
-                    {this.state.copied &&
-
-
+                    {this.state.showButton &&
 
                         <div style={{marginTop: '24px'}}>
                           <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>

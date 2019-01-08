@@ -130,9 +130,8 @@ this.updateKeys();
 
 }
 
-snackbarClose(){
-  this.setState({snackbarOpen: false})
-}
+
+
 
 
 updateKeys() {
@@ -163,6 +162,7 @@ updateKeys() {
       <div style={{textAlign: 'center', width: '100%'}}>
 
 
+
       <MobileStepper
       variant="progress"
         steps={maxSteps}
@@ -173,12 +173,7 @@ updateKeys() {
      }}
       />
 
-
-
     {tutorialSteps[activeStep].id === 1 &&
-
-
-
 
       <div>
         {user && user.token ?
@@ -221,6 +216,8 @@ Bitte logge dich ein oder eröffne ein Konto.
     }
     {tutorialSteps[activeStep].id === 2 &&
       <div>
+        {this.props.credits >= 20 ?
+          <div>
     <p style={{fontFamily: 'roboto', fontSize:'1em', color: '#484F58', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
@@ -228,8 +225,13 @@ Bitte logge dich ein oder eröffne ein Konto.
     <Button variant="contained" style={{width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}} onClick={this.buyFinal}>
           <Key style={{marginRight: '2%'}}/>
             Key erhalten</Button>
-
-
+        </div>
+          :
+          <div>
+        <p style={{fontFamily: 'roboto', fontSize:'1em', color: '#484F58', marginLeft: '2%', marginRight: '2%', marginTop: '10%'}}>
+                           Du verfügst nicht über genügend Credits.</p>
+          </div>
+        }
 
         </div>
 

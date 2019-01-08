@@ -9,7 +9,6 @@ import Typed from 'react-typed';
 import SearchIcon from '@material-ui/icons/Search';
 import { debounce} from 'lodash'
 import Content from '../components/Content';
-import CustomSnackbar from '../components/CustomSnackbar';
 import Button from '@material-ui/core/Button';
 import { history } from '../_helpers';
 
@@ -33,7 +32,7 @@ constructor(props){
   this.focus = this.focus.bind(this);
   this.updateMessage = debounce(this.updateMessage, 0 );
   this.loadContent = debounce(this.loadContent.bind(this), 0);
-  this.copy = this.copy.bind(this);
+
 
 
  }
@@ -100,12 +99,6 @@ fetch(requestUrl + '1&_limit=3')
 
    focus() {
    this.textInput.focus();
- }
-
- copy(){
-   this.setState({
-     copied: true
-   })
  }
 
 
@@ -178,7 +171,7 @@ render() {
     return (
 
       <div>
-        <CustomSnackbar snackbarOpen={this.state.copied} />
+
 
         {this.props.drawerOpen === false &&
 
@@ -225,7 +218,7 @@ render() {
 
 
          }
-         <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent}/>
+         <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent} />
 
 </div>
     )
