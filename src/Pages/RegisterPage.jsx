@@ -16,7 +16,6 @@ import CloseButton from '../components/CloseButton';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import ErrorMessages from '../components/ErrorMessages';
-import SuccessMessages from '../components/SuccessMessages';
 
 const styles = theme => ({
   root: {
