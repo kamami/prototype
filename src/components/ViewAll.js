@@ -182,10 +182,6 @@ render() {
 
         {this.props.drawerOpen === false &&
 
-      <Media query="(max-width: 599px)">
-        {matches =>
-          matches ? (
-
 
             <Fade in={true}  timeout={1000}>
 
@@ -193,7 +189,7 @@ render() {
   <MuiThemeProvider>
 
     <TextField hintText= <div>
-  <SearchIcon style={{fontSize: '7.5vw', color: 'rgba(72,79,88,0.8)', marginBottom: -5}}/>
+  <SearchIcon style={{fontSize: '1.3em', color: 'rgba(72,79,88,0.8)', marginBottom: -5}}/>
 
       <Typed
                  strings={[
@@ -214,8 +210,8 @@ render() {
          value={message}
          underlineFocusStyle={{borderColor: '#ffffff', borderWidth: 0}}
          underlineStyle={{borderColor: '#ffffff', borderWidth: 0}}
-         hintStyle={{fontSize: '6vw', fontFamily: 'Anton', color: 'rgba(72,79,88,0.8)'}}
-         inputStyle={{fontSize: '6vw', fontFamily: 'Anton', color: '#484F58'}}
+         hintStyle={{fontSize: '1.5em', fontFamily: 'Anton', color: 'rgba(72,79,88,0.8)'}}
+         inputStyle={{fontSize: '1.5em', fontFamily: 'Anton', color: '#484F58'}}
          ref={(input) => { this.textInput = input; }}
          style={{caretColor: '#484F58', width: '85%', maginLeft: 'auto', marginRight: 'auto',
            marginTop:  56}}
@@ -227,39 +223,7 @@ render() {
       </div>
       </Fade>
 
-               ) : (
-                 <div>
-                   <div style={{width: '100%', marginLeft: 'auto',
-    marginRight: 'auto', marginBottom: 70 }}>
 
-      <div style={{backgroundImage: 'url(' + imageUrl + ')'}} className="cityDesktop">
-
-  <MuiThemeProvider>
-
-                   <TextField
-                        hintText="Welcher Bot darf es sein?"
-                        type="Text"
-                        onChange={this.searchHandler}
-                        value={message}
-                        fullWidth={true}
-                        underlineFocusStyle={{borderColor: '#B00020', borderWidth: 3, top: '95px' }}
-                        underlineStyle={{borderColor: '#B00020', borderWidth: 1.5, top: '95px' }}
-                        hintStyle={{fontSize: '4em', fontFamily: 'Anton', color: 'rgba(72,79,88,0.8)'}}
-                        inputStyle={{fontSize: '4em', fontFamily: 'Anton',  color: '#484F58'}}
-                        ref={(input) => { this.textInput = input; }}
-                        style={{caretColor: '#B00020', marginTop: '6%', width: '80%', height: '12vh'}}
-                        />
-                    </MuiThemeProvider>
-                  </div>
-
-                   </div>
-                 }
-
-                     </div>
-
-               )
-             }
-           </Media>
          }
          <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent}/>
 
