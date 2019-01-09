@@ -126,7 +126,7 @@ class FableSelect extends React.Component {
           <div style={{width: '100%'}}>
           <Link to="/" style={{textDecoration: 'none'}}>
 
-                <p style={{fontFamily: 'Pacifico', fontSize: '1.7em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
+                <p style={{fontFamily: 'Pacifico', fontSize: '1.5em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
                   Fable.
                 </p>
                 </Link>

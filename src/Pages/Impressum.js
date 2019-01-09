@@ -61,6 +61,8 @@ const styles = theme => ({
     padding: '0 8px',
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+    backgroundColor: '#00C9B7',
+
   },
   content: {
     flexGrow: 1,
@@ -128,7 +130,7 @@ class Impressum extends React.Component {
               <Link to="/" style={{textDecoration: 'none'}}>
 
             <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
-              <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em', useNextVariants: true }}     
+              <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em', useNextVariants: true }}
  className="logoColor">
 
                 Fable.
@@ -202,10 +204,18 @@ class Impressum extends React.Component {
           }}
         >
           <div className={classes.drawerHeader}>
+            <div style={{width: '100%'}}>
+            <Link to="/" style={{textDecoration: 'none'}}>
+
+                  <p style={{fontFamily: 'Pacifico', fontSize: '1.5em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
+                    Fable.
+                  </p>
+                  </Link>
+            </div>
+
             <IconButton onClick={this.handleDrawerClose}               style={{outline: 'none'}}
 >
-              {theme.direction === 'ltr' ? <ChevronLeftIcon
- /> : <ChevronRightIcon              />}
+            <ChevronLeftIcon style={{color: '#ffffff'}}/>
             </IconButton>
           </div>
           <Divider />
