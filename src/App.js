@@ -12,7 +12,12 @@ import { history } from './_helpers';
 import {alertActions}   from './_actions';
 import { PrivateRoute } from './_components';
 import ProductPage from './Pages/ProductPage';
-import TourWuerzburg from './Pages/TourWuerzburg';
+import FableSelect from './Pages/FableSelect';
+import Quiz from './Pages/Quiz';
+import Abenteuer from './Pages/Abenteuer';
+import Games from './Pages/Games';
+import DrinkingGames from './Pages/DrinkingGames';
+
 import {KeysPage} from './Pages/KeysPage';
 
 class App extends Component {
@@ -44,11 +49,14 @@ class App extends Component {
                   <Route path="/login" exact strict component={LoginPage}/>
                     <Route path="/register" exact strict component={RegisterPage}/>
                       <PrivateRoute path="/profile" exact strict component={Profile}/>
-                          <Route path="/tourwuerzburg" exact strict component={TourWuerzburg}/>
+                          <Route path="/fableselect" exact strict component={FableSelect}/>
                             <Route path="/keys" exact strict component={KeysPage}/>
-                            <Route path="/product" exact strict component={ProductPage} />
+                              <Route path="/quiz" exact strict component={Quiz}/>
+                                <Route path="/adventure" exact strict component={Abenteuer}/>
+                                  <Route path="/game" exact strict component={Games}/>
+                                    <Route path="/drinking_game" exact strict component={DrinkingGames}/>
 
-                              <Route path="/bots/:id" exact strict component={ProductPage}/>
+                                <Route path="/bots/:id" exact strict component={ProductPage}/>
 
 
 

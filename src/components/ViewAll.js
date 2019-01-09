@@ -40,7 +40,7 @@ constructor(props){
   loadContent() {
     if(this.state.message.length === 0){
     var requestUrl = this.props.url;
-    fetch(requestUrl + this.state.page + '&_limit=3').then((response)=>{
+    fetch(requestUrl + this.state.page + '&_limit=3'  + this.props.category).then((response)=>{
         return response.json();
     }) .then((tracks)=>{
         this.setState({ tracks: this.state.tracks.concat(tracks)});
@@ -58,7 +58,7 @@ constructor(props){
 componentDidMount() {
 
 var requestUrl = this.props.url;
-fetch(requestUrl + '1&_limit=3')
+fetch(requestUrl + '1&_limit=3' + this.props.category)
     .then((response)=>{
     return response.json();
 }) .then((data)=>{
@@ -84,7 +84,7 @@ fetch(requestUrl + '1&_limit=3')
         }else{
 
       var requestUrl = 'https://questdb.herokuapp.com/all?q='
-      fetch(requestUrl + this.state.message).then((response)=>{
+      fetch(requestUrl + this.state.message  + this.props.category).then((response)=>{
           return response.json();
       }) .then((data)=>{
           this.setState({ tracks: data});
@@ -131,7 +131,7 @@ render() {
                       <Card className="ItemViewAll" style={{backgroundImage: 'url(' + title.image + ')', boxShadow: 'none'}}>
                         {title.select &&
                         <div style={{display: 'flex', width: '100%',backgroundColor: 'rgba(255, 255, 255, 0.9)', height: 36, marginTop: -1 }}>
-                          <p style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '1%', marginBottom: '1%', fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.4em', lineHeight: '1.6'}}> Fable Select</p>
+                          <p style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '1%', marginBottom: '1%', fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.4em', lineHeight: '1.6'}}> Fable.Select</p>
                         </div>
                         }
 

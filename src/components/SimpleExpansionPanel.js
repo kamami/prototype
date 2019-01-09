@@ -44,45 +44,39 @@ render(){
   let user = JSON.parse(localStorage.getItem('user'));
 
 
-  const städteList = (
+  const gamesList = (
     <div className={classes.list}>
+
       <List style={{padding: 0, marginLeft: 10}}>
+        <Link to="/game" style={{textDecoration: 'none'}}>
+
+        <ListItem button style={{height: 60}}>
+
+          <ListItemText>
+            <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem'}}>
+
+              Alle Spiele
+            </p>
+
+          </ListItemText>
+
+        </ListItem>
+      </Link>
 
 
-      <ListItem button style={{height: 60}}>
 
-            <ListItemText>
-                Augsburg
-            </ListItemText>
-          </ListItem>
-
-          <ListItem button style={{height: 60}}>
-
-            <ListItemText>
-                München
-            </ListItemText>
-          </ListItem>
-
-          <ListItem button style={{height: 60}}>
-
-            <ListItemText>
-                Nürnberg
-            </ListItemText>
-          </ListItem>
+          <Link to="/drinking_game" style={{textDecoration: 'none'}}>
 
           <ListItem button style={{height: 60}}>
 
             <ListItemText>
-                Regensburg
-            </ListItemText>
-          </ListItem>
-          <Link to="/tourwuerzburg" style={{textDecoration: 'none'}}>
+              <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem'}}>
 
-          <ListItem button style={{height: 60}}>
+                Trinkspiele
+              </p>
 
-            <ListItemText>
-                Würzburg
             </ListItemText>
+
           </ListItem>
         </Link>
 
@@ -94,41 +88,73 @@ render(){
   );
 
   return (
+
     <div className={classes.root} style={{overflow: 'hidden'}}>
 
-      <ExpansionPanel style={{boxShadow: 'none', width: '99.999%'}}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} style={{height: 60}}>
+      <ExpansionPanel style={{boxShadow: 'none', width: '99.999%', marginTop: '5vh'}}>
+        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{paddingTop: 0}}/>} style={{height: 60, paddingLeft: 26}}>
 
-          <Typography className={classes.heading} style={{useNextVariants: true}}>
-              Stadtführungen
-            </Typography>
+          <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem', marginTop: 'auto', marginBottom: 'auto', paddingBottom: 11, paddingTop: 11}}>
+              Games
+            </p>
 
         </ExpansionPanelSummary>
         <ExpansionPanelDetails style={{marginBottom: -17, padding: 0}}>
-        {städteList}
+        {gamesList}
 
         </ExpansionPanelDetails>
       </ExpansionPanel>
+      <Divider/>
 
       <List style={{padding: 0}}>
 
-      <Link to="/tourwuerzburg" style={{textDecoration: 'none'}}>
+
 
         <ListItem button style={{height: 60, marginLeft: 10}}>
+          <Link to="/adventure" style={{textDecoration: 'none'}}>
+
 
           <ListItemText>
-            <p style={{fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.3em'}}> Fable Select</p>
+            <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem'}}> Abenteuer</p>
 
             </ListItemText>
+          </Link>
+
         </ListItem>
-        </Link>
+
+
+
+                <ListItem button style={{height: 60, marginLeft: 10}}>
+                  <Link to="/quiz" style={{textDecoration: 'none'}}>
+
+
+                  <ListItemText>
+                    <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem'}}> Quiz Bots</p>
+
+                    </ListItemText>
+                  </Link>
+
+                </ListItem>
+
+
+
+        <ListItem button style={{height: 60, marginLeft: 10}}>
+          <Link to="/fableselect" style={{textDecoration: 'none'}}>
+
+          <ListItemText>
+            <p style={{fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.3em'}}> Fable.Select</p>
+
+            </ListItemText>
+          </Link>
+
+        </ListItem>
 
 
       </List>
+      <List style={{bottom: '0', position: 'absolute', background: '#ffffff'}}>
+        <Divider />
 
-      <List style={{bottom: '0', position: 'absolute'}}>
         {user && user.token &&
-
 
         <Link to="/keys" style={{textDecoration: 'none'}}>
         <ListItem button>
@@ -193,8 +219,8 @@ Login
 
 
       </List>
-
     </div>
+
   );
 }
 }

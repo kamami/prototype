@@ -139,7 +139,7 @@ class RegisterPage extends React.Component {
                 <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
-                  <Typography style={{fontFamily: 'Pacifico', fontSize: '5em', marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
+                  <Typography style={{fontFamily: 'Pacifico', fontSize: '5em', marginLeft: 'auto', marginRight: 'auto', marginBottom: '4vh', marginTop: '4vh'}} className="logoColor">
 
   Fable.
     </Typography>
@@ -177,7 +177,7 @@ class RegisterPage extends React.Component {
                     </div>
                   </div>
                     <div className={'form-group' + (submitted && !user.lastName ? ' has-error' : '')}>
-                      <div style={{display: 'flex', marginTop: 30}}>
+                      <div style={{display: 'flex', marginTop: '3vh'}}>
                         <MuiThemeProvider theme={theme}>
 
                           <TextField
@@ -207,7 +207,7 @@ class RegisterPage extends React.Component {
                     </div>
                   </div>
                     <div className={'form-group' + (submitted && !user.username ? ' has-error' : '')}>
-                      <div style={{display: 'flex', marginTop: 30}}>
+                      <div style={{display: 'flex', marginTop: '3vh'}}>
                         <MuiThemeProvider theme={theme}>
 
                           <TextField
@@ -237,7 +237,7 @@ class RegisterPage extends React.Component {
                     </div>
                   </div>
                     <div className={'form-group' + (submitted && !user.password ? ' has-error' : '')}>
-                      <div style={{display: 'flex', marginTop: 30}}>
+                      <div style={{display: 'flex', marginTop: '3vh'}}>
                         <MuiThemeProvider theme={theme}>
 
                           <TextField
@@ -267,7 +267,7 @@ class RegisterPage extends React.Component {
                       }
                     </div>
                   </div>
-                  <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
+                  <div className="form-group" style={{display: 'flex', marginLeft: '10%', marginTop: '9vh', marginBottom: '9vh'}}>
                     <div onClick={this.handleSubmit}>
                       <LoginButton background='#FF6B6B' label='Registrieren'/>
 

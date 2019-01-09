@@ -123,7 +123,7 @@ class LoginPage extends React.Component {
                 <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
-    <Typography style={{fontFamily: 'Pacifico', fontSize: '5em', marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
+    <Typography style={{fontFamily: 'Pacifico', fontSize: '5em', marginLeft: 'auto', marginRight: 'auto', marginBottom: '4vh', marginTop: '4vh'}} className="logoColor">
 
   Fable.
     </Typography>
@@ -164,7 +164,7 @@ class LoginPage extends React.Component {
                       </div>
 
                       <div className={'form-group' + (submitted && !password ? ' has-error' : '')}>
-                        <div style={{display: 'flex', marginTop: 30}}>
+                        <div style={{display: 'flex', marginTop: '3vh'}}>
                           <MuiThemeProvider theme={theme}>
 
                             <TextField
@@ -206,7 +206,7 @@ class LoginPage extends React.Component {
                     </div>
                     </div>
 
-                      <div className="form-group" style={{display: 'flex', marginLeft: '10%'}}>
+                      <div className="form-group" style={{display: 'flex', marginLeft: '10%', marginTop: '9vh'}}>
                         <div onClick={this.handleSubmit}>
                           <LoginButton background='#FF6B6B' label='Login'/>
 

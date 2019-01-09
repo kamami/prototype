@@ -73,7 +73,7 @@ const styles = {
    borderRadius: '2em',
    width: '38vw',
    marginRight: '4vw',
-   fontSize: '0.8em',
+   fontSize: '0.7em',
    height: '36px'
 
 
@@ -98,7 +98,7 @@ const styles = {
    borderRadius: '2em',
    width: '38vw',
    marginLeft: '4vw',
-   fontSize: '0.8em',
+   fontSize: '0.7em',
    height: '36px'
 
 
@@ -487,7 +487,9 @@ getScrollClassNameBlur() {
                      </div>
 
 
-                     <DrawerBottom updateCredits = {this.updateCredits} code={this.state.code} matchId={this.state.matchId} copy={this.copy} credits={this.state.credits}/>
+                     <DrawerBottom updateCredits = {this.updateCredits} code={this.state.code}
+                       matchId={this.state.matchId} copy={this.copy} credits={this.state.credits}
+                       select={this.state.select} messenger={this.state.messenger}/>
 
 
 

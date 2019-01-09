@@ -8,7 +8,6 @@ import Media from "react-media";
 
 const styles = theme => ({
   button: {
-    marginTop: 50,
     color: '#ffffff',
     boxShadow: 'none',
     borderWidth: 1.5,
@@ -16,10 +15,8 @@ const styles = theme => ({
 
   },
   buttonsmall:{
-    marginTop: 50,
     color: '#ffffff',
     fontSize: '0.7em',
-    marginBottom: 50,
     boxShadow: 'none',
     borderWidth: 1.5,
     borderColor: '#FF6B6B',

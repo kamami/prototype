@@ -9,7 +9,6 @@ import { history } from '../_helpers';
 const styles = theme => ({
   button: {
     marginLeft: '10%',
-    marginTop: 50,
     color: '#FF6B6B',
     position: 'absolute',
     right: '10%',
@@ -19,7 +18,6 @@ const styles = theme => ({
   },
   buttonsmall: {
     marginLeft: '10%',
-    marginTop: 50,
     color: '#FF6B6B',
     position: 'absolute',
     right: '10%',

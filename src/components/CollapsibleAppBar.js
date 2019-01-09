@@ -5,6 +5,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import { history } from '../_helpers';
 
 import MenuIcon from '@material-ui/icons/Menu';
 
@@ -130,8 +131,7 @@ class CollapsibleAppBar extends React.PureComponent {
    }
 
    onClick() {
-   window.location.reload();
-
+history.push('/')
 
    }
 
@@ -163,7 +163,7 @@ class CollapsibleAppBar extends React.PureComponent {
          <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
                <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em', useNextVariants: true}} className="logoColor">
 
-                 Fable.
+                 {this.props.pageTitle}
                </Typography>
          </div>
 

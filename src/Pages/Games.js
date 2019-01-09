@@ -18,6 +18,7 @@ import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
+import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
 
 const drawerWidth = '50%';
@@ -71,7 +72,7 @@ const styles = theme => ({
   },
 });
 
-class Homepage extends React.Component {
+class Games extends React.Component {
 
   constructor(props){
       super(props);
@@ -109,7 +110,7 @@ class Homepage extends React.Component {
         {this.state.open === false &&
 
 
-      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable."}/>
+      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.Games"} />
 }
 
         <Drawer
@@ -122,15 +123,17 @@ class Homepage extends React.Component {
           }}
         >
           <div className={classes.drawerHeader}>
-            <div style={{width: '100%'}}>
-            <Link to="/" style={{textDecoration: 'none'}}>
+          <div style={{width: '100%'}}>
+          <Link to="/" style={{textDecoration: 'none'}}>
 
-                  <p style={{fontFamily: 'Pacifico', fontSize: '1.7em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
-                    Fable.
-                  </p>
-                  </Link>
-            </div>
-            <IconButton onClick={this.handleDrawerClose} style={{outline: 'none'}}>
+                <p style={{fontFamily: 'Pacifico', fontSize: '1.7em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
+                  Fable.
+                </p>
+                </Link>
+          </div>
+
+          <div>
+          <IconButton onClick={this.handleDrawerClose} style={{outline: 'none'}}>
               <ScrollToTop showUnder={-20} duration={1000}
                     style={{
                     position: 'flex',
@@ -142,6 +145,7 @@ class Homepage extends React.Component {
                 <ChevronLeftIcon style={{color: '#ffffff'}}/>
                 </ScrollToTop>
             </IconButton>
+            </div>
           </div>
 
             <SimpleExpansionPanel/>
@@ -156,7 +160,7 @@ class Homepage extends React.Component {
 
             <div style={{position: 'relative', width: '100%', marginBottom: 10 }} onScroll={this.updateDimensions}>
 
-              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={""} />
+              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={"&game=true"}/>
           </div>
 
         </main>
@@ -165,9 +169,9 @@ class Homepage extends React.Component {
   }
 }
 
-Homepage.propTypes = {
+Games.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(Homepage);
+export default withStyles(styles, { withTheme: true })(Games);

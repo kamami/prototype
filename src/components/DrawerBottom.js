@@ -14,7 +14,6 @@ const styles = {
   },
   fullList: {
     width: 'auto',
-
   },
 };
 
@@ -45,9 +44,11 @@ class DrawerBottom extends React.Component {
 
 
    const fullList = (
-     <div style={{display: 'flex', height: "45vh"}}>
+     <div style={{display: 'flex'}}>
        <div style={{marginLeft: 'auto', marginRight: 'auto', width: '100%'}}>
-         <ProgressMobileStepper credits={this.props.credits} matchId={this.props.matchId} updateCredits={this.props.updateCredits} code={this.props.code} copy={this.props.copy}/>
+         <ProgressMobileStepper credits={this.props.credits} matchId={this.props.matchId}
+           updateCredits={this.props.updateCredits} code={this.props.code} copy={this.props.copy}
+           select={this.props.select} messenger={this.props.messenger}/>
 
 
 
@@ -75,7 +76,8 @@ class DrawerBottom extends React.Component {
          <div
            tabIndex={0}
            role="button"
-           style={{ outline: 'none'}}
+           style={{ outline: 'none', overflow: 'hidden'}}
+
 
          >
            {fullList}
