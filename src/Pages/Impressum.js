@@ -128,7 +128,8 @@ class Impressum extends React.Component {
               <Link to="/" style={{textDecoration: 'none'}}>
 
             <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
-              <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em'}} className="logoColor">
+              <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em', useNextVariants: true }}     
+ className="logoColor">
 
                 Fable.
 

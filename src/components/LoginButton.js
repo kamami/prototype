@@ -53,7 +53,7 @@ class LoginButton extends React.Component{
   return (
     <div>
 
-      <Media query="(max-width: 350px)">
+      <Media query="(max-width: 361px)">
             {matches =>
               matches ? (
       <Button variant="outlined"  className={classes.buttonsmall} style={{backgroundColor: this.props.background}}>

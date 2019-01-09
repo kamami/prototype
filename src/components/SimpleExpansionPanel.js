@@ -88,7 +88,6 @@ render(){
 
 
       </List>
-      <Divider />
 
 
     </div>
@@ -100,7 +99,7 @@ render(){
       <ExpansionPanel style={{boxShadow: 'none', width: '99.999%'}}>
         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} style={{height: 60}}>
 
-          <Typography className={classes.heading}>
+          <Typography className={classes.heading} style={{useNextVariants: true}}>
               Stadtführungen
             </Typography>
 
@@ -113,12 +112,13 @@ render(){
 
       <List style={{padding: 0}}>
 
-      <Link to="/homepage/" style={{textDecoration: 'none'}}>
+      <Link to="/tourwuerzburg" style={{textDecoration: 'none'}}>
 
         <ListItem button style={{height: 60, marginLeft: 10}}>
 
           <ListItemText>
-              Blackstories
+            <p style={{fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.3em'}}> Fable Select</p>
+
             </ListItemText>
         </ListItem>
         </Link>

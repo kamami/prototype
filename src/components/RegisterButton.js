@@ -23,7 +23,7 @@ const styles = theme => ({
     color: '#FF6B6B',
     position: 'absolute',
     right: '10%',
-    fontSize: '0.6em',
+    fontSize: '0.7em',
     boxShadow: 'none',
     borderColor: '#FF6B6B',
     borderWidth: 1.5
@@ -59,7 +59,7 @@ class RegisterButton extends React.Component{
 
   return (
     <div>
-      <Media query="(max-width: 350px)">
+      <Media query="(max-width: 361px)">
             {matches =>
               matches ? (
       <Button  className={classes.buttonsmall} variant="outlined" >

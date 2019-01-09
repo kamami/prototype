@@ -139,7 +139,7 @@ class RegisterPage extends React.Component {
                 <Fade in={true}  timeout={2000}>
 
                 <div  style={{display: 'flex'}}>
-                  <Typography style={{fontFamily: 'Pacifico', fontSize: 90, marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
+                  <Typography style={{fontFamily: 'Pacifico', fontSize: '5em', marginLeft: 'auto', marginRight: 'auto', marginBottom: 18, marginTop: 18}} className="logoColor">
 
   Fable.
     </Typography>

@@ -56,7 +56,6 @@ constructor(props){
 }
 
 componentDidMount() {
-  window.scrollTo(0, 0);
 
 var requestUrl = this.props.url;
 fetch(requestUrl + '1&_limit=3')

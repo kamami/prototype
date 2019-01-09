@@ -10,7 +10,7 @@ import Media from "react-media";
 
 function TabContainer({ children, dir }) {
   return (
-    <Typography component="div" dir={dir} style={{ padding: 8  }}>
+    <Typography component="div" dir={dir} style={{ padding: 8, useNextVariants: true  }}>
       {children}
     </Typography>
   );
@@ -74,6 +74,8 @@ const styles = theme => ({
   tabSelected: {},
   typography: {
     padding: theme.spacing.unit * 3,
+    useNextVariants: true
+
   },
 });
 

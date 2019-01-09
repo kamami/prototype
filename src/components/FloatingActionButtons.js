@@ -25,7 +25,7 @@ function FloatingActionButtons(props) {
               matches ? (
                 <Fab color="primary" aria-label="Add" className={classes.fab}
         style={{background: '#FF6B6B', color: '#ffffff', outline:'none',
-          float: 'right', marginBottom: '4vw', position: 'fixed', bottom: 0}}>
+          float: 'right', marginBottom: '4vw', position: 'fixed', bottom: 0,  right: 'calc(4vw - 6px)'}}>
         <Key className={classes.extendedIcon} />
       </Fab>
     ) : (

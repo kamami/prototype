@@ -85,6 +85,7 @@ leaved={scaleDown.leaved}
   hasMore={this.props.hasMoreItems}
   initialLoad={true}
 
+
  >
  <StackGrid
    columnWidth={180}

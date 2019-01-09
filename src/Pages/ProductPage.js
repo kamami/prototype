@@ -17,13 +17,15 @@ import PropTypes from 'prop-types';
 import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import DialogContent from '@material-ui/core/DialogContent';
+import ReactDOM from 'react-dom';
+
 
 const styles = {
 
 
  showFacebook: {
 
-   transition: "all 2s, opacity 1s linear",
+   transition: "all 2s, color 0s",
    borderRadius: '2em',
    width: '38vw',
    marginRight: '4vw'
@@ -33,41 +35,28 @@ const styles = {
  },
  hideFacebook: {
 
-   transform: "translate(-0vw, 25px)",
-   transition: "all 2s",
+   transform: "translate(-0vw, 20px)",
+   transition: "all 1.5s, color 0s",
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.4em'
-
-
-
 
  },
  showCredits: {
 
-   transition: "all 2s, opacity 1s linear",
+   transition: "all 2s",
    borderRadius: '2em',
    width: '38vw',
-   color: '#ffffff',
    marginLeft: '4vw'
-
-
-
-
 
  },
  hideCredits: {
 
-   transform: "translate(0vw, 25px)",
-   transition: "all 2s",
+   transform: "translate(0vw, 20px)",
+   transition: "all 1.5s",
    borderRadius: '0em',
    width: '50%',
-   color: '#ffffff',
    fontSize: '1.4em'
-
-
-
-
 
  },
  blur: {
@@ -135,6 +124,7 @@ class ProductPage extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
+
   }
 
   updateDimensions() {
@@ -206,10 +196,15 @@ getScrollClassNameBlur() {
 
 
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-    this.updateDimensions();
 
+  componentDidMount() {
+    window.scrollTo(0,0);
+    window.onload = function() {
+     setTimeout (function () {
+      window.scrollTo(0,0);
+     }); //100ms for example
+    }
+    this.updateDimensions();
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     window.addEventListener('scroll', this.updateDimensions);
 
@@ -253,6 +248,8 @@ getScrollClassNameBlur() {
 
     )
   }
+
+
 
   updateCredits() {
     let user = JSON.parse(localStorage.getItem('user'));
@@ -320,7 +317,7 @@ getScrollClassNameBlur() {
                    <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#3b5998',
-                   boxShadow: 'none', marginTop: -20, float: 'right', color: '#ffffff'}}
+                   boxShadow: 'none', marginTop: -20, float: 'right'}}
                    className={classNames(`${this.getScrollClassNameFacebook()}`)}
                    >
                   Facebook
@@ -333,7 +330,7 @@ getScrollClassNameBlur() {
                   boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
                    className={classNames(`${this.getScrollClassNameCredits()}`)}
                    >
-                   <Credits style={{marginRight: 10}}/>
+                   <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
 
                   {this.state.credits} Credits
                   </Button>
@@ -343,7 +340,7 @@ getScrollClassNameBlur() {
                   boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
                   className={classNames(`${this.getScrollClassNameCredits()}`)}
                   >
-                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
+                  <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
 
                   Free
                   </Button>

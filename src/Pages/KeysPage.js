@@ -53,7 +53,7 @@ class KeysPage extends React.Component {
               </IconButton>
             </Link>
 
-            <Typography style={{fontFamily: 'Roboto', fontSize: 20, color: '#000'}}>
+            <Typography style={{fontFamily: 'Roboto', fontSize: 20, color: '#000', useNextVariants: true}}>
 
           Keys
             </Typography>

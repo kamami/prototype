@@ -17,7 +17,6 @@ import ScrollToTop from 'react-scroll-up';
 import SearchButton from '../components/SearchButton';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
-import Typography from '@material-ui/core/Typography';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
 
 const drawerWidth = '50%';
