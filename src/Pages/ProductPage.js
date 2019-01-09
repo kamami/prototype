@@ -38,7 +38,7 @@ const styles = {
  hideFacebook: {
 
    transform: "translate(-0vw, 20px)",
-   transition: "all 1.5s, color 0s",
+   transition: "all 1s, color 0s",
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.4em',
@@ -58,7 +58,7 @@ const styles = {
  hideCredits: {
 
    transform: "translate(0vw, 20px)",
-   transition: "all 1.5s",
+   transition: "all 1s",
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.4em',
@@ -84,7 +84,7 @@ const styles = {
  hideFacebookSmall: {
 
    transform: "translate(-0vw, 20px)",
-   transition: "all 1.5s, color 0s",
+   transition: "all 1s, color 0s",
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.1em',
@@ -107,7 +107,7 @@ const styles = {
  hideCreditsSmall: {
 
    transform: "translate(0vw, 20px)",
-   transition: "all 1.5s",
+   transition: "all 1s",
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.1em',
