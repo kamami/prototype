@@ -159,6 +159,7 @@ getScrollClassNameBlur() {
 
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     this.updateDimensions();
 
     window.addEventListener('scroll', this.handleScroll, { passive: true });

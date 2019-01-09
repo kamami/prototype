@@ -19,6 +19,9 @@ const styles1 = theme => ({
   warning: {
     backgroundColor: '#FF6B6B',
   },
+  success: {
+    backgroundColor: '#ffffff',
+  },
 
   icon: {
     fontSize: 20,
@@ -103,6 +106,7 @@ class ErrorMessages extends React.Component {
     return (
       <div>
 
+
         <Snackbar
           anchorOrigin={{
             vertical: 'top',
@@ -113,12 +117,17 @@ class ErrorMessages extends React.Component {
           onClose={this.props.closeSnackbar}
 
         >
+
+
           <MySnackbarContentWrapper
             onClose={this.props.closeSnackbar}
             variant="warning"
             message={this.props.error}
           />
+
         </Snackbar>
+
+      
 
 
       </div>
