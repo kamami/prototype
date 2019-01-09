@@ -18,6 +18,7 @@ import Divider from '@material-ui/core/Divider';
 import { withStyles } from '@material-ui/core/styles';
 import DialogContent from '@material-ui/core/DialogContent';
 import ReactDOM from 'react-dom';
+import Media from "react-media";
 
 
 const styles = {
@@ -28,7 +29,8 @@ const styles = {
    transition: "all 2s, color 0s",
    borderRadius: '2em',
    width: '38vw',
-   marginRight: '4vw'
+   marginRight: '4vw',
+   height: '36px'
 
 
 
@@ -39,7 +41,8 @@ const styles = {
    transition: "all 1.5s, color 0s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.4em'
+   fontSize: '1.4em',
+   height: '56px'
 
  },
  showCredits: {
@@ -47,7 +50,9 @@ const styles = {
    transition: "all 2s",
    borderRadius: '2em',
    width: '38vw',
-   marginLeft: '4vw'
+   marginLeft: '4vw',
+   height: '36px'
+
 
  },
  hideCredits: {
@@ -56,7 +61,58 @@ const styles = {
    transition: "all 1.5s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.4em'
+   fontSize: '1.4em',
+   height: '56px'
+
+
+ },
+
+ showFacebookSmall: {
+
+   transition: "all 2s, color 0s",
+   borderRadius: '2em',
+   width: '38vw',
+   marginRight: '4vw',
+   fontSize: '0.8em',
+   height: '36px'
+
+
+
+
+
+ },
+ hideFacebookSmall: {
+
+   transform: "translate(-0vw, 20px)",
+   transition: "all 1.5s, color 0s",
+   borderRadius: '0em',
+   width: '50%',
+   fontSize: '1.1em',
+   height: '56px'
+
+
+ },
+ showCreditsSmall: {
+
+   transition: "all 2s",
+   borderRadius: '2em',
+   width: '38vw',
+   marginLeft: '4vw',
+   fontSize: '0.8em',
+   height: '36px'
+
+
+
+ },
+ hideCreditsSmall: {
+
+   transform: "translate(0vw, 20px)",
+   transition: "all 1.5s",
+   borderRadius: '0em',
+   width: '50%',
+   fontSize: '1.1em',
+   height: '56px'
+
 
  },
  blur: {
@@ -155,7 +211,7 @@ getScrollClassNameFacebook() {
   if (this.state.shouldShow === null) {
     return '';
   }
-   else if(this.state.shouldShow === false && this.state.heightSet > 20){
+   else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideFacebook;
 
    } else {
@@ -169,7 +225,7 @@ getScrollClassNameCredits() {
   if (this.state.shouldShow === null) {
     return '';
   }
-   else if(this.state.shouldShow === false && this.state.heightSet > 20){
+   else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideCredits;
 
    } else {
@@ -179,11 +235,39 @@ getScrollClassNameCredits() {
 
 }
 
+getScrollClassNameFacebookSmall() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if(this.state.shouldShow === false && this.state.heightSet > 40){
+     return this.props.classes.hideFacebookSmall;
+
+   } else {
+     return this.props.classes.showFacebookSmall;
+
+   }
+
+}
+
+getScrollClassNameCreditsSmall() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if(this.state.shouldShow === false && this.state.heightSet > 40){
+     return this.props.classes.hideCreditsSmall;
+
+   } else {
+     return this.props.classes.showCreditsSmall;
+
+   }
+
+}
+
 getScrollClassNameBlur() {
   if (this.state.shouldShow === null) {
     return '';
   }
-   else if(this.state.shouldShow === false && this.state.heightSet > 20){
+   else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.blur;
 
    } else {
@@ -314,14 +398,17 @@ getScrollClassNameBlur() {
                    <div style={{position: 'fixed', top: 0, zIndex: -1}}>
                      <img className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
                    </div>
-                   <div>
+                   <Media query="(min-width: 361px)">
+                         {matches =>
+                           matches ? (
+                          <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#3b5998',
                    boxShadow: 'none', marginTop: -20, float: 'right'}}
                    className={classNames(`${this.getScrollClassNameFacebook()}`)}
                    >
                   Facebook
-                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
+                  <img src={require("../assets/facebookicon.png")} style={{heigth: 18, width: 18, marginLeft: 10}} alt="facebookicon"/>
                   </Button>
                   </a>
 
@@ -330,7 +417,7 @@ getScrollClassNameBlur() {
                   boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
                    className={classNames(`${this.getScrollClassNameCredits()}`)}
                    >
-                   <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
+                   <img src={require("../assets/crediticon.png")} style={{heigth: 18, width: 18, marginRight: 10}} alt="facebookicon"/>
 
                   {this.state.credits} Credits
                   </Button>
@@ -340,13 +427,52 @@ getScrollClassNameBlur() {
                   boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
                   className={classNames(`${this.getScrollClassNameCredits()}`)}
                   >
-                  <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
+                  <img src={require("../assets/crediticon.png")} style={{heigth: 18, width: 18, marginRight: 10}} alt="facebookicon"/>
 
                   Free
                   </Button>
                   }
 
                    </div>
+
+                 ):(
+
+                   <div>
+              <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+           <Button variant="contained" style={{backgroundColor: '#3b5998',
+            boxShadow: 'none', marginTop: -20, float: 'right'}}
+            className={classNames(`${this.getScrollClassNameFacebookSmall()}`)}
+            >
+           Facebook
+           <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
+           </Button>
+           </a>
+
+           {this.state.select ?
+           <Button variant="contained" style={{backgroundColor: '#40E0D0',
+           boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
+            className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
+            >
+            <img src={require("../assets/crediticon.png")} style={{heigth: 16, width: 16, marginRight: 5}} alt="facebookicon"/>
+
+           {this.state.credits} Credits
+           </Button>
+           :
+
+           <Button variant="contained" style={{backgroundColor: '#40E0D0',
+           boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
+           className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
+           >
+           <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
+
+           Free
+           </Button>
+           }
+
+            </div>
+
+                 )}
+               </Media>
 
                    <div style={{marginTop: 'calc(30vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)' }}>
 
@@ -359,6 +485,7 @@ getScrollClassNameBlur() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
+
 
                      <DrawerBottom updateCredits = {this.updateCredits} code={this.state.code} matchId={this.state.matchId} copy={this.copy} credits={this.state.credits}/>
 
