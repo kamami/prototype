@@ -21,20 +21,53 @@ import DialogContent from '@material-ui/core/DialogContent';
 const styles = {
 
 
- show: {
-   opacity: 1,
-   visibility: 'visible',
-   transform: "translate(0, 0)",
-   transition: "transform 1s, opacity 1s linear",
+ showFacebook: {
+
+   transition: "all 2s, opacity 1s linear",
+   borderRadius: '2em',
+   width: '38vw',
+   marginRight: '4vw'
+
 
 
  },
- hide: {
-   visibility: 'hidden',
-   opacity: 0,
+ hideFacebook: {
 
-   transform: "translate(calc(-96vw + 131.5px + 4vw), 0px)",
-   transition: "transform 1s, visibility 0s 1s, opacity 1s ease-in-out"
+   transform: "translate(-0vw, 25px)",
+   transition: "all 2s",
+   borderRadius: '0em',
+   width: '50%',
+   fontSize: '1.4em'
+
+
+
+
+ },
+ showCredits: {
+
+   transition: "all 2s, opacity 1s linear",
+   borderRadius: '2em',
+   width: '38vw',
+   color: '#ffffff',
+   marginLeft: '4vw'
+
+
+
+
+
+ },
+ hideCredits: {
+
+   transform: "translate(0vw, 25px)",
+   transition: "all 2s",
+   borderRadius: '0em',
+   width: '50%',
+   color: '#ffffff',
+   fontSize: '1.4em'
+
+
+
+
 
  },
  blur: {
@@ -93,7 +126,8 @@ class ProductPage extends React.Component {
       this.updateCredits = this.updateCredits.bind(this);
       this.copy = this.copy.bind(this);
       this.updateDimensions = this.updateDimensions.bind(this);
-      this.getScrollClassName = this.getScrollClassName.bind(this);
+      this.getScrollClassNameFacebook = this.getScrollClassNameFacebook.bind(this);
+      this.getScrollClassNameCredits = this.getScrollClassNameCredits.bind(this);
       this.handleScroll = this.handleScroll.bind(this);
   }
 
@@ -127,15 +161,29 @@ handleScroll() {
   this.lastScroll = lastScroll;
 }
 
-getScrollClassName() {
+getScrollClassNameFacebook() {
   if (this.state.shouldShow === null) {
     return '';
   }
    else if(this.state.shouldShow === false && this.state.heightSet > 20){
-     return this.props.classes.hide;
+     return this.props.classes.hideFacebook;
 
    } else {
-     return this.props.classes.show;
+     return this.props.classes.showFacebook;
+
+   }
+
+}
+
+getScrollClassNameCredits() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if(this.state.shouldShow === false && this.state.heightSet > 20){
+     return this.props.classes.hideCredits;
+
+   } else {
+     return this.props.classes.showCredits;
 
    }
 
@@ -178,7 +226,9 @@ getScrollClassNameBlur() {
       this.setState({ description: data.description });
       this.setState({ messenger: data.messenger });
       this.setState({ code: data.key });
-      this.setState({ matchId: data.matchId, loading: false });
+      this.setState({ matchId: data.matchId});
+      this.setState({credits: data.credits});
+      this.setState({select: data.select, loading: false });
 
     }
 
@@ -267,25 +317,43 @@ getScrollClassNameBlur() {
                    <div style={{position: 'fixed', top: 0, zIndex: -1}}>
                      <img className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
                    </div>
+                   <div>
+                     <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+                  <Button variant="contained" style={{backgroundColor: '#3b5998',
+                   boxShadow: 'none', marginTop: -20, float: 'right', color: '#ffffff'}}
+                   className={classNames(`${this.getScrollClassNameFacebook()}`)}
+                   >
+                  Facebook
+                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
+                  </Button>
+                  </a>
+
+                  {this.state.select ?
+                  <Button variant="contained" style={{backgroundColor: '#40E0D0',
+                  boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
+                   className={classNames(`${this.getScrollClassNameCredits()}`)}
+                   >
+                   <Credits style={{marginRight: 10}}/>
+
+                  {this.state.credits} Credits
+                  </Button>
+                  :
+
+                  <Button variant="contained" style={{backgroundColor: '#40E0D0',
+                  boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
+                  className={classNames(`${this.getScrollClassNameCredits()}`)}
+                  >
+                  <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
+
+                  Free
+                  </Button>
+                  }
+
+                   </div>
 
                    <div style={{marginTop: 'calc(30vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)' }}>
-                     <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
-                 <Button variant="contained" style={{backgroundColor: '#3b5998',
-                   color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em", marginTop: -20, float: 'right'}}
-                   className={classNames(`${this.getScrollClassName()}`)}
-                   >
-                 Facebook
-                 <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
-                 </Button>
-               </a>
-               <div style={{display: 'flex'}}>
-                 <Credits style={{marginRight: '2%', float: 'left', color: '#484F58', marginTop: '5vh'}}/>
 
-                 <p style={{ fontFamily: 'Roboto', marginLeft: 5, fontSize: 20, color:'#484F58', marginTop: '4.5vh'}}> 20 Credits</p>
-
-             </div>
-
-                     <div style={{color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
+                     <div style={{display : 'flex', color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
                      </div>
                      <Divider style={{width: '30%', height: 3, backgroundColor: '#40E0D0'}}/>

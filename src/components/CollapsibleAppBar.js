@@ -161,9 +161,9 @@ class CollapsibleAppBar extends React.PureComponent {
          <Fade in={true}  timeout={2000}>
 
          <div  onClick={this.onClick} style={{marginTop: 'auto', marginBottom: 'auto'}}>
-               <Typography style={{fontFamily: 'Devonshire', fontSize: 40}} className="logoColor">
+               <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em'}} className="logoColor">
 
-                 Genkō
+                 Fable.
                </Typography>
          </div>
 
