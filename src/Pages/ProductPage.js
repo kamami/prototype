@@ -117,7 +117,7 @@ const styles = {
  },
  blur: {
    width: '100vw',
-   height: '30vh',
+   height: '25vh',
    marginTop: '56px',
    objectFit: 'cover',
    backgroundPosition: '50% 50%',
@@ -136,7 +136,7 @@ transition: '1s -webkit-filter linear'
 },
 noBlur:{
   width: '100vw',
-  height: '30vh',
+  height: '25vh',
   marginTop: '56px',
   objectFit: 'cover',
   backgroundPosition: '50% 50%',
@@ -474,7 +474,7 @@ getScrollClassNameBlur() {
                  )}
                </Media>
 
-                   <div style={{marginTop: 'calc(30vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)' }}>
+                   <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)' }}>
 
                      <div style={{display : 'flex', color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
