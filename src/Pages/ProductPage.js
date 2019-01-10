@@ -59,7 +59,7 @@ const styles = {
    transition: "all 1s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.4em',
+   fontSize: '1.3em',
    height: '56px'
 
 
@@ -114,33 +114,33 @@ const styles = {
  showIconFacebook: {
 
    transition: "all 2s, color 0s",
-   width: 18,
-   marginLeft: '4vw',
-   height: 18,
+   width: 17,
+   marginLeft: '3vw',
+   height: 17,
  },
 
  hideIconFacebook: {
 
    transition: "all 2s, color 0s",
-   width: 24,
-   marginLeft: '4vw',
-   height: 24,
+   width: 22,
+   marginLeft: '3.1vw',
+   height: 22,
  },
 
  showIconCredits: {
 
    transition: "all 2s, color 0s",
-   width: 18,
-   marginRight: '4vw',
-   height: 18,
+   width: 17,
+   marginRight: '3vw',
+   height: 17,
  },
 
  hideIconCredits: {
 
    transition: "all 2s, color 0s",
-   width: 24,
-   marginRight: '4vw',
-   height: 24,
+   width: 22,
+   marginRight: '3.1vw',
+   height: 22,
  },
 
 
