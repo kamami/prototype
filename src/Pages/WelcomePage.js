@@ -119,7 +119,7 @@ class WelcomePage extends React.Component {
                     Fable.Select
                     </u>
                     <span style={{fontFamily: 'anton', fontSize: '1.4em', color: '#484F58'}}>
-                      &nbsp; - Unsere ganzer Stolz
+                      &nbsp; - Unser ganzer Stolz
 
                     </span>
                 </p>
@@ -189,11 +189,13 @@ class WelcomePage extends React.Component {
                 Du kannst sofort loslegen, alles was du brauchst ist ein Konto bei Facebook, um Zugriff auf den Messenger zu haben. < br /> < br />Wir empfehlen daher die Installation der Messenger-App auf deinem mobilen Endgerät.
               </p>
               <div style={{padding: '4vw'}}>
+                <a href="https://itunes.apple.com/de/app/messenger/id454638411?mt=8" >
                 <Button  variant="contained"
                   style={{height: 40, width: '100%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#0084ff', color: '#ffffff',  marginBottom: '3vh'}}>
                   <img src={require("../assets/facebookicon.png")} style={{height: 22, with: 22, marginRight: 20}} alt="facebookicon"/>
 
                    Hier geht's zum Download</Button>
+               </a>
               </div>
 
 
