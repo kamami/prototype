@@ -39,7 +39,7 @@ const styles = {
    transition: "all 1s, color 0s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.4em',
+   fontSize: '1.2em',
    height: '56px'
 
  },
@@ -59,7 +59,7 @@ const styles = {
    transition: "all 1s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.3em',
+   fontSize: '1.2em',
    height: '56px'
 
 
@@ -72,7 +72,9 @@ const styles = {
    width: '38vw',
    marginRight: '4vw',
    fontSize: '0.7em',
-   height: '40px'
+   height: '40px',
+   padding: '6px 14px 6px 14px'
+
 
  },
 
@@ -82,7 +84,7 @@ const styles = {
    transition: "all 1s, color 0s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.1em',
+   fontSize: '1em',
    height: '56px'
 
 
@@ -94,7 +96,8 @@ const styles = {
    width: '38vw',
    marginLeft: '4vw',
    fontSize: '0.7em',
-   height: '40px'
+   height: '40px',
+   padding: '6px 14px 6px 14px'
 
 
 
@@ -105,8 +108,9 @@ const styles = {
    transition: "all 1s",
    borderRadius: '0em',
    width: '50%',
-   fontSize: '1.1em',
-   height: '56px'
+   fontSize: '1em',
+   height: '56px',
+
 
 
  },
