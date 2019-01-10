@@ -49,7 +49,7 @@ componentDidMount() {
 
 
   var requestUrl = 'https://questdb.herokuapp.com/all?_page=';
-  fetch(requestUrl + '1&_limit=14')
+  fetch(requestUrl + '1&_limit=14' + '&select=true')
       .then((response)=>{
       return response.json();
   }) .then((data)=>{
@@ -71,7 +71,7 @@ componentDidMount() {
  loadContent() {
 
    var requestUrl = 'https://questdb.herokuapp.com/all?_page=';
-   fetch(requestUrl + this.state.page + '&_limit=14').then((response)=>{
+   fetch(requestUrl + this.state.page + '&_limit=14' + '&select=true').then((response)=>{
        return response.json();
    }) .then((bots)=>{
        this.setState({ bots: this.state.bots.concat(bots)});
