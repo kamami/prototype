@@ -192,10 +192,11 @@ render() {
 
       <Typed
                  strings={[
+                     'Das ist deine Suche',
                      'Welchen Bot suchst du?',
-                     'Stadtführungen?',
-                     'Blackstories?',
-                   'Suche hier deine Quest!']}
+                     'Text-Adventures?',
+                     'Quizzes?',
+                     'Einfach hier tippen!']}
                      typeSpeed={70}
                      backSpeed={90}
                      loop >
