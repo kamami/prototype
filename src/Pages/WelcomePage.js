@@ -64,14 +64,16 @@ class WelcomePage extends React.Component {
           <div style={{ height: '100vh'}}>
             <div style={{height: 56, width: '100vw'}}>
               <Fade in={true}  timeout={2000}>
-                <Link to="/home" style={{textDecoration: 'none'}}>
 
               <div  style={{marginTop: 'auto', marginBottom: 'auto'}}>
+                <Link to="/home" style={{textDecoration: 'none'}}>
+
                     <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em', useNextVariants: true, marginLeft: '4vw', marginTop: '4vw'}} className="logoColor">
                         Fable.
                       </Typography>
+                    </Link>
+
               </div>
-            </Link>
               </Fade>
 
             </div>
