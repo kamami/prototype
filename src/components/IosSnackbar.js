@@ -112,9 +112,7 @@ class IosSnackbar extends React.Component {
 
     return (
       <div>
-        <Button className={classes.margin} onClick={this.handleClick}>
-          Open success snackbar
-        </Button>
+      
         <Snackbar
           anchorOrigin={{
             vertical: 'bottom',
