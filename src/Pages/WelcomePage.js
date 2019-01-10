@@ -226,7 +226,7 @@ class WelcomePage extends React.Component {
                    Kaum Datenvolumen
                    </u>
                    <span style={{fontFamily: 'anton', fontSize: '1.4em', color: '#484F58'}}>
-                     &nbsp; wird belastet
+                     &nbsp; nötig
 
                    </span>
                </p>
