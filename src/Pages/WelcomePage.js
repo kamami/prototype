@@ -189,13 +189,20 @@ class WelcomePage extends React.Component {
                 Du kannst sofort loslegen, alles was du brauchst ist ein Konto bei Facebook, um Zugriff auf den Messenger zu haben. < br /> < br />Wir empfehlen daher die Installation der Messenger-App auf deinem mobilen Endgerät.
               </p>
               <div style={{padding: '4vw'}}>
-                <a href="https://itunes.apple.com/de/app/messenger/id454638411?mt=8" >
+                <a href="https://itunes.apple.com/de/app/messenger/id454638411?mt=8" style={{textDecoration: 'none'}}>
                 <Button  variant="contained"
                   style={{height: 40, width: '100%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#0084ff', color: '#ffffff',  marginBottom: '3vh'}}>
-                  <img src={require("../assets/facebookicon.png")} style={{height: 22, with: 22, marginRight: 20}} alt="facebookicon"/>
+                  <img src={require("../assets/facebookicon.png")} style={{height: 22, with: 22, position: 'absolute', left: 30}} alt="facebookicon"/>
 
-                   Hier geht's zum Download</Button>
+                   ios Download</Button>
                </a>
+               <a href="https://play.google.com/store/apps/details?id=com.facebook.orca&hl=de" style={{textDecoration: 'none'}}>
+               <Button  variant="contained"
+                 style={{height: 40, width: '100%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#0084ff', color: '#ffffff',  marginBottom: '3vh'}}>
+                 <img src={require("../assets/facebookicon.png")} style={{height: 22, with: 22, position: 'absolute', left: 30}} alt="facebookicon"/>
+
+                  Android Download</Button>
+              </a>
               </div>
 
 
