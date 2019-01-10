@@ -18,6 +18,7 @@ import Abenteuer from './Pages/Abenteuer';
 import Games from './Pages/Games';
 import DrinkingGames from './Pages/DrinkingGames';
 import WelcomePage from './Pages/WelcomePage';
+import IosSnackbar from './components/IosSnackbar';
 
 import {KeysPage} from './Pages/KeysPage';
 
@@ -33,6 +34,21 @@ class App extends Component {
             dispatch(alertActions.clear());
         });
     }
+    componentDidMount(){
+      const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test( userAgent );
+    }
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+    // Checks if should display install popup notification:
+    if (isIos() && !isInStandaloneMode()) {
+    this.setState({ showInstallMessage: true });
+    }
+    }
+
+
 
   render() {
     return (
@@ -66,6 +82,9 @@ class App extends Component {
         </Router>
       </div>
             </div>
+            {this.state.showInstallMessage &&
+            <IosSnackbar />
+            }
         </div>
     );
   }

@@ -19,6 +19,7 @@ import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Fade from '@material-ui/core/Fade';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
 import {Link} from 'react-router-dom';
+import IosSnackbar from '../components/IosSnackbar';
 
 const drawerWidth = '50%';
 
@@ -95,6 +96,7 @@ class Homepage extends React.Component {
    })
  }
 
+ 
 
 
 
@@ -160,6 +162,7 @@ class Homepage extends React.Component {
           </div>
 
         </main>
+
       </div>
     );
   }

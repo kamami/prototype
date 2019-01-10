@@ -218,7 +218,7 @@ updateKeys() {
   {user && user.token ?
     <div>
       <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '5vh'}}>
-Dieser Bot kostet keine Credits, du kannst sofort loslegen!
+Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
 
 </p>
 
@@ -242,7 +242,7 @@ Dieser Bot kostet keine Credits, du kannst sofort loslegen!
 
  <div>
    <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '0 4vw 0 4vw', marginTop: '5vh', textAlign: 'left'}}>
-     Dieser Bot kostet keine Credits, du kannst sofort loslegen!
+     Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
      < br/>
 
  </p>
