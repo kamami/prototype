@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import DrawerBottom from '../components/DrawerBottom';
 import { authHeader } from '../_helpers';
 import Credits from '@material-ui/icons/MonetizationOn';
+import Copyright from '@material-ui/icons/Copyright';
 import CustomSnackbar from '../components/CustomSnackbar';
 import Dialog from '@material-ui/core/Dialog';
 import classNames from 'classnames';
@@ -370,7 +371,9 @@ getScrollClassNameIconCredits() {
       this.setState({ code: data.key });
       this.setState({ matchId: data.matchId});
       this.setState({credits: data.credits});
+      this.setState({rightsTo: data.rightsTo});
       this.setState({select: data.select, loading: false });
+
 
     }
 
@@ -547,6 +550,29 @@ getScrollClassNameIconCredits() {
                        style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
+                     </div>
+
+
+                     <div style={{ marginTop: 20, paddingBottom: 20}}>
+                        { this.state.rightsTo === "" ?
+
+                          <p style={{fontSize: '0.8em', fontWeight: 'lighter', width: '100%', color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
+                            <Copyright style={{position: 'relative', top: '2.5px', right: '3px', height: 15}}/>
+                             <span> Publisher: </span>
+                            unknown
+
+
+                          </p>
+                          :
+                          <p style={{fontSize: '0.8em', fontWeight: 'lighter', width: '100%', color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
+                            <Copyright style={{position: 'relative', top: '2.5px', right: '3px', height: 15}}/>
+                             <span> Publisher: </span>
+                             <a href={this.state.rightsTo} style={{textDecoration: 'none', color: '#484F58'}}>{this.state.rightsTo} </a>
+
+
+                          </p>
+                        }
+
                      </div>
 
 
