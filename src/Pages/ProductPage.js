@@ -404,12 +404,12 @@ getScrollClassNameBlur() {
                            matches ? (
                           <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
-                  <Button variant="contained" style={{backgroundColor: '#3b5998',
+                  <Button variant="contained" style={{backgroundColor: '#0084ff',
                    boxShadow: 'none', marginTop: -20, float: 'right'}}
                    className={classNames(`${this.getScrollClassNameFacebook()}`)}
                    >
-                  Facebook
-                  <img src={require("../assets/facebookicon.png")} style={{heigth: 18, width: 18, marginLeft: 10}} alt="facebookicon"/>
+                  Messenger
+                  <img src={require("../assets/facebookicon.png")} style={{heigth: 18, width: 18, marginLeft: 10}} alt="facebookico"/>
                   </Button>
                   </a>
 
@@ -418,7 +418,7 @@ getScrollClassNameBlur() {
                   boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
                    className={classNames(`${this.getScrollClassNameCredits()}`)}
                    >
-                   <img src={require("../assets/crediticon.png")} style={{heigth: 18, width: 18, marginRight: 10}} alt="facebookicon"/>
+                   <img src={require("../assets/crediticon.png")} style={{heigth: 18, width: 18, marginRight: 10}} alt="credits"/>
 
                   {this.state.credits} Credits
                   </Button>
@@ -428,7 +428,7 @@ getScrollClassNameBlur() {
                   boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
                   className={classNames(`${this.getScrollClassNameCredits()}`)}
                   >
-                  <img src={require("../assets/crediticon.png")} style={{heigth: 18, width: 18, marginRight: 10}} alt="facebookicon"/>
+                  <img src={require("../assets/crediticon.png")} style={{heigth: 18, width: 18, marginRight: 10}} alt="credits"/>
 
                   Free
                   </Button>
@@ -440,11 +440,11 @@ getScrollClassNameBlur() {
 
                    <div>
               <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
-           <Button variant="contained" style={{backgroundColor: '#3b5998',
+           <Button variant="contained" style={{backgroundColor: '#0084ff',
             boxShadow: 'none', marginTop: -20, float: 'right'}}
             className={classNames(`${this.getScrollClassNameFacebookSmall()}`)}
             >
-           Facebook
+           Messenger
            <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
            </Button>
            </a>
@@ -454,7 +454,7 @@ getScrollClassNameBlur() {
            boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
             className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
             >
-            <img src={require("../assets/crediticon.png")} style={{heigth: 16, width: 16, marginRight: 5}} alt="facebookicon"/>
+            <img src={require("../assets/crediticon.png")} style={{heigth: 16, width: 16, marginRight: 5}} alt="credits"/>
 
            {this.state.credits} Credits
            </Button>
@@ -464,7 +464,7 @@ getScrollClassNameBlur() {
            boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
            className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
            >
-           <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="facebookicon"/>
+           <img src={require("../assets/crediticon.png")} style={{heigth: 20, width: 20, marginRight: 10}} alt="credits"/>
 
            Free
            </Button>

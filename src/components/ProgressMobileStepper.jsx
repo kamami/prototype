@@ -225,10 +225,10 @@ Dieser Bot kostet keine Credits, du kannst sofort loslegen!
 <div className="form-group" style={{ marginBottom: '7vh', marginTop: '5vh'}}>
   <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 
-  <Button variant="contained" style={{height: 40, backgroundColor: '#3b5998', width: '90%',
+  <Button variant="contained" style={{height: 40, backgroundColor: '#0084ff', width: '90%',
     color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
 
-  Facebook
+  Messenger
 
   <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
   </Button>

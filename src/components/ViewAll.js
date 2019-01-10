@@ -154,9 +154,9 @@ render() {
 
 
                         <a href={title.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
-                        <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
+                        <Button variant="contained" style={{backgroundColor: '#0084ff', width: '100%',
                           color: '#ffffff', boxShadow: 'none', borderRadius: "0em 0em 2em 2em", Top: 100}}>
-                        Facebook
+                        Messenger
                         <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}} alt="facebookicon"/>
                         </Button>
                       </a>
