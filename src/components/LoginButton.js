@@ -12,6 +12,7 @@ const styles = theme => ({
     boxShadow: 'none',
     borderWidth: 1.5,
     borderColor: '#FF6B6B',
+    height: 40
 
   },
   buttonsmall:{
@@ -20,6 +21,7 @@ const styles = theme => ({
     boxShadow: 'none',
     borderWidth: 1.5,
     borderColor: '#FF6B6B',
+    height: 40
 
 
 

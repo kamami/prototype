@@ -30,7 +30,8 @@ const styles = {
    borderRadius: '2em',
    width: '38vw',
    marginRight: '4vw',
-   height: '36px'
+   height: '40px',
+
 
 
 
@@ -51,7 +52,7 @@ const styles = {
    borderRadius: '2em',
    width: '38vw',
    marginLeft: '4vw',
-   height: '36px'
+   height: '40px'
 
 
  },
@@ -74,7 +75,7 @@ const styles = {
    width: '38vw',
    marginRight: '4vw',
    fontSize: '0.7em',
-   height: '36px'
+   height: '40px'
 
 
 
@@ -99,7 +100,7 @@ const styles = {
    width: '38vw',
    marginLeft: '4vw',
    fontSize: '0.7em',
-   height: '36px'
+   height: '40px'
 
 
 
@@ -387,7 +388,7 @@ getScrollClassNameBlur() {
                     <BackIcon />
                   </IconButton>
                   {user && user.token &&
-                  <Button variant="outlined" style={{position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto', borderWidth: 0}}>
+                  <Button variant="outlined" style={{height: 40, position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto', borderWidth: 0}}>
                               <Credits style={{marginRight: '2%'}}/>
                                {this.state.credits}</Button>
 

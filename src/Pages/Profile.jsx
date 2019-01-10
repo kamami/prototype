@@ -110,7 +110,7 @@ class Profile extends React.Component {
                 </Link>
 
                 {user && user.token &&
-                          <Button  variant="outlined" style={{borderWidth: 0, position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
+                          <Button  variant="outlined" style={{height: 40, borderWidth: 0, position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto'}}>
                             <Credits />
                              {this.state.credits}</Button>
 

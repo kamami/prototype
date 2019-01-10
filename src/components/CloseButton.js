@@ -14,7 +14,9 @@ const styles = theme => ({
     right: '10%',
     boxShadow: 'none',
     borderColor: '#FF6B6B',
-    borderWidth: 1.5
+    borderWidth: 1.5,
+    height: 40
+
   },
   buttonsmall: {
     marginLeft: '10%',
@@ -24,7 +26,9 @@ const styles = theme => ({
     fontSize: '0.7em',
     boxShadow: 'none',
     borderColor: '#FF6B6B',
-    borderWidth: 1.5
+    borderWidth: 1.5,
+    height: 40
+
 
   },
   leftIcon: {
