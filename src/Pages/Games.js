@@ -124,7 +124,7 @@ class Games extends React.Component {
         >
           <div className={classes.drawerHeader}>
           <div style={{width: '100%'}}>
-          <Link to="/" style={{textDecoration: 'none'}}>
+          <Link to="/home" style={{textDecoration: 'none'}}>
 
                 <p style={{fontFamily: 'Pacifico', fontSize: '1.5em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
                   Fable.

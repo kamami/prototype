@@ -182,7 +182,7 @@ updateKeys() {
 
         </p>
 
-        <Button  variant="contained" style={{width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '5vh'}}
+        <Button  variant="contained" style={{ height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '5vh'}}
           onClick={this.handleNext}>
           <CheckIcon style={{marginRight: '2%'}}/>
           Verstanden</Button>
@@ -282,7 +282,7 @@ Dieser Bot kostet keine Credits, du kannst sofort loslegen!
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
 
-    <Button  variant="contained" style={{width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '5vh'}} onClick={this.buyFinal}>
+    <Button  variant="contained" style={{height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '5vh'}} onClick={this.buyFinal}>
           <Key style={{marginRight: '2%'}}/>
             Key erhalten</Button>
         </div>

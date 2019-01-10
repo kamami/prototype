@@ -127,7 +127,7 @@ class Impressum extends React.Component {
               <MenuIcon />
             </IconButton>
             <Fade in={true}  timeout={2000}>
-              <Link to="/" style={{textDecoration: 'none'}}>
+              <Link to="/home" style={{textDecoration: 'none'}}>
 
             <div style={{marginTop: 'auto', marginBottom: 'auto'}}>
               <Typography style={{fontFamily: 'Pacifico', fontSize: '2.1em', useNextVariants: true }}

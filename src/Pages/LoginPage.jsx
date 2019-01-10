@@ -98,7 +98,7 @@ class LoginPage extends React.Component {
 
               >
                 <Toolbar  style={{background: '#ffffff', color: '#000', maxHeight: '56px'}}>
-                  <Link to="/">
+                  <Link to="/home">
                   <IconButton
 
                     style={{outline: 'none', color: '#000'}}

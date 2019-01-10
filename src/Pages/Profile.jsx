@@ -99,7 +99,7 @@ class Profile extends React.Component {
               >
                 <Toolbar  style={{background: '#ffffff',       maxHeight: '56px'
       }}>
-      <Link to="/">
+      <Link to="/home">
 
                   <IconButton
 

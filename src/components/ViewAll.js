@@ -111,7 +111,6 @@ render() {
 
 
   var items = [];
-  const imageUrl = require(`../assets/white-wall.jpg`)
 
   tracks.map(function(title, i)
 

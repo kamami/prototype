@@ -200,6 +200,20 @@ Login
 
 }
 
+<Link to="/" style={{textDecoration: 'none'}}>
+<ListItem button>
+  <ListItemIcon>
+    <img src={require("../assets/fable.png")} style={{height: 22, width: 22}} alt="facebookicon"/>
+
+    </ListItemIcon>
+  <ListItemText style={{fontSize: '0.9375rem'}}>
+
+      About
+  </ListItemText>
+</ListItem>
+</Link>
+
+
 
 
 

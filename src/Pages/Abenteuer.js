@@ -20,6 +20,7 @@ import Fade from '@material-ui/core/Fade';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 
 const drawerWidth = '50%';
 
@@ -124,7 +125,7 @@ class Abenteuer extends React.Component {
         >
           <div className={classes.drawerHeader}>
           <div style={{width: '100%'}}>
-          <Link to="/" style={{textDecoration: 'none'}}>
+          <Link to="/home" style={{textDecoration: 'none'}}>
 
                 <p style={{fontFamily: 'Pacifico', fontSize: '1.5em', marginTop: 'auto', marginBottom: 'auto', marginLeft: '4vw', color: '#ffffff'}}>
                   Fable.

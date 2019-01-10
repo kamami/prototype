@@ -43,7 +43,7 @@ class KeysPage extends React.Component {
           >
             <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
   }}>
-  <Link to="/">
+  <Link to="/home">
 
               <IconButton
 

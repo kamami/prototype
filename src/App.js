@@ -17,6 +17,7 @@ import Quiz from './Pages/Quiz';
 import Abenteuer from './Pages/Abenteuer';
 import Games from './Pages/Games';
 import DrinkingGames from './Pages/DrinkingGames';
+import WelcomePage from './Pages/WelcomePage';
 
 import {KeysPage} from './Pages/KeysPage';
 
@@ -41,8 +42,9 @@ class App extends Component {
 
                         <Router history={history}>
           <div>
-            <Route path="/" exact strict component={Homepage}
+            <Route path="/" exact strict component={WelcomePage}
             />
+          <Route path="/home" exact strict component={Homepage}/>
 
               <Route path="/impressum" exact strict component={Impressum}/>
 

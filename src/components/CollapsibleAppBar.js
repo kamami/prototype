@@ -131,7 +131,7 @@ class CollapsibleAppBar extends React.PureComponent {
    }
 
    onClick() {
-history.push('/')
+history.push('/home')
 
    }
 
