@@ -10,7 +10,8 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     maxWidth: 752,
-    marginTop: 56
+    marginTop: 56,
+
   },
   demo: {
     backgroundColor: theme.palette.background.paper,
@@ -148,7 +149,7 @@ handleClose = (event, reason) => {
 
             < div className={classes.demo}>
 
-              <List >
+              <List style={{width: '100vw'}}>
 
                     <InfiniteScroll
                       initialLoad={false}
