@@ -49,21 +49,9 @@ componentDidMount(){
 })
 .then((user)=>{
   this.setState({key1: user._1});
-    this.setState({key2: user._2});
     this.setState({key3: user._3});
-    this.setState({key4: user._4});
-    this.setState({key5: user._5});
-    this.setState({key6: user._6});
-    this.setState({key7: user._7});
-    this.setState({key8: user._8});
-    this.setState({key9: user._9});
-    this.setState({key10: user._10});
-    this.setState({key11: user._11});
-    this.setState({key12: user._12});
-    this.setState({key13: user._13});
-    this.setState({key14: user._14});
-    this.setState({key15: user._15});
-    this.setState({key16: user._16});
+
+
 
 
 
@@ -104,20 +92,8 @@ showFacebook = () =>{
           <div>
 
             {this.props.code === this.state.key1 ||
-              this.props.code === this.state.key2 ||
-              this.props.code === this.state.key4 ||
-              this.props.code === this.state.key5 ||
-              this.props.code === this.state.key6 ||
-              this.props.code === this.state.key7 ||
-              this.props.code === this.state.key8 ||
-              this.props.code === this.state.key9 ||
-              this.props.code === this.state.key10 ||
-              this.props.code === this.state.key11 ||
-              this.props.code === this.state.key12 ||
-              this.props.code === this.state.key13 ||
-              this.props.code === this.state.key14 ||
-              this.props.code === this.state.key15 ||
-              this.props.code === this.state.key16
+              this.props.code === this.state.key3 
+
               ?
 
           <div>
