@@ -26,7 +26,8 @@ class App extends Component {
   constructor(props) {
         super(props);
           this.state={
-            open: true
+            open: true,
+            changeRoute: false
           }
         const { dispatch } = this.props;
         history.listen((location, action) => {
@@ -35,12 +36,19 @@ class App extends Component {
         });
     }
     componentDidMount(){
+
       const isIos = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
     return /iphone|ipad|ipod/.test( userAgent );
     }
     // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+    const isInStandaloneMode = () => ('standalone' in window.navigator) || (window.navigator.standalone);
+
+    if('standalone' in window.navigator || window.navigator.standalone){
+      this.setState({ changeRoute: true });
+      console.log("Standalone")
+
+    }
 
     // Checks if should display install popup notification:
     if (isIos() && !isInStandaloneMode()) {
@@ -49,18 +57,22 @@ class App extends Component {
     }
 
 
-
   render() {
     return (
       <div >
                 <div className="container">
                     <div>
-
                         <Router history={history}>
           <div>
-            <Route path="/" exact strict component={WelcomePage}
-            />
-          <Route path="/home" exact strict component={Homepage}/>
+            {this.state.changeRoute ?
+
+                <Route path="/" exact strict component={Homepage} />
+
+            :
+            <Route path="/" exact strict component={WelcomePage} />
+          }
+
+<Route path="/home" exact strict component={Homepage}/>
 
               <Route path="/impressum" exact strict component={Impressum}/>
 

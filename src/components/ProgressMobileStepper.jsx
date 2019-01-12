@@ -246,6 +246,20 @@ Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
      < br/>
 
  </p>
+ <div className="form-group" style={{ marginBottom: '3vh', marginTop: '3vh'}}>
+   <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
+
+   <Button variant="contained" style={{height: 40, backgroundColor: '#0084ff', width: '90%',
+     color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
+
+   Messenger
+
+   <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
+   </Button>
+ </a>
+
+
+ </div>
  <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '0 4vw 0 4vw', textAlign: 'left'}}>
 
      Möchtest du dich trotzdem einloggen oder ein Konto eröffnen?

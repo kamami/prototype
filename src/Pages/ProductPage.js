@@ -20,6 +20,7 @@ import { withStyles } from '@material-ui/core/styles';
 import DialogContent from '@material-ui/core/DialogContent';
 import ReactDOM from 'react-dom';
 import Media from "react-media";
+import MetaTags from 'react-meta-tags';
 
 
 const styles = {
@@ -119,34 +120,65 @@ const styles = {
  showIconFacebook: {
 
    transition: "all 2s, color 0s",
-   width: 17,
+   width: 16,
    marginLeft: '3vw',
-   height: 17,
+   height: 16,
  },
 
  hideIconFacebook: {
 
    transition: "all 2s, color 0s",
-   width: 22,
+   width: 20,
    marginLeft: '3.1vw',
-   height: 22,
+   height: 20,
  },
 
  showIconCredits: {
 
    transition: "all 2s, color 0s",
-   width: 17,
+   width: 16,
    marginRight: '3vw',
-   height: 17,
+   height: 16,
  },
 
  hideIconCredits: {
 
    transition: "all 2s, color 0s",
-   width: 22,
+   width: 20,
    marginRight: '3.1vw',
-   height: 22,
+   height: 20,
  },
+
+
+ hideFacebookFix: {
+
+  position: 'fixed',
+  top: 56,
+  right: 0,
+  borderRadius: '0em',
+  width: '50%',
+  fontSize: '1.2em',
+  height: '56px',
+  transform: "translate(0vw, 20px)",
+  transition: "all 1s, color 0s"
+
+
+ },
+
+
+ hideCreditsFix: {
+
+  position: 'fixed',
+  top: 56,
+  borderRadius: '0em',
+  width: '50%',
+  fontSize: '1.2em',
+  height: '56px',
+  transform: "translate(0vw, 20px)",
+  transition: "all 1s, color 0s"
+
+ },
+
 
 
 
@@ -225,7 +257,6 @@ class ProductPage extends React.Component {
 
 handleScroll() {
   const lastScroll = window.scrollY;
-
   if (lastScroll === this.state.lastScroll) {
     return;
   }
@@ -250,7 +281,7 @@ getScrollClassNameFacebook() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideFacebook;
 
-   } else {
+   } else if(this.state.heightSet < 205.8){
      return this.props.classes.showFacebook;
 
    }
@@ -264,7 +295,7 @@ getScrollClassNameCredits() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideCredits;
 
-   } else {
+   } else if(this.state.heightSet < 205.8){
      return this.props.classes.showCredits;
 
    }
@@ -341,12 +372,34 @@ getScrollClassNameIconCredits() {
 
 }
 
+getFixFacebook() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if( this.state.heightSet > 205.8){
+     return this.props.classes.hideFacebookFix;
+
+   }
+
+}
+
+
+getFixCredits() {
+  if (this.state.shouldShow === null) {
+    return '';
+  }
+   else if( this.state.heightSet > 205.8){
+     return this.props.classes.hideCreditsFix;
+
+   }
+
+}
+
 
 
 
 
   componentDidMount() {
-    window.scrollTo(0,0);
     window.onload = function() {
      setTimeout (function () {
       window.scrollTo(0,0);
@@ -435,6 +488,12 @@ getScrollClassNameIconCredits() {
 
         return (
           <div style={{backgroundColor: '#ffffff', height: 'calc(70vh - 56px)'}}>
+            <MetaTags>
+         <title>{this.state.title}</title>
+         <meta name="description" content={this.state.description} />
+         <meta property="og:title" content={this.state.title} />
+         <meta property="og:image" content={this.state.backdrop} />
+       </MetaTags>
             <CustomSnackbar snackbarOpen={this.state.copied} closeSnackbar={this.closeSnackbar}/>
 
               <AppBar
@@ -464,6 +523,7 @@ getScrollClassNameIconCredits() {
                    <div style={{position: 'fixed', top: 0, zIndex: -1}}>
                      <img className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
                    </div>
+
                    <Media query="(min-width: 361px)">
                          {matches =>
                            matches ? (
@@ -471,7 +531,7 @@ getScrollClassNameIconCredits() {
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',
                    boxShadow: 'none', marginTop: -20, float: 'right'}}
-                   className={classNames(`${this.getScrollClassNameFacebook()}`)}
+                   className={classNames(`${this.getScrollClassNameFacebook()}`, `${this.getFixFacebook()}`)}
                    >
                   Messenger
                   <img src={require("../assets/facebookicon.png")} className={classNames(`${this.getScrollClassNameIconFacebook()}`)} alt="facebookicon"/>
@@ -480,12 +540,12 @@ getScrollClassNameIconCredits() {
 
                   {this.state.select ?
                   <Button variant="contained" style={{backgroundColor: '#40E0D0',
-                  boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
-                   className={classNames(`${this.getScrollClassNameCredits()}`)}
+                  boxShadow: 'none', marginTop: -20, float: 'left'}}
+                   className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
                    >
                    <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
 
-                  {this.state.credits} Credits
+                  20 Credits
                   </Button>
                   :
 
@@ -540,8 +600,8 @@ getScrollClassNameIconCredits() {
                  )}
                </Media>
 
-                   <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)' }}>
-
+                   <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)'}}>
+                     <div style={{paddingTop: '7vh', width: '100%'}}>
                      <div style={{display : 'flex', color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
                      </div>
@@ -552,6 +612,8 @@ getScrollClassNameIconCredits() {
                        {this.state.description}
                      </div>
 
+
+                   </div>
 
                      <div style={{ marginTop: 20, paddingBottom: 20}}>
                         { this.state.rightsTo === "" ?
