@@ -107,9 +107,10 @@ class RegisterPage extends React.Component {
             <div>
               <AppBar
                 position="fixed"
+                style={{minHeight: 56}}
 
               >
-                <Toolbar  style={{background: '#ffffff', color: '#000',       maxHeight: '56px'
+                <Toolbar  style={{background: '#ffffff', color: '#000', maxHeight: '56px', minHeight: 56
       }}>
 
                   <IconButton
