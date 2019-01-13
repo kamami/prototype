@@ -556,12 +556,7 @@ font-family: roboto;
 }
 
 
-.ItemViewAll:nth-child() {
-  margin-top: 20px;
-}
-.ItemViewAll:last-child {
-  margin-right: 0;
-}
+
 .ItemViewAll .overlay {
   /* FF3.6-15 */
   background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.85) 0%, transparent 100%);
@@ -578,33 +573,7 @@ font-family: roboto;
   -webkit-transition: opacity .125s ease;
   transition: opacity .125s ease;
 }
-.ItemViewAll .overlay .title {
-  font-size: 22px;
-  font-weight: 200;
-  opacity: 0;
-  -webkit-transition: opacity .25s ease;
-  transition: opacity .25s ease;
-}
-.ItemViewAll .overlay .rating {
-  font-size: 14px;
-  opacity: 0;
-  -webkit-transition: opacity .25s ease .125s;
-  transition: opacity .25s ease .125s;
-}
-.ItemViewAll .overlay .plot {
-  font-size: 14px;
-  display: -webkit-box;
-  margin-top: 100px;
-  font-weight: 300;
-  line-height: 1.6;
-  opacity: 0;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  -webkit-transition: margin .25s ease .125s, opacity .25s ease .25s;
-  transition: margin .25s ease .125s, opacity .25s ease .25s;
-}
+
 .ItemViewAll:hover {
   background-size: 200%;
   cursor: pointer;
@@ -614,29 +583,24 @@ font-family: roboto;
 .ItemViewAll:hover .overlay {
   opacity: 1;
   pointer-events: all;
-}
-.ItemViewAll:hover .overlay .plot {
-  margin-top: 10px;
-  opacity: 1;
-}
-.ItemViewAll:hover .overlay .title {
-  opacity: 1;
-}
-.ItemViewAll:hover .overlay .rating {
-  opacity: 1;
-}
-.ItemViewAll:hover .overlay .ListToggle {
-  opacity: 1;
-}
-
-.ItemViewAllContainer {
-  background: red;
-
 
 }
+.ItemViewAllMobile {
+  width: 100%;
+  min-width: 150px;
+  background-color: #ffffff;
 
+  background-position: center;
+  background-size: 100%;
+  height: 170px;
+  min-height: 170px;
+  background-repeat: no-repeat;
 
+  border-radius: 2em 2em 0em 0em !important;
+  border: 0px !important;
+   box-sizing: inherit;
 
+}
 
 .DetailImgMobile {
   width: 100vw;
