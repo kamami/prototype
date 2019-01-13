@@ -715,7 +715,7 @@ getAppbar() {
             >
             <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
 
-           {this.state.credits} Credits
+           20 Credits
            </Button>
            :
 
