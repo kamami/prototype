@@ -162,7 +162,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
   marginRight: '0vw !important'
 
 
@@ -179,7 +179,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
   marginLeft: '0vw !important'
 
 
@@ -196,7 +196,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
   marginRight: '0vw !important'
 
 
@@ -212,7 +212,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
   marginLeft: '0vw !important'
 
 
@@ -531,7 +531,7 @@ getAppbar() {
       window.onload = function() {
      setTimeout (function () {
       window.scrollTo(0,0);
-     }); //100ms for example
+    }, 100); //100ms for example
     }
     this.updateDimensions();
     window.addEventListener('scroll', this.handleScroll, { passive: true });
