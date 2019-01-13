@@ -127,9 +127,6 @@ const styles = {
    height: '56px',
    boxShadow: 'none'
 
-
-
-
  },
 
  showIconFacebook: {
@@ -178,9 +175,6 @@ const styles = {
   transition: "all 1s, color 0s",
   boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
 
-
-
-
  },
 
 
@@ -191,6 +185,35 @@ const styles = {
   borderRadius: '0em',
   width: '50%',
   fontSize: '1.2em',
+  height: '56px',
+  transform: "translate(0vw, 20px)",
+  transition: "all 1s, color 0s",
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+
+ },
+
+ hideFacebookFixSmall: {
+
+  position: 'fixed',
+  top: 56,
+  right: 0,
+  borderRadius: '0em',
+  width: '50%',
+  fontSize: '1em',
+  height: '56px',
+  transform: "translate(0vw, 20px)",
+  transition: "all 1s, color 0s",
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+
+ },
+
+ hideCreditsFixSmall: {
+
+  position: 'fixed',
+  top: 56,
+  borderRadius: '0em',
+  width: '50%',
+  fontSize: '1em',
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
@@ -220,11 +243,6 @@ const styles = {
    marginLeft: '3.1vw',
    height: 20,
  },
-
-
-
-
-
 
  blur: {
    width: '100vw',
@@ -352,7 +370,7 @@ getScrollClassNameFacebookSmall() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideFacebookSmall;
 
-   } else {
+   } else if(this.state.heightSet < this.state.offsetHeight){
      return this.props.classes.showFacebookSmall;
 
    }
@@ -366,7 +384,7 @@ getScrollClassNameCreditsSmall() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideCreditsSmall;
 
-   } else {
+   } else if(this.state.heightSet < this.state.offsetHeight){
      return this.props.classes.showCreditsSmall;
 
    }
@@ -434,6 +452,31 @@ getFixCredits() {
 
   }else if( this.state.heightSet > this.state.offsetHeight ){
      return this.props.classes.hideCreditsFix;
+
+
+   }
+
+}
+
+getFixFacebookSmall() {
+  if (this.state.shouldShow === null) {
+    return '';
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
+     return this.props.classes.hideFacebookFixSmall;
+
+   }
+
+}
+
+
+getFixCreditsSmall() {
+
+  if (this.state.shouldShow === null) {
+    return '';
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
+     return this.props.classes.hideCreditsFixSmall;
 
 
    }
@@ -644,7 +687,7 @@ getAppbar() {
                     marginTop: -20, float: 'left'}}
                   className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
                   >
-                  <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`,  `${this.getimageCredits()}`)} alt="credits"/>
+                  <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
 
                   Free
                   </Button>
@@ -657,30 +700,30 @@ getAppbar() {
                    <div>
               <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
            <Button variant="contained" style={{backgroundColor: '#0084ff',
-            boxShadow: 'none', marginTop: -20, float: 'right'}}
-             className={classNames(`${this.getScrollClassNameFacebookSmall()}`)}
+             marginTop: -20, float: 'right'}}
+             className={classNames(`${this.getScrollClassNameFacebookSmall()}`, `${this.getFixFacebookSmall()}`)}
             >
            Messenger
-           <img src={require("../assets/facebookicon.png")} className={classNames(`${this.getScrollClassNameIconFacebook()}`)} alt="facebookicon"/>
+           <img src={require("../assets/facebookicon.png")} className={classNames(`${this.getScrollClassNameIconFacebook()}`, `${this.getimageFacebook()}`)} alt="facebookicon"/>
            </Button>
            </a>
 
            {this.state.select ?
            <Button variant="contained" style={{backgroundColor: '#40E0D0',
-           boxShadow: 'none', marginTop: -20, float: 'left'}}
-            className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
+           marginTop: -20, float: 'left'}}
+            className={classNames(`${this.getScrollClassNameCreditsSmall()}`, `${this.getFixCreditsSmall()}`)}
             >
-            <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
+            <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
 
            {this.state.credits} Credits
            </Button>
            :
 
            <Button variant="contained" style={{backgroundColor: '#40E0D0',
-           boxShadow: 'none', marginTop: -20, float: 'left'}}
-           className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
+            marginTop: -20, float: 'left'}}
+           className={classNames(`${this.getScrollClassNameCreditsSmall()}`, `${this.getFixCreditsSmall()}`)}
            >
-           <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
+           <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
 
            Free
            </Button>
