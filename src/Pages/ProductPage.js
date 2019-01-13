@@ -274,7 +274,7 @@ noBlur:{
 filter: 'blur(0px)',
 webkitTransition:' 2s -webkit-filter linear',
 oTransition: '2s -o-filter linear',
-transition: '1s -webkit-filter linear', 
+transition: '1s -webkit-filter linear',
 backfaceVisibility: 'visible'
 
 
@@ -652,13 +652,15 @@ getAppbar() {
                 </Toolbar>
               </AppBar>
 
-                   <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
-                     <img id="image" className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
-                   </div>
+
 
                    <Media query="(min-width: 361px)">
                          {matches =>
                            matches ? (
+                             <div>
+                             <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
+                               <img id="image" className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
+                             </div>
                           <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',
@@ -692,9 +694,12 @@ getAppbar() {
                   }
 
                    </div>
-
+                 </div>
                  ):(
-
+                   <div>
+                   <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
+                     <img id="image" style={{width: '100vw', height: '25vh', marginTop: '56px', objectFit: 'cover' }} src={this.state.backdrop} alt="DetailImgMobile" />
+                   </div>
                    <div>
               <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
            <Button variant="contained" style={{backgroundColor: '#0084ff',
@@ -728,7 +733,7 @@ getAppbar() {
            }
 
             </div>
-
+          </div>
                  )}
                </Media>
 
