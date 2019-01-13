@@ -162,7 +162,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '0px 3px 4px 0px rgba(0,0,0,0.3) !important',
   marginRight: '0vw !important'
 
 
@@ -179,7 +179,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.3) !important',
   marginLeft: '0vw !important'
 
 
@@ -196,7 +196,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '0px 3px 4px 0px rgba(0,0,0,0.3) !important',
   marginRight: '0vw !important'
 
 
@@ -212,7 +212,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.3) !important',
   marginLeft: '0vw !important'
 
 
@@ -520,8 +520,6 @@ getAppbar() {
 
 
   componentDidMount() {
-    window.scrollTo(0,0);
-
     var offsetHeight = document.getElementById('image').offsetHeight;
     this.setState({ offsetHeight }, () => {
       console.log(this.state.offsetHeight)
@@ -754,7 +752,8 @@ getAppbar() {
 
                    </div>
 
-                     <div style={{ marginTop: 20, paddingBottom: 20}}>
+                     <div style={{ marginTop: 20, paddingBottom: 20, width: '100%', wordWrap: 'break-word'
+}}>
                         { this.state.rightsTo === "" ?
 
                           <p style={{fontSize: '0.8em', fontWeight: 'lighter', width: '100%', color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
