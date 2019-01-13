@@ -249,9 +249,6 @@ const styles = {
    height: '25vh',
    marginTop: '56px',
    objectFit: 'cover',
-   backgroundPosition: '50% 50%',
-   display: 'block',
-   backgroundRepeat: 'no-repeat',
    webkitFilter:' blur(30px)',
    mozFilter: 'blur(30px)',
 oFilter: 'blur(30px)',
@@ -259,7 +256,9 @@ msFilter: 'blur(30px)',
 filter: 'blur(30px)',
 webkitTransition:' 2s -webkit-filter linear',
 oTransition: '2s -o-filter linear',
-transition: '1s -webkit-filter linear'
+transition: '1s -webkit-filter linear',
+backfaceVisibility: 'hidden'
+
 
 
 },
@@ -268,9 +267,6 @@ noBlur:{
   height: '25vh',
   marginTop: '56px',
   objectFit: 'cover',
-  backgroundPosition: '50% 50%',
-  display: 'block',
-  backgroundRepeat: 'no-repeat',
   webkitFilter: 'blur(0px)',
   mozFilter: 'blur(0px)',
   oFilter: 'blur(0px)',
@@ -278,7 +274,8 @@ noBlur:{
 filter: 'blur(0px)',
 webkitTransition:' 2s -webkit-filter linear',
 oTransition: '2s -o-filter linear',
-transition: '1s -webkit-filter linear'
+transition: '1s -webkit-filter linear', 
+backfaceVisibility: 'visible'
 
 
 

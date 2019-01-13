@@ -23,12 +23,12 @@ const variantIcon = {
 
 const styles1 = theme => ({
   success: {
-    backgroundColor: '#FF6B6B',
+    backgroundColor: '#ffffff',
   },
 
   icon: {
     fontSize: 20,
-    color: '#ffffff'
+    color: '#484F58'
   },
   iconVariant: {
     opacity: 0.9,
@@ -37,7 +37,7 @@ const styles1 = theme => ({
   message: {
     display: 'flex',
     alignItems: 'center',
-    color: '#ffffff'
+    color: '#484F58'
   },
 });
 
@@ -112,7 +112,7 @@ class IosSnackbar extends React.Component {
 
     return (
       <div>
-      
+
         <Snackbar
           anchorOrigin={{
             vertical: 'bottom',
