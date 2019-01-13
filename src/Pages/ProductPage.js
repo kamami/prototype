@@ -531,7 +531,7 @@ getFixCredits() {
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',
                    boxShadow: 'none', marginTop: -20, float: 'right'}}
-                   className={classNames(`${this.getScrollClassNameFacebook()}`, `${this.getFixFacebook()}`)}
+                   className={classNames(`${this.getScrollClassNameFacebook()}`)}
                    >
                   Messenger
                   <img src={require("../assets/facebookicon.png")} className={classNames(`${this.getScrollClassNameIconFacebook()}`)} alt="facebookicon"/>
@@ -541,7 +541,7 @@ getFixCredits() {
                   {this.state.select ?
                   <Button variant="contained" style={{backgroundColor: '#40E0D0',
                   boxShadow: 'none', marginTop: -20, float: 'left'}}
-                   className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
+                   className={classNames(`${this.getScrollClassNameCredits()}`)}
                    >
                    <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
 
@@ -611,8 +611,7 @@ getFixCredits() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
-
-
+                    
                    </div>
 
                      <div style={{ marginTop: 20, paddingBottom: 20}}>

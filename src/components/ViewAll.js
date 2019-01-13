@@ -87,8 +87,12 @@ fetch(requestUrl + '1&_limit=3' + this.props.category)
       fetch(requestUrl + this.state.message  + this.props.category).then((response)=>{
           return response.json();
       }) .then((data)=>{
-          this.setState({ tracks: data});
-
+          this.setState({tracks: data});
+          if(this.state.tracks.length === 0){
+              this.setState({noResults: true})
+            } else {
+              this.setState({noResults: false})
+            }
       })
       }
 });
@@ -107,7 +111,7 @@ render() {
 
 
 
-  const {message, data, tracks} = this.state;
+  const {message, data, tracks, noResults} = this.state;
 
 
   var items = [];
@@ -123,6 +127,7 @@ render() {
                 }} zDepth={1} >
 
                 <div>
+
 
 
 
@@ -179,6 +184,7 @@ render() {
       <div>
 
 
+
         {this.props.drawerOpen === false &&
 
 
@@ -225,7 +231,22 @@ render() {
 
 
          }
-         <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent} />
+
+
+           {noResults ?
+             <Fade in={true}  timeout={3000}>
+             <div style={{ position: 'absolute', left: '50%', top: 150}}>
+
+               <img src={require("../assets/no_results_found.png")} style={{width: '100%', position: 'relative', left: '-50%'}}/>
+                 <p style={{marginTop: '2vh', left: '-50%', color: '#484F58', fontSize: '1.5em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute'}}> Nichts gefunden.</p>
+
+             </div>
+           </Fade>
+           :
+           <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent} />
+
+         }
+
 
 </div>
     )
