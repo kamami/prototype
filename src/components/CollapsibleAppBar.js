@@ -18,7 +18,8 @@ import Fade from '@material-ui/core/Fade';
 
 const styles = {
   root: {
-   flexGrow: 1
+   flexGrow: 1,
+   minHeight: 56
  },
 
  shadow :{
@@ -147,7 +148,7 @@ history.push('/home')
       >
 
 
-      <Toolbar disableGutters={!this.props.open } style={{color: '#000'}}>
+      <Toolbar disableGutters={!this.props.open } style={{color: '#000', minHeight: 56}}>
          <IconButton
            color="inherit"
            aria-label="Open drawer"
