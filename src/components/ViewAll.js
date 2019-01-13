@@ -138,7 +138,7 @@ render() {
 
                       <div className="ItemViewAll" style={{backgroundImage: 'url(' + title.image + ')', boxShadow: 'none'}}  >
                         {title.select &&
-                        <div style={{display: 'flex', width: '100%',backgroundColor: 'rgba(255, 255, 255, 0.8)', height: 36, marginTop: -1 }}>
+                        <div style={{display: 'flex', width: '100%',backgroundColor: 'rgba(255, 255, 255, 0.8)', height: 36, marginTop: -1, borderRadius: '2em 2em 0 0' }}>
                           <p style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '1%', marginBottom: '1%', fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.4em', lineHeight: '1.6'}}> Fable.Select</p>
                         </div>
                         }
