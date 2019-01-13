@@ -144,7 +144,6 @@ history.push('/home')
         className={classNames(`${classes.root}, ${this.getScrollClassName()}`, `${this.getShadow()}`,
             {[classes.appBarShift]: this.props.open}
           )}
-
       >
 
 

@@ -547,14 +547,14 @@ getAppbar() {
     .then((data) =>{
       this.setState({ title: data.title });
       this.setState({ overview: data.body });
-      this.setState({ backdrop: data.image });
+      this.setState({ backdrop: data.image});
       this.setState({ description: data.description });
       this.setState({ messenger: data.messenger });
       this.setState({ code: data.key });
       this.setState({ matchId: data.matchId});
       this.setState({credits: data.credits});
       this.setState({rightsTo: data.rightsTo});
-      this.setState({select: data.select, loading: false });
+      this.setState({select: data.select, loading: false  });
 
 
     }
@@ -658,9 +658,11 @@ getAppbar() {
                          {matches =>
                            matches ? (
                              <div>
+
                              <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
-                               <img id="image" className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
+                               <img id="image" className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop}  alt={this.state.loading ? "" : this.state.title}/>
                              </div>
+
                           <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',

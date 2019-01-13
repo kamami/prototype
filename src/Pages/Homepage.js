@@ -21,6 +21,7 @@ import CollapsibleAppBar from '../components/CollapsibleAppBar';
 import {Link} from 'react-router-dom';
 import IosSnackbar from '../components/IosSnackbar';
 
+
 const drawerWidth = '50%';
 
 const styles = theme => ({
@@ -96,7 +97,7 @@ class Homepage extends React.Component {
    })
  }
 
- 
+
 
 
 

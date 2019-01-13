@@ -11,7 +11,9 @@ import { debounce} from 'lodash'
 import Content from '../components/Content';
 import Button from '@material-ui/core/Button';
 import { history } from '../_helpers';
+import Dialog from '@material-ui/core/Dialog';
 
+import DialogContent from '@material-ui/core/DialogContent';
 import Card from '@material-ui/core/Card';
 
 
@@ -25,7 +27,8 @@ constructor(props){
     tracks: [],
     hasMoreItems: true,
     page: 2,
-    message: ''
+    message: '',
+    loading: true
   }
 
   this.searchHandler = this.searchHandler.bind(this);
@@ -62,8 +65,8 @@ fetch(requestUrl + '1&_limit=3' + this.props.category)
     .then((response)=>{
     return response.json();
 }) .then((data)=>{
-    this.setState({tracks : data});
-    this.setState({hasMoreItems: true})
+    this.setState({tracks : data, loading: false});
+    this.setState({hasMoreItems: true});
 
 })
 .catch((err)=>{
@@ -243,8 +246,35 @@ render() {
              </div>
            </Fade>
            :
-           <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent} />
+           <div>
+           {this.state.loading &&
+             <Dialog
+                   open={true}
+                   aria-labelledby="alert-dialog-title"
+                   aria-describedby="alert-dialog-description"
+                   fullScreen
+                   PaperProps={{
 
+
+             style: {
+             backgroundColor: 'rgba(255, 255, 255, 0.5)',
+             boxShadow: 'none',
+             },
+             }}
+                 >
+                 <DialogContent >
+                   <div  style={{display: 'flex'}}>
+
+                   <div  className="loader" style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '100%'}}>
+
+                   </div>
+                 </div>
+                 </DialogContent>
+               </Dialog>
+
+         }
+           <Content items={items} hasMoreItems={this.state.hasMoreItems} loadContent={this.loadContent} />
+           </div>
          }
 
 
