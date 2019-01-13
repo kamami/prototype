@@ -255,7 +255,7 @@ render() {
              <div style={{ position: 'absolute', left: '50%', top: 150}}>
 
                <img src={require("../assets/no_results_found.png")} style={{width: '100%', position: 'relative', left: '-50%'}}/>
-                 <p style={{marginTop: '2vh', left: '-50%', color: '#484F58', fontSize: '1.5em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute'}}> Nichts gefunden.</p>
+                 <p style={{top: '100%', left: '-50%', color: '#484F58', fontSize: '1.5em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute'}}> Nichts gefunden.</p>
 
              </div>
            </Fade>
