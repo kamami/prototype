@@ -1,4 +1,5 @@
 import React from 'react';
+
 import '../App.css';
 import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
@@ -298,7 +299,6 @@ class ProductPage extends React.Component {
   }
 
 
-
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
 
@@ -520,17 +520,15 @@ getAppbar() {
 
 
   componentDidMount() {
+    window.scrollTo(0,0);
+
     var offsetHeight = document.getElementById('image').offsetHeight;
     this.setState({ offsetHeight }, () => {
       console.log(this.state.offsetHeight)
 }
     );
 
-      window.onload = function() {
-     setTimeout (function () {
-      window.scrollTo(0,0);
-    }, 100); //100ms for example
-    }
+
     this.updateDimensions();
     window.addEventListener('scroll', this.handleScroll, { passive: true });
     window.addEventListener('scroll', this.updateDimensions);
