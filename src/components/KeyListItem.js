@@ -92,7 +92,7 @@ showFacebook = () =>{
           <div>
 
             {this.props.code === this.state.key1 ||
-              this.props.code === this.state.key3 
+              this.props.code === this.state.key3
 
               ?
 
@@ -145,7 +145,7 @@ showFacebook = () =>{
                       <CopyToClipboard text={this.props.code}
                         onCopy={() => this.setState({copied: true})}>
                         <div style={{display: 'flex'}}>
-                        <Button variant="contained" style={{width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}} onClick={this.showFacebook}>
+                        <Button variant="contained" style={{ height: 40, width: '100%',boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}} onClick={this.showFacebook}>
 
                           {this.props.code}
 
@@ -161,10 +161,10 @@ showFacebook = () =>{
                         <div style={{marginTop: '24px'}}>
                           <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 
-                          <Button variant="contained" style={{backgroundColor: '#3b5998', width: '100%',
+                          <Button variant="contained" style={{height: 40, backgroundColor: '#0084ff', width: '100%',
                             color: '#ffffff', boxShadow: 'none', borderRadius: "2em 2em 2em 2em"}}>
 
-                          Facebook
+                          Messenger
 
                           <img src={require("../assets/facebookicon.png")} style={{heigth: 20, width: 20, marginLeft: 10}}/>
                           </Button>

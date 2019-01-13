@@ -162,7 +162,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
   marginRight: '0vw !important'
 
 
@@ -179,7 +179,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
   marginLeft: '0vw !important'
 
 
@@ -196,7 +196,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
   marginRight: '0vw !important'
 
 
@@ -212,7 +212,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 2px 2px 0px rgba(0,0,0,0.4) !important',
   marginLeft: '0vw !important'
 
 
@@ -520,6 +520,8 @@ getAppbar() {
 
 
   componentDidMount() {
+    window.scrollTo(0,0);
+
     var offsetHeight = document.getElementById('image').offsetHeight;
     this.setState({ offsetHeight }, () => {
       console.log(this.state.offsetHeight)
