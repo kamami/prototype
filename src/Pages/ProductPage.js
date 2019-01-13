@@ -437,7 +437,7 @@ getFixFacebook() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.hideFacebookFix;
 
    }
@@ -450,7 +450,7 @@ getFixCredits() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.hideCreditsFix;
 
 
@@ -462,7 +462,7 @@ getFixFacebookSmall() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.hideFacebookFixSmall;
 
    }
@@ -475,7 +475,7 @@ getFixCreditsSmall() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.hideCreditsFixSmall;
 
 
@@ -487,7 +487,7 @@ getimageFacebook() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.hideFacebookimage;
 
    }
@@ -500,7 +500,7 @@ getimageCredits() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.hideCreditsimage;
 
 
@@ -513,7 +513,7 @@ getAppbar() {
   if (this.state.shouldShow === null) {
     return '';
 
-  }else if( this.state.heightSet > this.state.offsetHeight ){
+  }else if( this.state.heightSet >= this.state.offsetHeight ){
      return this.props.classes.appBar;
 
 
@@ -735,7 +735,7 @@ getAppbar() {
                </Media>
 
                    <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff'}}>
-                     <div style={{paddingTop: '7vh', width: '100%'}}>
+                     <div style={{paddingTop: '9vh', width: '100%'}}>
                      <div style={{display : 'flex', color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
                      </div>
@@ -745,7 +745,7 @@ getAppbar() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
-                    
+
 
 
                    </div>
