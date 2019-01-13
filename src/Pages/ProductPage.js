@@ -620,7 +620,7 @@ getAppbar() {
       let user = JSON.parse(localStorage.getItem('user'));
 
         return (
-          <div >
+          <div style={{background: '#ffffff', height: 'calc(100vh - 56px)'}} >
             <MetaTags>
          <title>{this.state.title}</title>
          <meta name="description" content={this.state.description} />
@@ -745,23 +745,7 @@ getAppbar() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
-                     <div
-                       style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
-                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
-                       {this.state.description}
-                     </div>
-
-                     <div
-                       style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
-                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
-                       {this.state.description}
-                     </div>
-
-                     <div
-                       style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
-                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
-                       {this.state.description}
-                     </div>
+                    
 
 
                    </div>
