@@ -127,7 +127,7 @@ render() {
               <MuiThemeProvider>
                 <Paper style={{ borderRadius: "2em",
                   background: '#ffffff'
-                }} zDepth={1} >
+                }} zDepth={1} onClick = {()=> {history.push('/bots/' + title.id)}}>
 
                 <div>
 
@@ -137,7 +137,7 @@ render() {
                           matches ? (
 
 
-                      <Card className="ItemViewAll" style={{backgroundImage: 'url(' + title.image + ')', boxShadow: 'none'}}>
+                      <Card className="ItemViewAll" style={{backgroundImage: 'url(' + title.image + ')', boxShadow: 'none'}}  >
                         {title.select &&
                         <div style={{display: 'flex', width: '100%',backgroundColor: 'rgba(255, 255, 255, 0.8)', height: 36, marginTop: -1 }}>
                           <p style={{marginLeft: 'auto', marginRight: 'auto', marginTop: '1%', marginBottom: '1%', fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.4em', lineHeight: '1.6'}}> Fable.Select</p>
@@ -169,10 +169,10 @@ render() {
 
 
 
-                      <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton', color: '#484F58'}}  onClick = {()=> {history.push('/bots/' + title.id)}}>
+                      <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton', color: '#484F58'}} >
                         {title.title}
                       </div>
-                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', color: '#484F58'}}  onClick = {()=> {history.push('/bots/' + title.id)}}>
+                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', color: '#484F58'}}  >
                         {title.body}
                       </div>
                       <div >
