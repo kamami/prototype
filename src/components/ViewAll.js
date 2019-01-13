@@ -234,7 +234,7 @@ render() {
 
 
            {noResults ?
-             <Fade in={true}  timeout={3000}>
+             <Fade in={true}  timeout={2000}>
              <div style={{ position: 'absolute', left: '50%', top: 150}}>
 
                <img src={require("../assets/no_results_found.png")} style={{width: '100%', position: 'relative', left: '-50%'}}/>

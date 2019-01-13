@@ -33,6 +33,7 @@ const styles = {
    width: '38vw',
    marginRight: '4vw',
    height: '40px',
+   boxShadow: 'none'
  },
 
  hideFacebook: {
@@ -42,7 +43,9 @@ const styles = {
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.2em',
-   height: '56px'
+   height: '56px',
+   boxShadow: 'none'
+
 
  },
  showCredits: {
@@ -51,7 +54,9 @@ const styles = {
    borderRadius: '2em',
    width: '38vw',
    marginLeft: '4vw',
-   height: '40px'
+   height: '40px',
+   boxShadow: 'none'
+
 
 
  },
@@ -62,7 +67,9 @@ const styles = {
    borderRadius: '0em',
    width: '50%',
    fontSize: '1.2em',
-   height: '56px'
+   height: '56px',
+   boxShadow: 'none'
+
 
 
  },
@@ -75,7 +82,9 @@ const styles = {
    marginRight: '4vw',
    fontSize: '0.7em',
    height: '40px',
-   padding: '6px 14px 6px 14px'
+   padding: '6px 14px 6px 14px',
+   boxShadow: 'none'
+
 
 
  },
@@ -87,7 +96,9 @@ const styles = {
    borderRadius: '0em',
    width: '50%',
    fontSize: '1em',
-   height: '56px'
+   height: '56px',
+   boxShadow: 'none'
+
 
 
  },
@@ -99,7 +110,9 @@ const styles = {
    marginLeft: '4vw',
    fontSize: '0.7em',
    height: '40px',
-   padding: '6px 14px 6px 14px'
+   padding: '6px 14px 6px 14px',
+   boxShadow: 'none'
+
 
 
 
@@ -112,6 +125,8 @@ const styles = {
    width: '50%',
    fontSize: '1em',
    height: '56px',
+   boxShadow: 'none'
+
 
 
 
@@ -160,7 +175,10 @@ const styles = {
   fontSize: '1.2em',
   height: '56px',
   transform: "translate(0vw, 20px)",
-  transition: "all 1s, color 0s"
+  transition: "all 1s, color 0s",
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+
+
 
 
  },
@@ -175,9 +193,34 @@ const styles = {
   fontSize: '1.2em',
   height: '56px',
   transform: "translate(0vw, 20px)",
-  transition: "all 1s, color 0s"
+  transition: "all 1s, color 0s",
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
 
  },
+
+ appBar: {
+   boxShadow: 'none',
+   transition: "all 1s",
+   backgroundColor: '#ffffff'
+
+ },
+
+ hideCreditsimage: {
+
+   transition: "all 2s, color 0s",
+   width: 20,
+   marginRight: '3.1vw',
+   height: 20,
+ },
+
+ hideFacebookimage: {
+
+   transition: "all 2s, color 0s",
+   width: 20,
+   marginLeft: '3.1vw',
+   height: 20,
+ },
+
 
 
 
@@ -227,8 +270,6 @@ transition: '1s -webkit-filter linear'
 }
 
 
-
-
 class ProductPage extends React.Component {
   constructor(props){
       super(props)
@@ -253,6 +294,8 @@ class ProductPage extends React.Component {
 
   updateDimensions() {
     this.setState({ heightSet: window.scrollY })
+    console.log(this.state.heightSet)
+
 }
 
 handleScroll() {
@@ -281,7 +324,7 @@ getScrollClassNameFacebook() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideFacebook;
 
-   } else if(this.state.heightSet < 205.8){
+   } else if(this.state.heightSet < this.state.offsetHeight){
      return this.props.classes.showFacebook;
 
    }
@@ -295,7 +338,7 @@ getScrollClassNameCredits() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideCredits;
 
-   } else if(this.state.heightSet < 205.8){
+   } else if(this.state.heightSet < this.state.offsetHeight){
      return this.props.classes.showCredits;
 
    }
@@ -351,7 +394,7 @@ getScrollClassNameIconFacebook() {
    else if(this.state.shouldShow === false && this.state.heightSet > 40){
      return this.props.classes.hideIconFacebook;
 
-   } else {
+   } else{
      return this.props.classes.showIconFacebook;
 
    }
@@ -375,8 +418,8 @@ getScrollClassNameIconCredits() {
 getFixFacebook() {
   if (this.state.shouldShow === null) {
     return '';
-  }
-   else if( this.state.heightSet > 205.8){
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
      return this.props.classes.hideFacebookFix;
 
    }
@@ -385,11 +428,51 @@ getFixFacebook() {
 
 
 getFixCredits() {
+
   if (this.state.shouldShow === null) {
     return '';
-  }
-   else if( this.state.heightSet > 205.8){
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
      return this.props.classes.hideCreditsFix;
+
+
+   }
+
+}
+
+getimageFacebook() {
+  if (this.state.shouldShow === null) {
+    return '';
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
+     return this.props.classes.hideFacebookimage;
+
+   }
+
+}
+
+
+getimageCredits() {
+
+  if (this.state.shouldShow === null) {
+    return '';
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
+     return this.props.classes.hideCreditsimage;
+
+
+   }
+
+}
+
+getAppbar() {
+
+  if (this.state.shouldShow === null) {
+    return '';
+
+  }else if( this.state.heightSet > this.state.offsetHeight ){
+     return this.props.classes.appBar;
+
 
    }
 
@@ -400,7 +483,12 @@ getFixCredits() {
 
 
   componentDidMount() {
-    window.onload = function() {
+    var offsetHeight = document.getElementById('image').offsetHeight;
+    this.setState({ offsetHeight }, () => {
+}
+    );
+
+      window.onload = function() {
      setTimeout (function () {
       window.scrollTo(0,0);
      }); //100ms for example
@@ -483,11 +571,13 @@ getFixCredits() {
 
 
 
+
     render() {
+
       let user = JSON.parse(localStorage.getItem('user'));
 
         return (
-          <div style={{backgroundColor: '#ffffff', height: 'calc(70vh - 56px)'}}>
+          <div >
             <MetaTags>
          <title>{this.state.title}</title>
          <meta name="description" content={this.state.description} />
@@ -498,7 +588,7 @@ getFixCredits() {
 
               <AppBar
                 position="fixed"
-
+                className={classNames(`${this.getAppbar()}`)}
               >
                 <Toolbar  style={{background: '#ffffff', color: '#000',maxHeight: '56px'
       }}>
@@ -520,8 +610,9 @@ getFixCredits() {
 
                 </Toolbar>
               </AppBar>
-                   <div style={{position: 'fixed', top: 0, zIndex: -1}}>
-                     <img className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
+
+                   <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
+                     <img id="image" className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop} alt="DetailImgMobile" />
                    </div>
 
                    <Media query="(min-width: 361px)">
@@ -530,18 +621,18 @@ getFixCredits() {
                           <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',
-                   boxShadow: 'none', marginTop: -20, float: 'right'}}
-                   className={classNames(`${this.getScrollClassNameFacebook()}`)}
+                   marginTop: -20, float: 'right'}}
+                   className={classNames(`${this.getScrollClassNameFacebook()}`, `${this.getFixFacebook()}`)}
                    >
                   Messenger
-                  <img src={require("../assets/facebookicon.png")} className={classNames(`${this.getScrollClassNameIconFacebook()}`)} alt="facebookicon"/>
+                  <img src={require("../assets/facebookicon.png")} className={classNames(`${this.getScrollClassNameIconFacebook()}`, `${this.getimageFacebook()}`)} alt="facebookicon"/>
                   </Button>
                   </a>
 
                   {this.state.select ?
                   <Button variant="contained" style={{backgroundColor: '#40E0D0',
-                  boxShadow: 'none', marginTop: -20, float: 'left'}}
-                   className={classNames(`${this.getScrollClassNameCredits()}`)}
+              marginTop: -20, float: 'left'}}
+                   className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
                    >
                    <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
 
@@ -550,10 +641,10 @@ getFixCredits() {
                   :
 
                   <Button variant="contained" style={{backgroundColor: '#40E0D0',
-                  boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
-                  className={classNames(`${this.getScrollClassNameCredits()}`)}
+                    marginTop: -20, float: 'left'}}
+                  className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
                   >
-                  <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
+                  <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`,  `${this.getimageCredits()}`)} alt="credits"/>
 
                   Free
                   </Button>
@@ -576,7 +667,7 @@ getFixCredits() {
 
            {this.state.select ?
            <Button variant="contained" style={{backgroundColor: '#40E0D0',
-           boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
+           boxShadow: 'none', marginTop: -20, float: 'left'}}
             className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
             >
             <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
@@ -586,7 +677,7 @@ getFixCredits() {
            :
 
            <Button variant="contained" style={{backgroundColor: '#40E0D0',
-           boxShadow: 'none', marginTop: -20, float: 'left', marginBottom: '7vh'}}
+           boxShadow: 'none', marginTop: -20, float: 'left'}}
            className={classNames(`${this.getScrollClassNameCreditsSmall()}`)}
            >
            <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
@@ -600,7 +691,7 @@ getFixCredits() {
                  )}
                </Media>
 
-                   <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff', height: 'calc(100vh - 56px)'}}>
+                   <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff'}}>
                      <div style={{paddingTop: '7vh', width: '100%'}}>
                      <div style={{display : 'flex', color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
@@ -611,7 +702,25 @@ getFixCredits() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
-                    
+                     <div
+                       style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
+                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
+                       {this.state.description}
+                     </div>
+
+                     <div
+                       style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
+                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
+                       {this.state.description}
+                     </div>
+
+                     <div
+                       style={{fontSize: '1.1rem', marginTop: 20, paddingBottom: 20,
+                         fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
+                       {this.state.description}
+                     </div>
+
+
                    </div>
 
                      <div style={{ marginTop: 20, paddingBottom: 20}}>
