@@ -311,7 +311,7 @@ class ProductPage extends React.Component {
   }
 
   updateDimensions() {
-    this.setState({ heightSet: window.scrollY })
+    this.setState({ heightSet: Math.round(window.scrollY) })
     console.log(this.state.heightSet)
 
 }
@@ -528,6 +528,7 @@ getAppbar() {
   componentDidMount() {
     var offsetHeight = document.getElementById('image').offsetHeight;
     this.setState({ offsetHeight }, () => {
+      console.log(this.state.offsetHeight)
 }
     );
 
