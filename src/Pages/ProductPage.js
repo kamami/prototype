@@ -29,33 +29,27 @@ const styles = {
  showFacebook: {
 
    transition: "all 2s, color 0s",
-   borderRadius: '2em',
    width: '38vw',
-   marginRight: '4vw',
    height: '40px',
-   boxShadow: 'none'
  },
 
  hideFacebook: {
 
    transform: "translate(-0vw, 20px)",
    transition: "all 1s, color 0s",
-   borderRadius: '0em',
+   borderRadius: '0em !important',
    width: '50%',
    fontSize: '1.2em',
    height: '56px',
-   boxShadow: 'none'
+   marginRight: '0vw !important'
 
 
  },
  showCredits: {
 
    transition: "all 2s",
-   borderRadius: '2em',
    width: '38vw',
-   marginLeft: '4vw',
    height: '40px',
-   boxShadow: 'none'
 
 
 
@@ -64,11 +58,12 @@ const styles = {
 
    transform: "translate(0vw, 20px)",
    transition: "all 1s",
-   borderRadius: '0em',
+   borderRadius: '0em !important',
    width: '50%',
    fontSize: '1.2em',
    height: '56px',
-   boxShadow: 'none'
+   marginLeft: '0vw !important'
+
 
 
 
@@ -77,13 +72,9 @@ const styles = {
  showFacebookSmall: {
 
    transition: "all 2s, color 0s",
-   borderRadius: '2em',
    width: '38vw',
-   marginRight: '4vw',
-   fontSize: '0.7em',
    height: '40px',
    padding: '6px 14px 6px 14px',
-   boxShadow: 'none'
 
 
 
@@ -93,11 +84,12 @@ const styles = {
 
    transform: "translate(-0vw, 20px)",
    transition: "all 1s, color 0s",
-   borderRadius: '0em',
+   borderRadius: '0em !important',
    width: '50%',
-   fontSize: '1em',
+   fontSize: '1em !important',
    height: '56px',
-   boxShadow: 'none'
+   marginRight: '0vw !important'
+
 
 
 
@@ -105,13 +97,9 @@ const styles = {
  showCreditsSmall: {
 
    transition: "all 2s",
-   borderRadius: '2em',
    width: '38vw',
-   marginLeft: '4vw',
-   fontSize: '0.7em',
    height: '40px',
    padding: '6px 14px 6px 14px',
-   boxShadow: 'none'
 
 
 
@@ -121,11 +109,12 @@ const styles = {
 
    transform: "translate(0vw, 20px)",
    transition: "all 1s",
-   borderRadius: '0em',
+   borderRadius: '0em !important',
    width: '50%',
-   fontSize: '1em',
+   fontSize: '1em !important',
    height: '56px',
-   boxShadow: 'none'
+   marginLeft: '0vw !important'
+
 
  },
 
@@ -167,13 +156,15 @@ const styles = {
   position: 'fixed',
   top: 56,
   right: 0,
-  borderRadius: '0em',
+  borderRadius: '0em !important',
   width: '50%',
   fontSize: '1.2em',
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  marginRight: '0vw !important'
+
 
  },
 
@@ -182,13 +173,15 @@ const styles = {
 
   position: 'fixed',
   top: 56,
-  borderRadius: '0em',
+  borderRadius: '0em !important',
   width: '50%',
   fontSize: '1.2em',
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  marginLeft: '0vw !important'
+
 
  },
 
@@ -197,13 +190,15 @@ const styles = {
   position: 'fixed',
   top: 56,
   right: 0,
-  borderRadius: '0em',
+  borderRadius: '0em !important',
   width: '50%',
   fontSize: '1em',
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  marginRight: '0vw !important'
+
 
  },
 
@@ -211,13 +206,15 @@ const styles = {
 
   position: 'fixed',
   top: 56,
-  borderRadius: '0em',
+  borderRadius: '0em !important',
   width: '50%',
   fontSize: '1em',
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4)'
+  boxShadow: '-1px 3px 2px 0px rgba(0,0,0,0.4) !important',
+  marginLeft: '0vw !important'
+
 
  },
 
@@ -666,7 +663,7 @@ getAppbar() {
                           <div>
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',
-                   marginTop: -20, float: 'right'}}
+                   marginTop: -20, float: 'right', marginRight: '4vw', borderRadius: '2em', boxShadow: 'none'}}
                    className={classNames(`${this.getScrollClassNameFacebook()}`, `${this.getFixFacebook()}`)}
                    >
                   Messenger
@@ -676,7 +673,7 @@ getAppbar() {
 
                   {this.state.select ?
                   <Button variant="contained" style={{backgroundColor: '#40E0D0',
-              marginTop: -20, float: 'left'}}
+              marginTop: -20, float: 'left', marginLeft: '4vw', borderRadius: '2em', boxShadow: 'none'}}
                    className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
                    >
                    <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`)} alt="credits"/>
@@ -686,7 +683,7 @@ getAppbar() {
                   :
 
                   <Button variant="contained" style={{backgroundColor: '#40E0D0',
-                    marginTop: -20, float: 'left'}}
+                    marginTop: -20, float: 'left', marginLeft: '4vw', borderRadius: '2em', boxShadow: 'none'}}
                   className={classNames(`${this.getScrollClassNameCredits()}`, `${this.getFixCredits()}`)}
                   >
                   <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
@@ -705,7 +702,7 @@ getAppbar() {
                    <div>
               <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
            <Button variant="contained" style={{backgroundColor: '#0084ff',
-             marginTop: -20, float: 'right'}}
+             marginTop: -20, float: 'right', marginRight: '4vw', borderRadius: '2em', boxShadow: 'none', fontSize: '0.7em'}}
              className={classNames(`${this.getScrollClassNameFacebookSmall()}`, `${this.getFixFacebookSmall()}`)}
             >
            Messenger
@@ -715,7 +712,7 @@ getAppbar() {
 
            {this.state.select ?
            <Button variant="contained" style={{backgroundColor: '#40E0D0',
-           marginTop: -20, float: 'left'}}
+           marginTop: -20, float: 'left', marginLeft: '4vw', borderRadius: '2em', boxShadow: 'none', fontSize: '0.7em'}}
             className={classNames(`${this.getScrollClassNameCreditsSmall()}`, `${this.getFixCreditsSmall()}`)}
             >
             <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
@@ -725,7 +722,7 @@ getAppbar() {
            :
 
            <Button variant="contained" style={{backgroundColor: '#40E0D0',
-            marginTop: -20, float: 'left'}}
+            marginTop: -20, float: 'left', marginLeft: '4vw', borderRadius: '2em', boxShadow: 'none', fontSize: '0.7em'}}
            className={classNames(`${this.getScrollClassNameCreditsSmall()}`, `${this.getFixCreditsSmall()}`)}
            >
            <img src={require("../assets/crediticon.png")} className={classNames(`${this.getScrollClassNameIconCredits()}`, `${this.getimageCredits()}`)} alt="credits"/>
