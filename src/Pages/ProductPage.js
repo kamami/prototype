@@ -739,7 +739,7 @@ getAppbar() {
                                <img id="image" className={classNames(`${this.getScrollClassNameBlur()}`)} src={this.state.backdrop}  alt={this.state.loading ? "" : this.state.title}/>
                              </div>
 
-                          <div>
+                          <div className="noSelect">
                      <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
                   <Button variant="contained" style={{backgroundColor: '#0084ff',
                    marginTop: -20, float: 'right', marginRight: '4vw', borderRadius: '2em', boxShadow: 'none'}}
@@ -778,7 +778,7 @@ getAppbar() {
                    <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
                      <img id="image" style={{width: '100vw', height: '25vh', marginTop: '56px', objectFit: 'cover' }} src={this.state.backdrop}  alt={this.state.loading ? "" : this.state.title} />
                    </div>
-                   <div>
+                   <div className="noSelect">
               <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
            <Button variant="contained" style={{backgroundColor: '#0084ff',
              marginTop: -20, float: 'right', marginRight: '4vw', borderRadius: '2em', boxShadow: 'none', fontSize: '0.7em'}}
