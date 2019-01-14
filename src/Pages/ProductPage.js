@@ -699,7 +699,7 @@ getAppbar() {
          <title>{this.state.title}</title>
          <meta name="description" content={this.state.description} />
          <meta property="og:title" content={this.state.title} />
-         <meta property="og:image" content={this.state.backdrop} />
+         <meta property="og:image" content={"../assets/fable.png"} />
        </MetaTags>
             <CustomSnackbar snackbarOpen={this.state.copied} closeSnackbar={this.closeSnackbar}/>
 

@@ -64,15 +64,10 @@ class App extends Component {
                     <div>
                         <Router history={history}>
           <div>
-            {this.state.changeRoute ?
 
-                <Route path="/" exact strict component={Homepage} />
-
-            :
             <Route path="/" exact strict component={WelcomePage} />
-          }
-
-<Route path="/home" exact strict component={Homepage}/>
+        
+            <Route path="/home" exact strict component={Homepage}/>
 
               <Route path="/impressum" exact strict component={Impressum}/>
 
