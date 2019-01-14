@@ -866,7 +866,7 @@ getAppbar() {
                        name='rating'
                        starColor='rgb(255, 180, 0)'
                        emptyStarColor='#484F58'
-                       renderStarIcon={() => <span style={{marginLeft: '5vw'}}>{this.state.change ? <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
+                       renderStarIcon={() => <span style={{marginRight: '5vw'}}>{this.state.change ? <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
                      />
 
                    <RatingSnackbar snackbarOpen={this.state.done} />
