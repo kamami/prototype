@@ -852,7 +852,7 @@ getAppbar() {
                          <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> Deine Meinung ist gefragt</p>
 
                      </div>
-                     <div style={{display: 'flex', fontSize: '2em', marginRight: '-5vw', marginTop: '3vh', marginBottom: '3vh'}}>
+                     <div style={{display: 'flex', fontSize: '2em', marginLeft: '5vw', marginTop: '3vh', marginBottom: '3vh'}}>
                        {user && user.token ?
 
                      <div style={{marginLeft: 'auto', marginRight: 'auto'}} className="noSelect">
@@ -866,7 +866,7 @@ getAppbar() {
                        name='rating'
                        starColor='rgb(255, 180, 0)'
                        emptyStarColor='#484F58'
-                       renderStarIcon={() => <span style={{marginRight: '5vw'}}>{this.state.change ? <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
+                       renderStarIcon={() => <span style={{marginLeft: '5vw'}}>{this.state.change ? <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
                      />
 
                    <RatingSnackbar snackbarOpen={this.state.done} />
