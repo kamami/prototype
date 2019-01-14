@@ -855,7 +855,7 @@ getAppbar() {
                      <div style={{display: 'flex', fontSize: '2em', marginRight: '-5vw', marginTop: '3vh', marginBottom: '3vh'}}>
                        {user && user.token ?
 
-                     <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                     <div style={{marginLeft: 'auto', marginRight: 'auto'}} className="noSelect">
 
 
                      <StarRatingComponent
