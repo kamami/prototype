@@ -11,6 +11,9 @@ import Button from '@material-ui/core/Button';
 import DrawerBottom from '../components/DrawerBottom';
 import { authHeader } from '../_helpers';
 import Credits from '@material-ui/icons/MonetizationOn';
+import Person from '@material-ui/icons/Person';
+import StarBorder from '@material-ui/icons/StarBorder';
+
 import Copyright from '@material-ui/icons/Copyright';
 import CustomSnackbar from '../components/CustomSnackbar';
 import Dialog from '@material-ui/core/Dialog';
@@ -22,6 +25,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import ReactDOM from 'react-dom';
 import Media from "react-media";
 import MetaTags from 'react-meta-tags';
+import RatingSystem from '../components/RatingSystem';
+import StarRatingComponent from 'react-star-rating-component';
 
 
 const styles = {
@@ -296,6 +301,8 @@ class ProductPage extends React.Component {
       this.getScrollClassNameFacebook = this.getScrollClassNameFacebook.bind(this);
       this.getScrollClassNameCredits = this.getScrollClassNameCredits.bind(this);
       this.handleScroll = this.handleScroll.bind(this);
+      this.updateRating = this.updateRating.bind(this);
+
   }
 
 
@@ -540,6 +547,7 @@ getAppbar() {
     fetch(requestUrl + `${params.id}`)
     .then(response => response.json())
     .then((data) =>{
+      this.setState({id: data.id});
       this.setState({ title: data.title });
       this.setState({ overview: data.body });
       this.setState({ backdrop: data.image});
@@ -547,9 +555,10 @@ getAppbar() {
       this.setState({ messenger: data.messenger });
       this.setState({ code: data.key });
       this.setState({ matchId: data.matchId});
-      this.setState({credits: data.credits});
+      this.setState({ ratingCount: data.ratingCount});
+      this.setState({rating: data.rating});
       this.setState({rightsTo: data.rightsTo});
-      this.setState({select: data.select, loading: false  });
+      this.setState({select: data.select, loading: false });
 
 
     }
@@ -575,7 +584,6 @@ getAppbar() {
 
     )
   }
-
 
 
   updateCredits() {
@@ -604,6 +612,39 @@ getAppbar() {
   closeSnackbar=() => {
     this.setState({copied: false})
   }
+
+
+  updateRating() {
+    const { match: { params } } = this.props;
+
+    var requestUrl = 'https://questdb.herokuapp.com/all/'
+    fetch(requestUrl + `${params.id}` , {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({rating: this.state.actualRating, ratingCount: this.state.newRatingCount})
+      }).then(()=>{
+            this.setState({rating: this.state.actualRating});
+            this.setState({ratingCount: this.state.newRatingCount});
+            this.forceUpdate();
+        })
+
+  }
+
+  onStarClick(nextValue, prevValue, name) {
+    this.setState({actualRating: this.state.rating + nextValue,
+                  newRatingCount: this.state.ratingCount + 1,
+                  shortRate: nextValue
+
+      }, () => {
+
+          this.updateRating();
+
+      });
+
+    }
+
 
 
 
@@ -736,6 +777,23 @@ getAppbar() {
 
                    <div style={{marginTop: 'calc(25vh + 56px)', zIndex: 99, padding: "0vw 4vw 0vw 4vw", backgroundColor: '#ffffff'}}>
                      <div style={{paddingTop: '9vh', width: '100%'}}>
+                       <div style={{float: 'right'}}>
+                       <div style={{fontSize: '2em'}}>
+                       <StarRatingComponent
+                         value={this.state.rating / this.state.ratingCount}
+                         onStarClick={this.onStarClick.bind(this)}
+                         starCount={5}
+                         name='rating'
+                         emptyStarColor='#484F58'
+                         editing={true}
+
+                       />
+                   </div>
+                     <div style={{fontSize: '1em', fontFamily: 'roboto', marginTop: '-1vh', float: 'right', marginBottom: '2vh', color: '#484F58'}}>
+                       {this.state.ratingCount}
+                       <Person style={{fontSize: '1.2em', position: 'relative', top: '3px', color: '#484F58'}}/>
+                     </div>
+                   </div>
                      <div style={{display : 'flex', color: '#484F58', fontSize: '1.5rem', marginTop: 20, fontFamily: 'Anton', width: '100%', paddingLeft: 0, paddingRight: 0, marginBottom: '3vh'}}>
                        {this.state.title}
                      </div>
@@ -745,9 +803,21 @@ getAppbar() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
+                     <div style={{display: 'flex', fontSize: '2em'}}>
+                     <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                       <StarRatingComponent
+                         editing={true}
+                         value={this.state.shortRate}
+                         onStarClick={this.onStarClick.bind(this)}
+                         starCount={5}
+                         name='rating'
+                         starColor='rgb(255, 180, 0)'
+                         emptyStarColor='#484F58'
 
 
-
+                       />
+                     </div>
+                   </div>
                    </div>
 
                      <div style={{ marginTop: 20, paddingBottom: 20, width: '100%', wordWrap: 'break-word'
