@@ -206,7 +206,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-2px 3px 4px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.4) !important',
   marginLeft: '0vw !important',
   zIndex: 2
 
@@ -243,7 +243,7 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-2px 3px 4px 0px rgba(0,0,0,0.4) !important',
+  boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.4) !important',
   marginLeft: '0vw !important',
   zIndex: 2
 
@@ -776,7 +776,7 @@ getAppbar() {
                  ):(
                    <div>
                    <div  style={{position: 'fixed', top: 0, zIndex: -1}}>
-                     <img id="image" style={{width: '100vw', height: '25vh', marginTop: '56px', objectFit: 'cover' }} src={this.state.backdrop} alt="DetailImgMobile" />
+                     <img id="image" style={{width: '100vw', height: '25vh', marginTop: '56px', objectFit: 'cover' }} src={this.state.backdrop}  alt={this.state.loading ? "" : this.state.title} />
                    </div>
                    <div>
               <a href={this.state.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
@@ -877,7 +877,7 @@ getAppbar() {
 
                      :
 
-                     <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+                     <div style={{marginLeft: 'auto', marginRight: 'auto'}} className="noSelect">
 
 
                      <StarRatingComponent
@@ -888,7 +888,7 @@ getAppbar() {
                        name='rating'
                        starColor='rgb(255, 180, 0)'
                        emptyStarColor='#484F58'
-                       renderStarIcon={() => <span style={{marginRight: '5vw'}}> <StarBorder style={{fontSize: '1em'}}/></span>}
+                       renderStarIcon={() => <span style={{marginRight: '5vw'}}><StarBorder style={{fontSize: '1em', outline: 'none',boxShadow: 'none'}}/></span>}
                      />
 
                    <RatingSnackbarLogin snackbarOpen={this.state.openLogin} closeRatingSnackbarLogin={this.closeRatingSnackbarLogin} />
