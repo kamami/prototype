@@ -257,14 +257,14 @@ render() {
                  <div style={{ position: 'absolute', left: '50%'}}>
 
                    <img src={require("../assets/no_results_found.png")} style={{width: '100%', position: 'relative', left: '-50%', marginTop: '30vh'}}/>
-                     <p style={{top: '100%', left: '-50%', color: '#484F58', fontSize: '0.8em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute'}}> Nichts gefunden.</p>
+                     <p style={{top: '100%', left: '-50%', color: '#484F58', fontSize: '0.8em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute', width: '100%'}}> Nichts gefunden.</p>
 
                  </div>
                  :
              <div style={{ position: 'absolute', left: '50%'}}>
 
                <img src={require("../assets/no_results_found.png")} style={{width: '100%', position: 'relative', left: '-50%'}}/>
-                 <p style={{top: '100%', left: '-50%', color: '#484F58', fontSize: '1.5em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute'}}> Nichts gefunden.</p>
+                 <p style={{top: '100%', left: '-50%', color: '#484F58', fontSize: '1.5em', fontFamily: 'roboto', textAlign: 'center', position: 'absolute', width: '100%'}}> Nichts gefunden.</p>
 
              </div>
            }
