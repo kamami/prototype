@@ -79,16 +79,6 @@ p {
   margin-bottom: 1em;
 }
 
-.inRow{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,auto);
-  grid-gap: 50px /*This add space between elements, only works on grid items*/
-}
-
-.icon:first-child{
- margin-left:0;
-}
-
 .Header {
   /* FF3.6-15 */
   /* Chrome10-25,Safari5.1-6 */
