@@ -12,8 +12,8 @@ import DrawerBottom from '../components/DrawerBottom';
 import { authHeader } from '../_helpers';
 import Credits from '@material-ui/icons/MonetizationOn';
 import Person from '@material-ui/icons/Person';
+import Star from '@material-ui/icons/Star';
 import StarBorder from '@material-ui/icons/StarBorder';
-
 import Copyright from '@material-ui/icons/Copyright';
 import CustomSnackbar from '../components/CustomSnackbar';
 import Dialog from '@material-ui/core/Dialog';
@@ -27,6 +27,8 @@ import Media from "react-media";
 import MetaTags from 'react-meta-tags';
 import RatingSystem from '../components/RatingSystem';
 import StarRatingComponent from 'react-star-rating-component';
+import RatingSnackbar from '../components/RatingSnackbar';
+import RatingSnackbarLogin from '../components/RatingSnackbarLogin';
 
 
 const styles = {
@@ -37,6 +39,7 @@ const styles = {
    transition: "all 2s, color 0s",
    width: '38vw',
    height: '40px',
+   zIndex: 1
  },
 
  hideFacebook: {
@@ -47,7 +50,9 @@ const styles = {
    width: '50%',
    fontSize: '1.2em',
    height: '56px',
-   marginRight: '0vw !important'
+   marginRight: '0vw !important',
+   zIndex: 1
+
 
 
  },
@@ -56,6 +61,8 @@ const styles = {
    transition: "all 2s",
    width: '38vw',
    height: '40px',
+   zIndex: 2
+
 
 
 
@@ -68,7 +75,9 @@ const styles = {
    width: '50%',
    fontSize: '1.2em',
    height: '56px',
-   marginLeft: '0vw !important'
+   marginLeft: '0vw !important',
+   zIndex: 2
+
 
 
 
@@ -81,6 +90,7 @@ const styles = {
    width: '38vw',
    height: '40px',
    padding: '6px 14px 6px 14px',
+   zIndex: 1
 
 
 
@@ -94,7 +104,8 @@ const styles = {
    width: '50%',
    fontSize: '1em !important',
    height: '56px',
-   marginRight: '0vw !important'
+   marginRight: '0vw !important',
+   zIndex: 1
 
 
 
@@ -106,6 +117,7 @@ const styles = {
    width: '38vw',
    height: '40px',
    padding: '6px 14px 6px 14px',
+   zIndex: 2
 
 
 
@@ -119,7 +131,9 @@ const styles = {
    width: '50%',
    fontSize: '1em !important',
    height: '56px',
-   marginLeft: '0vw !important'
+   marginLeft: '0vw !important',
+    zIndex: 2
+
 
 
  },
@@ -130,6 +144,7 @@ const styles = {
    width: 16,
    marginLeft: '3vw',
    height: 16,
+
  },
 
  hideIconFacebook: {
@@ -138,6 +153,7 @@ const styles = {
    width: 20,
    marginLeft: '3.1vw',
    height: 20,
+
  },
 
  showIconCredits: {
@@ -146,6 +162,7 @@ const styles = {
    width: 16,
    marginRight: '3vw',
    height: 16,
+
  },
 
  hideIconCredits: {
@@ -154,6 +171,8 @@ const styles = {
    width: 20,
    marginRight: '3.1vw',
    height: 20,
+
+
  },
 
 
@@ -169,7 +188,9 @@ const styles = {
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
   boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.4) !important',
-  marginRight: '0vw !important'
+  marginRight: '0vw !important',
+  zIndex: 1
+
 
 
  },
@@ -185,8 +206,10 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.4) !important',
-  marginLeft: '0vw !important'
+  boxShadow: '-2px 3px 4px 0px rgba(0,0,0,0.4) !important',
+  marginLeft: '0vw !important',
+  zIndex: 2
+
 
 
  },
@@ -203,7 +226,9 @@ const styles = {
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
   boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.4) !important',
-  marginRight: '0vw !important'
+  marginRight: '0vw !important',
+  zIndex: 1
+
 
 
  },
@@ -218,8 +243,10 @@ const styles = {
   height: '56px',
   transform: "translate(0vw, 20px)",
   transition: "all 1s, color 0s",
-  boxShadow: '-1px 3px 4px 0px rgba(0,0,0,0.4) !important',
-  marginLeft: '0vw !important'
+  boxShadow: '-2px 3px 4px 0px rgba(0,0,0,0.4) !important',
+  marginLeft: '0vw !important',
+  zIndex: 2
+
 
 
  },
@@ -632,10 +659,14 @@ getAppbar() {
 
   }
 
+
+
   onStarClick(nextValue, prevValue, name) {
     this.setState({actualRating: this.state.rating + nextValue,
                   newRatingCount: this.state.ratingCount + 1,
-                  shortRate: nextValue
+                  shortRate: nextValue,
+                  change: true,
+                  done: true
 
       }, () => {
 
@@ -644,6 +675,15 @@ getAppbar() {
       });
 
     }
+
+    fireSnackbar() {
+    this.setState({openLogin: true})
+
+      }
+
+      closeRatingSnackbarLogin=() => {
+        this.setState({openLogin: false})
+      }
 
 
 
@@ -786,6 +826,9 @@ getAppbar() {
                          name='rating'
                          emptyStarColor='#484F58'
                          editing={true}
+                         renderStarIcon={() => <span><Star /></span>}
+                         editing={false}
+
 
                        />
                    </div>
@@ -803,24 +846,66 @@ getAppbar() {
                          fontWeight: 'lighter', width: '100%', paddingLeft: 0, paddingRight: 0, color: '#484F58', fontFamily: 'roboto',  lineHeight: 1.5}}>
                        {this.state.description}
                      </div>
-                     <div style={{display: 'flex', fontSize: '2em'}}>
-                     <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
-                       <StarRatingComponent
-                         editing={true}
-                         value={this.state.shortRate}
-                         onStarClick={this.onStarClick.bind(this)}
-                         starCount={5}
-                         name='rating'
-                         starColor='rgb(255, 180, 0)'
-                         emptyStarColor='#484F58'
+                     <Divider />
+                     <div>
+                       <p style={{fontFamily: 'Roboto', fontWeight: 'bold', fontSize: '1.3rem', paddingTop: 20, color: '#484F58', marginBottom: 0}}> Chatbot bewerten</p>
+                         <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> Deine Meinung ist gefragt</p>
 
-
-                       />
                      </div>
-                   </div>
+                     <div style={{display: 'flex', fontSize: '2em', marginRight: '-5vw', marginTop: '3vh', marginBottom: '3vh'}}>
+                       {user && user.token ?
+
+                     <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+
+
+                     <StarRatingComponent
+                       editing={this.state.done ? false : true}
+                       value={this.state.shortRate}
+                       onStarClick={this.onStarClick.bind(this)}
+                       starCount={5}
+                       name='rating'
+                       starColor='rgb(255, 180, 0)'
+                       emptyStarColor='#484F58'
+                       renderStarIcon={() => <span style={{marginRight: '5vw'}}>{this.state.change ? <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
+                     />
+
+                   <RatingSnackbar snackbarOpen={this.state.done} />
+
+
+                     </div>
+
+
+                     :
+
+                     <div style={{marginLeft: 'auto', marginRight: 'auto'}}>
+
+
+                     <StarRatingComponent
+                       editing={true}
+                       value={this.state.shortRate}
+                       onStarClick={this.fireSnackbar.bind(this)}
+                       starCount={5}
+                       name='rating'
+                       starColor='rgb(255, 180, 0)'
+                       emptyStarColor='#484F58'
+                       renderStarIcon={() => <span style={{marginRight: '5vw'}}> <StarBorder style={{fontSize: '1em'}}/></span>}
+                     />
+
+                   <RatingSnackbarLogin snackbarOpen={this.state.openLogin} closeRatingSnackbarLogin={this.closeRatingSnackbarLogin} />
+
+
+                     </div>
+
+                   }
+
                    </div>
 
-                     <div style={{ marginTop: 20, paddingBottom: 20, width: '100%', wordWrap: 'break-word'
+                   <Divider />
+
+
+                   </div>
+
+                     <div style={{ marginTop: 20, paddingBottom: 20, width: '100%', wordWrap: 'break-word', paddingTop: 15
 }}>
                         { this.state.rightsTo === "" ?
 
