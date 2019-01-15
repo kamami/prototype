@@ -771,7 +771,7 @@ resetRating(){
   const { match: { params } } = this.props;
 
 
-      this.setState({userRating: 0}, () => {
+      this.setState({userRating: 0, ratingCount: this.state.ratingCount - 1, rating: this.state.rating - this.state.userRating}, () => {
 
         fetch(requestUrl + `${params.id}`, {
             method: 'PATCH',
@@ -779,7 +779,7 @@ resetRating(){
               'Accept': 'application/json, text/plain, */*',
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({[user.username]: this.state.userRating})
+            body: JSON.stringify({[user.username]: this.state.userRating, ratingCount: this.state.ratingCount, rating: this.state.rating})
           })
       })
       this.setState({openConfirmationDialog: false})
