@@ -11,6 +11,7 @@ import LoginButton from '../components/LoginButton';
 import RegisterButton from '../components/RegisterButton';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import CheckIcon from '@material-ui/icons/CheckCircle';
+import Divider from '@material-ui/core/Divider';
 
 const tutorialSteps = [
   {
@@ -34,7 +35,7 @@ const styles = theme => ({
     marginLeft: 'auto',
     marginRight: 'auto',
     padding: 0,
-    paddingTop: 5,
+    paddingTop: 5
     },
 
   header: {
@@ -176,13 +177,13 @@ updateKeys() {
         <div>
           {user && user.token ?
             <div>
-              <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '5vh'}}>
+              <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '3vh'}}>
         Um den Bot in vollem Umfang genießen zu können, benötigst du einen Key.
         Gib deinen Key direkt im Messenger ein, sobald du dazu aufgefordert wirst.
 
         </p>
 
-        <Button  variant="contained" style={{ height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '5vh'}}
+        <Button  variant="contained" style={{ height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '3vh'}}
           onClick={this.handleNext}>
           <CheckIcon style={{marginRight: '2%'}}/>
           Verstanden</Button>
@@ -192,11 +193,11 @@ updateKeys() {
          :
 
          <div>
-           <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '0 4vw 0 4vw', marginTop: '5vh'}}>
+           <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '3vh'}}>
         Bitte logge dich ein oder eröffne ein Konto:
 
         </p>
-        <div className="form-group" style={{display: 'flex', marginLeft: '10%', marginBottom: '7vh', marginTop: '5vh'}}>
+        <div className="form-group" style={{display: 'flex', marginLeft: '10%', marginBottom: '7vh', marginTop: '3vh'}}>
 
          <div onClick={this.toLogin}>
            <LoginButton background='#FF6B6B' label='Login'/>
@@ -217,12 +218,12 @@ updateKeys() {
 <div>
   {user && user.token ?
     <div>
-      <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '5vh'}}>
+      <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '3vh'}}>
 Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
 
 </p>
 
-<div className="form-group" style={{ marginBottom: '7vh', marginTop: '5vh'}}>
+<div className="form-group" style={{ marginBottom: '7vh', marginTop: '3vh'}}>
   <a href={this.props.messenger} target="_blank" rel="noopener noreferrer" style={{textDecoration: 'none'}}>
 
   <Button variant="contained" style={{height: 40, backgroundColor: '#0084ff', width: '90%',
@@ -241,7 +242,7 @@ Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
  :
 
  <div>
-   <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '0 4vw 0 4vw', marginTop: '5vh', textAlign: 'left'}}>
+   <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '3vh', textAlign: 'left'}}>
      Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
      < br/>
 
@@ -260,14 +261,10 @@ Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
 
 
  </div>
- <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '0 4vw 0 4vw', textAlign: 'left'}}>
 
-     Möchtest du dich trotzdem einloggen oder ein Konto eröffnen?
+<Divider />
 
-</p>
-
-
-<div className="form-group" style={{display: 'flex', marginLeft: '10%', marginBottom: '7vh', marginTop: '5vh'}}>
+<div className="form-group" style={{display: 'flex', marginLeft: '10%', marginBottom: '7vh', marginTop: '3vh'}}>
 
  <div onClick={this.toLogin}>
    <LoginButton background='#FF6B6B' label='Login'/>
@@ -292,11 +289,11 @@ Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
       <div>
         {this.props.credits >= 20 ?
           <div>
-            <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '5vh'}}>
+            <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '3vh'}}>
         Dein Guthaben wird mit 20 Credits belastet:
     </p>
 
-    <Button  variant="contained" style={{height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '5vh'}} onClick={this.buyFinal}>
+    <Button  variant="contained" style={{height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '3vh'}} onClick={this.buyFinal}>
           <Key style={{marginRight: '2%'}}/>
             Key erhalten</Button>
         </div>
@@ -315,15 +312,14 @@ Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
       <div>
         <div>
 
-              <p style={{fontFamily: 'roboto', fontSize: '1.1em', color: '#484F58', padding: '4vw', marginTop: '5vh', marginBottom: '7vh'}}>
+              <p style={{fontFamily: 'roboto', fontSize: '1em', color: '#484F58', padding: '4vw', marginTop: '3vh'}}>
                 Hier ist dein Key:
                   </p>
 
 
-                    <div style={{marginBottom: '7vh', marginTop: '5vh'}}>
                           <CopyToClipboard text={this.props.code}
                             onCopy={this.props.copy}>
-                            <Button variant="contained" style={{ height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff'}}>
+                            <Button variant="contained" style={{height: 40, width: '90%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#FF6B6B', color: '#ffffff',  marginBottom: '7vh', marginTop: '3vh'}}>
 
                               {this.props.code}
 
@@ -332,12 +328,11 @@ Dieser Bot benötigt keinen Key, du kannst sofort loslegen!
                           </CopyToClipboard>
                           <div style={{ marginLeft: 'auto', marginRight: 'auto'}}>
 
-                            <p style={{fontFamily:'roboto', color: 'grey', position: 'absolute', right: '5%', fontSize: '0.8em'}}>
+                            <p style={{fontFamily:'roboto', color: 'grey', position: 'absolute', right: '5vw', fontSize: '0.8em', bottom: 0}}>
                               (Klicken um den Key zu kopieren)
                             </p>
 
                             </div>
-                          </div>
 
                       </div>
 

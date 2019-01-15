@@ -41,12 +41,7 @@ gutterHeight={20}
 gutterWidth={20}
 duration={1500}
 monitorImagesLoaded={true}
-easing={easings.quadInOut}
-appear={scaleDown.appear}
-appeared={scaleDown.appeared}
-enter={scaleDown.enter}
-entered={scaleDown.entered}
-leaved={scaleDown.leaved}
+
 
 >
 {this.props.items}
@@ -57,12 +52,7 @@ gutterHeight={10}
 gutterWidth={10}
 duration={1500}
 monitorImagesLoaded={true}
-easing={easings.quadInOut}
-appear={scaleDown.appear}
-appeared={scaleDown.appeared}
-enter={scaleDown.enter}
-entered={scaleDown.entered}
-leaved={scaleDown.leaved}
+
 
 >
 
@@ -93,12 +83,6 @@ gutterHeight={80}
 gutterWidth={80}
 duration={1500}
 monitorImagesLoaded={true}
-easing={easings.quadInOut}
-appear={scaleDown.appear}
-appeared={scaleDown.appeared}
-enter={scaleDown.enter}
-entered={scaleDown.entered}
-leaved={scaleDown.leaved}
 
 >
 
