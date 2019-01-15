@@ -3,9 +3,6 @@ import '../App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
-import ButtonBase from '@material-ui/core/ButtonBase';
-
-
 import Media from "react-media";
 import Fade from '@material-ui/core/Fade';
 import Typed from 'react-typed';
@@ -17,7 +14,6 @@ import { history } from '../_helpers';
 import Dialog from '@material-ui/core/Dialog';
 
 import DialogContent from '@material-ui/core/DialogContent';
-import Card from '@material-ui/core/Card';
 
 
 class ViewAll extends React.Component{

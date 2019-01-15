@@ -60,13 +60,12 @@ class App extends Component {
   render() {
     return (
       <div >
-                <div className="container">
                     <div>
                         <Router history={history}>
           <div>
 
             <Route path="/" exact strict component={WelcomePage} />
-        
+
             <Route path="/home" exact strict component={Homepage}/>
 
               <Route path="/impressum" exact strict component={Impressum}/>
@@ -87,7 +86,6 @@ class App extends Component {
 
           </div>
         </Router>
-      </div>
             </div>
             {this.state.showInstallMessage &&
             <IosSnackbar />

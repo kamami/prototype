@@ -340,7 +340,6 @@ class ProductPage extends React.Component {
 
   updateDimensions() {
     this.setState({ heightSet: Math.round(window.scrollY) })
-    console.log(this.state.heightSet)
 
 }
 
@@ -571,45 +570,95 @@ getAppbar() {
     let user = JSON.parse(localStorage.getItem('user'));
     var requestUrlUser = 'https://mighty-atoll-75521.herokuapp.com/users/';
     var requestUrl = 'https://questdb.herokuapp.com/all/'
-    fetch(requestUrl + `${params.id}`)
-    .then(response => response.json())
-    .then((data) =>{
-      this.setState({id: data.id});
-      this.setState({ title: data.title });
-      this.setState({ overview: data.body });
-      this.setState({ backdrop: data.image});
-      this.setState({ description: data.description });
-      this.setState({ messenger: data.messenger });
-      this.setState({ code: data.key });
-      this.setState({ matchId: data.matchId});
-      this.setState({ ratingCount: data.ratingCount});
-      this.setState({rating: data.rating});
-      this.setState({rightsTo: data.rightsTo});
-      this.setState({select: data.select, loading: false });
+    if(user && user.token){
+      fetch(requestUrl + `${params.id}`)
+      .then(response => response.json())
+      .then((data) =>{
+        this.setState({id: data.id});
+        this.setState({ title: data.title });
+        this.setState({ overview: data.body });
+        this.setState({ backdrop: data.image});
+        this.setState({ description: data.description });
+        this.setState({ messenger: data.messenger });
+        this.setState({ code: data.key });
+        this.setState({ matchId: data.matchId});
+        this.setState({ ratingCount: data.ratingCount});
+        this.setState({rating: data.rating});
+        this.setState({rightsTo: data.rightsTo});
+        this.setState({select: data.select, loading: false });
+        this.setState({userRating: data[user.username]})
 
+
+      }
+
+    ) .then((data) =>{
+      console.log(this.state.userRating)
+      {user && user.token &&
+
+     fetch(requestUrlUser+user._id,{
+       method: 'get',
+       headers: {
+         ...authHeader(),
+         'Accept': 'application/json, text/plain, */*',
+         'Content-Type': 'application/json'
+       },
+     })
+     .then((response)=>{
+     return response.json();
+   }) .then((user)=>{
+     this.setState({credits : user.credits});
+     })
+   }
+      }
+
+      )
+
+    } else {
+
+
+      fetch(requestUrl + `${params.id}`)
+      .then(response => response.json())
+      .then((data) =>{
+        this.setState({id: data.id});
+        this.setState({ title: data.title });
+        this.setState({ overview: data.body });
+        this.setState({ backdrop: data.image});
+        this.setState({ description: data.description });
+        this.setState({ messenger: data.messenger });
+        this.setState({ code: data.key });
+        this.setState({ matchId: data.matchId});
+        this.setState({ ratingCount: data.ratingCount});
+        this.setState({rating: data.rating});
+        this.setState({rightsTo: data.rightsTo});
+        this.setState({select: data.select, loading: false });
+
+
+      }
+
+    ) .then((data) =>{
+      console.log(this.state.userRating)
+      {user && user.token &&
+
+     fetch(requestUrlUser+user._id,{
+       method: 'get',
+       headers: {
+         ...authHeader(),
+         'Accept': 'application/json, text/plain, */*',
+         'Content-Type': 'application/json'
+       },
+     })
+     .then((response)=>{
+     return response.json();
+   }) .then((user)=>{
+     this.setState({credits : user.credits});
+     })
+   }
+      }
+
+      )
 
     }
 
-  ) .then((data) =>{
-    {user && user.token &&
-
-   fetch(requestUrlUser+user._id,{
-     method: 'get',
-     headers: {
-       ...authHeader(),
-       'Accept': 'application/json, text/plain, */*',
-       'Content-Type': 'application/json'
-     },
-   })
-   .then((response)=>{
-   return response.json();
- }) .then((user)=>{
-   this.setState({credits : user.credits});
-   })
- }
-    }
-
-    )
   }
 
 
@@ -662,6 +711,10 @@ getAppbar() {
 
 
   onStarClick(nextValue, prevValue, name) {
+    const { match: { params } } = this.props;
+    let user = JSON.parse(localStorage.getItem('user'));
+
+
     this.setState({actualRating: this.state.rating + nextValue,
                   newRatingCount: this.state.ratingCount + 1,
                   shortRate: nextValue,
@@ -671,6 +724,18 @@ getAppbar() {
       }, () => {
 
           this.updateRating();
+          console.log(this.state.username)
+          let user = JSON.parse(localStorage.getItem('user'));
+          var requestUrl = 'https://questdb.herokuapp.com/all/'
+          var id = user._id
+          fetch(requestUrl + `${params.id}`, {
+              method: 'PATCH',
+              headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({[user.username]: this.state.shortRate})
+            })
 
       });
 
@@ -847,25 +912,45 @@ getAppbar() {
                      <Divider />
                      <div>
                        <p style={{fontFamily: 'Roboto', fontWeight: 'bold', fontSize: '1.3rem', paddingTop: 20, color: '#484F58', marginBottom: 0}}> Chatbot bewerten</p>
+                         {this.state.userRating ?
+                         <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> Deine Bewertung:</p>
+                         :
                          <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> Deine Meinung ist gefragt</p>
+                         }
 
                      </div>
                      <div style={{display: 'flex', fontSize: '2em', marginLeft: '5vw', marginTop: '3vh', marginBottom: '3vh'}}>
                        {user && user.token ?
 
                      <div style={{marginLeft: 'auto', marginRight: 'auto'}} className="noSelect">
+                        {this.state.userRating ?
 
+                                               <StarRatingComponent
+                                                 editing={false}
+                                                 value={this.state.userRating}
+                                                 onStarClick={this.fireSnackbar.bind(this)}
+                                                 starCount={5}
+                                                 name='rating'
+                                                 starColor='rgb(255, 180, 0)'
+                                                 emptyStarColor='#484F58'
+                                                 renderStarIcon={() => <span style={{marginRight: '5vw'}}><Star style={{fontSize: '1em', outline: 'none',boxShadow: 'none'}}/></span>}
+                                               />
 
-                     <StarRatingComponent
-                       editing={this.state.done ? false : true}
-                       value={this.state.shortRate}
-                       onStarClick={this.onStarClick.bind(this)}
-                       starCount={5}
-                       name='rating'
-                       starColor='rgb(255, 180, 0)'
-                       emptyStarColor='#484F58'
-                       renderStarIcon={() => <span style={{marginRight: '5vw'}}>{this.state.change ? <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
-                     />
+                                             :
+
+                                             <StarRatingComponent
+                                               editing={this.state.done ? false : true}
+                                               value={this.state.shortRate}
+                                               onStarClick={this.onStarClick.bind(this)}
+                                               starCount={5}
+                                               name='rating'
+                                               starColor='rgb(255, 180, 0)'
+                                               emptyStarColor='#484F58'
+                                               renderStarIcon={() => <span style={{marginRight: '5vw'}}>{this.state.change ?
+                                               <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
+                                             />
+
+                 }
 
                    <RatingSnackbar snackbarOpen={this.state.done} />
 
