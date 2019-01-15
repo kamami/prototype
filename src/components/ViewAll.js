@@ -3,6 +3,9 @@ import '../App.css';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
 import Paper from 'material-ui/Paper';
 import TextField from 'material-ui/TextField';
+import ButtonBase from '@material-ui/core/ButtonBase';
+
+
 import Media from "react-media";
 import Fade from '@material-ui/core/Fade';
 import Typed from 'react-typed';
@@ -124,7 +127,8 @@ render() {
 {
     items.push(
             <div>
-                <Button style={{ borderRadius: "2em",
+
+                <Button waves='light' style={{ borderRadius: "2em",
                   background: '#ffffff', padding: 0,  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)', textTransform: 'none'
                 }} zDepth={1} >
 
@@ -169,9 +173,20 @@ render() {
                       <div className="BreakWords" style={{fontSize: 17, marginTop: 20, fontFamily: 'Anton', color: '#484F58', textAlign: 'left'}} onClick = {()=> {history.push('/bots/' + title.id)}}>
                         {title.title}
                       </div>
-                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', color: '#484F58', textAlign: 'left', }}  onClick = {()=> {history.push('/bots/' + title.id)}}>
+
+                                        <Media query="(min-width: 361px)">
+                                              {matches =>
+                                                matches ? (
+                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', color: '#484F58', textAlign: 'left', width: '170px' }}  onClick = {()=> {history.push('/bots/' + title.id)}}>
                         {title.body}
                       </div>
+                    ):(
+                      <div className="BreakWords" style={{fontSize: 13, marginTop: 10, paddingBottom: 20, fontWeight: 'lighter', color: '#484F58', textAlign: 'left', width: '150px' }}  onClick = {()=> {history.push('/bots/' + title.id)}}>
+                        {title.body}
+                      </div>
+                    )
+                  }
+                </Media>
                       <div >
 
 

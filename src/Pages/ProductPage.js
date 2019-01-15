@@ -728,8 +728,6 @@ getAppbar() {
                 </Toolbar>
               </AppBar>
 
-
-
                    <Media query="(min-width: 361px)">
                          {matches =>
                            matches ? (
