@@ -124,7 +124,7 @@ render() {
     items.push(
             <div>
 
-                <Button waves='light' style={{ borderRadius: "2em",
+                <Button style={{ borderRadius: "2em",
                   background: '#ffffff', padding: 0,  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)', textTransform: 'none'
                 }} zDepth={1} >
 

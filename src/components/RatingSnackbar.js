@@ -106,9 +106,9 @@ class RatingSnackbar extends React.Component {
 
   handleClose = (event, reason) => {
     if (reason === 'clickaway') {
-      this.setState({open: false});
+      this.props.handleCloseRatingSnackbar()
     }
-    this.setState({open: false});
+    this.props.handleCloseRatingSnackbar()
   };
 
   render() {

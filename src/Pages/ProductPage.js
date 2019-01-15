@@ -25,13 +25,12 @@ import DialogContent from '@material-ui/core/DialogContent';
 import ReactDOM from 'react-dom';
 import Media from "react-media";
 import MetaTags from 'react-meta-tags';
-import RatingSystem from '../components/RatingSystem';
 import StarRatingComponent from 'react-star-rating-component';
 import RatingSnackbar from '../components/RatingSnackbar';
 import RatingSnackbarLogin from '../components/RatingSnackbarLogin';
 
 
-const styles = {
+const styles = theme => ({
 
 
  showFacebook: {
@@ -311,8 +310,16 @@ backfaceVisibility: 'visible'
 
 },
 
+dialog: {
+   width: '90%',
+   maxHeight: 435,
+   margin: 0,
+   boxShadow: 'none'
 
-}
+ }
+
+
+})
 
 
 class ProductPage extends React.Component {
@@ -329,6 +336,9 @@ class ProductPage extends React.Component {
       this.getScrollClassNameCredits = this.getScrollClassNameCredits.bind(this);
       this.handleScroll = this.handleScroll.bind(this);
       this.updateRating = this.updateRating.bind(this);
+      this.resetRating = this.resetRating.bind(this);
+      this.openDialog = this.openDialog.bind(this);
+      this.closeConfirmationDialog = this.closeConfirmationDialog.bind(this);
 
   }
 
@@ -592,7 +602,6 @@ getAppbar() {
       }
 
     ) .then((data) =>{
-      console.log(this.state.userRating)
       {user && user.token &&
 
      fetch(requestUrlUser+user._id,{
@@ -717,14 +726,12 @@ getAppbar() {
 
     this.setState({actualRating: this.state.rating + nextValue,
                   newRatingCount: this.state.ratingCount + 1,
-                  shortRate: nextValue,
-                  change: true,
+                  userRating: nextValue,
                   done: true
 
       }, () => {
 
           this.updateRating();
-          console.log(this.state.username)
           let user = JSON.parse(localStorage.getItem('user'));
           var requestUrl = 'https://questdb.herokuapp.com/all/'
           var id = user._id
@@ -734,7 +741,7 @@ getAppbar() {
                 'Accept': 'application/json, text/plain, */*',
                 'Content-Type': 'application/json'
               },
-              body: JSON.stringify({[user.username]: this.state.shortRate})
+              body: JSON.stringify({[user.username]: this.state.userRating})
             })
 
       });
@@ -750,6 +757,38 @@ getAppbar() {
         this.setState({openLogin: false})
       }
 
+      handleCloseRatingSnackbar = () => {
+        this.setState({ done: false });
+      }
+
+      openDialog(){
+        this.setState({openConfirmationDialog: true})
+      }
+
+resetRating(){
+  let user = JSON.parse(localStorage.getItem('user'));
+  var requestUrl = 'https://questdb.herokuapp.com/all/'
+  const { match: { params } } = this.props;
+
+
+      this.setState({userRating: 0}, () => {
+
+        fetch(requestUrl + `${params.id}`, {
+            method: 'PATCH',
+            headers: {
+              'Accept': 'application/json, text/plain, */*',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({[user.username]: this.state.userRating})
+          })
+      })
+      this.setState({openConfirmationDialog: false})
+
+}
+
+closeConfirmationDialog(){
+  this.setState({openConfirmationDialog: false})
+}
 
 
 
@@ -911,54 +950,87 @@ getAppbar() {
                      </div>
                      <Divider />
                      <div>
-                       <p style={{fontFamily: 'Roboto', fontWeight: 'bold', fontSize: '1.3rem', paddingTop: 20, color: '#484F58', marginBottom: 0}}> Chatbot bewerten</p>
                          {this.state.userRating ?
-                         <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> Deine Bewertung:</p>
+                           <div>
+                               <p style={{fontFamily: 'Roboto', fontWeight: 'bold', fontSize: '1.3rem', paddingTop: 20, color: '#484F58', marginBottom: 0}}>Deine Bewertung</p>
+
+
+                         <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> {user.username}</p>
+                         </div>
                          :
+                         <div>
+                         <p style={{fontFamily: 'Roboto', fontWeight: 'bold', fontSize: '1.3rem', paddingTop: 20, color: '#484F58', marginBottom: 0}}> Chatbot bewerten</p>
+
                          <p style={{fontFamily: 'Roboto', fontSize: '1rem', color: '#484F58'}}> Deine Meinung ist gefragt</p>
+                         </div>
                          }
 
                      </div>
-                     <div style={{display: 'flex', fontSize: '2em', marginLeft: '5vw', marginTop: '3vh', marginBottom: '3vh'}}>
                        {user && user.token ?
+                         <div style={{display: 'flex', fontSize: '2em', marginLeft: '5vw', marginTop: '3vh', marginBottom: '7vh'}}>
 
                      <div style={{marginLeft: 'auto', marginRight: 'auto'}} className="noSelect">
                         {this.state.userRating ?
-
+                            <div >
                                                <StarRatingComponent
                                                  editing={false}
                                                  value={this.state.userRating}
-                                                 onStarClick={this.fireSnackbar.bind(this)}
                                                  starCount={5}
                                                  name='rating'
                                                  starColor='rgb(255, 180, 0)'
                                                  emptyStarColor='#484F58'
-                                                 renderStarIcon={() => <span style={{marginRight: '5vw'}}><Star style={{fontSize: '1em', outline: 'none',boxShadow: 'none'}}/></span>}
+                                                 renderStarIcon={() => <span style={{marginRight: '5vw'}}><Star style={{fontSize: '1em', outline: 'none', boxShadow: 'none'}}/></span>}
                                                />
+                                             <div onClick={this.openDialog}>
+                                             <p style={{position: 'absolute', fontFamily: 'Roboto', fontSize: '0.8rem', paddingTop: '2vh', color: '#484F58', right: '4vw'}}>Bewertung löschen</p>
+                                             </div>
+                                             <Dialog
+                                                   open={this.state.openConfirmationDialog}
+                                                   aria-labelledby="alert-dialog-title"
+                                                   aria-describedby="alert-dialog-description"
+                                                   onClose={this.closeConfirmationDialog}
+                                                   classes={{
+              paper: this.props.classes.dialog
+            }}
+                                                 >
 
+                                             <DialogContent>
+                                                    <div style={{fontFamily: 'Roboto', fontWeight: 'bold', fontSize: '1.2rem', color: '#484F58', marginBottom: '3vh'}}> Wirklich löschen?</div>
+                                                    <Button onClick={this.resetRating} style={{backgroundColor: '#FF6B6B',
+                                                      color: '#ffffff', marginTop: '2vh', borderWidth: 1.5, borderColor: '#FF6B6B',  fontSize: '0.8em', height: 40, boxShadow: 'none' }}> Löschen</Button>
+                                                      <Button onClick={this.closeConfirmationDialog} variant="outlined" style={{ color: '#FF6B6B', marginTop: '2vh',
+                                                        borderColor: '#FF6B6B', borderWidth: 1.5, float: 'right', fontSize: '0.8em', height: 40, boxShadow: 'none'}}> Abbrechen</Button>
+
+                                               </DialogContent>
+
+                                       </Dialog>
+
+                                               </div>
                                              :
 
                                              <StarRatingComponent
-                                               editing={this.state.done ? false : true}
-                                               value={this.state.shortRate}
+                                               editing={true}
+                                               value={this.state.userRating}
                                                onStarClick={this.onStarClick.bind(this)}
                                                starCount={5}
                                                name='rating'
                                                starColor='rgb(255, 180, 0)'
                                                emptyStarColor='#484F58'
-                                               renderStarIcon={() => <span style={{marginRight: '5vw'}}>{this.state.change ?
-                                               <Star style={{fontSize: '1em'}}/> : <StarBorder style={{fontSize: '1em'}}/>}</span>}
+                                               renderStarIcon={() => <span style={{marginRight: '5vw'}}>
+                                            <StarBorder style={{fontSize: '1em'}}/></span>}
                                              />
 
                  }
 
-                   <RatingSnackbar snackbarOpen={this.state.done} />
+                   <RatingSnackbar snackbarOpen={this.state.done} handleCloseRatingSnackbar={this.handleCloseRatingSnackbar}/>
 
+                   </div>
 
                      </div>
 
 
                      :
+                     <div style={{display: 'flex', fontSize: '2em', marginLeft: '5vw', marginTop: '3vh', marginBottom: '3vh'}}>
 
                      <div style={{marginLeft: 'auto', marginRight: 'auto'}} className="noSelect">
 
@@ -978,12 +1050,12 @@ getAppbar() {
 
 
                      </div>
+                   </div>
 
                    }
 
-                   </div>
 
-                   <Divider />
+                   <Divider/>
 
 
                    </div>
