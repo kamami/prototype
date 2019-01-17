@@ -47,8 +47,8 @@ render() {
             onClose={this.closeConfirmationDialog}
 
             >
-          
- <DialogContent style={{marginTop: '3.5vh'}}>
+
+ <DialogContent style={{marginTop: '10vh', paddingTop: 0}}>
    <IconButton
      color="inherit"
      aria-label="Open drawer"
