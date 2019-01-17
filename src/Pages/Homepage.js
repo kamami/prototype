@@ -179,11 +179,11 @@ handleDialogClose = () => {
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) => this.textInput = input} drawerOpen={this.state.open} category={""} prevPath={this.props.prevPath}/>
 
           </div>
-          <FloatingActionButtonsSearch  focus={this.focus}/>
+          <FloatingActionButtonsSearch  focus={this.focus} handleDrawerClose={this.handleDrawerClose}/>
 
         </main>
 
-        <CategoryDialog dialogOpen={this.state.dialogOpen} handleDialogClose={this.handleDialogClose}/>
+        <CategoryDialog dialogOpen={this.state.dialogOpen} handleDialogClose={this.handleDialogClose} />
 
       </div>
     );

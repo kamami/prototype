@@ -32,7 +32,7 @@ render(){
   return (
     <div>
 
-<ScrollUp scrollStepInPx="50" delayInMs="16.66" focus={this.props.focus}/>
+<ScrollUp scrollStepInPx="50" delayInMs="16.66" focus={this.props.focus} handleDrawerClose={this.props.handleDrawerClose}/>
     </div>
   );
 }

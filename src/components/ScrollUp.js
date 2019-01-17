@@ -105,7 +105,9 @@ class ScrollUp extends React.Component {
 
 onClick() {
 
-  this.scrollToTop()
+  this.props.handleDrawerClose();
+  this.scrollToTop();
+
        setTimeout(() => {
            this.props.focus()
        }, 1000);
