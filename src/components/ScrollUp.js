@@ -77,12 +77,6 @@ class ScrollUp extends React.Component {
   const isInStandaloneMode = () => ('standalone' in window.navigator) || (window.navigator.standalone);
 
 
-if(isInStandaloneMode()){
-  this.setState({
-
-      pushFabUp: true
-  })
-}
 
 
   // Checks if should display install popup notification:
@@ -122,7 +116,7 @@ onClick() {
 
   render () {
     const { classes } = this.props;
-    const fabClassName = classNames(classes.fab, this.state.openSnackbar&&!this.state.pushFabUp ? classes.fabMoveUp : classes.fabMoveDown);
+    const fabClassName = classNames(classes.fab, this.state.openSnackbar&&this.state.showInstallMessage ? classes.fabMoveUp : classes.fabMoveDown);
 
       return (
 
