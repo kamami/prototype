@@ -38,7 +38,7 @@ constructor(props){
 
 
  }
- 
+
 
   loadContent() {
     if(this.state.message.length === 0){
@@ -49,7 +49,7 @@ constructor(props){
         this.setState({ tracks: this.state.tracks.concat(tracks)});
         this.setState({page: this.state.page + 1});
 
-        if(this.state.page === 6){
+        if(this.state.page === 8){
          this.setState({hasMoreItems: false})
        }
     }).catch((err)=>{

@@ -25,7 +25,6 @@ const styles = theme => ({
 
 
 dialog: {
-   height: '100vh'
 
  }
 
@@ -58,23 +57,21 @@ render() {
             aria-describedby="alert-dialog-description"
             fullScreen
             onClose={this.closeConfirmationDialog}
-            classes={{
-paper: classes.dialog
-}}
             >
 
- <DialogContent style={{paddingTop: 0}}>
+ <DialogContent style={{paddingTop: '10vh'}}>
    <IconButton
      color="inherit"
      aria-label="Open drawer"
      onClick={this.handleDialogClose}
-     style={{outline: 'none', position: 'fixed', right: 12, top: 4, zIndex: 99999}}
+     style={{outline: 'none', position: 'fixed', right: 12, top: 4, zIndex: 9999}}
    >
    <Close style={{color: '#000'}} onClick={this.props.handleDialogClose}/>
    </IconButton>
 
 
-            <CategoriesList />
+        <CategoriesList />
+
 
           </DialogContent>
         </Dialog>

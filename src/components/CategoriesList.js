@@ -14,10 +14,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     position: 'relative',
     overflow: 'auto',
-    maxHeight: '100vh'
+    maxHeight: '120vh'
   },
   listSection: {
-    backgroundColor: 'inherit',
+    backgroundColor: 'inherit'
   },
   ul: {
     backgroundColor: 'inherit',
