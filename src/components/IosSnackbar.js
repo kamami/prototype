@@ -93,17 +93,6 @@ class IosSnackbar extends React.Component {
     openSnackbar: true,
   };
 
-  handleClick = () => {
-    this.setState({ openSnackbar: true });
-  };
-
-  handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-
-    this.setState({ openSnackbar: false });
-  };
 
   render() {
     const { classes } = this.props;
@@ -118,12 +107,12 @@ class IosSnackbar extends React.Component {
             vertical: 'bottom',
             horizontal: 'center',
           }}
-          open={this.state.openSnackbar}
+          open={this.props.open}
           autoHideDuration={12000}
-          onClose={this.handleClose}
+          onClose={this.props.handleClose}
         >
           <MySnackbarContentWrapper
-            onClose={this.handleClose}
+            onClose={this.props.handleClose}
             variant="success"
             message="Zum Homescreen hinzufügen "
           />

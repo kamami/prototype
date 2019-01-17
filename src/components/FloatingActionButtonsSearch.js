@@ -8,6 +8,7 @@ import Key from '@material-ui/icons/VpnKey';
 import Media from "react-media";
 import SearchIcon from '@material-ui/icons/Search';
 import ScrollToTop from 'react-scroll-up';
+import ScrollUp from '../components/ScrollUp'
 
 const styles = theme => ({
   fab: {
@@ -31,13 +32,7 @@ render(){
   return (
     <div>
 
-      <Fab color="primary" aria-label="Add" className={classes.fab}
-        style={{background: '#FF6B6B', color: '#ffffff', outline:'none',
-          float: 'right',  marginBottom: '4vw', position: 'fixed', bottom: 0, right: 'calc(4vw - 6px)'}}>
-
-        <SearchIcon className={classes.extendedIcon} onClick={this.props.focus}/>
-      </Fab>
-
+<ScrollUp scrollStepInPx="50" delayInMs="16.66" focus={this.props.focus}/>
     </div>
   );
 }
