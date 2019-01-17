@@ -34,7 +34,7 @@ function PinnedSubheaderList(props) {
     <List className={classes.root} subheader={<li />}>
     <li className={classes.listSection}>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7}}>Entertainment</ListSubheader>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7}}>Entertainment</ListSubheader>
     <Link to="/adventure" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -64,7 +64,7 @@ function PinnedSubheaderList(props) {
 
     </ul>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
     <Link to="/news" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -81,7 +81,7 @@ function PinnedSubheaderList(props) {
 
           </ul>
           <ul className={classes.ul}>
-          <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+          <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
           <Link to="/news" style={{textDecoration: 'none'}}>
 
           <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -98,7 +98,7 @@ function PinnedSubheaderList(props) {
 
                 </ul>
                 <ul className={classes.ul}>
-                <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+                <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
                 <Link to="/news" style={{textDecoration: 'none'}}>
 
                 <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -115,7 +115,7 @@ function PinnedSubheaderList(props) {
 
                       </ul>
                       <ul className={classes.ul}>
-                      <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+                      <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
                       <Link to="/news" style={{textDecoration: 'none'}}>
 
                       <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -132,7 +132,7 @@ function PinnedSubheaderList(props) {
 
                             </ul>
                             <ul className={classes.ul}>
-                            <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+                            <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
                             <Link to="/news" style={{textDecoration: 'none'}}>
 
                             <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
