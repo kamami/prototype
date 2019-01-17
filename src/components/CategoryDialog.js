@@ -16,20 +16,8 @@ import IconButton from '@material-ui/core/IconButton';
 import CategoriesList from '../components/CategoriesList';
 import Close from '@material-ui/icons/Close';
 import classNames from 'classnames';
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
 
 import DialogContent from '@material-ui/core/DialogContent';
-
-const styles = theme => ({
-
-
-dialog: {
-
- }
-
-
-})
 
 
 class CategoryDialog extends React.Component{
@@ -57,21 +45,21 @@ render() {
             aria-describedby="alert-dialog-description"
             fullScreen
             onClose={this.closeConfirmationDialog}
+
             >
 
- <DialogContent style={{paddingTop: '10vh'}}>
+ <DialogContent>
    <IconButton
      color="inherit"
      aria-label="Open drawer"
      onClick={this.handleDialogClose}
-     style={{outline: 'none', position: 'fixed', right: 12, top: 4, zIndex: 9999}}
+     style={{outline: 'none', position: 'fixed', right: 12, top: 4, zIndex: 99999}}
    >
    <Close style={{color: '#000'}} onClick={this.props.handleDialogClose}/>
    </IconButton>
 
 
-        <CategoriesList />
-
+            <CategoriesList />
 
           </DialogContent>
         </Dialog>
@@ -80,8 +68,4 @@ render() {
   }
 }
 
-CategoryDialog.propTypes = {
-  classes: PropTypes.object.isRequired,
-};
-
-export default  withStyles(styles)(CategoryDialog);
+export default CategoryDialog;
