@@ -45,16 +45,11 @@ function PinnedSubheaderList(props) {
 
     <Link to="/game" style={{textDecoration: 'none'}}>
 
-    <ListItem  style={{paddingLeft: 0, paddingRight: 0}} className="noSelect">
+    <ListItem  style={{paddingLeft: 0, paddingRight: 0}} >
             <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Spiele </p>
     </ListItem>
     </Link>
-    <Link to="/drinking_game" style={{textDecoration: 'none'}}>
 
-    <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
-            <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Trinkspiele </p>
-    </ListItem>
-    </Link>
     <Link to="/quiz" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
