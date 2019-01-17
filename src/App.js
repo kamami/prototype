@@ -40,6 +40,26 @@ class App extends Component {
         });
     }
 
+
+    componentDidMount(){
+
+      const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test( userAgent );
+    }
+    // Detects if device is in standalone mode
+    const isInStandaloneMode = () => ('standalone' in window.navigator) || (window.navigator.standalone);
+
+
+  if(isInStandaloneMode()){
+    this.setState({
+
+        pushFabUp: true
+    })
+  }
+
+    }
+
   render() {
     return (
       <div >
@@ -49,9 +69,12 @@ class App extends Component {
                                 {matches =>
                                   matches ? (
           <div>
+            {this.state.pushFabUp ?
 
+            <Route path="/" exact strict component={Homepage} />
+            :
             <Route path="/" exact strict component={WelcomePage} />
-
+            }
             <Route path="/home" exact strict component={Homepage}/>
 
               <Route path="/impressum" exact strict component={Impressum}/>
@@ -91,7 +114,7 @@ class App extends Component {
       </Media>
         </Router>
             </div>
-          
+
         </div>
     );
   }
