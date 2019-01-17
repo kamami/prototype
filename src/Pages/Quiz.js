@@ -20,6 +20,8 @@ import Fade from '@material-ui/core/Fade';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+import CategoryDialog from '../components/CategoryDialog';
+import FloatingActionButtonsSearch from '../components/FloatingActionButtonsSearch';
 
 const drawerWidth = '50%';
 
@@ -80,6 +82,8 @@ class Quiz extends React.Component {
         open: false
       }
       this.copy = this.copy.bind(this);
+      this.focus = this.focus.bind(this);
+
   }
 
   handleDrawerOpen = () => {
@@ -96,7 +100,17 @@ class Quiz extends React.Component {
    })
  }
 
+ focus() {
+    this.textInput.focus();
+  }
 
+ handleDialogOpen = () => {
+   this.setState({dialogOpen: true})
+ }
+
+ handleDialogClose = () => {
+ this.setState({dialogOpen: false})
+ }
 
 
   render() {
@@ -110,7 +124,7 @@ class Quiz extends React.Component {
         {this.state.open === false &&
 
 
-      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.Quiz"} />
+      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.Quiz"} handleDialogOpen={this.handleDialogOpen}/>
 }
 
         <Drawer
@@ -162,8 +176,11 @@ class Quiz extends React.Component {
 
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={"&quiz=true"}/>
           </div>
+          <FloatingActionButtonsSearch  focus={this.focus}/>
 
         </main>
+        <CategoryDialog dialogOpen={this.state.dialogOpen} handleDialogClose={this.handleDialogClose}/>
+
       </div>
     );
   }

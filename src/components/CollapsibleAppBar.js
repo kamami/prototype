@@ -8,6 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 import { history } from '../_helpers';
 
 import MenuIcon from '@material-ui/icons/Menu';
+import Sort from '@material-ui/icons/Dashboard';
 
 import classNames from 'classnames';
 
@@ -50,6 +51,11 @@ menuButton: {
   marginLeft: 12,
   marginRight: 20,
 },
+
+sortButton: {
+  right: 12,
+  position: 'absolute'
+}
 
 };
 
@@ -169,18 +175,17 @@ history.push('/home')
 
          </Fade>
 
-         <ScrollToTop showUnder={49}     duration={1000}
-                 style={{
-                 position: 'flex',
-                 cursor: 'pointer',
-                 transitionDuration: '1s',
-                 transitionTimingFunction: 'linear',
-                 transitionDelay: '0.5s',
+         <IconButton
+           color="inherit"
+           aria-label="Open drawer"
+           className={classes.sortButton}
+           style={{outline: 'none'}}
+            onClick={this.props.handleDialogOpen}
+         >
+         <Sort />
+         </IconButton>
 
-                 }}>
 
-   <SearchButton />
-   </ScrollToTop>
        </Toolbar>
       </AppBar>
     );

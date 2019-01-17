@@ -1,6 +1,8 @@
 import React from 'react';
 
 import '../App.css';
+import {Link} from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
@@ -28,6 +30,7 @@ import MetaTags from 'react-meta-tags';
 import StarRatingComponent from 'react-star-rating-component';
 import RatingSnackbar from '../components/RatingSnackbar';
 import RatingSnackbarLogin from '../components/RatingSnackbarLogin';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 
 const styles = theme => ({
@@ -320,6 +323,7 @@ dialog: {
 
 
 })
+
 
 
 class ProductPage extends React.Component {
@@ -793,12 +797,17 @@ closeConfirmationDialog(){
 
 
 
+
     render() {
 
       let user = JSON.parse(localStorage.getItem('user'));
 
         return (
           <div style={{background: '#ffffff', height: 'calc(100vh - 56px)'}} >
+
+
+
+
             <MetaTags>
          <title>{this.state.title}</title>
          <meta name="description" content={this.state.description} />
@@ -814,6 +823,7 @@ closeConfirmationDialog(){
                 <Toolbar  style={{background: '#ffffff', color: '#000',maxHeight: '56px'
       }}>
 
+      <Link to={{pathname: '/home', state: { prevPath: window.location.pathname }}}>
 
                   <IconButton
 
@@ -822,6 +832,7 @@ closeConfirmationDialog(){
                   >
                     <BackIcon />
                   </IconButton>
+                </Link>
                   {user && user.token &&
                   <Button variant="outlined" style={{height: 40, position: 'absolute', right: 20, background: '#40E0D0', color: '#ffffff', fontSize: 18, fontFamily: 'roboto', borderWidth: 0}}>
                               <Credits style={{marginRight: '2%'}}/>
@@ -1120,6 +1131,8 @@ closeConfirmationDialog(){
 
                }
 
+
+
             </div>
         );
     }
@@ -1136,6 +1149,6 @@ ProductPage.propTypes = {
 };
 
 
-const connectedProfilePage = connect(mapStateToProps)(ProductPage);
+const connectedProductPage = connect(mapStateToProps)(ProductPage);
 
 export default withStyles(styles)(ProductPage );

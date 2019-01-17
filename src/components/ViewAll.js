@@ -10,7 +10,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import { debounce} from 'lodash'
 import Content from '../components/Content';
 import Button from '@material-ui/core/Button';
-import { history } from '../_helpers';
+import { history, store } from '../_helpers';
 import Dialog from '@material-ui/core/Dialog';
 
 import DialogContent from '@material-ui/core/DialogContent';
@@ -38,6 +38,7 @@ constructor(props){
 
 
  }
+ 
 
   loadContent() {
     if(this.state.message.length === 0){
@@ -105,6 +106,7 @@ fetch(requestUrl + '1&_limit=3' + this.props.category)
    focus() {
    this.textInput.focus();
  }
+
 
 
 

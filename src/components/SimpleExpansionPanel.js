@@ -91,66 +91,12 @@ render(){
 
     <div className={classes.root} style={{overflow: 'hidden'}}>
 
-      <ExpansionPanel style={{boxShadow: 'none', width: '99.999%', marginTop: '5vh'}}>
-        <ExpansionPanelSummary expandIcon={<ExpandMoreIcon style={{paddingTop: 0}}/>} style={{height: 60, paddingLeft: 26}}>
-
-          <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem', marginTop: 'auto', marginBottom: 'auto', paddingBottom: 11, paddingTop: 11}}>
-              Games
-            </p>
-
-        </ExpansionPanelSummary>
-        <ExpansionPanelDetails style={{marginBottom: -17, padding: 0}}>
-        {gamesList}
-
-        </ExpansionPanelDetails>
-      </ExpansionPanel>
-      <Divider/>
-
-      <List style={{padding: 0}}>
 
 
 
-        <ListItem button style={{height: 60, marginLeft: 10}}>
-          <Link to="/adventure" style={{textDecoration: 'none'}}>
-
-
-          <ListItemText>
-            <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem'}}> Abenteuer</p>
-
-            </ListItemText>
-          </Link>
-
-        </ListItem>
 
 
 
-                <ListItem button style={{height: 60, marginLeft: 10}}>
-                  <Link to="/quiz" style={{textDecoration: 'none'}}>
-
-
-                  <ListItemText>
-                    <p style={{fontFamily: 'Roboto', color: '#484F58', fontSize: '0.9375rem'}}> Quiz Bots</p>
-
-                    </ListItemText>
-                  </Link>
-
-                </ListItem>
-
-
-
-        <ListItem button style={{height: 60, marginLeft: 10}}>
-          <Link to="/fableselect" style={{textDecoration: 'none'}}>
-
-          <ListItemText>
-            <p style={{fontFamily: 'Pacifico', color: '#00C9B7', fontSize: '1.3em'}}> Fable.Select</p>
-
-            </ListItemText>
-          </Link>
-
-        </ListItem>
-
-
-      </List>
       <List style={{bottom: '0', position: 'absolute', background: '#ffffff'}}>
         <Divider />
 

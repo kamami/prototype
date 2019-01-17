@@ -20,6 +20,12 @@ import Fade from '@material-ui/core/Fade';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
 import {Link} from 'react-router-dom';
 import IosSnackbar from '../components/IosSnackbar';
+import FloatingActionButtonsSearch from '../components/FloatingActionButtonsSearch';
+import Dialog from '@material-ui/core/Dialog';
+import DialogContent from '@material-ui/core/DialogContent';
+import Close from '@material-ui/icons/Close';
+import CategoriesList from '../components/CategoriesList';
+import CategoryDialog from '../components/CategoryDialog';
 
 
 const drawerWidth = '50%';
@@ -81,7 +87,10 @@ class Homepage extends React.Component {
         open: false
       }
       this.copy = this.copy.bind(this);
+      this.focus = this.focus.bind(this);
   }
+
+
 
   handleDrawerOpen = () => {
     this.setState({ open: true });
@@ -97,9 +106,17 @@ class Homepage extends React.Component {
    })
  }
 
+ focus() {
+    this.textInput.focus();
+  }
 
+  handleDialogOpen = () => {
+    this.setState({dialogOpen: true})
+  }
 
-
+handleDialogClose = () => {
+  this.setState({dialogOpen: false})
+}
 
   render() {
     const { classes, theme } = this.props;
@@ -112,7 +129,7 @@ class Homepage extends React.Component {
         {this.state.open === false &&
 
 
-      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable."}/>
+      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable."} handleDialogOpen={this.handleDialogOpen}/>
 }
 
         <Drawer
@@ -159,11 +176,14 @@ class Homepage extends React.Component {
 
             <div style={{position: 'relative', width: '100%', marginBottom: 10 }} onScroll={this.updateDimensions}>
 
-              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={""} />
-              
+              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) => this.textInput = input} drawerOpen={this.state.open} category={""} prevPath={this.props.prevPath}/>
+
           </div>
+          <FloatingActionButtonsSearch  focus={this.focus}/>
 
         </main>
+
+        <CategoryDialog dialogOpen={this.state.dialogOpen} handleDialogClose={this.handleDialogClose}/>
 
       </div>
     );

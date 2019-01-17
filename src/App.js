@@ -16,9 +16,14 @@ import FableSelect from './Pages/FableSelect';
 import Quiz from './Pages/Quiz';
 import Abenteuer from './Pages/Abenteuer';
 import Games from './Pages/Games';
+import News from './Pages/News';
+import Food from './Pages/Food';
+import Social from './Pages/Social';
 import DrinkingGames from './Pages/DrinkingGames';
 import WelcomePage from './Pages/WelcomePage';
 import IosSnackbar from './components/IosSnackbar';
+import WelcomePageDesktop from './Pages/WelcomePageDesktop';
+import Media from "react-media";
 
 import {KeysPage} from './Pages/KeysPage';
 
@@ -27,7 +32,6 @@ class App extends Component {
         super(props);
           this.state={
             open: true,
-            changeRoute: false
           }
         const { dispatch } = this.props;
         history.listen((location, action) => {
@@ -44,11 +48,7 @@ class App extends Component {
     // Detects if device is in standalone mode
     const isInStandaloneMode = () => ('standalone' in window.navigator) || (window.navigator.standalone);
 
-    if('standalone' in window.navigator || window.navigator.standalone){
-      this.setState({ changeRoute: true });
-      console.log("Standalone")
 
-    }
 
     // Checks if should display install popup notification:
     if (isIos() && !isInStandaloneMode()) {
@@ -62,6 +62,9 @@ class App extends Component {
       <div >
                     <div>
                         <Router history={history}>
+                          <Media query="(max-width: 1025px)">
+                                {matches =>
+                                  matches ? (
           <div>
 
             <Route path="/" exact strict component={WelcomePage} />
@@ -79,12 +82,30 @@ class App extends Component {
                                 <Route path="/adventure" exact strict component={Abenteuer}/>
                                   <Route path="/game" exact strict component={Games}/>
                                     <Route path="/drinking_game" exact strict component={DrinkingGames}/>
+                                      <Route path="/social" exact strict component={Social}/>
+                                        <Route path="/food" exact strict component={Food}/>
+                                          <Route path="/news" exact strict component={News}/>
 
                                 <Route path="/bots/:id" exact strict component={ProductPage}/>
 
 
 
           </div>
+        ):(
+
+          <div>
+
+            <Route path="/" exact strict component={WelcomePageDesktop} />
+
+
+
+
+
+          </div>
+
+
+        )}
+      </Media>
         </Router>
             </div>
             {this.state.showInstallMessage &&

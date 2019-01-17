@@ -20,6 +20,7 @@ import Fade from '@material-ui/core/Fade';
 import CollapsibleAppBar from '../components/CollapsibleAppBar';
 import Typography from '@material-ui/core/Typography';
 import {Link} from 'react-router-dom';
+import { connect } from 'react-redux';
 import CategoryDialog from '../components/CategoryDialog';
 import FloatingActionButtonsSearch from '../components/FloatingActionButtonsSearch';
 
@@ -74,7 +75,7 @@ const styles = theme => ({
   },
 });
 
-class DrinkingGames extends React.Component {
+class News extends React.Component {
 
   constructor(props){
       super(props);
@@ -124,7 +125,7 @@ class DrinkingGames extends React.Component {
         {this.state.open === false &&
 
 
-      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.Drinks"} handleDialogOpen={this.handleDialogOpen}/>
+      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.News"} handleDialogOpen={this.handleDialogOpen} />
 }
 
         <Drawer
@@ -174,7 +175,7 @@ class DrinkingGames extends React.Component {
 
             <div style={{position: 'relative', width: '100%', marginBottom: 10 }} onScroll={this.updateDimensions}>
 
-              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={"&drinking_game=true"}/>
+              <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={"&news=true"}/>
           </div>
           <FloatingActionButtonsSearch  focus={this.focus}/>
 
@@ -187,9 +188,9 @@ class DrinkingGames extends React.Component {
   }
 }
 
-DrinkingGames.propTypes = {
+News.propTypes = {
   classes: PropTypes.object.isRequired,
   theme: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles, { withTheme: true })(DrinkingGames);
+export default withStyles(styles, { withTheme: true })(News);
