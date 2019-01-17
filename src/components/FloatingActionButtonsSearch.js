@@ -30,20 +30,13 @@ render(){
   const { classes } = this.props;
   return (
     <div>
-      <ScrollToTop showUnder={-1}
-              style={{
-              position: 'flex',
-              cursor: 'pointer',
 
-
-              }}>
       <Fab color="primary" aria-label="Add" className={classes.fab}
         style={{background: '#FF6B6B', color: '#ffffff', outline:'none',
           float: 'right',  marginBottom: '4vw', position: 'fixed', bottom: 0, right: 'calc(4vw - 6px)'}}>
 
         <SearchIcon className={classes.extendedIcon} onClick={this.props.focus}/>
       </Fab>
-    </ScrollToTop>
 
     </div>
   );
