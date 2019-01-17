@@ -35,7 +35,7 @@ function PinnedSubheaderList(props) {
     <List className={classes.root} subheader={<li />}>
     <li className={classes.listSection}>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#FF6B6B', fontFamily: 'anton'}}>Entertainment</ListSubheader>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#FF6B6B', fontFamily: 'anton', minHeight: 56}}>Entertainment</ListSubheader>
     <Link to="/adventure" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
