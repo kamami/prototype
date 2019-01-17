@@ -47,14 +47,7 @@ render() {
             onClose={this.closeConfirmationDialog}
 
             >
-            <div style={{overflow: 'hidden', position: 'fixed', backgroundColor: '#ffffff', top: 0, width: '100vw', height: 56}} >
-              <div>
-                <p style={{fontFamily: 'impact', color: '#ffffff', marginTop: 10, marginLeft: 26, fontSize: '1.4em'}}> Kategorien</p>
-
-              </div>
-
-
- </div>
+          
  <DialogContent style={{marginTop: '3.5vh'}}>
    <IconButton
      color="inherit"

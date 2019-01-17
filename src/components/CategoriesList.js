@@ -15,7 +15,7 @@ const styles = theme => ({
     position: 'relative',
     overflow: 'auto',
     maxHeight: '100vh',
-    marginTop: '7vh'
+    marginTop: '4vh'
   },
   listSection: {
     backgroundColor: 'inherit',
@@ -35,7 +35,7 @@ function PinnedSubheaderList(props) {
     <List className={classes.root} subheader={<li />}>
     <li className={classes.listSection}>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#FF6B6B', fontFamily: 'anton', minHeight: 56}}>Entertainment</ListSubheader>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7}}>Entertainment</ListSubheader>
     <Link to="/adventure" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -65,7 +65,7 @@ function PinnedSubheaderList(props) {
 
     </ul>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton'}}>Alltagshelfer</ListSubheader>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
     <Link to="/news" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -81,6 +81,74 @@ function PinnedSubheaderList(props) {
     </Link>
 
           </ul>
+          <ul className={classes.ul}>
+          <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+          <Link to="/news" style={{textDecoration: 'none'}}>
+
+          <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                  <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> News </p>
+          </ListItem>
+          </Link>
+
+          <Link to="/food" style={{textDecoration: 'none'}}>
+
+          <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                  <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Food </p>
+          </ListItem>
+          </Link>
+
+                </ul>
+                <ul className={classes.ul}>
+                <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+                <Link to="/news" style={{textDecoration: 'none'}}>
+
+                <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                        <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> News </p>
+                </ListItem>
+                </Link>
+
+                <Link to="/food" style={{textDecoration: 'none'}}>
+
+                <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                        <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Food </p>
+                </ListItem>
+                </Link>
+
+                      </ul>
+                      <ul className={classes.ul}>
+                      <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+                      <Link to="/news" style={{textDecoration: 'none'}}>
+
+                      <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                              <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> News </p>
+                      </ListItem>
+                      </Link>
+
+                      <Link to="/food" style={{textDecoration: 'none'}}>
+
+                      <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                              <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Food </p>
+                      </ListItem>
+                      </Link>
+
+                            </ul>
+                            <ul className={classes.ul}>
+                            <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+                            <Link to="/news" style={{textDecoration: 'none'}}>
+
+                            <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                                    <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> News </p>
+                            </ListItem>
+                            </Link>
+
+                            <Link to="/food" style={{textDecoration: 'none'}}>
+
+                            <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
+                                    <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Food </p>
+                            </ListItem>
+                            </Link>
+
+                                  </ul>
   </li>
   </List>
 
