@@ -42,15 +42,12 @@ render() {
             >
             <AppBar
               position="fixed"
-              style={{minHeight: '56px'}}
+              style={{minHeight: '56px', boxShadow: 'none'}}
             >
               <Toolbar  style={{background: '#ffffff', color: '#000',  minHeight: '56px'}}>
 
 
-              <Typography style={{fontFamily: 'Roboto', fontSize: 20, color: '#000', useNextVariants: true, marginLeft: '2vw'}}>
 
-            Kategorien
-              </Typography>
 
               <IconButton
                 color="inherit"

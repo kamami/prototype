@@ -65,9 +65,6 @@ const styles = theme => ({
    height: '40px',
    zIndex: 2
 
-
-
-
  },
  hideCredits: {
 
@@ -80,10 +77,6 @@ const styles = theme => ({
    marginLeft: '0vw !important',
    zIndex: 2
 
-
-
-
-
  },
 
  showFacebookSmall: {
@@ -93,8 +86,6 @@ const styles = theme => ({
    height: '40px',
    padding: '6px 14px 6px 14px',
    zIndex: 1
-
-
 
  },
 

@@ -14,6 +14,7 @@ import SnackbarContent from '@material-ui/core/SnackbarContent';
 import WarningIcon from '@material-ui/icons/Warning';
 import { withStyles } from '@material-ui/core/styles';
 import ArrowDownward from '@material-ui/icons/ArrowDownward'
+
 const variantIcon = {
   success:  ArrowDownward ,
   warning: WarningIcon,
