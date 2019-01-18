@@ -177,7 +177,7 @@ class News extends React.Component {
 
               <ViewAll url='https://questdb.herokuapp.com/all?_page=' ref={(input) =>  this.textInput = input} drawerOpen={this.state.open} category={"&news=true"}/>
           </div>
-          <FloatingActionButtonsSearch  focus={this.focus}/>
+          <FloatingActionButtonsSearch  focus={this.focus} handleDrawerClose={this.handleDrawerClose}/>
 
         </main>
 
