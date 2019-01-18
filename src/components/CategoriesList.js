@@ -1,6 +1,4 @@
 import React from 'react';
-import '../App.css';
-
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -9,7 +7,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import {Link} from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
-
 
 const styles = theme => ({
   root: {
@@ -39,10 +36,9 @@ function PinnedSubheaderList(props) {
     <li className={classes.listSection}>
     <ul className={classes.ul}>
       <Link to="/home" style={{textDecoration: 'none'}}>
-        <ListItem style={{padding: 0, fontSize: '2em', color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7, webkitTapHighlightColor: 'transparent'}}>Trending</ListItem>
+        <ListItem style={{padding: 0, fontSize: '2em', color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7}}>Trending</ListItem>
         </Link>
         <Divider />
-
         <Link to="/home" style={{textDecoration: 'none'}}>
         <ListItem style={{padding: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Neuheiten</ListItem>
         </Link>
@@ -94,6 +90,7 @@ function PinnedSubheaderList(props) {
             <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Food </p>
     </ListItem>
     </Link>
+
 
           </ul>
 
