@@ -125,7 +125,7 @@ class Abenteuer extends React.Component {
         {this.state.open === false &&
 
 
-      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.Abenteuer"} handleDialogOpen={this.handleDialogOpen} />
+      <CollapsibleAppBar open={this.state.open} handleDrawerOpen={this.handleDrawerOpen} pageTitle={"Fable.Quest"} handleDialogOpen={this.handleDialogOpen} />
 }
 
         <Drawer

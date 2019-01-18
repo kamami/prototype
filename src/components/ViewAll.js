@@ -12,6 +12,7 @@ import Content from '../components/Content';
 import Button from '@material-ui/core/Button';
 import { history, store } from '../_helpers';
 import Dialog from '@material-ui/core/Dialog';
+import shuffle from 'shuffle-array';
 
 import DialogContent from '@material-ui/core/DialogContent';
 
@@ -43,12 +44,14 @@ constructor(props){
   loadContent() {
     if(this.state.message.length === 0){
     var requestUrl = this.props.url;
-    fetch(requestUrl + this.state.page + '&_limit=3'  + this.props.category).then((response)=>{
+    fetch(requestUrl + this.state.page + '&_limit=4'  + this.props.category).then((response)=>{
         return response.json();
     }) .then((tracks)=>{
-        this.setState({ tracks: this.state.tracks.concat(tracks)});
-        this.setState({page: this.state.page + 1});
 
+        this.setState({ tracks: this.state.tracks.concat(tracks)}, () => {
+
+        });
+        this.setState({page: this.state.page + 1});
         if(this.state.page === 8){
          this.setState({hasMoreItems: false})
        }
@@ -59,13 +62,14 @@ constructor(props){
 }
 
 componentDidMount() {
-
 var requestUrl = this.props.url;
-fetch(requestUrl + '1&_limit=3' + this.props.category)
+fetch(requestUrl + '1&_limit=4' + this.props.category)
     .then((response)=>{
     return response.json();
 }) .then((data)=>{
-    this.setState({tracks : data, loading: false});
+    this.setState({tracks : data, loading: false}, () => {
+
+    });
     this.setState({hasMoreItems: true});
 
 })
@@ -125,6 +129,7 @@ render() {
 {
     items.push(
             <div>
+              <Fade in={true}  timeout={1000}>
 
                 <Button style={{ borderRadius: "2em",
                   background: '#ffffff', padding: 0,  boxShadow: '0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)', textTransform: 'none'
@@ -203,6 +208,7 @@ render() {
                   </div>
 
       </Button>
+    </Fade>
       </div>
     );
   }, this);

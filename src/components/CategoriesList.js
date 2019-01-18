@@ -15,10 +15,9 @@ const styles = theme => ({
     position: 'relative',
     overflow: 'auto',
     maxHeight: '100vh',
-    marginTop: '7vh'
   },
   listSection: {
-    backgroundColor: 'inherit',
+    backgroundColor: 'inherit'
   },
   ul: {
     backgroundColor: 'inherit',
@@ -35,11 +34,18 @@ function PinnedSubheaderList(props) {
     <List className={classes.root} subheader={<li />}>
     <li className={classes.listSection}>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7}}>Entertainment</ListSubheader>
+      <Link to="/home" style={{textDecoration: 'none'}}>
+        <ListItem style={{padding: 0, fontSize: '2em', color: '#FF6B6B', fontFamily: 'anton', lineHeight: 1.7}}>Trending</ListItem>
+        </Link>
+
+        <Link to="/home" style={{textDecoration: 'none'}}>
+        <ListItem style={{padding: 0, fontSize: '2em', color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Neuheiten</ListItem>
+        </Link>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#484F58', fontFamily: 'anton', lineHeight: 1.7}}>Entertainment</ListSubheader>
     <Link to="/adventure" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
-            <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Abenteuer </p>
+            <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Quests </p>
     </ListItem>
     </Link>
 
@@ -65,7 +71,7 @@ function PinnedSubheaderList(props) {
 
     </ul>
     <ul className={classes.ul}>
-    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', height: 56, color: '#00C9B7', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
+    <ListSubheader style={{paddingLeft: 0, paddingRight: 0, fontSize: '2em', color: '#40E0D0', fontFamily: 'anton', lineHeight: 1.7}}>Alltagshelfer</ListSubheader>
     <Link to="/news" style={{textDecoration: 'none'}}>
 
     <ListItem  style={{paddingLeft: 0, paddingRight: 0}}>
@@ -79,6 +85,7 @@ function PinnedSubheaderList(props) {
             <p style={{fontFamily: 'roboto', color: '#000', fontSize: '1.5em', marginBottom: 0}}> Food </p>
     </ListItem>
     </Link>
+  
 
           </ul>
 

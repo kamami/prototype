@@ -90,6 +90,11 @@ class Homepage extends React.Component {
       this.focus = this.focus.bind(this);
   }
 
+  componentDidMount(){
+    window.scrollTo(0, 0)
+    
+  }
+
 
 
   handleDrawerOpen = () => {

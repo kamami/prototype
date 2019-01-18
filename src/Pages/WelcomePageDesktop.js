@@ -177,9 +177,9 @@ class WelcomePage extends React.Component {
                  </div>
                  <Link to="/home" style={{textDecoration: 'none'}}>
 
-                 <Button  variant="contained"
-                   style={{height: 40, width: '40%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#40E0D0', color: '#ffffff',  marginBottom: '5vh', marginTop: '5vh'}}>
-                    Los geht's</Button>
+                   <Button  variant="contained"
+                     style={{height: 40, width: '40%', boxShadow: 'none', marginLeft: 'auto', marginRight: 'auto', background: '#40E0D0', color: '#ffffff',  marginBottom: '5vh', marginTop: '5vh'}}>
+                      Los geht's</Button>
                   </Link>
 
             </div>

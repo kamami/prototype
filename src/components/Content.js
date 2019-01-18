@@ -31,6 +31,7 @@ class Content extends React.Component {
   loadMore={this.props.loadContent}
   hasMore={this.props.hasMoreItems}
   initialLoad={false}
+  threshold={500}
  >
  <Media query="(min-width: 375px)">
    {matches =>
@@ -39,7 +40,7 @@ class Content extends React.Component {
 columnWidth={170}
 gutterHeight={20}
 gutterWidth={20}
-duration={1500}
+duration={0}
 monitorImagesLoaded={true}
 
 
@@ -50,7 +51,7 @@ monitorImagesLoaded={true}
 columnWidth={150}
 gutterHeight={10}
 gutterWidth={10}
-duration={1500}
+duration={0}
 monitorImagesLoaded={true}
 
 
@@ -74,6 +75,7 @@ monitorImagesLoaded={true}
   loadMore={this.props.loadContent}
   hasMore={this.props.hasMoreItems}
   initialLoad={true}
+  threshold={500}
 
 
  >
@@ -81,7 +83,7 @@ monitorImagesLoaded={true}
    columnWidth={180}
 gutterHeight={80}
 gutterWidth={80}
-duration={1500}
+duration={0}
 monitorImagesLoaded={true}
 
 >

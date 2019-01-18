@@ -64,17 +64,14 @@ class App extends Component {
     return (
       <div >
                     <div>
-                        <Router history={history}>
+                        <Router  history={history}>
                           <Media query="(max-width: 1025px)">
                                 {matches =>
                                   matches ? (
           <div>
-            {this.state.pushFabUp ?
 
-            <Route path="/" exact strict component={Homepage} />
-            :
             <Route path="/" exact strict component={WelcomePage} />
-            }
+
             <Route path="/home" exact strict component={Homepage}/>
 
               <Route path="/impressum" exact strict component={Impressum}/>
