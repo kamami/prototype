@@ -21,7 +21,6 @@ import Food from './Pages/Food';
 import Social from './Pages/Social';
 import DrinkingGames from './Pages/DrinkingGames';
 import WelcomePage from './Pages/WelcomePage';
-import IosSnackbar from './components/IosSnackbar';
 import WelcomePageDesktop from './Pages/WelcomePageDesktop';
 import Media from "react-media";
 
@@ -41,25 +40,7 @@ class App extends Component {
     }
 
 
-    componentDidMount(){
-
-      const isIos = () => {
-    const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test( userAgent );
-    }
-    // Detects if device is in standalone mode
-    const isInStandaloneMode = () => ('standalone' in window.navigator) || (window.navigator.standalone);
-
-
-  if(isInStandaloneMode()){
-    this.setState({
-
-        pushFabUp: true
-    })
-  }
-
-    }
-
+  
   render() {
     return (
       <div >

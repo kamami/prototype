@@ -10,7 +10,6 @@ import Divider from '@material-ui/core/Divider';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import SimpleExpansionPanel from '../components/SimpleExpansionPanel';
 import Media from "react-media";
 import {Link} from 'react-router-dom';

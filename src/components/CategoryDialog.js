@@ -1,27 +1,13 @@
 import React from 'react';
 import '../App.css';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import Paper from 'material-ui/Paper';
-import TextField from 'material-ui/TextField';
-import Media from "react-media";
-import Fade from '@material-ui/core/Fade';
-import Typed from 'react-typed';
-import SearchIcon from '@material-ui/icons/Search';
-import { debounce} from 'lodash'
-import Content from '../components/Content';
-import Button from '@material-ui/core/Button';
-import { history, store } from '../_helpers';
 import Dialog from '@material-ui/core/Dialog';
 import IconButton from '@material-ui/core/IconButton';
 import CategoriesList from '../components/CategoriesList';
 import Close from '@material-ui/icons/Close';
-import classNames from 'classnames';
 import AppBar from '@material-ui/core/AppBar';
 
-import BackIcon from '@material-ui/icons/ArrowBack';
 
 import Toolbar from '@material-ui/core/Toolbar';
-import { Link } from 'react-router-dom';
 
 import Typography from '@material-ui/core/Typography';
 
@@ -40,7 +26,6 @@ constructor(props){
 
 
 render() {
-  const { classes } = this.props;
 
 
 

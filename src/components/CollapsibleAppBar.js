@@ -12,9 +12,7 @@ import Sort from '@material-ui/icons/Dashboard';
 
 import classNames from 'classnames';
 
-import ScrollToTop from 'react-scroll-up';
 
-import SearchButton from '../components/SearchButton';
 import Fade from '@material-ui/core/Fade';
 
 const styles = {

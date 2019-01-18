@@ -19,9 +19,7 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
-import { alertConstants } from '../_constants/alert.constants';
 import ErrorMessages from '../components/ErrorMessages';
-import { history } from '../_helpers';
 
 
 class LoginPage extends React.Component {

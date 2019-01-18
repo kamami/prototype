@@ -31,7 +31,7 @@ class Content extends React.Component {
   loadMore={this.props.loadContent}
   hasMore={this.props.hasMoreItems}
   initialLoad={false}
-  threshold={500}
+  threshold={600}
  >
  <Media query="(min-width: 375px)">
    {matches =>
@@ -75,7 +75,7 @@ monitorImagesLoaded={true}
   loadMore={this.props.loadContent}
   hasMore={this.props.hasMoreItems}
   initialLoad={true}
-  threshold={500}
+  threshold={600}
 
 
  >
